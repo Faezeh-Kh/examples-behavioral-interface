@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.gemoc.execution.sequential.javaengine.ui.launcher">
+<intAttribute key="GEMOC_ANIMATE_DELAY" value="0"/>
+<stringAttribute key="GEMOC_DEBUG_MODEL_ID" value="org.gemoc.execution.sequential.javaengine.ui.debugModel"/>
+<stringAttribute key="GEMOC_LAUNCH_ARBITER_URI" value=""/>
+<booleanAttribute key="GEMOC_LAUNCH_BREAK_START" value="true"/>
+<stringAttribute key="GEMOC_LAUNCH_INITIALIZATION_ARGUMENTS" value=""/>
+<stringAttribute key="GEMOC_LAUNCH_INITIALIZATION_METHOD" value=""/>
+<stringAttribute key="GEMOC_LAUNCH_MELANGE_QUERY" value=""/>
+<stringAttribute key="GEMOC_LAUNCH_SCENARIO_URI" value=""/>
+<stringAttribute key="GEMOC_LAUNCH_SELECTED_LANGUAGE" value="org.tetrabox.example.XElevator"/>
+<booleanAttribute key="Generic MultiDimensional Trace" value="false"/>
+<stringAttribute key="LAUNCH_METHOD_ENTRY_POINT" value="public static void org.tetrabox.example.xelevator.aspects.ElevatorAspect.run(org.tetrabox.example.xelevator.elevator.Elevator)"/>
+<stringAttribute key="LAUNCH_MODEL_ENTRY_POINT" value="//@elevators.0"/>
+<booleanAttribute key="Property Monitor" value="false"/>
+<stringAttribute key="Resource" value="/org.tetrabox.example.elevator.examples/models/elevator1.xelevator"/>
+<booleanAttribute key="XActivityDiagram Event Manager" value="false"/>
+<booleanAttribute key="XElevator Event Manager" value="true"/>
+<stringAttribute key="airdResource" value=""/>
+</launchConfiguration>

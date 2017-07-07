@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XActivityDiagramScenario:XActivityDiagramScenario xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:XActivityDiagramEvent="http://org.gemoc.activitydiagram.sequential.xactivitydiagram/scenario/XActivityDiagramEvent/" xmlns:XActivityDiagramProvider="http://org.gemoc.activitydiagram.sequential.xactivitydiagram/scenario/XActivityDiagramProvider/" xmlns:XActivityDiagramScenario="http://org.gemoc.activitydiagram.sequential.xactivitydiagram/scenario/XActivityDiagramScenario/" xmlns:activitydiagram="http://org.gemoc.activitydiagram.sequential.xactivitydiagram/activitydiagram/">
+  <elements xsi:type="XActivityDiagramScenario:XActivityDiagramEventOccurrence">
+    <nextElements xsi:type="XActivityDiagramScenario:XActivityDiagramEventOccurrence">
+      <nextElements xsi:type="XActivityDiagramScenario:XActivityDiagramEventOccurrence">
+        <nextElements xsi:type="XActivityDiagramScenario:XActivityDiagramEventOccurrence">
+          <nextElements xsi:type="XActivityDiagramScenario:XActivityDiagramEventOccurrence">
+            <nextElements xsi:type="XActivityDiagramScenario:XActivityDiagramEventOccurrence">
+              <nextElements xsi:type="XActivityDiagramScenario:XActivityDiagramEventOccurrence">
+                <nextElements xsi:type="XActivityDiagramScenario:XActivityDiagramEventOccurrence">
+                  <nextElements xsi:type="XActivityDiagramScenario:XActivityDiagramEventOccurrence">
+                    <nextElements xsi:type="XActivityDiagramScenario:XActivityDiagramEventOccurrence">
+                      <event xsi:type="XActivityDiagramEvent:AcceptEventActionAcceptEvent">
+                        <targetProvider xsi:type="XActivityDiagramProvider:AcceptEventActionReference">
+                          <element xsi:type="activitydiagram:AcceptEventAction" href="../models/testSignal2.xsad#acceptSignal"/>
+                        </targetProvider>
+                        <eventProvider xsi:type="XActivityDiagramProvider:EventReference">
+                          <element xsi:type="activitydiagram:Event" href="../models/testSignal2.xsad#signal"/>
+                        </eventProvider>
+                      </event>
+                    </nextElements>
+                    <event xsi:type="XActivityDiagramEvent:AcceptEventActionAcceptEvent">
+                      <targetProvider xsi:type="XActivityDiagramProvider:AcceptEventActionReference">
+                        <element xsi:type="activitydiagram:AcceptEventAction" href="../models/testSignal2.xsad#acceptSignal"/>
+                      </targetProvider>
+                      <eventProvider xsi:type="XActivityDiagramProvider:EventReference">
+                        <element xsi:type="activitydiagram:Event" href="../models/testSignal2.xsad#signal"/>
+                      </eventProvider>
+                    </event>
+                  </nextElements>
+                  <event xsi:type="XActivityDiagramEvent:AcceptEventActionAcceptEvent">
+                    <targetProvider xsi:type="XActivityDiagramProvider:AcceptEventActionReference">
+                      <element xsi:type="activitydiagram:AcceptEventAction" href="../models/testSignal2.xsad#acceptSignal"/>
+                    </targetProvider>
+                    <eventProvider xsi:type="XActivityDiagramProvider:EventReference">
+                      <element xsi:type="activitydiagram:Event" href="../models/testSignal2.xsad#signal"/>
+                    </eventProvider>
+                  </event>
+                </nextElements>
+                <event xsi:type="XActivityDiagramEvent:AcceptEventActionAcceptEvent">
+                  <targetProvider xsi:type="XActivityDiagramProvider:AcceptEventActionReference">
+                    <element xsi:type="activitydiagram:AcceptEventAction" href="../models/testSignal2.xsad#acceptSignal"/>
+                  </targetProvider>
+                  <eventProvider xsi:type="XActivityDiagramProvider:EventReference">
+                    <element xsi:type="activitydiagram:Event" href="../models/testSignal2.xsad#signal"/>
+                  </eventProvider>
+                </event>
+              </nextElements>
+              <event xsi:type="XActivityDiagramEvent:AcceptEventActionAcceptEvent">
+                <targetProvider xsi:type="XActivityDiagramProvider:AcceptEventActionReference">
+                  <element xsi:type="activitydiagram:AcceptEventAction" href="../models/testSignal2.xsad#acceptSignal"/>
+                </targetProvider>
+                <eventProvider xsi:type="XActivityDiagramProvider:EventReference">
+                  <element xsi:type="activitydiagram:Event" href="../models/testSignal2.xsad#signal"/>
+                </eventProvider>
+              </event>
+            </nextElements>
+            <event xsi:type="XActivityDiagramEvent:AcceptEventActionAcceptEvent">
+              <targetProvider xsi:type="XActivityDiagramProvider:AcceptEventActionReference">
+                <element xsi:type="activitydiagram:AcceptEventAction" href="../models/testSignal2.xsad#acceptSignal"/>
+              </targetProvider>
+              <eventProvider xsi:type="XActivityDiagramProvider:EventReference">
+                <element xsi:type="activitydiagram:Event" href="../models/testSignal2.xsad#signal"/>
+              </eventProvider>
+            </event>
+          </nextElements>
+          <event xsi:type="XActivityDiagramEvent:AcceptEventActionAcceptEvent">
+            <targetProvider xsi:type="XActivityDiagramProvider:AcceptEventActionReference">
+              <element xsi:type="activitydiagram:AcceptEventAction" href="../models/testSignal2.xsad#acceptSignal"/>
+            </targetProvider>
+            <eventProvider xsi:type="XActivityDiagramProvider:EventReference">
+              <element xsi:type="activitydiagram:Event" href="../models/testSignal2.xsad#signal"/>
+            </eventProvider>
+          </event>
+        </nextElements>
+        <event xsi:type="XActivityDiagramEvent:AcceptEventActionAcceptEvent">
+          <targetProvider xsi:type="XActivityDiagramProvider:AcceptEventActionReference">
+            <element xsi:type="activitydiagram:AcceptEventAction" href="../models/testSignal2.xsad#acceptSignal"/>
+          </targetProvider>
+          <eventProvider xsi:type="XActivityDiagramProvider:EventReference">
+            <element xsi:type="activitydiagram:Event" href="../models/testSignal2.xsad#signal"/>
+          </eventProvider>
+        </event>
+      </nextElements>
+      <event xsi:type="XActivityDiagramEvent:AcceptEventActionAcceptEvent">
+        <targetProvider xsi:type="XActivityDiagramProvider:AcceptEventActionReference">
+          <element xsi:type="activitydiagram:AcceptEventAction" href="../models/testSignal2.xsad#acceptSignal"/>
+        </targetProvider>
+        <eventProvider xsi:type="XActivityDiagramProvider:EventReference">
+          <element xsi:type="activitydiagram:Event" href="../models/testSignal2.xsad#signal"/>
+        </eventProvider>
+      </event>
+    </nextElements>
+    <event xsi:type="XActivityDiagramEvent:AcceptEventActionAcceptEvent">
+      <targetProvider xsi:type="XActivityDiagramProvider:AcceptEventActionReference">
+        <element xsi:type="activitydiagram:AcceptEventAction" href="../models/testSignal2.xsad#acceptSignal"/>
+      </targetProvider>
+      <eventProvider xsi:type="XActivityDiagramProvider:EventReference">
+        <element xsi:type="activitydiagram:Event" href="../models/testSignal2.xsad#signal"/>
+      </eventProvider>
+    </event>
+  </elements>
+</XActivityDiagramScenario:XActivityDiagramScenario>

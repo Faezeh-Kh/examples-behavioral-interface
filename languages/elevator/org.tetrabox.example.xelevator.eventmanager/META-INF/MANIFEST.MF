@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.tetrabox.example.xelevator.eventmanager
+Bundle-SymbolicName: org.tetrabox.example.xelevator.eventmanager;singleton:=true
+Bundle-Version: 0.1.0
+Require-Bundle: fr.inria.diverse.event.commons.interpreter,
+  fr.inria.diverse.trace.commons.model,
+  org.gemoc.xdsmlframework.api,
+  org.tetrabox.example.xelevator.scenario
+Export-Package: org.tetrabox.example.xelevator.eventmanager
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+

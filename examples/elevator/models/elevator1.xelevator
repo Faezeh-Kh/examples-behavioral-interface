@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elevator:ElevatorSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:elevator="http://org.tetrabox.example.xelevator/elevator/">
+  <elevators doorsOpen="true" goingUp="true" currentFloor="//@floors.0">
+    <elevatorButtons requestedFloor="//@floors.0"/>
+    <elevatorButtons requestedFloor="//@floors.1"/>
+    <elevatorButtons requestedFloor="//@floors.2"/>
+  </elevators>
+  <floors next="//@floors.1">
+    <floorButtons xsi:type="elevator:UpButton" requestedFloor="//@floors.0"/>
+  </floors>
+  <floors next="//@floors.2" previous="//@floors.0">
+    <floorButtons xsi:type="elevator:UpButton" requestedFloor="//@floors.1"/>
+    <floorButtons xsi:type="elevator:DownButton" requestedFloor="//@floors.1"/>
+  </floors>
+  <floors previous="//@floors.1">
+    <floorButtons xsi:type="elevator:DownButton" requestedFloor="//@floors.2"/>
+  </floors>
+</elevator:ElevatorSystem>

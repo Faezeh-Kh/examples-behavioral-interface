@@ -1,0 +1,23 @@
+activity testSignal1 {
+	events {
+		signal1, signal2
+	}
+	
+	nodes {
+		initial initialNode out (e1),
+		fork forkNode in (e1) out (e2, e3),
+		accept acceptSignal1 type (signal1) in (e2) out (e4),
+		accept acceptSignal2 type (signal2) in (e3) out (e5),
+		join joinNode in (e4, e5) out (e6),
+		final finalNode in (e6)
+	}
+	
+	edges {
+		flow e1 from initialNode to forkNode,
+		flow e2 from forkNode to acceptSignal1,
+		flow e3 from forkNode to acceptSignal2,
+		flow e4 from acceptSignal1 to joinNode,
+		flow e5 from acceptSignal2 to joinNode,
+		flow e6 from joinNode to finalNode
+	}
+}

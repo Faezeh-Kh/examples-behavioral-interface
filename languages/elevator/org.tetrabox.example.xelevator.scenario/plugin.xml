@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated XElevatorScenario -->
+      <package
+            uri="http://org.tetrabox.example.xelevator/scenario/XElevatorArbiter/"
+            class="org.tetrabox.example.xelevator.scenario.xelevatorscenario.XElevatorArbiter.XElevatorArbiterPackage"
+            genModel="model/XElevatorScenario.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated XElevatorScenario -->
+      <package
+            uri="http://org.tetrabox.example.xelevator/scenario/XElevatorEvent/"
+            class="org.tetrabox.example.xelevator.scenario.xelevatorscenario.XElevatorEvent.XElevatorEventPackage"
+            genModel="model/XElevatorScenario.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated XElevatorScenario -->
+      <package
+            uri="http://org.tetrabox.example.xelevator/scenario/XElevatorProperty/"
+            class="org.tetrabox.example.xelevator.scenario.xelevatorscenario.XElevatorProperty.XElevatorPropertyPackage"
+            genModel="model/XElevatorScenario.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated XElevatorScenario -->
+      <package
+            uri="http://org.tetrabox.example.xelevator/scenario/XElevatorProvider/"
+            class="org.tetrabox.example.xelevator.scenario.xelevatorscenario.XElevatorProvider.XElevatorProviderPackage"
+            genModel="model/XElevatorScenario.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated XElevatorScenario -->
+      <package
+            uri="http://org.tetrabox.example.xelevator/scenario/XElevatorScenario/"
+            class="org.tetrabox.example.xelevator.scenario.xelevatorscenario.XElevatorScenario.XElevatorScenarioPackage"
+            genModel="model/XElevatorScenario.genmodel"/>
+   </extension>
+</plugin>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.tetrabox.example.elevator/src-gen" modelPluginID="org.tetrabox.example.elevator" modelName="XElevatorMT" complianceLevel="7.0" copyrightFields="false">
+  <foreignModel>platform:/resource/org.tetrabox.example.elevator/model-gen/XElevatorMT.ecore</foreignModel>
+  <genPackages prefix="Elevator" basePackage="org.tetrabox.example.xelevatormt" disposableProviderFactory="true">
+    <ecorePackage href="XElevatorMT.ecore#/"/>
+    <genClasses>
+      <ecoreClass href="XElevatorMT.ecore#//Floor"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XElevatorMT.ecore#//Floor/next"/>
+      </genFeatures>
+      <genFeatures property="Readonly" createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XElevatorMT.ecore#//Floor/nr"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XElevatorMT.ecore#//Floor/floorButtons"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XElevatorMT.ecore#//Floor/previous"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XElevatorMT.ecore#//Floor/hasUpperFloorLitButton"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XElevatorMT.ecore#//Floor/hasLowerFloorLitButton"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="XElevatorMT.ecore#//Button"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XElevatorMT.ecore#//Button/requestedFloor"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XElevatorMT.ecore#//Button/pressed"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XElevatorMT.ecore#//Button/press"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XElevatorMT.ecore#//Button/notPressed"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XElevatorMT.ecore#//Elevator"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XElevatorMT.ecore#//Elevator/elevatorButtons"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XElevatorMT.ecore#//Elevator/doorsOpen"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XElevatorMT.ecore#//Elevator/goingUp"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XElevatorMT.ecore#//Elevator/currentFloor"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XElevatorMT.ecore#//Elevator/run"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XElevatorMT.ecore#//Elevator/openDoorUp"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XElevatorMT.ecore#//Elevator/openDoorDown"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XElevatorMT.ecore#//Elevator/closeDoor"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XElevatorMT.ecore#//Elevator/changeToDown"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XElevatorMT.ecore#//Elevator/changeToUp"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XElevatorMT.ecore#//Elevator/moveUp"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XElevatorMT.ecore#//Elevator/moveDown"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XElevatorMT.ecore#//ElevatorButton"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="XElevatorMT.ecore#//FloorButton"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XElevatorMT.ecore#//UpButton"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XElevatorMT.ecore#//DownButton"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XElevatorMT.ecore#//ElevatorSystem"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XElevatorMT.ecore#//ElevatorSystem/elevators"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XElevatorMT.ecore#//ElevatorSystem/floors"/>
+      </genFeatures>
+    </genClasses>
+  </genPackages>
+  <usedGenPackages href="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"/>
+</genmodel:GenModel>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XElevatorScenario:XElevatorScenario xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:XElevatorEvent="http://org.tetrabox.example.xelevator/scenario/XElevatorEvent/" xmlns:XElevatorProvider="http://org.tetrabox.example.xelevator/scenario/XElevatorProvider/" xmlns:XElevatorScenario="http://org.tetrabox.example.xelevator/scenario/XElevatorScenario/" xmlns:elevator="http://org.tetrabox.example.xelevator/elevator/">
+  <elements xsi:type="XElevatorScenario:XElevatorEventOccurrence">
+    <nextElements xsi:type="XElevatorScenario:XElevatorEventOccurrence">
+      <nextElements xsi:type="XElevatorScenario:XElevatorEventOccurrence">
+        <event xsi:type="XElevatorEvent:ButtonPressEvent">
+          <targetProvider xsi:type="XElevatorProvider:ButtonReference">
+            <element xsi:type="elevator:UpButton" href="../models/elevator2.xelevator#//@floors.1/@floorButtons.0"/>
+          </targetProvider>
+        </event>
+      </nextElements>
+      <event xsi:type="XElevatorEvent:ButtonPressEvent">
+        <targetProvider xsi:type="XElevatorProvider:ButtonReference">
+          <element xsi:type="elevator:ElevatorButton" href="../models/elevator2.xelevator#//@elevators.0/@elevatorButtons.2"/>
+        </targetProvider>
+      </event>
+    </nextElements>
+    <event xsi:type="XElevatorEvent:ButtonPressEvent">
+      <targetProvider xsi:type="XElevatorProvider:ButtonReference">
+        <element xsi:type="elevator:UpButton" href="../models/elevator2.xelevator#//@floors.0/@floorButtons.0"/>
+      </targetProvider>
+    </event>
+  </elements>
+</XElevatorScenario:XElevatorScenario>

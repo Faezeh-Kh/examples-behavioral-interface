@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated XActivityDiagramScenario -->
+      <package
+            uri="http://org.gemoc.activitydiagram.sequential.xactivitydiagram/scenario/XActivityDiagramArbiter/"
+            class="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario.xactivitydiagramscenario.XActivityDiagramArbiter.XActivityDiagramArbiterPackage"
+            genModel="model/XActivityDiagramScenario.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated XActivityDiagramScenario -->
+      <package
+            uri="http://org.gemoc.activitydiagram.sequential.xactivitydiagram/scenario/XActivityDiagramEvent/"
+            class="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario.xactivitydiagramscenario.XActivityDiagramEvent.XActivityDiagramEventPackage"
+            genModel="model/XActivityDiagramScenario.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated XActivityDiagramScenario -->
+      <package
+            uri="http://org.gemoc.activitydiagram.sequential.xactivitydiagram/scenario/XActivityDiagramProperty/"
+            class="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario.xactivitydiagramscenario.XActivityDiagramProperty.XActivityDiagramPropertyPackage"
+            genModel="model/XActivityDiagramScenario.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated XActivityDiagramScenario -->
+      <package
+            uri="http://org.gemoc.activitydiagram.sequential.xactivitydiagram/scenario/XActivityDiagramProvider/"
+            class="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario.xactivitydiagramscenario.XActivityDiagramProvider.XActivityDiagramProviderPackage"
+            genModel="model/XActivityDiagramScenario.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated XActivityDiagramScenario -->
+      <package
+            uri="http://org.gemoc.activitydiagram.sequential.xactivitydiagram/scenario/XActivityDiagramScenario/"
+            class="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario.xactivitydiagramscenario.XActivityDiagramScenario.XActivityDiagramScenarioPackage"
+            genModel="model/XActivityDiagramScenario.genmodel"/>
+   </extension>
+</plugin>

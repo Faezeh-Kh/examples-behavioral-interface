@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated XActivityDiagramScenario -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario.xactivitydiagramscenario.XActivityDiagramArbiter.presentation.XActivityDiagramArbiterModelWizardID"
+            name="%_UI_XActivityDiagramArbiterModelWizard_label"
+            class="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario.xactivitydiagramscenario.XActivityDiagramArbiter.presentation.XActivityDiagramArbiterModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/XActivityDiagramArbiterModelFile.gif">
+         <description>%_UI_XActivityDiagramArbiterModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated XActivityDiagramScenario -->
+      <editor
+            id="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario.xactivitydiagramscenario.XActivityDiagramArbiter.presentation.XActivityDiagramArbiterEditorID"
+            name="%_UI_XActivityDiagramArbiterEditor_label"
+            icon="icons/full/obj16/XActivityDiagramArbiterModelFile.gif"
+            extensions="xactivitydiagramarbiter"
+            class="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario.xactivitydiagramscenario.XActivityDiagramArbiter.presentation.XActivityDiagramArbiterEditor"
+            contributorClass="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario.xactivitydiagramscenario.XActivityDiagramArbiter.presentation.XActivityDiagramArbiterActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated XActivityDiagramScenario -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario.xactivitydiagramscenario.XActivityDiagramEvent.presentation.XActivityDiagramEventModelWizardID"
+            name="%_UI_XActivityDiagramEventModelWizard_label"
+            class="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario.xactivitydiagramscenario.XActivityDiagramEvent.presentation.XActivityDiagramEventModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/XActivityDiagramEventModelFile.gif">
+         <description>%_UI_XActivityDiagramEventModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated XActivityDiagramScenario -->
+      <editor
+            id="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario.xactivitydiagramscenario.XActivityDiagramEvent.presentation.XActivityDiagramEventEditorID"
+            name="%_UI_XActivityDiagramEventEditor_label"
+            icon="icons/full/obj16/XActivityDiagramEventModelFile.gif"
+            extensions="xactivitydiagramevent"
+            class="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario.xactivitydiagramscenario.XActivityDiagramEvent.presentation.XActivityDiagramEventEditor"
+            contributorClass="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario.xactivitydiagramscenario.XActivityDiagramEvent.presentation.XActivityDiagramEventActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated XActivityDiagramScenario -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario.xactivitydiagramscenario.XActivityDiagramProperty.presentation.XActivityDiagramPropertyModelWizardID"
+            name="%_UI_XActivityDiagramPropertyModelWizard_label"
+            class="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario.xactivitydiagramscenario.XActivityDiagramProperty.presentation.XActivityDiagramPropertyModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/XActivityDiagramPropertyModelFile.gif">
+         <description>%_UI_XActivityDiagramPropertyModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated XActivityDiagramScenario -->
+      <editor
+            id="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario.xactivitydiagramscenario.XActivityDiagramProperty.presentation.XActivityDiagramPropertyEditorID"
+            name="%_UI_XActivityDiagramPropertyEditor_label"
+            icon="icons/full/obj16/XActivityDiagramPropertyModelFile.gif"
+            extensions="xactivitydiagramproperty"
+            class="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario.xactivitydiagramscenario.XActivityDiagramProperty.presentation.XActivityDiagramPropertyEditor"
+            contributorClass="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario.xactivitydiagramscenario.XActivityDiagramProperty.presentation.XActivityDiagramPropertyActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated XActivityDiagramScenario -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario.xactivitydiagramscenario.XActivityDiagramProvider.presentation.XActivityDiagramProviderModelWizardID"
+            name="%_UI_XActivityDiagramProviderModelWizard_label"
+            class="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario.xactivitydiagramscenario.XActivityDiagramProvider.presentation.XActivityDiagramProviderModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/XActivityDiagramProviderModelFile.gif">
+         <description>%_UI_XActivityDiagramProviderModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated XActivityDiagramScenario -->
+      <editor
+            id="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario.xactivitydiagramscenario.XActivityDiagramProvider.presentation.XActivityDiagramProviderEditorID"
+            name="%_UI_XActivityDiagramProviderEditor_label"
+            icon="icons/full/obj16/XActivityDiagramProviderModelFile.gif"
+            extensions="xactivitydiagramprovider"
+            class="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario.xactivitydiagramscenario.XActivityDiagramProvider.presentation.XActivityDiagramProviderEditor"
+            contributorClass="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario.xactivitydiagramscenario.XActivityDiagramProvider.presentation.XActivityDiagramProviderActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated XActivityDiagramScenario -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario.xactivitydiagramscenario.XActivityDiagramScenario.presentation.XActivityDiagramScenarioModelWizardID"
+            name="%_UI_XActivityDiagramScenarioModelWizard_label"
+            class="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario.xactivitydiagramscenario.XActivityDiagramScenario.presentation.XActivityDiagramScenarioModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/XActivityDiagramScenarioModelFile.gif">
+         <description>%_UI_XActivityDiagramScenarioModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated XActivityDiagramScenario -->
+      <editor
+            id="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario.xactivitydiagramscenario.XActivityDiagramScenario.presentation.XActivityDiagramScenarioEditorID"
+            name="%_UI_XActivityDiagramScenarioEditor_label"
+            icon="icons/full/obj16/XActivityDiagramScenarioModelFile.gif"
+            extensions="xactivitydiagramscenario"
+            class="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario.xactivitydiagramscenario.XActivityDiagramScenario.presentation.XActivityDiagramScenarioEditor"
+            contributorClass="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario.xactivitydiagramscenario.XActivityDiagramScenario.presentation.XActivityDiagramScenarioActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

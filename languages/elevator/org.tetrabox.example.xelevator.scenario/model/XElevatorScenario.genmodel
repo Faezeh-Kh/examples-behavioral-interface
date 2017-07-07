@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.tetrabox.example.xelevator.scenario/src/" modelPluginID="org.tetrabox.example.xelevator.scenario" modelName="XElevatorscenario" complianceLevel="7.0" copyrightFields="false">
+  <foreignModel>platform:/resource/org.tetrabox.example.xelevator/model/XElevator.ecore</foreignModel>
+  <genPackages prefix="Xelevatorscenario" basePackage="org.tetrabox.example.xelevator.scenario" disposableProviderFactory="true" fileExtensions="xelevators">
+    <ecorePackage href="XElevatorScenario.ecore#/"/>
+    <nestedGenPackages prefix="XElevatorArbiter" disposableProviderFactory="true">
+      <ecorePackage href="XElevatorScenario.ecore#//XElevatorArbiter"/>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorArbiter/XElevatorArbiter"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorArbiter/XElevatorArbiterState"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorArbiter/XElevatorArbiterTransition"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="XElevatorEvent" disposableProviderFactory="true">
+      <ecorePackage href="XElevatorScenario.ecore#//XElevatorEvent"/>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XElevatorScenario.ecore#//XElevatorEvent/XElevatorEvent/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorEvent/XElevatorEvent"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorEvent/ButtonPressEvent"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="XElevatorProperty" disposableProviderFactory="true">
+      <ecorePackage href="XElevatorScenario.ecore#//XElevatorProperty"/>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorOpenDoorUpProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorOpenDoorUpProperty/getOperation"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorCloseDoorProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorCloseDoorProperty/getOperation"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorMoveUpProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorMoveUpProperty/getOperation"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorChangeToUpProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorChangeToUpProperty/getOperation"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorOpenDoorDownProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorOpenDoorDownProperty/getOperation"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorMoveDownProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorMoveDownProperty/getOperation"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorChangeToDownProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorChangeToDownProperty/getOperation"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/ButtonPressProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/ButtonPressProperty/getOperation"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/XElevatorAbstractProperty"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/XElevatorTemporalProperty"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/XElevatorProperty"/>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XElevatorScenario.ecore#//XElevatorProperty/XElevatorStateProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/XElevatorStateProperty"/>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XElevatorScenario.ecore#//XElevatorProperty/XElevatorStepProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/XElevatorStepProperty"/>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XElevatorScenario.ecore#//XElevatorProperty/FloorProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/FloorProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/UnaryFloorProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/BinaryFloorProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/FloorNextProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/FloorNextProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/FloorNrProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/FloorNrProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/ButtonContainerProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/ButtonContainerProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XElevatorScenario.ecore#//XElevatorProperty/ButtonProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/ButtonProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/UnaryButtonProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/BinaryButtonProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/ButtonRequestedFloorProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/ButtonRequestedFloorProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/ButtonPressedProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/ButtonPressedProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/FloorFloorButtonsProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/FloorFloorButtonsProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/FloorPreviousProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/FloorPreviousProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/UnaryElevatorProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/BinaryElevatorProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorButtonContainerProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorButtonContainerProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorButtonProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorButtonProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/UnaryElevatorButtonProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/BinaryElevatorButtonProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorButtonRequestedFloorProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorButtonRequestedFloorProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorButtonPressedProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorButtonPressedProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorElevatorButtonsProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorElevatorButtonsProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorDoorsOpenProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorDoorsOpenProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorGoingUpProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorGoingUpProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorCurrentFloorProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorCurrentFloorProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XElevatorScenario.ecore#//XElevatorProperty/FloorButtonProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/FloorButtonProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/UnaryFloorButtonProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/BinaryFloorButtonProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/FloorButtonRequestedFloorProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/FloorButtonRequestedFloorProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/FloorButtonPressedProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/FloorButtonPressedProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XElevatorScenario.ecore#//XElevatorProperty/UpButtonProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/UpButtonProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/UnaryUpButtonProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/BinaryUpButtonProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/UpButtonRequestedFloorProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/UpButtonRequestedFloorProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/UpButtonPressedProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/UpButtonPressedProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XElevatorScenario.ecore#//XElevatorProperty/DownButtonProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/DownButtonProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/UnaryDownButtonProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/BinaryDownButtonProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/DownButtonRequestedFloorProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/DownButtonRequestedFloorProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/DownButtonPressedProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/DownButtonPressedProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorSystemProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorSystemProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/UnaryElevatorSystemProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/BinaryElevatorSystemProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorContainerProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorContainerProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorSystemElevatorsProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorSystemElevatorsProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/FloorContainerProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/FloorContainerProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorSystemFloorsProperty"/>
+        <genOperations>
+          <ecoreOperation href="XElevatorScenario.ecore#//XElevatorProperty/ElevatorSystemFloorsProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/XElevatorNextProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/XElevatorUntilProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/XElevatorReleaseProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProperty/XElevatorNegationTemporalProperty"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="XElevatorProvider" disposableProviderFactory="true">
+      <ecorePackage href="XElevatorScenario.ecore#//XElevatorProvider"/>
+      <genClasses image="false">
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProvider/ButtonProvider"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProvider/ButtonReference"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProvider/ButtonQuery"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProvider/ElevatorProvider"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProvider/ElevatorReference"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorProvider/ElevatorQuery"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="XElevatorScenario" disposableProviderFactory="true">
+      <ecorePackage href="XElevatorScenario.ecore#//XElevatorScenario"/>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorScenario/XElevatorScenario"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorScenario/XElevatorScenarioElement"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorScenario/XElevatorEventOccurrence"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorScenario/XElevatorScenarioFSM"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorScenario/XElevatorScenarioFSMState"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XElevatorScenario.ecore#//XElevatorScenario/XElevatorScenarioFSMTransition"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+  <usedGenPackages href="../../../plugin/fr.inria.diverse.event.commons.model/model/property.genmodel#//property"/>
+  <usedGenPackages href="../../../plugin/fr.inria.diverse.event.commons.model/model/scenario.genmodel#//scenario"/>
+  <usedGenPackages href="../../../plugin/org.tetrabox.example.xelevator/model/XElevator.genmodel#//elevator"/>
+  <usedGenPackages href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"/>
+</genmodel:GenModel>

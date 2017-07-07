@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.gemoc.activitydiagram.sequential.xactivitydiagram.eventmanager
+Bundle-SymbolicName: org.gemoc.activitydiagram.sequential.xactivitydiagram.eventmanager;singleton:=true
+Bundle-Version: 0.1.0
+Require-Bundle: fr.inria.diverse.event.commons.interpreter,
+  fr.inria.diverse.trace.commons.model,
+  org.gemoc.xdsmlframework.api,
+  org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario
+Export-Package: org.gemoc.activitydiagram.sequential.xactivitydiagram.eventmanager
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+

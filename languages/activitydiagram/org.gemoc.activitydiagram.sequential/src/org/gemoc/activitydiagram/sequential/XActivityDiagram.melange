@@ -1,0 +1,11 @@
+package org.gemoc.activitydiagram.sequential
+
+
+language XActivityDiagram {
+
+	syntax "platform:/resource/org.gemoc.activitydiagram.sequential.model/ad/activitydiagram.ecore"
+	syntax "platform:/resource/org.gemoc.activitydiagram.sequential.model.dynamic/model/dynamic.ecore"
+	
+	with org.gemoc.activitydiagram.sequential.k3dsa.*
+	
+}

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated XElevatorScenario -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.tetrabox.example.xelevator.scenario.xelevatorscenario.XElevatorArbiter.presentation.XElevatorArbiterModelWizardID"
+            name="%_UI_XElevatorArbiterModelWizard_label"
+            class="org.tetrabox.example.xelevator.scenario.xelevatorscenario.XElevatorArbiter.presentation.XElevatorArbiterModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/XElevatorArbiterModelFile.gif">
+         <description>%_UI_XElevatorArbiterModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated XElevatorScenario -->
+      <editor
+            id="org.tetrabox.example.xelevator.scenario.xelevatorscenario.XElevatorArbiter.presentation.XElevatorArbiterEditorID"
+            name="%_UI_XElevatorArbiterEditor_label"
+            icon="icons/full/obj16/XElevatorArbiterModelFile.gif"
+            extensions="xelevatorarbiter"
+            class="org.tetrabox.example.xelevator.scenario.xelevatorscenario.XElevatorArbiter.presentation.XElevatorArbiterEditor"
+            contributorClass="org.tetrabox.example.xelevator.scenario.xelevatorscenario.XElevatorArbiter.presentation.XElevatorArbiterActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated XElevatorScenario -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.tetrabox.example.xelevator.scenario.xelevatorscenario.XElevatorEvent.presentation.XElevatorEventModelWizardID"
+            name="%_UI_XElevatorEventModelWizard_label"
+            class="org.tetrabox.example.xelevator.scenario.xelevatorscenario.XElevatorEvent.presentation.XElevatorEventModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/XElevatorEventModelFile.gif">
+         <description>%_UI_XElevatorEventModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated XElevatorScenario -->
+      <editor
+            id="org.tetrabox.example.xelevator.scenario.xelevatorscenario.XElevatorEvent.presentation.XElevatorEventEditorID"
+            name="%_UI_XElevatorEventEditor_label"
+            icon="icons/full/obj16/XElevatorEventModelFile.gif"
+            extensions="xelevatorevent"
+            class="org.tetrabox.example.xelevator.scenario.xelevatorscenario.XElevatorEvent.presentation.XElevatorEventEditor"
+            contributorClass="org.tetrabox.example.xelevator.scenario.xelevatorscenario.XElevatorEvent.presentation.XElevatorEventActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated XElevatorScenario -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.tetrabox.example.xelevator.scenario.xelevatorscenario.XElevatorProperty.presentation.XElevatorPropertyModelWizardID"
+            name="%_UI_XElevatorPropertyModelWizard_label"
+            class="org.tetrabox.example.xelevator.scenario.xelevatorscenario.XElevatorProperty.presentation.XElevatorPropertyModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/XElevatorPropertyModelFile.gif">
+         <description>%_UI_XElevatorPropertyModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated XElevatorScenario -->
+      <editor
+            id="org.tetrabox.example.xelevator.scenario.xelevatorscenario.XElevatorProperty.presentation.XElevatorPropertyEditorID"
+            name="%_UI_XElevatorPropertyEditor_label"
+            icon="icons/full/obj16/XElevatorPropertyModelFile.gif"
+            extensions="xelevatorproperty"
+            class="org.tetrabox.example.xelevator.scenario.xelevatorscenario.XElevatorProperty.presentation.XElevatorPropertyEditor"
+            contributorClass="org.tetrabox.example.xelevator.scenario.xelevatorscenario.XElevatorProperty.presentation.XElevatorPropertyActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated XElevatorScenario -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.tetrabox.example.xelevator.scenario.xelevatorscenario.XElevatorProvider.presentation.XElevatorProviderModelWizardID"
+            name="%_UI_XElevatorProviderModelWizard_label"
+            class="org.tetrabox.example.xelevator.scenario.xelevatorscenario.XElevatorProvider.presentation.XElevatorProviderModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/XElevatorProviderModelFile.gif">
+         <description>%_UI_XElevatorProviderModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated XElevatorScenario -->
+      <editor
+            id="org.tetrabox.example.xelevator.scenario.xelevatorscenario.XElevatorProvider.presentation.XElevatorProviderEditorID"
+            name="%_UI_XElevatorProviderEditor_label"
+            icon="icons/full/obj16/XElevatorProviderModelFile.gif"
+            extensions="xelevatorprovider"
+            class="org.tetrabox.example.xelevator.scenario.xelevatorscenario.XElevatorProvider.presentation.XElevatorProviderEditor"
+            contributorClass="org.tetrabox.example.xelevator.scenario.xelevatorscenario.XElevatorProvider.presentation.XElevatorProviderActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated XElevatorScenario -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.tetrabox.example.xelevator.scenario.xelevatorscenario.XElevatorScenario.presentation.XElevatorScenarioModelWizardID"
+            name="%_UI_XElevatorScenarioModelWizard_label"
+            class="org.tetrabox.example.xelevator.scenario.xelevatorscenario.XElevatorScenario.presentation.XElevatorScenarioModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/XElevatorScenarioModelFile.gif">
+         <description>%_UI_XElevatorScenarioModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated XElevatorScenario -->
+      <editor
+            id="org.tetrabox.example.xelevator.scenario.xelevatorscenario.XElevatorScenario.presentation.XElevatorScenarioEditorID"
+            name="%_UI_XElevatorScenarioEditor_label"
+            icon="icons/full/obj16/XElevatorScenarioModelFile.gif"
+            extensions="xelevatorscenario"
+            class="org.tetrabox.example.xelevator.scenario.xelevatorscenario.XElevatorScenario.presentation.XElevatorScenarioEditor"
+            contributorClass="org.tetrabox.example.xelevator.scenario.xelevatorscenario.XElevatorScenario.presentation.XElevatorScenarioActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

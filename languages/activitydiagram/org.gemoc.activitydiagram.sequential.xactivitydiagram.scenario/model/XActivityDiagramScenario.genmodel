@@ -1,0 +1,1607 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario/src/" modelPluginID="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario" modelName="XActivityDiagramscenario" complianceLevel="7.0" copyrightFields="false">
+  <foreignModel>platform:/resource/org.gemoc.activitydiagram.sequential.xactivitydiagram/model/XActivityDiagram.ecore</foreignModel>
+  <genPackages prefix="Xactivitydiagramscenario" basePackage="org.gemoc.activitydiagram.sequential.xactivitydiagram.scenario" disposableProviderFactory="true" fileExtensions="xactivitydiagrams">
+    <ecorePackage href="XActivityDiagramScenario.ecore#/"/>
+    <nestedGenPackages prefix="XActivityDiagramArbiter" disposableProviderFactory="true">
+      <ecorePackage href="XActivityDiagramScenario.ecore#//XActivityDiagramArbiter"/>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramArbiter/XActivityDiagramArbiter"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramArbiter/XActivityDiagramArbiterState"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramArbiter/XActivityDiagramArbiterTransition"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="XActivityDiagramEvent" disposableProviderFactory="true">
+      <ecorePackage href="XActivityDiagramScenario.ecore#//XActivityDiagramEvent"/>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramEvent/XActivityDiagramEvent/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramEvent/XActivityDiagramEvent"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramEvent/AcceptEventActionAcceptEvent"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="XActivityDiagramScenario.ecore#//XActivityDiagramEvent/AcceptEventActionAcceptEvent/eventProvider"/>
+        </genFeatures>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="XActivityDiagramProperty" disposableProviderFactory="true" loadInitialization="true" literalsInterface="false">
+      <ecorePackage href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty"/>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/JoinNodeExecuteProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/JoinNodeExecuteProperty/getOperation"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/FinalNodeExecuteProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/FinalNodeExecuteProperty/getOperation"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/DecisionNodeExecuteProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/DecisionNodeExecuteProperty/getOperation"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityFinalNodeExecuteProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityFinalNodeExecuteProperty/getOperation"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityNodeTerminateProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityNodeTerminateProperty/getOperation"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/OpaqueActionExecuteProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/OpaqueActionExecuteProperty/getOperation"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityNodeAddTokenProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityNodeAddTokenProperty/getOperation"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/VariableAssignmentExecuteProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/VariableAssignmentExecuteProperty/getOperation"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/MergeNodeExecuteProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/MergeNodeExecuteProperty/getOperation"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/VariableInitProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/VariableInitProperty/getOperation"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityExecuteProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityExecuteProperty/getOperation"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ForkNodeExecuteProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ForkNodeExecuteProperty/getOperation"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/AcceptEventActionExecuteProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/AcceptEventActionExecuteProperty/getOperation"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/FlowFinalNodeExecuteProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/FlowFinalNodeExecuteProperty/getOperation"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/InitialNodeExecuteProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/InitialNodeExecuteProperty/getOperation"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanVariableAssignmentExecuteProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanVariableAssignmentExecuteProperty/getOperation"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityNodeRemoveTokenProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityNodeRemoveTokenProperty/getOperation"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerVariableAssignmentExecuteProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerVariableAssignmentExecuteProperty/getOperation"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/AcceptEventActionAcceptProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/AcceptEventActionAcceptProperty/getOperation"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityNodeExecuteProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityNodeExecuteProperty/getOperation"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/AcceptEventActionWaitForEventProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/AcceptEventActionWaitForEventProperty/getOperation"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/XActivityDiagramAbstractProperty"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/XActivityDiagramTemporalProperty"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/XActivityDiagramProperty"/>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/XActivityDiagramStateProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/XActivityDiagramStateProperty"/>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/XActivityDiagramStepProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/XActivityDiagramStepProperty"/>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/NamedElementProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/NamedElementProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryNamedElementProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryNamedElementProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/NamedElementNameProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/NamedElementNameProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryActivityProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryActivityProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityNameProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityNameProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/EventActivityContainerProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/EventActivityContainerProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/EventProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/EventProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryEventProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryEventProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/EventNameProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/EventNameProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityEventsProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityEventsProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityNodesProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityNodesProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityNodeProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityNodeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryActivityNodeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryActivityNodeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityNodeNameProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityNodeNameProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityNodeActivityProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityNodeActivityProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityNodeRunningProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityNodeRunningProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenActivityNodeContainerProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenActivityNodeContainerProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryControlTokenProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryControlTokenProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityNodeHeldTokensProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityNodeHeldTokensProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityEdgeActivityContainerProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityEdgeActivityContainerProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityEdgeProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityEdgeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryActivityEdgeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryActivityEdgeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityEdgeNameProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityEdgeNameProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityEdgeSourceProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityEdgeSourceProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityEdgeTargetProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityEdgeTargetProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenActivityEdgeContainerProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenActivityEdgeContainerProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityEdgeOfferedTokensProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityEdgeOfferedTokensProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityEdgesProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityEdgesProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/VariableActivityContainerProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/VariableActivityContainerProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/VariableProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/VariableProperty"/>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ExpressionProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ExpressionProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryExpressionProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryExpressionProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryVariableProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryVariableProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/VariableNameProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/VariableNameProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityLocalsProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityLocalsProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlFlowProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlFlowProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryControlFlowProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryControlFlowProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlFlowNameProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlFlowNameProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlFlowSourceProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlFlowSourceProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlFlowTargetProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlFlowTargetProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenControlFlowContainerProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenControlFlowContainerProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlFlowOfferedTokensProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlFlowOfferedTokensProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlFlowGuardProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlFlowGuardProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanVariableProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanVariableProperty"/>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanExpressionProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanExpressionProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryBooleanExpressionProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryBooleanExpressionProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryBooleanVariableProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryBooleanVariableProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanVariableNameProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanVariableNameProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanVariableInitialValueProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanVariableInitialValueProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanVariableCurrentValueProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanVariableCurrentValueProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActionProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActionProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryActionProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryActionProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActionNameProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActionNameProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActionActivityProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActionActivityProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActionRunningProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActionRunningProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenActionContainerProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenActionContainerProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActionHeldTokensProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActionHeldTokensProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActionIncomingProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActionIncomingProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActionOutgoingProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActionOutgoingProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/OpaqueActionProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/OpaqueActionProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryOpaqueActionProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryOpaqueActionProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/OpaqueActionNameProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/OpaqueActionNameProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/OpaqueActionActivityProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/OpaqueActionActivityProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/OpaqueActionRunningProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/OpaqueActionRunningProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenOpaqueActionContainerProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenOpaqueActionContainerProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/OpaqueActionHeldTokensProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/OpaqueActionHeldTokensProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/OpaqueActionIncomingProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/OpaqueActionIncomingProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/OpaqueActionOutgoingProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/OpaqueActionOutgoingProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/VariableAssignmentOpaqueActionContainerProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/VariableAssignmentOpaqueActionContainerProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/VariableAssignmentProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/VariableAssignmentProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryVariableAssignmentProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryVariableAssignmentProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/OpaqueActionAssignmentsProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/OpaqueActionAssignmentsProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/AcceptEventActionProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/AcceptEventActionProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryAcceptEventActionProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryAcceptEventActionProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/AcceptEventActionNameProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/AcceptEventActionNameProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/AcceptEventActionActivityProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/AcceptEventActionActivityProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/AcceptEventActionRunningProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/AcceptEventActionRunningProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenAcceptEventActionContainerProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenAcceptEventActionContainerProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/AcceptEventActionHeldTokensProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/AcceptEventActionHeldTokensProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/AcceptEventActionEventTypeProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/AcceptEventActionEventTypeProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/AcceptEventActionIncomingProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/AcceptEventActionIncomingProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/AcceptEventActionOutgoingProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/AcceptEventActionOutgoingProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlNodeProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlNodeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryControlNodeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryControlNodeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlNodeNameProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlNodeNameProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlNodeActivityProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlNodeActivityProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlNodeRunningProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlNodeRunningProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenControlNodeContainerProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenControlNodeContainerProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlNodeHeldTokensProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlNodeHeldTokensProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/InitialNodeProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/InitialNodeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryInitialNodeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryInitialNodeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/InitialNodeNameProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/InitialNodeNameProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/InitialNodeActivityProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/InitialNodeActivityProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/InitialNodeRunningProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/InitialNodeRunningProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenInitialNodeContainerProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenInitialNodeContainerProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/InitialNodeHeldTokensProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/InitialNodeHeldTokensProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/InitialNodeOutgoingProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/InitialNodeOutgoingProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/DecisionNodeProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/DecisionNodeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryDecisionNodeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryDecisionNodeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/DecisionNodeNameProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/DecisionNodeNameProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/DecisionNodeActivityProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/DecisionNodeActivityProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/DecisionNodeRunningProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/DecisionNodeRunningProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenDecisionNodeContainerProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenDecisionNodeContainerProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/DecisionNodeHeldTokensProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/DecisionNodeHeldTokensProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/DecisionNodeIncomingProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/DecisionNodeIncomingProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/DecisionNodeOutgoingProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/DecisionNodeOutgoingProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/MergeNodeProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/MergeNodeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryMergeNodeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryMergeNodeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/MergeNodeNameProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/MergeNodeNameProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/MergeNodeActivityProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/MergeNodeActivityProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/MergeNodeRunningProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/MergeNodeRunningProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenMergeNodeContainerProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenMergeNodeContainerProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/MergeNodeHeldTokensProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/MergeNodeHeldTokensProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/MergeNodeIncomingProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/MergeNodeIncomingProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/MergeNodeOutgoingProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/MergeNodeOutgoingProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ForkNodeProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ForkNodeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryForkNodeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryForkNodeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ForkNodeNameProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ForkNodeNameProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ForkNodeActivityProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ForkNodeActivityProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ForkNodeRunningProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ForkNodeRunningProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenForkNodeContainerProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenForkNodeContainerProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ForkNodeHeldTokensProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ForkNodeHeldTokensProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ForkNodeIncomingProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ForkNodeIncomingProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ForkNodeOutgoingProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ForkNodeOutgoingProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/JoinNodeProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/JoinNodeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryJoinNodeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryJoinNodeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/JoinNodeNameProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/JoinNodeNameProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/JoinNodeActivityProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/JoinNodeActivityProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/JoinNodeRunningProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/JoinNodeRunningProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenJoinNodeContainerProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenJoinNodeContainerProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/JoinNodeHeldTokensProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/JoinNodeHeldTokensProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/JoinNodeIncomingProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/JoinNodeIncomingProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/JoinNodeOutgoingProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/JoinNodeOutgoingProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/FinalNodeProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/FinalNodeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryFinalNodeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryFinalNodeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/FinalNodeNameProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/FinalNodeNameProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/FinalNodeActivityProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/FinalNodeActivityProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/FinalNodeRunningProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/FinalNodeRunningProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenFinalNodeContainerProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenFinalNodeContainerProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/FinalNodeHeldTokensProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/FinalNodeHeldTokensProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/FinalNodeIncomingProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/FinalNodeIncomingProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityFinalNodeProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityFinalNodeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryActivityFinalNodeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryActivityFinalNodeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityFinalNodeNameProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityFinalNodeNameProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityFinalNodeActivityProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityFinalNodeActivityProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityFinalNodeRunningProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityFinalNodeRunningProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenActivityFinalNodeContainerProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenActivityFinalNodeContainerProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityFinalNodeHeldTokensProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityFinalNodeHeldTokensProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityFinalNodeIncomingProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ActivityFinalNodeIncomingProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/FlowFinalNodeProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/FlowFinalNodeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryFlowFinalNodeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryFlowFinalNodeProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/FlowFinalNodeNameProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/FlowFinalNodeNameProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/FlowFinalNodeActivityProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/FlowFinalNodeActivityProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/FlowFinalNodeRunningProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/FlowFinalNodeRunningProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenFlowFinalNodeContainerProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ControlTokenFlowFinalNodeContainerProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/FlowFinalNodeHeldTokensProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/FlowFinalNodeHeldTokensProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/FlowFinalNodeIncomingProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/FlowFinalNodeIncomingProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ValueProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/ValueProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryValueProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryValueProperty"/>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerExpressionProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerExpressionProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryIntegerExpressionProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryIntegerExpressionProperty"/>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerVariableProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerVariableProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryIntegerVariableProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryIntegerVariableProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerVariableNameProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerVariableNameProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerVariableInitialValueProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerVariableInitialValueProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerVariableCurrentValueProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerVariableCurrentValueProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanValueProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanValueProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryBooleanValueProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryBooleanValueProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanValueValueProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanValueValueProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerValueProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerValueProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryIntegerValueProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryIntegerValueProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerValueValueProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerValueValueProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerBinaryExpressionProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerBinaryExpressionProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryIntegerBinaryExpressionProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryIntegerBinaryExpressionProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerBinaryExpressionOperand1Property"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerBinaryExpressionOperand1Property/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerBinaryExpressionOperand2Property"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerBinaryExpressionOperand2Property/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerBinaryExpressionOperatorProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerBinaryExpressionOperatorProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerComparisonExpressionProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerComparisonExpressionProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryIntegerComparisonExpressionProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryIntegerComparisonExpressionProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerComparisonExpressionOperatorProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerComparisonExpressionOperatorProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerComparisonExpressionOperand1Property"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerComparisonExpressionOperand1Property/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerComparisonExpressionOperand2Property"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerComparisonExpressionOperand2Property/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanUnaryExpressionProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanUnaryExpressionProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryBooleanUnaryExpressionProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryBooleanUnaryExpressionProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanUnaryExpressionOperandProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanUnaryExpressionOperandProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanUnaryExpressionOperatorProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanUnaryExpressionOperatorProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanBinaryExpressionProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanBinaryExpressionProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryBooleanBinaryExpressionProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryBooleanBinaryExpressionProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanBinaryExpressionOperand1Property"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanBinaryExpressionOperand1Property/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanBinaryExpressionOperand2Property"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanBinaryExpressionOperand2Property/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanBinaryExpressionOperatorProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanBinaryExpressionOperatorProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanVariableAssignmentProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanVariableAssignmentProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryBooleanVariableAssignmentProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryBooleanVariableAssignmentProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanVariableAssignmentAssigneeProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanVariableAssignmentAssigneeProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanExpressionBooleanVariableAssignmentContainerProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanExpressionBooleanVariableAssignmentContainerProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanVariableAssignmentExpressionProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BooleanVariableAssignmentExpressionProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerVariableAssignmentProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerVariableAssignmentProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryIntegerVariableAssignmentProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryIntegerVariableAssignmentProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerVariableAssignmentAssigneeProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerVariableAssignmentAssigneeProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerExpressionIntegerVariableAssignmentContainerProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerExpressionIntegerVariableAssignmentContainerProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerVariableAssignmentExpressionProperty"/>
+        <genOperations>
+          <ecoreOperation href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/IntegerVariableAssignmentExpressionProperty/getFeature"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/OfferProperty/T"/>
+        </genTypeParameters>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/OfferProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/UnaryOfferProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/BinaryOfferProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/XActivityDiagramNextProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/XActivityDiagramUntilProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/XActivityDiagramReleaseProperty"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProperty/XActivityDiagramNegationTemporalProperty"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="XActivityDiagramProvider" disposableProviderFactory="true">
+      <ecorePackage href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider"/>
+      <genClasses image="false">
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/AcceptEventActionProvider"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/AcceptEventActionReference"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/AcceptEventActionQuery"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/EventProvider"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/EventReference"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/EventQuery"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/JoinNodeProvider"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/JoinNodeReference"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/JoinNodeQuery"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/FinalNodeProvider"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/FinalNodeReference"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/FinalNodeQuery"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/DecisionNodeProvider"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/DecisionNodeReference"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/DecisionNodeQuery"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/ActivityFinalNodeProvider"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/ActivityFinalNodeReference"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/ActivityFinalNodeQuery"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/ActivityNodeProvider"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/ActivityNodeReference"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/ActivityNodeQuery"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/OpaqueActionProvider"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/OpaqueActionReference"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/OpaqueActionQuery"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/VariableAssignmentProvider"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/VariableAssignmentReference"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/VariableAssignmentQuery"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/MergeNodeProvider"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/MergeNodeReference"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/MergeNodeQuery"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/VariableProvider"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/VariableReference"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/VariableQuery"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/ActivityProvider"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/ActivityReference"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/ActivityQuery"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/ForkNodeProvider"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/ForkNodeReference"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/ForkNodeQuery"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/FlowFinalNodeProvider"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/FlowFinalNodeReference"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/FlowFinalNodeQuery"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/InitialNodeProvider"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/InitialNodeReference"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/InitialNodeQuery"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/BooleanVariableAssignmentProvider"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/BooleanVariableAssignmentReference"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/BooleanVariableAssignmentQuery"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/IntegerVariableAssignmentProvider"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/IntegerVariableAssignmentReference"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramProvider/IntegerVariableAssignmentQuery"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="XActivityDiagramScenario" disposableProviderFactory="true">
+      <ecorePackage href="XActivityDiagramScenario.ecore#//XActivityDiagramScenario"/>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramScenario/XActivityDiagramScenario"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramScenario/XActivityDiagramScenarioElement"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramScenario/XActivityDiagramEventOccurrence"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramScenario/XActivityDiagramScenarioFSM"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramScenario/XActivityDiagramScenarioFSMState"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="XActivityDiagramScenario.ecore#//XActivityDiagramScenario/XActivityDiagramScenarioFSMTransition"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+  <usedGenPackages href="../../../plugin/fr.inria.diverse.event.commons.model/model/property.genmodel#//property"/>
+  <usedGenPackages href="../../../plugin/fr.inria.diverse.event.commons.model/model/scenario.genmodel#//scenario"/>
+  <usedGenPackages href="../../../plugin/org.gemoc.activitydiagram.sequential.xactivitydiagram/model/XActivityDiagram.genmodel#//activitydiagram"/>
+  <usedGenPackages href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"/>
+</genmodel:GenModel>

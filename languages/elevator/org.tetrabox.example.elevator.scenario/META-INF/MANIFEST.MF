@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.tetrabox.example.elevator.scenario
+Bundle-SymbolicName: org.tetrabox.example.elevator.scenario;singleton:=true
+Bundle-Version: 0.1.0
+Require-Bundle: org.tetrabox.example.elevator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+

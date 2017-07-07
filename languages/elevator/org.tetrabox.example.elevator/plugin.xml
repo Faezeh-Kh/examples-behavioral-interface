@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+  <extension point="org.gemoc.gemoc_language_workbench.sequential.xdsml">
+    <XDSML_Definition modelLoader_class="org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="org.tetrabox.example.XElevator" xdsmlFilePath="/org.tetrabox.example.elevator/src/org/tetrabox/example/elevator.melange" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated ElevatorMT -->
+    <package class="org.tetrabox.example.elevatormt.elevator.ElevatorPackage" genModel="model-gen/ElevatorMT.genmodel" uri="http://org.tetrabox.example.elevatormt/elevator/" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated XElevatorMT -->
+    <package class="org.tetrabox.example.xelevatormt.elevator.ElevatorPackage" genModel="model-gen/XElevatorMT.genmodel" uri="http://org.tetrabox.example.xelevatormt/elevator/" />
+  </extension>
+  <extension point="fr.inria.diverse.melange.modeltype">
+    <modeltype id="org.tetrabox.example.XElevatorMT" uri="http://org.tetrabox.example.xelevatormt/" />
+  </extension>
+  <extension point="fr.inria.diverse.melange.language">
+    <language aspects="Floor:org.tetrabox.example.xelevator.aspects.FloorAspect;Button:org.tetrabox.example.xelevator.aspects.ButtonAspect;Elevator:org.tetrabox.example.xelevator.aspects.ElevatorAspect" entryPoints="org.tetrabox.example.xelevator.aspects.ElevatorAspect.run(org.tetrabox.example.xelevator.elevator.Elevator)" exactType="org.tetrabox.example.XElevatorMT" id="org.tetrabox.example.XElevator" uri="http://org.tetrabox.example.xelevator/elevator/">
+      <adapter class="org.tetrabox.example.xelevator.adapters.xelevatormt.XElevatorAdapter" modeltypeId="org.tetrabox.example.XElevatorMT" />
+    </language>
+  </extension>
+</plugin>

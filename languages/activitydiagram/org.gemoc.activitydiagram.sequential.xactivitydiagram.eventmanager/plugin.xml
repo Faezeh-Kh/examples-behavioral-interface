@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?><plugin>
+  <extension point="org.gemoc.gemoc_language_workbench.engine_addon">
+    <Addon AddonGroupId="Sequential.AddonGroup" Class="org.gemoc.activitydiagram.sequential.xactivitydiagram.eventmanager.XActivityDiagramEventManager" Default="false" Name="XActivityDiagram Event Manager" ShortDescription="Handles events for the XActivityDiagram language" id="org.gemoc.activitydiagram.sequential.xactivitydiagram.eventmanager"/>
+  </extension>
+</plugin>

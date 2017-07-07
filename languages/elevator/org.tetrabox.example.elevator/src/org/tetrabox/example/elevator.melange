@@ -1,0 +1,7 @@
+package org.tetrabox.example
+
+language XElevator {
+	syntax "platform:/resource/org.tetrabox.example.elevator.model/model/model.ecore"
+	
+	with org.tetrabox.example.elevator.aspects.*
+}

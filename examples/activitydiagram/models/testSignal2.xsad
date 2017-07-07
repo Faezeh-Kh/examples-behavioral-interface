@@ -1,0 +1,45 @@
+activity testSignal2 {
+	
+	int i = 0,
+	int const1 = 1,
+	int const10,
+	bool continue = true,
+	bool stop = false
+	
+	events {
+		signal, stop
+	}
+	
+	nodes {
+		initial initialNode out (e1),
+		merge mergeNode1 in (e1,e8) out (e2),
+		decision decisionNode in (e2) out (e3,e9),
+		accept acceptSignal type (signal) in (e3) out (e4),
+		action actionNode1 comp {
+			i = i + const1,
+			continue = i < const10,
+			stop = i == const10
+		} in (e4) out (e5),
+		
+		accept interruptSignal type (stop) out (e6),
+		action actionNode2 comp {
+			continue = false,
+			stop = true
+		} in (e6) out (e7),
+		merge mergeNode2 in (e5,e7) out (e8),
+		
+		final finalNode in (e6)
+	}
+	
+	edges {
+		flow e1 from initialNode to mergeNode1,
+		flow e2 from mergeNode1 to decisionNode,
+		flow e3 from decisionNode to acceptSignal [continue],
+		flow e4 from acceptSignal to actionNode1,
+		flow e5 from actionNode1 to mergeNode2,
+		flow e6 from interruptSignal to actionNode2 ,
+		flow e7 from actionNode2 to mergeNode2,
+		flow e8 from mergeNode2 to mergeNode1,
+		flow e9 from decisionNode to finalNode [stop]
+	}
+}

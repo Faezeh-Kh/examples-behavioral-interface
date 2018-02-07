@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated InterpretedStateMachines -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.presentation.StatemachinesModelWizardID"
+            name="%_UI_StatemachinesModelWizard_label"
+            class="org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.presentation.StatemachinesModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/StatemachinesModelFile.gif">
+         <description>%_UI_StatemachinesModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated InterpretedStateMachines -->
+      <editor
+            id="org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.presentation.StatemachinesEditorID"
+            name="%_UI_StatemachinesEditor_label"
+            icon="icons/full/obj16/StatemachinesModelFile.gif"
+            extensions="interpretedstatemachines"
+            class="org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.presentation.StatemachinesEditor"
+            contributorClass="org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.presentation.StatemachinesActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated InterpretedStateMachines -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.presentation.AlmostumlModelWizardID"
+            name="%_UI_AlmostumlModelWizard_label"
+            class="org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.presentation.AlmostumlModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/AlmostumlModelFile.gif">
+         <description>%_UI_AlmostumlModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated InterpretedStateMachines -->
+      <editor
+            id="org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.presentation.AlmostumlEditorID"
+            name="%_UI_AlmostumlEditor_label"
+            icon="icons/full/obj16/AlmostumlModelFile.gif"
+            extensions="almostuml"
+            class="org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.presentation.AlmostumlEditor"
+            contributorClass="org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.presentation.AlmostumlActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated InterpretedStateMachines -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.tetrabox.examples.statemachines.interpretedstatemachines.statemachinesexecutiondata.presentation.StatemachinesexecutiondataModelWizardID"
+            name="%_UI_StatemachinesexecutiondataModelWizard_label"
+            class="org.tetrabox.examples.statemachines.interpretedstatemachines.statemachinesexecutiondata.presentation.StatemachinesexecutiondataModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/StatemachinesexecutiondataModelFile.gif">
+         <description>%_UI_StatemachinesexecutiondataModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated InterpretedStateMachines -->
+      <editor
+            id="org.tetrabox.examples.statemachines.interpretedstatemachines.statemachinesexecutiondata.presentation.StatemachinesexecutiondataEditorID"
+            name="%_UI_StatemachinesexecutiondataEditor_label"
+            icon="icons/full/obj16/StatemachinesexecutiondataModelFile.gif"
+            extensions="interpretedstatemachines"
+            class="org.tetrabox.examples.statemachines.interpretedstatemachines.statemachinesexecutiondata.presentation.StatemachinesexecutiondataEditor"
+            contributorClass="org.tetrabox.examples.statemachines.interpretedstatemachines.statemachinesexecutiondata.presentation.StatemachinesexecutiondataActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

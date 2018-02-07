@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.tetrabox.examples.statemachines.melange/src-gen" modelPluginID="org.tetrabox.examples.statemachines.melange" modelName="InterpretedStateMachinesMT" complianceLevel="7.0" copyrightFields="false">
+  <foreignModel>platform:/resource/org.tetrabox.examples.statemachines.melange/model-gen/InterpretedStateMachinesMT.ecore</foreignModel>
+  <genPackages prefix="Statemachines" basePackage="org.tetrabox.examples.statemachines.interpretedstatemachinesmt" disposableProviderFactory="true">
+    <ecorePackage href="InterpretedStateMachinesMT.ecore#/0"/>
+    <genDataTypes>
+      <ecoreDataType href="InterpretedStateMachinesMT.ecore#/0/Iterable"/>
+    </genDataTypes>
+    <genClasses>
+      <ecoreClass href="InterpretedStateMachinesMT.ecore#/0/CustomSystem"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="InterpretedStateMachinesMT.ecore#/0/CustomSystem/statemachine"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="InterpretedStateMachinesMT.ecore#/0/CustomSystem/events"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="InterpretedStateMachinesMT.ecore#/0/CustomEvent"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="InterpretedStateMachinesMT.ecore#/0/EventOccurrence"/>
+    </genClasses>
+    <nestedGenPackages prefix="Almostuml" disposableProviderFactory="true">
+      <ecorePackage href="InterpretedStateMachinesMT.ecore#/0/almostuml"/>
+      <genEnums typeSafeEnumCompatible="false">
+        <ecoreEnum href="InterpretedStateMachinesMT.ecore#/0/almostuml/PseudostateKind"/>
+        <genEnumLiterals>
+          <ecoreEnumLiteral href="InterpretedStateMachinesMT.ecore#/0/almostuml/PseudostateKind/initial"/>
+        </genEnumLiterals>
+        <genEnumLiterals>
+          <ecoreEnumLiteral href="InterpretedStateMachinesMT.ecore#/0/almostuml/PseudostateKind/join"/>
+        </genEnumLiterals>
+        <genEnumLiterals>
+          <ecoreEnumLiteral href="InterpretedStateMachinesMT.ecore#/0/almostuml/PseudostateKind/fork"/>
+        </genEnumLiterals>
+        <genEnumLiterals>
+          <ecoreEnumLiteral href="InterpretedStateMachinesMT.ecore#/0/almostuml/PseudostateKind/terminate"/>
+        </genEnumLiterals>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false">
+        <ecoreEnum href="InterpretedStateMachinesMT.ecore#/0/almostuml/TransitionKind"/>
+        <genEnumLiterals>
+          <ecoreEnumLiteral href="InterpretedStateMachinesMT.ecore#/0/almostuml/TransitionKind/internal"/>
+        </genEnumLiterals>
+        <genEnumLiterals>
+          <ecoreEnumLiteral href="InterpretedStateMachinesMT.ecore#/0/almostuml/TransitionKind/local"/>
+        </genEnumLiterals>
+        <genEnumLiterals>
+          <ecoreEnumLiteral href="InterpretedStateMachinesMT.ecore#/0/almostuml/TransitionKind/external"/>
+        </genEnumLiterals>
+      </genEnums>
+      <genClasses image="false">
+        <ecoreClass href="InterpretedStateMachinesMT.ecore#/0/almostuml/NamedElement"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="InterpretedStateMachinesMT.ecore#/0/almostuml/NamedElement/name"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="InterpretedStateMachinesMT.ecore#/0/almostuml/StateMachine"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="InterpretedStateMachinesMT.ecore#/0/almostuml/StateMachine/regions"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="InterpretedStateMachinesMT.ecore#/0/almostuml/StateMachine/run"/>
+        </genOperations>
+        <genOperations>
+          <ecoreOperation href="InterpretedStateMachinesMT.ecore#/0/almostuml/StateMachine/eventOccurrenceReceived"/>
+          <genParameters>
+            <ecoreParameter href="InterpretedStateMachinesMT.ecore#/0/almostuml/StateMachine/eventOccurrenceReceived/eventType"/>
+          </genParameters>
+        </genOperations>
+        <genOperations>
+          <ecoreOperation href="InterpretedStateMachinesMT.ecore#/0/almostuml/StateMachine/terminate"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="InterpretedStateMachinesMT.ecore#/0/almostuml/Region"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="InterpretedStateMachinesMT.ecore#/0/almostuml/Region/vertice"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="InterpretedStateMachinesMT.ecore#/0/almostuml/Region/transitions"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="InterpretedStateMachinesMT.ecore#/0/almostuml/Region/stateMachine"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="InterpretedStateMachinesMT.ecore#/0/almostuml/Region/state"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="InterpretedStateMachinesMT.ecore#/0/almostuml/Region/enter"/>
+          <genParameters>
+            <ecoreParameter href="InterpretedStateMachinesMT.ecore#/0/almostuml/Region/enter/enteringTransition"/>
+          </genParameters>
+          <genParameters>
+            <ecoreParameter href="InterpretedStateMachinesMT.ecore#/0/almostuml/Region/enter/eventOccurrence"/>
+          </genParameters>
+        </genOperations>
+        <genOperations>
+          <ecoreOperation href="InterpretedStateMachinesMT.ecore#/0/almostuml/Region/exit"/>
+          <genParameters>
+            <ecoreParameter href="InterpretedStateMachinesMT.ecore#/0/almostuml/Region/exit/exitingTransition"/>
+          </genParameters>
+          <genParameters>
+            <ecoreParameter href="InterpretedStateMachinesMT.ecore#/0/almostuml/Region/exit/eventOccurrence"/>
+          </genParameters>
+        </genOperations>
+        <genOperations>
+          <ecoreOperation href="InterpretedStateMachinesMT.ecore#/0/almostuml/Region/terminate"/>
+        </genOperations>
+        <genOperations>
+          <ecoreOperation href="InterpretedStateMachinesMT.ecore#/0/almostuml/Region/getContainingStateMachine"/>
+        </genOperations>
+        <genOperations>
+          <ecoreOperation href="InterpretedStateMachinesMT.ecore#/0/almostuml/Region/getActiveVertice"/>
+        </genOperations>
+        <genOperations>
+          <ecoreOperation href="InterpretedStateMachinesMT.ecore#/0/almostuml/Region/contains"/>
+          <genParameters>
+            <ecoreParameter href="InterpretedStateMachinesMT.ecore#/0/almostuml/Region/contains/vertex"/>
+          </genParameters>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="InterpretedStateMachinesMT.ecore#/0/almostuml/State"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="InterpretedStateMachinesMT.ecore#/0/almostuml/State/regions"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="InterpretedStateMachinesMT.ecore#/0/almostuml/State/enter"/>
+          <genParameters>
+            <ecoreParameter href="InterpretedStateMachinesMT.ecore#/0/almostuml/State/enter/enteringTransition"/>
+          </genParameters>
+          <genParameters>
+            <ecoreParameter href="InterpretedStateMachinesMT.ecore#/0/almostuml/State/enter/eventOccurrence"/>
+          </genParameters>
+          <genParameters>
+            <ecoreParameter href="InterpretedStateMachinesMT.ecore#/0/almostuml/State/enter/leastCommonAncestor"/>
+          </genParameters>
+        </genOperations>
+        <genOperations>
+          <ecoreOperation href="InterpretedStateMachinesMT.ecore#/0/almostuml/State/exit"/>
+          <genParameters>
+            <ecoreParameter href="InterpretedStateMachinesMT.ecore#/0/almostuml/State/exit/exitingTransition"/>
+          </genParameters>
+          <genParameters>
+            <ecoreParameter href="InterpretedStateMachinesMT.ecore#/0/almostuml/State/exit/eventOccurrence"/>
+          </genParameters>
+          <genParameters>
+            <ecoreParameter href="InterpretedStateMachinesMT.ecore#/0/almostuml/State/exit/leastCommonAncestor"/>
+          </genParameters>
+        </genOperations>
+        <genOperations>
+          <ecoreOperation href="InterpretedStateMachinesMT.ecore#/0/almostuml/State/enterRegions"/>
+          <genParameters>
+            <ecoreParameter href="InterpretedStateMachinesMT.ecore#/0/almostuml/State/enterRegions/enteringTransition"/>
+          </genParameters>
+          <genParameters>
+            <ecoreParameter href="InterpretedStateMachinesMT.ecore#/0/almostuml/State/enterRegions/eventOccurrence"/>
+          </genParameters>
+        </genOperations>
+        <genOperations>
+          <ecoreOperation href="InterpretedStateMachinesMT.ecore#/0/almostuml/State/terminate"/>
+        </genOperations>
+        <genOperations>
+          <ecoreOperation href="InterpretedStateMachinesMT.ecore#/0/almostuml/State/getActiveVertice"/>
+        </genOperations>
+        <genOperations>
+          <ecoreOperation href="InterpretedStateMachinesMT.ecore#/0/almostuml/State/hasCompleted"/>
+        </genOperations>
+        <genOperations>
+          <ecoreOperation href="InterpretedStateMachinesMT.ecore#/0/almostuml/State/complete"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="InterpretedStateMachinesMT.ecore#/0/almostuml/Vertex"/>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="InterpretedStateMachinesMT.ecore#/0/almostuml/Vertex/container"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="InterpretedStateMachinesMT.ecore#/0/almostuml/Vertex/outgoingTransitions"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="InterpretedStateMachinesMT.ecore#/0/almostuml/Vertex/incomingTransitions"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="InterpretedStateMachinesMT.ecore#/0/almostuml/Vertex/enter"/>
+          <genParameters>
+            <ecoreParameter href="InterpretedStateMachinesMT.ecore#/0/almostuml/Vertex/enter/enteringTransition"/>
+          </genParameters>
+          <genParameters>
+            <ecoreParameter href="InterpretedStateMachinesMT.ecore#/0/almostuml/Vertex/enter/eventOccurrence"/>
+          </genParameters>
+          <genParameters>
+            <ecoreParameter href="InterpretedStateMachinesMT.ecore#/0/almostuml/Vertex/enter/leastCommonAncestor"/>
+          </genParameters>
+        </genOperations>
+        <genOperations>
+          <ecoreOperation href="InterpretedStateMachinesMT.ecore#/0/almostuml/Vertex/exit"/>
+          <genParameters>
+            <ecoreParameter href="InterpretedStateMachinesMT.ecore#/0/almostuml/Vertex/exit/exitingTransition"/>
+          </genParameters>
+          <genParameters>
+            <ecoreParameter href="InterpretedStateMachinesMT.ecore#/0/almostuml/Vertex/exit/eventOccurrence"/>
+          </genParameters>
+          <genParameters>
+            <ecoreParameter href="InterpretedStateMachinesMT.ecore#/0/almostuml/Vertex/exit/leastCommonAncestor"/>
+          </genParameters>
+        </genOperations>
+        <genOperations>
+          <ecoreOperation href="InterpretedStateMachinesMT.ecore#/0/almostuml/Vertex/terminate"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="InterpretedStateMachinesMT.ecore#/0/almostuml/Transition"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="InterpretedStateMachinesMT.ecore#/0/almostuml/Transition/source"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="InterpretedStateMachinesMT.ecore#/0/almostuml/Transition/target"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="InterpretedStateMachinesMT.ecore#/0/almostuml/Transition/triggers"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="InterpretedStateMachinesMT.ecore#/0/almostuml/Transition/container"/>
+        </genFeatures>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="InterpretedStateMachinesMT.ecore#/0/almostuml/Transition/kind"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="InterpretedStateMachinesMT.ecore#/0/almostuml/Transition/fire"/>
+          <genParameters>
+            <ecoreParameter href="InterpretedStateMachinesMT.ecore#/0/almostuml/Transition/fire/eventOccurrence"/>
+          </genParameters>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="InterpretedStateMachinesMT.ecore#/0/almostuml/Trigger"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="InterpretedStateMachinesMT.ecore#/0/almostuml/Trigger/event"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="InterpretedStateMachinesMT.ecore#/0/almostuml/Event"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="InterpretedStateMachinesMT.ecore#/0/almostuml/CompletionEvent"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="InterpretedStateMachinesMT.ecore#/0/almostuml/CompletionEvent/state"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="InterpretedStateMachinesMT.ecore#/0/almostuml/FinalState"/>
+        <genOperations>
+          <ecoreOperation href="InterpretedStateMachinesMT.ecore#/0/almostuml/FinalState/enter"/>
+          <genParameters>
+            <ecoreParameter href="InterpretedStateMachinesMT.ecore#/0/almostuml/FinalState/enter/enteringTransition"/>
+          </genParameters>
+          <genParameters>
+            <ecoreParameter href="InterpretedStateMachinesMT.ecore#/0/almostuml/FinalState/enter/eventOccurrence"/>
+          </genParameters>
+          <genParameters>
+            <ecoreParameter href="InterpretedStateMachinesMT.ecore#/0/almostuml/FinalState/enter/leastCommonAncestor"/>
+          </genParameters>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="InterpretedStateMachinesMT.ecore#/0/almostuml/Pseudostate"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="InterpretedStateMachinesMT.ecore#/0/almostuml/Pseudostate/kind"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="InterpretedStateMachinesMT.ecore#/0/almostuml/Pseudostate/enter"/>
+          <genParameters>
+            <ecoreParameter href="InterpretedStateMachinesMT.ecore#/0/almostuml/Pseudostate/enter/enteringTransition"/>
+          </genParameters>
+          <genParameters>
+            <ecoreParameter href="InterpretedStateMachinesMT.ecore#/0/almostuml/Pseudostate/enter/eventOccurrence"/>
+          </genParameters>
+          <genParameters>
+            <ecoreParameter href="InterpretedStateMachinesMT.ecore#/0/almostuml/Pseudostate/enter/leastCommonAncestor"/>
+          </genParameters>
+        </genOperations>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+  <genPackages prefix="Statemachinesexecutiondata" basePackage="org.tetrabox.examples.statemachines.interpretedstatemachinesmt" disposableProviderFactory="true">
+    <ecorePackage href="InterpretedStateMachinesMT.ecore#/1"/>
+    <genClasses>
+      <ecoreClass href="InterpretedStateMachinesMT.ecore#/1/EventOccurrence"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="InterpretedStateMachinesMT.ecore#/1/EventOccurrence/event"/>
+      </genFeatures>
+    </genClasses>
+  </genPackages>
+  <usedGenPackages href="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"/>
+</genmodel:GenModel>

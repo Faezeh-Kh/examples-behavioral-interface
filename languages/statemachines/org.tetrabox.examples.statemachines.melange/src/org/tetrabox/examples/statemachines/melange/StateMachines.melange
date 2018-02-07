@@ -1,0 +1,10 @@
+package org.tetrabox.examples.statemachines
+
+external language StateMachines {
+	syntax "platform:/resource/org.tetrabox.examples.statemachines.abstractsyntax/model/statemachines.ecore"
+}
+
+language InterpretedStateMachines inherits StateMachines {
+	syntax "platform:/resource/org.tetrabox.examples.statemachines.executiondata/model/statemachinesexecutiondata.ecore"
+	 with org.tetrabox.examples.statemachines.interpreter.*
+}

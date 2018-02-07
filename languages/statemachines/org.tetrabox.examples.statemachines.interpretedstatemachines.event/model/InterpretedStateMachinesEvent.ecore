@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="interpretedstatemachinesevent" nsURI="http://org.tetrabox.examples.statemachines.interpretedstatemachines/statemachines/event/" nsPrefix="interpretedstatemachinesevent">
+  <eClassifiers xsi:type="ecore:EClass" name="InterpretedStateMachinesDSLEvent" abstract="true">
+    <eSuperTypes href="http://www.eclipse.org/gemoc/event#//Event"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StateMachineEvent" abstract="true" eSuperTypes="//InterpretedStateMachinesDSLEvent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stateMachine" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="../../org.tetrabox.examples.statemachines.interpretedstatemachines/model/InterpretedStateMachines.ecore#/0/almostuml/StateMachine"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StateMachineEventOccurrenceReceivedEvent" eSuperTypes="//StateMachineEvent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventType">
+      <eType xsi:type="ecore:EClass" href="../../org.tetrabox.examples.statemachines.interpretedstatemachines/model/InterpretedStateMachines.ecore#/0/CustomEvent"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StateMachineRunEvent" eSuperTypes="//StateMachineEvent"/>
+</ecore:EPackage>

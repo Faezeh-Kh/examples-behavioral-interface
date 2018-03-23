@@ -50,12 +50,4 @@ public interface Pseudostate extends Vertex {
 	 */
 	void setKind(PseudostateKind value);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void enter(Transition enteringTransition, EventOccurrence eventOccurrence, Region leastCommonAncestor);
-
 } // Pseudostate

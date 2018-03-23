@@ -16,6 +16,7 @@ import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachi
 
 import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.AlmostumlFactory;
 import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.AlmostumlPackage;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.Behavior;
 import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.CompletionEvent;
 import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.Event;
 import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.FinalState;
@@ -111,6 +112,13 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass behaviorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass finalStateEClass = null;
 
 	/**
@@ -184,18 +192,18 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 		EcorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		StatemachinesPackageImpl theStatemachinesPackage = (StatemachinesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StatemachinesPackage.eNS_URI) instanceof StatemachinesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StatemachinesPackage.eNS_URI) : StatemachinesPackage.eINSTANCE);
 		StatemachinesexecutiondataPackageImpl theStatemachinesexecutiondataPackage = (StatemachinesexecutiondataPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StatemachinesexecutiondataPackage.eNS_URI) instanceof StatemachinesexecutiondataPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StatemachinesexecutiondataPackage.eNS_URI) : StatemachinesexecutiondataPackage.eINSTANCE);
+		StatemachinesPackageImpl theStatemachinesPackage = (StatemachinesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StatemachinesPackage.eNS_URI) instanceof StatemachinesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StatemachinesPackage.eNS_URI) : StatemachinesPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theAlmostumlPackage.createPackageContents();
-		theStatemachinesPackage.createPackageContents();
 		theStatemachinesexecutiondataPackage.createPackageContents();
+		theStatemachinesPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theAlmostumlPackage.initializePackageContents();
-		theStatemachinesPackage.initializePackageContents();
 		theStatemachinesexecutiondataPackage.initializePackageContents();
+		theStatemachinesPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theAlmostumlPackage.freeze();
@@ -292,6 +300,15 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getRegion_CurrentVertex() {
+		return (EReference)regionEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getState() {
 		return stateEClass;
 	}
@@ -303,6 +320,69 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 	 */
 	public EReference getState_Regions() {
 		return (EReference)stateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getState_Entry() {
+		return (EReference)stateEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getState_DoActivity() {
+		return (EReference)stateEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getState_Exit() {
+		return (EReference)stateEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getState_DeferrableTriggers() {
+		return (EReference)stateEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getState_IsEntryCompleted() {
+		return (EAttribute)stateEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getState_IsDoActivityCompleted() {
+		return (EAttribute)stateEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getState_IsExitCompleted() {
+		return (EAttribute)stateEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -400,6 +480,15 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getTransition_Effect() {
+		return (EReference)transitionEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTrigger() {
 		return triggerEClass;
 	}
@@ -438,6 +527,15 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 	 */
 	public EReference getCompletionEvent_State() {
 		return (EReference)completionEventEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBehavior() {
+		return behaviorEClass;
 	}
 
 	/**
@@ -524,14 +622,27 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 		createEReference(regionEClass, REGION__TRANSITIONS);
 		createEReference(regionEClass, REGION__STATE_MACHINE);
 		createEReference(regionEClass, REGION__STATE);
-
-		stateEClass = createEClass(STATE);
-		createEReference(stateEClass, STATE__REGIONS);
+		createEReference(regionEClass, REGION__CURRENT_VERTEX);
 
 		vertexEClass = createEClass(VERTEX);
 		createEReference(vertexEClass, VERTEX__CONTAINER);
 		createEReference(vertexEClass, VERTEX__OUTGOING_TRANSITIONS);
 		createEReference(vertexEClass, VERTEX__INCOMING_TRANSITIONS);
+
+		pseudostateEClass = createEClass(PSEUDOSTATE);
+		createEAttribute(pseudostateEClass, PSEUDOSTATE__KIND);
+
+		stateEClass = createEClass(STATE);
+		createEReference(stateEClass, STATE__REGIONS);
+		createEReference(stateEClass, STATE__ENTRY);
+		createEReference(stateEClass, STATE__DO_ACTIVITY);
+		createEReference(stateEClass, STATE__EXIT);
+		createEReference(stateEClass, STATE__DEFERRABLE_TRIGGERS);
+		createEAttribute(stateEClass, STATE__IS_ENTRY_COMPLETED);
+		createEAttribute(stateEClass, STATE__IS_DO_ACTIVITY_COMPLETED);
+		createEAttribute(stateEClass, STATE__IS_EXIT_COMPLETED);
+
+		finalStateEClass = createEClass(FINAL_STATE);
 
 		transitionEClass = createEClass(TRANSITION);
 		createEReference(transitionEClass, TRANSITION__SOURCE);
@@ -539,6 +650,7 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 		createEReference(transitionEClass, TRANSITION__TRIGGERS);
 		createEReference(transitionEClass, TRANSITION__CONTAINER);
 		createEAttribute(transitionEClass, TRANSITION__KIND);
+		createEReference(transitionEClass, TRANSITION__EFFECT);
 
 		triggerEClass = createEClass(TRIGGER);
 		createEReference(triggerEClass, TRIGGER__EVENT);
@@ -548,10 +660,7 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 		completionEventEClass = createEClass(COMPLETION_EVENT);
 		createEReference(completionEventEClass, COMPLETION_EVENT__STATE);
 
-		finalStateEClass = createEClass(FINAL_STATE);
-
-		pseudostateEClass = createEClass(PSEUDOSTATE);
-		createEAttribute(pseudostateEClass, PSEUDOSTATE__KIND);
+		behaviorEClass = createEClass(BEHAVIOR);
 
 		// Create enums
 		pseudostateKindEEnum = createEEnum(PSEUDOSTATE_KIND);
@@ -590,14 +699,16 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 
 		// Add supertypes to classes
 		stateMachineEClass.getESuperTypes().add(this.getNamedElement());
-		stateEClass.getESuperTypes().add(this.getVertex());
+		regionEClass.getESuperTypes().add(this.getNamedElement());
 		vertexEClass.getESuperTypes().add(this.getNamedElement());
+		pseudostateEClass.getESuperTypes().add(this.getVertex());
+		stateEClass.getESuperTypes().add(this.getVertex());
+		finalStateEClass.getESuperTypes().add(this.getState());
 		transitionEClass.getESuperTypes().add(this.getNamedElement());
 		triggerEClass.getESuperTypes().add(this.getNamedElement());
 		eventEClass.getESuperTypes().add(this.getNamedElement());
 		completionEventEClass.getESuperTypes().add(this.getEvent());
-		finalStateEClass.getESuperTypes().add(this.getState());
-		pseudostateEClass.getESuperTypes().add(this.getVertex());
+		behaviorEClass.getESuperTypes().add(this.getNamedElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -611,72 +722,32 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 		EOperation op = addEOperation(stateMachineEClass, null, "eventOccurrenceReceived", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theStatemachinesPackage.getCustomEvent(), "eventType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(stateMachineEClass, null, "terminate", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(regionEClass, Region.class, "Region", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRegion_Vertice(), this.getVertex(), this.getVertex_Container(), "vertice", null, 0, -1, Region.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRegion_Transitions(), this.getTransition(), this.getTransition_Container(), "transitions", null, 0, -1, Region.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRegion_StateMachine(), this.getStateMachine(), this.getStateMachine_Regions(), "stateMachine", null, 0, 1, Region.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRegion_State(), this.getState(), this.getState_Regions(), "state", null, 0, 1, Region.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		op = addEOperation(regionEClass, null, "enter", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getTransition(), "enteringTransition", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theStatemachinesPackage.getEventOccurrence(), "eventOccurrence", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(regionEClass, null, "exit", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getTransition(), "exitingTransition", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theStatemachinesPackage.getEventOccurrence(), "eventOccurrence", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(regionEClass, null, "terminate", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(regionEClass, this.getStateMachine(), "getContainingStateMachine", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(regionEClass, theStatemachinesPackage.getIterable(), "getActiveVertice", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(regionEClass, ecorePackage.getEBoolean(), "contains", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getVertex(), "vertex", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getState_Regions(), this.getRegion(), this.getRegion_State(), "regions", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		op = addEOperation(stateEClass, null, "enter", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getTransition(), "enteringTransition", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theStatemachinesPackage.getEventOccurrence(), "eventOccurrence", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getRegion(), "leastCommonAncestor", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(stateEClass, null, "exit", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getTransition(), "exitingTransition", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theStatemachinesPackage.getEventOccurrence(), "eventOccurrence", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getRegion(), "leastCommonAncestor", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(stateEClass, null, "enterRegions", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getTransition(), "enteringTransition", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theStatemachinesPackage.getEventOccurrence(), "eventOccurrence", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(stateEClass, null, "terminate", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(stateEClass, this.getVertex(), "getActiveVertice", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(stateEClass, ecorePackage.getEBoolean(), "hasCompleted", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(stateEClass, null, "complete", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEReference(getRegion_CurrentVertex(), this.getVertex(), null, "currentVertex", null, 0, 1, Region.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(vertexEClass, Vertex.class, "Vertex", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getVertex_Container(), this.getRegion(), this.getRegion_Vertice(), "container", null, 0, 1, Vertex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVertex_OutgoingTransitions(), this.getTransition(), this.getTransition_Source(), "outgoingTransitions", null, 0, -1, Vertex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVertex_IncomingTransitions(), this.getTransition(), this.getTransition_Target(), "incomingTransitions", null, 0, -1, Vertex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = addEOperation(vertexEClass, null, "enter", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getTransition(), "enteringTransition", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theStatemachinesPackage.getEventOccurrence(), "eventOccurrence", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getRegion(), "leastCommonAncestor", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEClass(pseudostateEClass, Pseudostate.class, "Pseudostate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPseudostate_Kind(), this.getPseudostateKind(), "kind", null, 1, 1, Pseudostate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = addEOperation(vertexEClass, null, "exit", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getTransition(), "exitingTransition", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theStatemachinesPackage.getEventOccurrence(), "eventOccurrence", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getRegion(), "leastCommonAncestor", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getState_Regions(), this.getRegion(), this.getRegion_State(), "regions", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getState_Entry(), this.getBehavior(), null, "entry", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getState_DoActivity(), this.getBehavior(), null, "doActivity", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getState_Exit(), this.getBehavior(), null, "exit", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getState_DeferrableTriggers(), this.getTrigger(), null, "deferrableTriggers", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getState_IsEntryCompleted(), ecorePackage.getEBoolean(), "isEntryCompleted", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getState_IsDoActivityCompleted(), ecorePackage.getEBoolean(), "isDoActivityCompleted", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getState_IsExitCompleted(), ecorePackage.getEBoolean(), "isExitCompleted", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(vertexEClass, null, "terminate", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEClass(finalStateEClass, FinalState.class, "FinalState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(transitionEClass, Transition.class, "Transition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTransition_Source(), this.getVertex(), this.getVertex_OutgoingTransitions(), "source", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -684,6 +755,7 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 		initEReference(getTransition_Triggers(), this.getTrigger(), null, "triggers", null, 0, -1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTransition_Container(), this.getRegion(), this.getRegion_Transitions(), "container", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTransition_Kind(), this.getTransitionKind(), "kind", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTransition_Effect(), this.getBehavior(), null, "effect", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(transitionEClass, null, "fire", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theStatemachinesPackage.getEventOccurrence(), "eventOccurrence", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -696,20 +768,7 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 		initEClass(completionEventEClass, CompletionEvent.class, "CompletionEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCompletionEvent_State(), this.getState(), null, "state", null, 1, 1, CompletionEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(finalStateEClass, FinalState.class, "FinalState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = addEOperation(finalStateEClass, null, "enter", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getTransition(), "enteringTransition", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theStatemachinesPackage.getEventOccurrence(), "eventOccurrence", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getRegion(), "leastCommonAncestor", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(pseudostateEClass, Pseudostate.class, "Pseudostate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPseudostate_Kind(), this.getPseudostateKind(), "kind", null, 1, 1, Pseudostate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		op = addEOperation(pseudostateEClass, null, "enter", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getTransition(), "enteringTransition", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theStatemachinesPackage.getEventOccurrence(), "eventOccurrence", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getRegion(), "leastCommonAncestor", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEClass(behaviorEClass, Behavior.class, "Behavior", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(pseudostateKindEEnum, PseudostateKind.class, "PseudostateKind");
@@ -747,102 +806,27 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 		   new String[] {
 		   });	
 		addAnnotation
-		  (stateMachineEClass.getEOperations().get(2), 
+		  (getRegion_CurrentVertex(), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
-		  (regionEClass.getEOperations().get(0), 
+		  (getState_IsEntryCompleted(), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
-		  (regionEClass.getEOperations().get(1), 
+		  (getState_IsDoActivityCompleted(), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
-		  (regionEClass.getEOperations().get(2), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (regionEClass.getEOperations().get(3), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (regionEClass.getEOperations().get(4), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (regionEClass.getEOperations().get(5), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (stateEClass.getEOperations().get(0), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (stateEClass.getEOperations().get(1), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (stateEClass.getEOperations().get(2), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (stateEClass.getEOperations().get(3), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (stateEClass.getEOperations().get(4), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (stateEClass.getEOperations().get(5), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (stateEClass.getEOperations().get(6), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (vertexEClass.getEOperations().get(0), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (vertexEClass.getEOperations().get(1), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (vertexEClass.getEOperations().get(2), 
+		  (getState_IsExitCompleted(), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
 		  (transitionEClass.getEOperations().get(0), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (finalStateEClass.getEOperations().get(0), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (pseudostateEClass.getEOperations().get(0), 
 		   source, 
 		   new String[] {
 		   });

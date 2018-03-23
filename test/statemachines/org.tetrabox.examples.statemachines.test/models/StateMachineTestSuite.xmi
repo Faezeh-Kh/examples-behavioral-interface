@@ -1,0 +1,869 @@
+<?xml version="1.0" encoding="ASCII"?>
+<testsuite:TestSuite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:interpretedstatemachinesevent="http://org.tetrabox.examples.statemachines.interpretedstatemachines/statemachines/event/" xmlns:testsuite="http://http://www.eclipse.org/gemoc/event/testsuite">
+  <testCases name="Behavior001_Test$behavior$1">
+    <model href="Behavior001_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Behavior001_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Behavior001_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Behavior001_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+  </testCases>
+  <testCases name="Behavior002_Test$behavior$1">
+    <model href="Behavior002_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Behavior002_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Behavior002_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Behavior002_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+  </testCases>
+  <testCases name="Behavior004_Test$behavior$1">
+    <model href="Behavior004_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Behavior004_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Behavior004_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Behavior004_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Behavior004_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Behavior004_Test$behavior$1.xmi#//@events.1"/>
+    </scenario>
+  </testCases>
+  <testCases name="Behavior003_Test_A$behavior$1">
+    <model href="Behavior003_Test_A$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Behavior003_Test_A$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Behavior003_Test_A$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Behavior003_Test_A$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Behavior003_Test_A$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Behavior003_Test_A$behavior$1.xmi#//@events.1"/>
+    </scenario>
+  </testCases>
+  <testCases name="Behavior_003_Tester_B$behavior$1">
+    <model href="Behavior_003_Tester_B$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Behavior_003_Tester_B$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Behavior_003_Tester_B$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Behavior_003_Tester_B$behavior$1.xmi#//@events.0"/>
+    </scenario>
+  </testCases>
+  <testCases name="Behavior003_C_Test$behavior$1">
+    <model href="Behavior003_C_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Behavior003_C_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Behavior003_C_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Behavior003_C_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Behavior003_C_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Behavior003_C_Test$behavior$1.xmi#//@events.1"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Behavior003_C_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Behavior003_C_Test$behavior$1.xmi#//@events.2"/>
+    </scenario>
+  </testCases>
+  <testCases name="doActivity">
+    <model href="doActivity.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="doActivity.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="doActivity.xmi#//@statemachine"/>
+      <eventType href="doActivity.xmi#//@events.0"/>
+    </scenario>
+  </testCases>
+  <testCases name="Transition001_Test$behavior$1">
+    <model href="Transition001_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Transition001_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Transition001_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Transition001_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+  </testCases>
+  <testCases name="Transition007_Test$behavior$1">
+    <model href="Transition007_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Transition007_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Transition007_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Transition007_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Transition007_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Transition007_Test$behavior$1.xmi#//@events.1"/>
+    </scenario>
+  </testCases>
+  <testCases name="Transition010$behavior$1">
+    <model href="Transition010$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Transition010$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Transition010$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Transition010$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Transition010$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Transition010$behavior$1.xmi#//@events.1"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Transition010$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Transition010$behavior$1.xmi#//@events.2"/>
+    </scenario>
+  </testCases>
+  <testCases name="Transition015_Test$behavior$1">
+    <model href="Transition015_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Transition015_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Transition015_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Transition015_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+  </testCases>
+  <testCases name="Transition016_Test$behavior$1">
+    <model href="Transition016_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Transition016_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Transition016_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Transition016_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+  </testCases>
+  <testCases name="Transition017_Test$behavior$1">
+    <model href="Transition017_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Transition017_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Transition017_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Transition017_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+  </testCases>
+  <testCases name="Transition011_Test_A$behavior$1">
+    <model href="Transition011_Test_A$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Transition011_Test_A$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Transition011_Test_A$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Transition011_Test_A$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Transition011_Test_A$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Transition011_Test_A$behavior$1.xmi#//@events.1"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Transition011_Test_A$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Transition011_Test_A$behavior$1.xmi#//@events.2"/>
+    </scenario>
+  </testCases>
+  <testCases name="Transition011_Test_C$behavior$1">
+    <model href="Transition011_Test_C$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Transition011_Test_C$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Transition011_Test_C$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Transition011_Test_C$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Transition011_Test_C$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Transition011_Test_C$behavior$1.xmi#//@events.1"/>
+    </scenario>
+  </testCases>
+  <testCases name="Transition020_Test$behavior$1">
+    <model href="Transition020_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Transition020_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Transition020_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Transition020_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Transition020_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Transition020_Test$behavior$1.xmi#//@events.1"/>
+    </scenario>
+  </testCases>
+  <testCases name="Transition019_Test$behavior$1">
+    <model href="Transition019_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Transition019_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Transition019_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Transition019_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Transition019_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Transition019_Test$behavior$1.xmi#//@events.1"/>
+    </scenario>
+  </testCases>
+  <testCases name="Event016_Test_A$behavior$1">
+    <model href="Event016_Test_A$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Event016_Test_A$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Event016_Test_A$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Event016_Test_A$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Event016_Test_A$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Event016_Test_A$behavior$1.xmi#//@events.1"/>
+    </scenario>
+  </testCases>
+  <testCases name="Event002$behavior$1">
+    <model href="Event002$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Event002$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Event002$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Event002$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Event002$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Event002$behavior$1.xmi#//@events.1"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Event002$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Event002$behavior$1.xmi#//@events.2"/>
+    </scenario>
+  </testCases>
+  <testCases name="Event009_Test$behavior$1">
+    <model href="Event009_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Event009_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Event009_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Event009_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Event009_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Event009_Test$behavior$1.xmi#//@events.1"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Event009_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Event009_Test$behavior$1.xmi#//@events.2"/>
+    </scenario>
+  </testCases>
+  <testCases name="Event008_Test$behavior$1">
+    <model href="Event008_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Event008_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Event008_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Event008_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Event008_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Event008_Test$behavior$1.xmi#//@events.1"/>
+    </scenario>
+  </testCases>
+  <testCases name="Event010_Test$behavior$1">
+    <model href="Event010_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Event010_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Event010_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Event010_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Event010_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Event010_Test$behavior$1.xmi#//@events.1"/>
+    </scenario>
+  </testCases>
+  <testCases name="Event015_Test$behavior$1">
+    <model href="Event015_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Event015_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Event015_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Event015_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+  </testCases>
+  <testCases name="Event018_Test$behavior$1">
+    <model href="Event018_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Event018_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Event018_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Event018_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+  </testCases>
+  <testCases name="Event001_Test$behavior$1">
+    <model href="Event001_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Event001_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Event001_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Event001_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+  </testCases>
+  <testCases name="Event016_Test_B$behavior$1">
+    <model href="Event016_Test_B$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Event016_Test_B$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Event016_Test_B$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Event016_Test_B$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Event016_Test_B$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Event016_Test_B$behavior$1.xmi#//@events.1"/>
+    </scenario>
+  </testCases>
+  <testCases name="Event017_Test_B$behavior$1">
+    <model href="Event017_Test_B$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Event017_Test_B$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Event017_Test_B$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Event017_Test_B$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Event017_Test_B$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Event017_Test_B$behavior$1.xmi#//@events.1"/>
+    </scenario>
+  </testCases>
+  <testCases name="Entering005_Test$behavior$1">
+    <model href="Entering005_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Entering005_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Entering005_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Entering005_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+  </testCases>
+  <testCases name="Entering011_Test$behavior$1">
+    <model href="Entering011_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Entering011_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Entering011_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Entering011_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Entering011_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Entering011_Test$behavior$1.xmi#//@events.1"/>
+    </scenario>
+  </testCases>
+  <testCases name="Entering010_Test$behavior$1">
+    <model href="Entering010_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Entering010_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Entering010_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Entering010_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+  </testCases>
+  <testCases name="Entering004_Test$behavior$1">
+    <model href="Entering004_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Entering004_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Entering004_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Entering004_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+  </testCases>
+  <testCases name="Exiting001_Test$behavior$1">
+    <model href="Exiting001_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Exiting001_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Exiting001_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Exiting001_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Exiting001_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Exiting001_Test$behavior$1.xmi#//@events.1"/>
+    </scenario>
+  </testCases>
+  <testCases name="Exiting005_Test$behavior$1">
+    <model href="Exiting005_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Exiting005_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Exiting005_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Exiting005_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Exiting005_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Exiting005_Test$behavior$1.xmi#//@events.1"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Exiting005_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Exiting005_Test$behavior$1.xmi#//@events.2"/>
+    </scenario>
+  </testCases>
+  <testCases name="Exiting003_Test$behavior$1">
+    <model href="Exiting003_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Exiting003_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Exiting003_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Exiting003_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Exiting003_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Exiting003_Test$behavior$1.xmi#//@events.1"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Exiting003_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Exiting003_Test$behavior$1.xmi#//@events.2"/>
+    </scenario>
+  </testCases>
+  <testCases name="Exiting002_Test$behavior$1">
+    <model href="Exiting002_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Exiting002_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Exiting002_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Exiting002_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Exiting002_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Exiting002_Test$behavior$1.xmi#//@events.1"/>
+    </scenario>
+  </testCases>
+  <testCases name="Fork002_Test$behavior$1">
+    <model href="Fork002_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Fork002_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Fork002_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Fork002_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+  </testCases>
+  <testCases name="Join001_Test$behavior$1">
+    <model href="Join001_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Join001_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Join001_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Join001_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+  </testCases>
+  <testCases name="Join002_Test$behavior$1">
+    <model href="Join002_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Join002_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Join002_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Join002_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+  </testCases>
+  <testCases name="Terminate001_Test$behavior$1">
+    <model href="Terminate001_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Terminate001_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Terminate001_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Terminate001_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Terminate001_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Terminate001_Test$behavior$1.xmi#//@events.1"/>
+    </scenario>
+  </testCases>
+  <testCases name="Terminate002_Test$behavior$1">
+    <model href="Terminate002_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Terminate002_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Terminate002_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Terminate002_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+  </testCases>
+  <testCases name="Terminate003_Test$behavior$1">
+    <model href="Terminate003_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Terminate003_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Terminate003_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Terminate003_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+  </testCases>
+  <testCases name="Final001_Test$behavior$1">
+    <model href="Final001_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Final001_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Final001_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Final001_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+  </testCases>
+  <testCases name="Deferred001_Test$behavior$1">
+    <model href="Deferred001_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Deferred001_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Deferred001_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Deferred001_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Deferred001_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Deferred001_Test$behavior$1.xmi#//@events.1"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Deferred001_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Deferred001_Test$behavior$1.xmi#//@events.2"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Deferred001_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Deferred001_Test$behavior$1.xmi#//@events.3"/>
+    </scenario>
+  </testCases>
+  <testCases name="Deferred002_Test$behavior$1">
+    <model href="Deferred002_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Deferred002_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Deferred002_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Deferred002_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Deferred002_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Deferred002_Test$behavior$1.xmi#//@events.1"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Deferred002_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Deferred002_Test$behavior$1.xmi#//@events.2"/>
+    </scenario>
+  </testCases>
+  <testCases name="Deferred003_Test$behavior$1">
+    <model href="Deferred003_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Deferred003_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Deferred003_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Deferred003_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Deferred003_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Deferred003_Test$behavior$1.xmi#//@events.1"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Deferred003_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Deferred003_Test$behavior$1.xmi#//@events.2"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Deferred003_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Deferred003_Test$behavior$1.xmi#//@events.3"/>
+    </scenario>
+  </testCases>
+  <testCases name="Deferred004_Test_A$behavior$1">
+    <model href="Deferred004_Test_A$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Deferred004_Test_A$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Deferred004_Test_A$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Deferred004_Test_A$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Deferred004_Test_A$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Deferred004_Test_A$behavior$1.xmi#//@events.1"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Deferred004_Test_A$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Deferred004_Test_A$behavior$1.xmi#//@events.2"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Deferred004_Test_A$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Deferred004_Test_A$behavior$1.xmi#//@events.3"/>
+    </scenario>
+  </testCases>
+  <testCases name="Deferred004_Test_B$behavior$1">
+    <model href="Deferred004_Test_B$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Deferred004_Test_B$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Deferred004_Test_B$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Deferred004_Test_B$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Deferred004_Test_B$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Deferred004_Test_B$behavior$1.xmi#//@events.1"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Deferred004_Test_B$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Deferred004_Test_B$behavior$1.xmi#//@events.2"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Deferred004_Test_B$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Deferred004_Test_B$behavior$1.xmi#//@events.3"/>
+    </scenario>
+  </testCases>
+  <testCases name="Deferred005_Test$behavior$1">
+    <model href="Deferred005_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Deferred005_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Deferred005_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Deferred005_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Deferred005_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Deferred005_Test$behavior$1.xmi#//@events.1"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Deferred005_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Deferred005_Test$behavior$1.xmi#//@events.2"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Deferred005_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Deferred005_Test$behavior$1.xmi#//@events.3"/>
+    </scenario>
+  </testCases>
+  <testCases name="Deferred006_Test_A$behavior$1">
+    <model href="Deferred006_Test_A$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Deferred006_Test_A$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Deferred006_Test_A$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Deferred006_Test_A$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Deferred006_Test_A$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Deferred006_Test_A$behavior$1.xmi#//@events.1"/>
+    </scenario>
+  </testCases>
+  <testCases name="Deferred006_Test_B$behavior$1">
+    <model href="Deferred006_Test_B$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Deferred006_Test_B$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Deferred006_Test_B$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Deferred006_Test_B$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Deferred006_Test_B$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Deferred006_Test_B$behavior$1.xmi#//@events.1"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Deferred006_Test_B$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Deferred006_Test_B$behavior$1.xmi#//@events.2"/>
+    </scenario>
+  </testCases>
+  <testCases name="Deferred006_Test_C$behavior$1">
+    <model href="Deferred006_Test_C$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Deferred006_Test_C$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Deferred006_Test_C$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Deferred006_Test_C$behavior$1.xmi#//@events.0"/>
+    </scenario>
+  </testCases>
+  <testCases name="Redefinition001_Test$behavior$1">
+    <model href="Redefinition001_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Redefinition001_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Redefinition001_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Redefinition001_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Redefinition001_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Redefinition001_Test$behavior$1.xmi#//@events.1"/>
+    </scenario>
+  </testCases>
+  <testCases name="Redefinition001_Test_Redefinition$behavior$2">
+    <model href="Redefinition001_Test_Redefinition$behavior$2.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Redefinition001_Test_Redefinition$behavior$2.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Redefinition001_Test_Redefinition$behavior$2.xmi#//@statemachine"/>
+      <eventType href="Redefinition001_Test_Redefinition$behavior$2.xmi#//@events.0"/>
+    </scenario>
+  </testCases>
+  <testCases name="Redefinition002_Test$behavior$1">
+    <model href="Redefinition002_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Redefinition002_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+  </testCases>
+  <testCases name="Redefinition002_Test_Redefinition_Prime$behavior$1">
+    <model href="Redefinition002_Test_Redefinition_Prime$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Redefinition002_Test_Redefinition_Prime$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+  </testCases>
+  <testCases name="Redefinition002_Test_Redefinition_Second$behavior$1">
+    <model href="Redefinition002_Test_Redefinition_Second$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Redefinition002_Test_Redefinition_Second$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Redefinition002_Test_Redefinition_Second$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Redefinition002_Test_Redefinition_Second$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Redefinition002_Test_Redefinition_Second$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Redefinition002_Test_Redefinition_Second$behavior$1.xmi#//@events.1"/>
+    </scenario>
+  </testCases>
+  <testCases name="Redefinition003_Test$behavior$1">
+    <model href="Redefinition003_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Redefinition003_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Redefinition003_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Redefinition003_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Redefinition003_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Redefinition003_Test$behavior$1.xmi#//@events.1"/>
+    </scenario>
+  </testCases>
+  <testCases name="Redefinition003_Test_Prime$behavior$1">
+    <model href="Redefinition003_Test_Prime$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Redefinition003_Test_Prime$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Redefinition003_Test_Prime$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Redefinition003_Test_Prime$behavior$1.xmi#//@events.0"/>
+    </scenario>
+  </testCases>
+  <testCases name="Redefinition003_Test_Second$behavior$1">
+    <model href="Redefinition003_Test_Second$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Redefinition003_Test_Second$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Redefinition003_Test_Second$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Redefinition003_Test_Second$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Redefinition003_Test_Second$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Redefinition003_Test_Second$behavior$1.xmi#//@events.1"/>
+    </scenario>
+  </testCases>
+  <testCases name="Redefinition004_Test$behavior$1">
+    <model href="Redefinition004_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Redefinition004_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Redefinition004_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Redefinition004_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+  </testCases>
+  <testCases name="Redefinition004_Test_Prime$behavior$1">
+    <model href="Redefinition004_Test_Prime$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Redefinition004_Test_Prime$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Redefinition004_Test_Prime$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Redefinition004_Test_Prime$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Redefinition004_Test_Prime$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Redefinition004_Test_Prime$behavior$1.xmi#//@events.1"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Redefinition004_Test_Prime$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Redefinition004_Test_Prime$behavior$1.xmi#//@events.2"/>
+    </scenario>
+  </testCases>
+  <testCases name="Redefinition005_Test$behavior$1">
+    <model href="Redefinition005_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Redefinition005_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Redefinition005_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Redefinition005_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+  </testCases>
+  <testCases name="Redefinition005_Test_Prime$behavior$1">
+    <model href="Redefinition005_Test_Prime$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Redefinition005_Test_Prime$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+  </testCases>
+  <testCases name="Redefinition006_Test$behavior$1">
+    <model href="Redefinition006_Test$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Redefinition006_Test$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Redefinition006_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Redefinition006_Test$behavior$1.xmi#//@events.0"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Redefinition006_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Redefinition006_Test$behavior$1.xmi#//@events.1"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Redefinition006_Test$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Redefinition006_Test$behavior$1.xmi#//@events.2"/>
+    </scenario>
+  </testCases>
+  <testCases name="Redefinition006_Test_Prime$behavior$1">
+    <model href="Redefinition006_Test_Prime$behavior$1.xmi#/"/>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineRunEvent">
+      <stateMachine href="Redefinition006_Test_Prime$behavior$1.xmi#//@statemachine"/>
+    </scenario>
+    <scenario xsi:type="interpretedstatemachinesevent:StateMachineEventOccurrenceReceivedEvent">
+      <stateMachine href="Redefinition006_Test_Prime$behavior$1.xmi#//@statemachine"/>
+      <eventType href="Redefinition006_Test_Prime$behavior$1.xmi#//@events.0"/>
+    </scenario>
+  </testCases>
+</testsuite:TestSuite>

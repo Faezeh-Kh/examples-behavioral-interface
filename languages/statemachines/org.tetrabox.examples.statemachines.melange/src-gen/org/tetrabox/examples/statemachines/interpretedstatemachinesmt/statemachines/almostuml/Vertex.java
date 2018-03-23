@@ -89,28 +89,4 @@ public interface Vertex extends NamedElement {
 	 */
 	EList<Transition> getIncomingTransitions();
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void enter(Transition enteringTransition, EventOccurrence eventOccurrence, Region leastCommonAncestor);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void exit(Transition exitingTransition, EventOccurrence eventOccurrence, Region leastCommonAncestor);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void terminate();
-
 } // Vertex

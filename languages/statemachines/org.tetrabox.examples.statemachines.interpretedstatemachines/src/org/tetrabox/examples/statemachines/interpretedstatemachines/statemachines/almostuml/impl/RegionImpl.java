@@ -2,8 +2,6 @@
  */
 package org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.impl;
 
-import java.lang.Iterable;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -15,13 +13,10 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence;
 
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.AlmostumlPackage;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Region;
@@ -42,11 +37,12 @@ import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachine
  *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.impl.RegionImpl#getTransitions <em>Transitions</em>}</li>
  *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.impl.RegionImpl#getStateMachine <em>State Machine</em>}</li>
  *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.impl.RegionImpl#getState <em>State</em>}</li>
+ *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.impl.RegionImpl#getCurrentVertex <em>Current Vertex</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class RegionImpl extends EObjectImpl implements Region {
+public class RegionImpl extends NamedElementImpl implements Region {
 	/**
 	 * The cached value of the '{@link #getVertice() <em>Vertice</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -66,6 +62,16 @@ public class RegionImpl extends EObjectImpl implements Region {
 	 * @ordered
 	 */
 	protected EList<Transition> transitions;
+
+	/**
+	 * The cached value of the '{@link #getCurrentVertex() <em>Current Vertex</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCurrentVertex()
+	 * @generated
+	 * @ordered
+	 */
+	protected Vertex currentVertex;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -197,10 +203,16 @@ public class RegionImpl extends EObjectImpl implements Region {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void enter(Transition enteringTransition, EventOccurrence eventOccurrence) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public Vertex getCurrentVertex() {
+		if (currentVertex != null && currentVertex.eIsProxy()) {
+			InternalEObject oldCurrentVertex = (InternalEObject)currentVertex;
+			currentVertex = (Vertex)eResolveProxy(oldCurrentVertex);
+			if (currentVertex != oldCurrentVertex) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlmostumlPackage.REGION__CURRENT_VERTEX, oldCurrentVertex, currentVertex));
+			}
+		}
+		return currentVertex;
 	}
 
 	/**
@@ -208,10 +220,8 @@ public class RegionImpl extends EObjectImpl implements Region {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void exit(Transition exitingTransition, EventOccurrence eventOccurrence) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public Vertex basicGetCurrentVertex() {
+		return currentVertex;
 	}
 
 	/**
@@ -219,43 +229,11 @@ public class RegionImpl extends EObjectImpl implements Region {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void terminate() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public StateMachine getContainingStateMachine() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Iterable getActiveVertice() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean contains(Vertex vertex) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public void setCurrentVertex(Vertex newCurrentVertex) {
+		Vertex oldCurrentVertex = currentVertex;
+		currentVertex = newCurrentVertex;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AlmostumlPackage.REGION__CURRENT_VERTEX, oldCurrentVertex, currentVertex));
 	}
 
 	/**
@@ -335,6 +313,9 @@ public class RegionImpl extends EObjectImpl implements Region {
 				return getStateMachine();
 			case AlmostumlPackage.REGION__STATE:
 				return getState();
+			case AlmostumlPackage.REGION__CURRENT_VERTEX:
+				if (resolve) return getCurrentVertex();
+				return basicGetCurrentVertex();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -362,6 +343,9 @@ public class RegionImpl extends EObjectImpl implements Region {
 			case AlmostumlPackage.REGION__STATE:
 				setState((State)newValue);
 				return;
+			case AlmostumlPackage.REGION__CURRENT_VERTEX:
+				setCurrentVertex((Vertex)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -386,6 +370,9 @@ public class RegionImpl extends EObjectImpl implements Region {
 			case AlmostumlPackage.REGION__STATE:
 				setState((State)null);
 				return;
+			case AlmostumlPackage.REGION__CURRENT_VERTEX:
+				setCurrentVertex((Vertex)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -406,6 +393,8 @@ public class RegionImpl extends EObjectImpl implements Region {
 				return getStateMachine() != null;
 			case AlmostumlPackage.REGION__STATE:
 				return getState() != null;
+			case AlmostumlPackage.REGION__CURRENT_VERTEX:
+				return currentVertex != null;
 		}
 		return super.eIsSet(featureID);
 	}

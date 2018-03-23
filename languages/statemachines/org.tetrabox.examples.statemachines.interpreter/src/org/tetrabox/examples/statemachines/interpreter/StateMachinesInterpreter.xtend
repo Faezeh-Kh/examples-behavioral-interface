@@ -26,11 +26,13 @@ import static extension org.tetrabox.examples.statemachines.interpreter.StateAsp
 import static extension org.tetrabox.examples.statemachines.interpreter.StateMachineAspect.*
 import static extension org.tetrabox.examples.statemachines.interpreter.TransitionAspect.*
 import static extension org.tetrabox.examples.statemachines.interpreter.VertexAspect.*
+import org.eclipse.gemoc.executionframework.engine.annotations.EventEmitter
 
 @Aspect(className=StateMachine)
 class StateMachineAspect {
 	
 	protected val List<CompletionEvent> completionEvents = new ArrayList
+	protected val List<EventOccurrence> deferredEvents = new ArrayList
 	protected val List<Vertex> activeVertice = new ArrayList
 
 	@Step
@@ -43,16 +45,52 @@ class StateMachineAspect {
 	@Step
 	@EventHandler
 	def void eventOccurrenceReceived(CustomEvent eventType) {
-		val transition = _self.regions.map[activeVertice].flatten
-				.map[outgoingTransitions].flatten
-				.filter[t|t.triggers.exists[event == eventType]]
-				.head
-		if (transition !== null) {
-			val eventOccurrence = StatemachinesexecutiondataFactory::eINSTANCE.createEventOccurrence
-			eventOccurrence.event = eventType
-			transition.fire(eventOccurrence)
+		val eventOccurrence = StatemachinesexecutiondataFactory::eINSTANCE.createEventOccurrence
+		eventOccurrence.event = eventType
+		_self.dispatchEventOccurrence(eventOccurrence)
+		
+	}
+	
+	private def List<Transition> selectTransitions(CustomEvent eventType) {
+		return _self.regions.map[r|_self._selectTransitions(r.vertice, eventType)].flatten.toList
+	}
+	
+	private def List<Transition> _selectTransitions(List<Vertex> vertice, CustomEvent eventType) {
+		vertice.filter[v|_self.activeVertice.contains(v)]
+			.map[v|_self._selectTransitions(v, eventType)]
+			.flatten.toList
+	}
+	
+	private def List<Transition> _selectTransitions(Vertex vertex, CustomEvent eventType) {
+		val transitions = new ArrayList
+		if (vertex instanceof State) {
+			if (vertex.regions !== null) {
+				transitions.addAll(vertex.regions.map[r|_self._selectTransitions(r.vertice, eventType)].flatten)
+			}
 		}
-		_self.dispatchCompletionEvents
+		if (transitions.empty) {
+			transitions.addAll(vertex.outgoingTransitions.filter[t|t.triggers.exists[event == eventType]])
+			if (transitions.size > 1) {
+				val electedTransition = transitions.head
+				transitions.clear
+				transitions.add(electedTransition)
+			}
+		}
+		return transitions
+	}
+	
+	private def void dispatchEventOccurrence(EventOccurrence eventOccurrence) {
+		val eventType = eventOccurrence.event
+		val deferringState = _self.getDeferringState(eventType)
+		if (deferringState === null) {
+			_self.selectTransitions(eventType).forEach[t|
+				t.fire(eventOccurrence)
+			]
+			_self.dispatchCompletionEvents
+			_self.dispatchDeferredEvents
+		} else {
+			deferringState.deferredEvents.add(eventOccurrence)
+		}
 	}
 	
 	private def void dispatchCompletionEvents() {
@@ -65,11 +103,39 @@ class StateMachineAspect {
 		}
 	}
 	
+	private def void dispatchDeferredEvents() {
+		val toDispatch = new ArrayList(_self.deferredEvents)
+		_self.deferredEvents.clear
+		toDispatch.forEach[eventOccurrence|
+			_self.dispatchEventOccurrence(eventOccurrence)
+		]
+	}
+	
+	private def State getDeferringState(CustomEvent eventType) {
+		_self.regions.map[vertice].flatten.filter(State).filter[s|
+			_self.activeVertice.contains(s)
+		].map[s|
+			_self._getDeferringState(eventType, s)
+		].filterNull.head
+	}
+	
+	private def State _getDeferringState(CustomEvent eventType, State state) {
+		var State deferred = state.regions.map[vertice].flatten.filter(State).filter[s|
+			_self.activeVertice.contains(s)
+		].map[s|
+			_self._getDeferringState(eventType, s)
+		].filterNull.head
+		if (deferred === null && state.canDefer(eventType)) {
+			if (_self._selectTransitions(state, eventType).empty) {
+				deferred = state;
+			}
+		}
+		return deferred;
+	}
+	
 	@Step
-	def void terminate() {
+	protected def void terminate() {
 		_self.regions.forEach[terminate]
-		//TODO ulgy
-		Thread::currentThread.destroy
 	}
 }
 
@@ -78,42 +144,47 @@ class RegionAspect {
 	
 	protected boolean completed = false
 	
-	@Step
-	def void enter(Transition enteringTransition, EventOccurrence eventOccurrence) {
-		val initialState = _self.vertice.filter(Pseudostate).findFirst[
-			kind == PseudostateKind::INITIAL
-		]
-		if (initialState !== null) {
-			initialState.enter(enteringTransition, eventOccurrence, null)
-		} else {
-			if (_self.state !== null && _self.state.hasCompleted) {
-				_self.state.complete
+	public Vertex currentVertex = null
+	
+	protected def void enter(Transition enteringTransition, EventOccurrence eventOccurrence) {
+//		if (enteringTransition === null || enteringTransition.target == _self.state) {
+		if (enteringTransition === null || !_self.contains(enteringTransition.target)) {
+			val initialState = _self.vertice.filter(Pseudostate).findFirst[
+				kind == PseudostateKind::INITIAL
+			]
+			if (initialState !== null) {
+				initialState.enter(enteringTransition, eventOccurrence, null)
+			} else {
+				_self.completed = true
+				if (_self.state !== null && _self.state.hasCompleted) {
+					_self.state.complete
+				}
 			}
 		}
 	}
 	
-	def void exit(Transition exitingTransition, EventOccurrence eventOccurrence) {
-		_self.vertice.forEach[exit(exitingTransition, eventOccurrence, null)]
+	protected def void exit(Transition exitingTransition, EventOccurrence eventOccurrence) {
+		_self.vertice.filter[v|v.isExitable(exitingTransition)].forEach[exit(exitingTransition, eventOccurrence, null)]
 	}
 	
-	def void terminate() {
+	protected def void terminate() {
 		_self.vertice.forEach[terminate]
 	}
 	
-	def StateMachine getContainingStateMachine() {
+	protected def StateMachine getContainingStateMachine() {
 		if (_self.state !== null)
 			return _self.state.container.containingStateMachine
 		return _self.stateMachine
 	}
 	
-	def Iterable<Vertex> getActiveVertice() {
+	protected def Iterable<Vertex> getActiveVertice() {
 		val result = new ArrayList(_self.containingStateMachine.activeVertice)
 		result.retainAll(_self.vertice)
 		result.addAll(_self.vertice.filter(State).map[activeVertice].flatten)
 		return result
 	}
 	
-	def boolean contains(Vertex vertex) {
+	protected def boolean contains(Vertex vertex) {
 		return _self.vertice.exists[contains(vertex)]
 	}
 }
@@ -121,22 +192,19 @@ class RegionAspect {
 @Aspect(className=Vertex)
 class VertexAspect {
 	
-	@Step
-	def void enter(Transition enteringTransition, EventOccurrence eventOccurrence, Region leastCommonAncestor) {
-		println("Entering vertex: " + _self.name)
+	protected def void enter(Transition enteringTransition, EventOccurrence eventOccurrence, Region leastCommonAncestor) {
 		if (leastCommonAncestor !== null && _self.container !== null && _self.container != leastCommonAncestor) {
 			var containingState = _self.container.state
 			if (containingState !== null) {
 				containingState.enter(enteringTransition, eventOccurrence, leastCommonAncestor)
 			}
 		}
+		_self.container.currentVertex = _self
 		_self.container.containingStateMachine.activeVertice.add(_self)
-		println("Entered vertex: " + _self.name)
 	}
 	
-	@Step
-	def void exit(Transition exitingTransition, EventOccurrence eventOccurrence, Region leastCommonAncestor) {
-		println("Exiting vertex: " + _self.name)
+	protected def void exit(Transition exitingTransition, EventOccurrence eventOccurrence, Region leastCommonAncestor) {
+		_self.container.currentVertex = null
 		_self.container.containingStateMachine.activeVertice.remove(_self)
 		if(leastCommonAncestor !== null && _self.container !== null && leastCommonAncestor != _self.container){
 			var containingState = _self.container.state
@@ -144,11 +212,14 @@ class VertexAspect {
 				containingState.exit(exitingTransition, eventOccurrence, leastCommonAncestor);
 			}
 		}
-		println("Exited vertex: " + _self.name)
 	}
 	
-	def void terminate() {
+	protected def void terminate() {
 		return
+	}
+	
+	protected def boolean isActive() {
+		_self.container.containingStateMachine.activeVertice.contains(_self)
 	}
 	
 	protected def boolean isEnterable(Transition enteringTransition) {
@@ -164,30 +235,41 @@ class VertexAspect {
 	}
 }
 
-
 @Aspect(className=State)
 class StateAspect extends VertexAspect {
 
+	public boolean isEntryCompleted
+	public boolean isDoActivityCompleted
+	public boolean isExitCompleted
+	
+	protected List<EventOccurrence> deferredEvents = new ArrayList
+
 	@OverrideAspectMethod
-	def void enter(Transition enteringTransition, EventOccurrence eventOccurrence, Region leastCommonAncestor) {
+	protected def void enter(Transition enteringTransition, EventOccurrence eventOccurrence, Region leastCommonAncestor) {
 		if (!_self.active) {
 			_self.super_enter(enteringTransition, eventOccurrence, leastCommonAncestor)
+			_self.isEntryCompleted = _self.entry === null
+			_self.isDoActivityCompleted = _self.doActivity === null
+			_self.isExitCompleted = _self.exit === null
 			if (_self.hasCompleted) {
 				_self.complete
 			} else {
+				_self.tryExecuteEntry
+				_self.tryExecuteDoActivity
 				_self.enterRegions(enteringTransition, eventOccurrence)
 			}
 		}
-		
 	}
 
 	@OverrideAspectMethod
-	def void exit(Transition exitingTransition, EventOccurrence eventOccurrence, Region leastCommonAncestor) {
+	protected def void exit(Transition exitingTransition, EventOccurrence eventOccurrence, Region leastCommonAncestor) {
 		_self.regions.forEach[r|r.exit(exitingTransition, eventOccurrence)]
+		_self.tryExecuteExit
 		_self.super_exit(exitingTransition, eventOccurrence, leastCommonAncestor)
+		_self.container.containingStateMachine.deferredEvents.addAll(_self.deferredEvents)
 	}
 
-	def void enterRegions(Transition enteringTransition, EventOccurrence eventOccurrence) {
+	protected def void enterRegions(Transition enteringTransition, EventOccurrence eventOccurrence) {
 		val targetedVertice = new ArrayList
 		val source = enteringTransition.source
 		if (source instanceof Pseudostate && (source as Pseudostate).kind == PseudostateKind.FORK) {
@@ -195,16 +277,42 @@ class StateAspect extends VertexAspect {
 		} else {
 			targetedVertice.add(enteringTransition.target)
 		}
-		//TODO weird that we pass the enteringTransition instead of the proper transition
 		_self.regions.filter[r|
 			val vertice = new ArrayList(r.vertice)
 			vertice.retainAll(targetedVertice)
 			return vertice.empty
 		].forEach[enter(enteringTransition, eventOccurrence)]
 	}
+
+	private def void tryExecuteEntry() {
+		if (!_self.entryCompleted) {
+			println(_self.name + "(" + _self.entry.name + ")")
+			_self.isEntryCompleted = true
+			if (_self.hasCompleted) {
+				_self.complete
+			}
+		}
+	}
+
+	private def void tryExecuteDoActivity() {
+		if (!_self.doActivityCompleted) {
+			println(_self.name + "(" + _self.doActivity.name + ")")
+			_self.isDoActivityCompleted = true
+			if (_self.hasCompleted) {
+				_self.complete
+			}
+		}
+	}
 	
+	private def void tryExecuteExit() {
+		if (!_self.exitCompleted) {
+			println(_self.name + "(" + _self.exit.name + ")")
+			_self.isExitCompleted = true
+		}
+	}
+
 	@OverrideAspectMethod
-	def void terminate() {
+	protected def void terminate() {
 		_self.regions.forEach[terminate]
 	}
 	
@@ -218,10 +326,6 @@ class StateAspect extends VertexAspect {
 		return _self.active
 	}
 	
-	private def boolean isActive() {
-		_self.container.containingStateMachine.activeVertice.contains(_self)
-	}
-	
 	@OverrideAspectMethod
 	protected def boolean contains(Vertex vertex) {
 		if (_self == vertex) {
@@ -231,19 +335,23 @@ class StateAspect extends VertexAspect {
 		}
 	}
 	
-	def List<Vertex> getActiveVertice() {
+	protected def boolean canDefer(CustomEvent eventType) {
+		_self.deferrableTriggers.exists[event == eventType]
+	}
+	
+	protected def List<Vertex> getActiveVertice() {
 		return _self.regions.map[activeVertice].flatten.toList
 	}
 	
-	def boolean hasCompleted() {
-		return _self.regions.forall[completed]
+	protected def boolean hasCompleted() {
+		return _self.entryCompleted && _self.doActivityCompleted && _self.regions.forall[completed]
 	}
 	
-	def void complete() {
+	protected def void complete() {
 		val event = AlmostumlFactory::eINSTANCE.createCompletionEvent => [
 			state = _self
 		]
-		_self.container.containingStateMachine.completionEvents.add(0, event)
+		_self.container.containingStateMachine.completionEvents.add(event)
 	}
 }
 
@@ -251,11 +359,16 @@ class StateAspect extends VertexAspect {
 class FimalStateAspect extends StateAspect {
 	
 	@OverrideAspectMethod
-	def void enter(Transition enteringTransition, EventOccurrence eventOccurrence, Region leastCommonAncestor) {
+	protected def void enter(Transition enteringTransition, EventOccurrence eventOccurrence, Region leastCommonAncestor) {
+		_self.container.currentVertex = null
 		_self.container.completed = true
 		val parentState = _self.container.state
 		if (parentState !== null && parentState.hasCompleted) {
 			parentState.complete
+		}
+		//TODO
+		if (_self.container.eContainer instanceof StateMachine) {
+			(_self.container.eContainer as StateMachine).terminate
 		}
 	}
 }
@@ -264,25 +377,32 @@ class FimalStateAspect extends StateAspect {
 class PseudostateAspect extends VertexAspect {
 
 	@OverrideAspectMethod
-	def void enter(Transition enteringTransition, EventOccurrence eventOccurrence, Region leastCommonAncestor) {
+	protected def void enter(Transition enteringTransition, EventOccurrence eventOccurrence, Region leastCommonAncestor) {
 		switch (_self.kind) {
+			
 			case INITIAL: {
+				_self.container.currentVertex = _self
 				if (_self.outgoingTransitions.size == 1) {
 					_self.outgoingTransitions.head.fire(eventOccurrence)
 				}
 			}
+			
 			case FORK: {
+				_self.super_enter(enteringTransition, eventOccurrence, leastCommonAncestor)
 				_self.outgoingTransitions.forEach[fire(eventOccurrence)]
 			}
+			
 			case JOIN: {
 				_self.super_enter(enteringTransition, eventOccurrence, leastCommonAncestor)
 				_self.outgoingTransitions.head.fire(eventOccurrence)
 			}
+			
 			case TERMINATE: {
 				_self.super_enter(enteringTransition, eventOccurrence, leastCommonAncestor)
 				_self.container.containingStateMachine.terminate
 				_self.exit(null, null, null)
 			}
+			
 			default: {
 				_self.super_enter(enteringTransition, eventOccurrence, leastCommonAncestor)
 			}
@@ -322,8 +442,11 @@ class TransitionAspect {
 	@Step
 	def void fire(EventOccurrence eventOccurrence) {
 		_self.exitSource(eventOccurrence)
+		//TODO execute effect behavior
+		if (_self.effect !== null) {
+			println(_self.name + "(" + _self.effect.name + ")")
+		}
 		_self.traversed = true
-		println("Traversed " + _self.name)
 		_self.enterTarget(eventOccurrence)
 	}
 	
@@ -344,17 +467,12 @@ class TransitionAspect {
 			case LOCAL: {
 				if (_self.source.isExitable(_self)) {
 					val containingState = _self.containingState
-					val hierarchy = new ArrayList
-					var EObject currentElement = _self.target
-					while (currentElement != containingState) {
-						currentElement = currentElement.eContainer
-						if (currentElement instanceof Vertex) {
-							hierarchy.add(currentElement)
+					val containingRegion = containingState.regions.findFirst[r|r == _self.target.container]
+					if (containingRegion !== null) {
+						val vertexToExit = containingRegion.vertice.findFirst[active]
+						if (vertexToExit !== null) {
+							vertexToExit.exit(_self, eventOccurrence, null)
 						}
-					}
-					val vertexToExit = hierarchy.last
-					if (vertexToExit !== null) {
-						vertexToExit.exit(_self, eventOccurrence, null)
 					}
 					if (_self.source != containingState) {
 						_self.source.exit(_self, eventOccurrence, _self.leastCommonAncestor)
@@ -418,9 +536,11 @@ class TransitionAspect {
 			currentAncestor = currentAncestor.eContainer
 		}
 		var Region result = null
-		for (var i = 0; i < sourceAncestors.size && i < targetAncestors.size && result === null; i++) {
-			if (sourceAncestors.get(i) == targetAncestors.get(i)) {
-				result = sourceAncestors.get(i)
+		for (var i = 0; i < sourceAncestors.size && result === null; i++) {
+			for (var j = 0; j < targetAncestors.size && result === null; j++) {
+				if (sourceAncestors.get(i) == targetAncestors.get(j)) {
+					result = sourceAncestors.get(i)
+				}
 			}
 		}
 		return result

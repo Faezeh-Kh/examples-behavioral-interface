@@ -14,26 +14,35 @@
     <eClassifiers xsi:type="ecore:EClass" name="StateMachine" eSuperTypes="//almostuml/NamedElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="regions" lowerBound="1" upperBound="-1" eType="//almostuml/Region" containment="true" eOpposite="//almostuml/Region/stateMachine"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Region">
+    <eClassifiers xsi:type="ecore:EClass" name="Region" eSuperTypes="//almostuml/NamedElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="vertice" upperBound="-1" eType="//almostuml/Vertex" containment="true" eOpposite="//almostuml/Vertex/container"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="transitions" upperBound="-1" eType="//almostuml/Transition" containment="true" eOpposite="//almostuml/Transition/container"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="stateMachine" eType="//almostuml/StateMachine" eOpposite="//almostuml/StateMachine/regions"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="//almostuml/State" eOpposite="//almostuml/State/regions"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="//almostuml/Vertex">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="regions" upperBound="-1" eType="//almostuml/Region" containment="true" eOpposite="//almostuml/Region/state"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Vertex" abstract="true" eSuperTypes="//almostuml/NamedElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="container" eType="//almostuml/Region" eOpposite="//almostuml/Region/vertice"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingTransitions" upperBound="-1" eType="//almostuml/Transition" eOpposite="//almostuml/Transition/source"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="incomingTransitions" upperBound="-1" eType="//almostuml/Transition" eOpposite="//almostuml/Transition/target"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Pseudostate" eSuperTypes="//almostuml/Vertex">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1" eType="//almostuml/PseudostateKind"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="//almostuml/Vertex">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="regions" upperBound="-1" eType="//almostuml/Region" containment="true" eOpposite="//almostuml/Region/state"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="entry" eType="//almostuml/Behavior" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="doActivity" eType="//almostuml/Behavior" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="exit" eType="//almostuml/Behavior" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="deferrableTriggers" upperBound="-1" eType="//almostuml/Trigger" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FinalState" eSuperTypes="//almostuml/State"/>
     <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="//almostuml/NamedElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1" eType="//almostuml/Vertex" eOpposite="//almostuml/Vertex/outgoingTransitions"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1" eType="//almostuml/Vertex" eOpposite="//almostuml/Vertex/incomingTransitions"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="triggers" upperBound="-1" eType="//almostuml/Trigger" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="container" lowerBound="1" eType="//almostuml/Region" eOpposite="//almostuml/Region/transitions"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="//almostuml/TransitionKind"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="effect" eType="//almostuml/Behavior" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Trigger" eSuperTypes="//almostuml/NamedElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="event" lowerBound="1" eType="//almostuml/Event"/>
@@ -42,10 +51,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="CompletionEvent" eSuperTypes="//almostuml/Event">
       <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1" eType="//almostuml/State"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="FinalState" eSuperTypes="//almostuml/State"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Pseudostate" eSuperTypes="//almostuml/Vertex">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1" eType="//almostuml/PseudostateKind"/>
-    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Behavior" eSuperTypes="//almostuml/NamedElement"/>
     <eClassifiers xsi:type="ecore:EEnum" name="PseudostateKind">
       <eLiterals name="initial"/>
       <eLiterals name="join" value="1"/>

@@ -10,7 +10,7 @@ package statemachines.almostuml;
  *
  *
  * @see statemachines.almostuml.AlmostumlPackage#getBehavior()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface Behavior extends NamedElement {

@@ -2,7 +2,6 @@
  */
 package org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml;
 
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,12 +14,4 @@ import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachine
  * @generated
  */
 public interface FinalState extends State {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void enter(Transition enteringTransition, EventOccurrence eventOccurrence, Region leastCommonAncestor);
-
 } // FinalState

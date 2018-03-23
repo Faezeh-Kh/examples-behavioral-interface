@@ -14,6 +14,7 @@ import statemachines.StatemachinesPackage;
 
 import statemachines.almostuml.AlmostumlFactory;
 import statemachines.almostuml.AlmostumlPackage;
+import statemachines.almostuml.Behavior;
 import statemachines.almostuml.CompletionEvent;
 import statemachines.almostuml.Event;
 import statemachines.almostuml.FinalState;
@@ -99,6 +100,13 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 	 * @generated
 	 */
 	private EClass completionEventEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass behaviorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -280,6 +288,42 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getState_Entry() {
+		return (EReference)stateEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getState_DoActivity() {
+		return (EReference)stateEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getState_Exit() {
+		return (EReference)stateEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getState_DeferrableTriggers() {
+		return (EReference)stateEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getVertex() {
 		return vertexEClass;
 	}
@@ -370,6 +414,15 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getTransition_Effect() {
+		return (EReference)transitionEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTrigger() {
 		return triggerEClass;
 	}
@@ -426,6 +479,15 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 	 */
 	public EReference getCompletionEvent_State() {
 		return (EReference)completionEventEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBehavior() {
+		return behaviorEClass;
 	}
 
 	/**
@@ -513,13 +575,22 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 		createEReference(regionEClass, REGION__STATE_MACHINE);
 		createEReference(regionEClass, REGION__STATE);
 
-		stateEClass = createEClass(STATE);
-		createEReference(stateEClass, STATE__REGIONS);
-
 		vertexEClass = createEClass(VERTEX);
 		createEReference(vertexEClass, VERTEX__CONTAINER);
 		createEReference(vertexEClass, VERTEX__OUTGOING_TRANSITIONS);
 		createEReference(vertexEClass, VERTEX__INCOMING_TRANSITIONS);
+
+		pseudostateEClass = createEClass(PSEUDOSTATE);
+		createEAttribute(pseudostateEClass, PSEUDOSTATE__KIND);
+
+		stateEClass = createEClass(STATE);
+		createEReference(stateEClass, STATE__REGIONS);
+		createEReference(stateEClass, STATE__ENTRY);
+		createEReference(stateEClass, STATE__DO_ACTIVITY);
+		createEReference(stateEClass, STATE__EXIT);
+		createEReference(stateEClass, STATE__DEFERRABLE_TRIGGERS);
+
+		finalStateEClass = createEClass(FINAL_STATE);
 
 		transitionEClass = createEClass(TRANSITION);
 		createEReference(transitionEClass, TRANSITION__SOURCE);
@@ -527,6 +598,7 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 		createEReference(transitionEClass, TRANSITION__TRIGGERS);
 		createEReference(transitionEClass, TRANSITION__CONTAINER);
 		createEAttribute(transitionEClass, TRANSITION__KIND);
+		createEReference(transitionEClass, TRANSITION__EFFECT);
 
 		triggerEClass = createEClass(TRIGGER);
 		createEReference(triggerEClass, TRIGGER__EVENT);
@@ -536,10 +608,7 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 		completionEventEClass = createEClass(COMPLETION_EVENT);
 		createEReference(completionEventEClass, COMPLETION_EVENT__STATE);
 
-		finalStateEClass = createEClass(FINAL_STATE);
-
-		pseudostateEClass = createEClass(PSEUDOSTATE);
-		createEAttribute(pseudostateEClass, PSEUDOSTATE__KIND);
+		behaviorEClass = createEClass(BEHAVIOR);
 
 		// Create enums
 		pseudostateKindEEnum = createEEnum(PSEUDOSTATE_KIND);
@@ -575,14 +644,16 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 
 		// Add supertypes to classes
 		stateMachineEClass.getESuperTypes().add(this.getNamedElement());
-		stateEClass.getESuperTypes().add(this.getVertex());
+		regionEClass.getESuperTypes().add(this.getNamedElement());
 		vertexEClass.getESuperTypes().add(this.getNamedElement());
+		pseudostateEClass.getESuperTypes().add(this.getVertex());
+		stateEClass.getESuperTypes().add(this.getVertex());
+		finalStateEClass.getESuperTypes().add(this.getState());
 		transitionEClass.getESuperTypes().add(this.getNamedElement());
 		triggerEClass.getESuperTypes().add(this.getNamedElement());
 		eventEClass.getESuperTypes().add(this.getNamedElement());
 		completionEventEClass.getESuperTypes().add(this.getEvent());
-		finalStateEClass.getESuperTypes().add(this.getState());
-		pseudostateEClass.getESuperTypes().add(this.getVertex());
+		behaviorEClass.getESuperTypes().add(this.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -597,13 +668,22 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 		initEReference(getRegion_StateMachine(), this.getStateMachine(), this.getStateMachine_Regions(), "stateMachine", null, 0, 1, Region.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRegion_State(), this.getState(), this.getState_Regions(), "state", null, 0, 1, Region.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getState_Regions(), this.getRegion(), this.getRegion_State(), "regions", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(vertexEClass, Vertex.class, "Vertex", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getVertex_Container(), this.getRegion(), this.getRegion_Vertice(), "container", null, 0, 1, Vertex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVertex_OutgoingTransitions(), this.getTransition(), this.getTransition_Source(), "outgoingTransitions", null, 0, -1, Vertex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVertex_IncomingTransitions(), this.getTransition(), this.getTransition_Target(), "incomingTransitions", null, 0, -1, Vertex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(pseudostateEClass, Pseudostate.class, "Pseudostate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPseudostate_Kind(), this.getPseudostateKind(), "kind", null, 1, 1, Pseudostate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getState_Regions(), this.getRegion(), this.getRegion_State(), "regions", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getState_Entry(), this.getBehavior(), null, "entry", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getState_DoActivity(), this.getBehavior(), null, "doActivity", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getState_Exit(), this.getBehavior(), null, "exit", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getState_DeferrableTriggers(), this.getTrigger(), null, "deferrableTriggers", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(finalStateEClass, FinalState.class, "FinalState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(transitionEClass, Transition.class, "Transition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTransition_Source(), this.getVertex(), this.getVertex_OutgoingTransitions(), "source", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -611,6 +691,7 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 		initEReference(getTransition_Triggers(), this.getTrigger(), null, "triggers", null, 0, -1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTransition_Container(), this.getRegion(), this.getRegion_Transitions(), "container", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTransition_Kind(), this.getTransitionKind(), "kind", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTransition_Effect(), this.getBehavior(), null, "effect", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(triggerEClass, Trigger.class, "Trigger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTrigger_Event(), this.getEvent(), null, "event", null, 1, 1, Trigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -620,10 +701,7 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 		initEClass(completionEventEClass, CompletionEvent.class, "CompletionEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCompletionEvent_State(), this.getState(), null, "state", null, 1, 1, CompletionEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(finalStateEClass, FinalState.class, "FinalState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(pseudostateEClass, Pseudostate.class, "Pseudostate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPseudostate_Kind(), this.getPseudostateKind(), "kind", null, 1, 1, Pseudostate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(behaviorEClass, Behavior.class, "Behavior", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(pseudostateKindEEnum, PseudostateKind.class, "PseudostateKind");

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.gemoc.execution.testsuite.javaengine.ui.launcher">
+<stringAttribute key="LANGUAGE_NAME" value="org.tetrabox.examples.statemachines.InterpretedStateMachines"/>
+<stringAttribute key="TEST_SUITE_URI" value="/org.tetrabox.examples.statemachines.test/models/ActualStateMachineTestSuite.xmi"/>
+</launchConfiguration>

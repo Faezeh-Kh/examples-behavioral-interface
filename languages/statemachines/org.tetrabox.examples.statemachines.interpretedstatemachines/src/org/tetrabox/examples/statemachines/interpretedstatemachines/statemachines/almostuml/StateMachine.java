@@ -57,12 +57,4 @@ public interface StateMachine extends NamedElement {
 	 */
 	void eventOccurrenceReceived(CustomEvent eventType);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void terminate();
-
 } // StateMachine

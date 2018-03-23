@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.CustomEventAdapter;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.CustomSystemAdapter;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.almostuml.BehaviorAdapter;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.almostuml.CompletionEventAdapter;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.almostuml.EventAdapter;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.almostuml.FinalStateAdapter;
@@ -20,6 +21,7 @@ import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.sta
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.almostuml.VertexAdapter;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CustomEvent;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CustomSystem;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Behavior;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.CompletionEvent;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Event;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.FinalState;
@@ -56,6 +58,12 @@ public class StateMachinesMTAdaptersFactory implements AdaptersFactory {
     if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Region){
     	return createRegionAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Region) o, res);
     }
+    if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate){
+    	return createPseudostateAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate) o, res);
+    }
+    if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.FinalState){
+    	return createFinalStateAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.FinalState) o, res);
+    }
     if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.State){
     	return createStateAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.State) o, res);
     }
@@ -68,11 +76,8 @@ public class StateMachinesMTAdaptersFactory implements AdaptersFactory {
     if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.CompletionEvent){
     	return createCompletionEventAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.CompletionEvent) o, res);
     }
-    if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.FinalState){
-    	return createFinalStateAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.FinalState) o, res);
-    }
-    if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate){
-    	return createPseudostateAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate) o, res);
+    if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Behavior){
+    	return createBehaviorAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Behavior) o, res);
     }
     if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CustomSystem){
     	return createCustomSystemAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CustomSystem) o, res);
@@ -129,6 +134,36 @@ public class StateMachinesMTAdaptersFactory implements AdaptersFactory {
     }
   }
   
+  public VertexAdapter createVertexAdapter(final Vertex adaptee, final Resource res) {
+    if (adaptee == null)
+    	return null;
+    EObjectAdapter adapter = register.get(adaptee);
+    if(adapter != null)
+    	 return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.almostuml.VertexAdapter) adapter;
+    else {
+    	adapter = new org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.almostuml.VertexAdapter();
+    	adapter.setAdaptee(adaptee);
+    	adapter.setResource(res);
+    	register.put(adaptee, adapter);
+    	return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.almostuml.VertexAdapter) adapter;
+    }
+  }
+  
+  public PseudostateAdapter createPseudostateAdapter(final Pseudostate adaptee, final Resource res) {
+    if (adaptee == null)
+    	return null;
+    EObjectAdapter adapter = register.get(adaptee);
+    if(adapter != null)
+    	 return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.almostuml.PseudostateAdapter) adapter;
+    else {
+    	adapter = new org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.almostuml.PseudostateAdapter();
+    	adapter.setAdaptee(adaptee);
+    	adapter.setResource(res);
+    	register.put(adaptee, adapter);
+    	return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.almostuml.PseudostateAdapter) adapter;
+    }
+  }
+  
   public StateAdapter createStateAdapter(final State adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -144,18 +179,18 @@ public class StateMachinesMTAdaptersFactory implements AdaptersFactory {
     }
   }
   
-  public VertexAdapter createVertexAdapter(final Vertex adaptee, final Resource res) {
+  public FinalStateAdapter createFinalStateAdapter(final FinalState adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
     EObjectAdapter adapter = register.get(adaptee);
     if(adapter != null)
-    	 return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.almostuml.VertexAdapter) adapter;
+    	 return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.almostuml.FinalStateAdapter) adapter;
     else {
-    	adapter = new org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.almostuml.VertexAdapter();
+    	adapter = new org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.almostuml.FinalStateAdapter();
     	adapter.setAdaptee(adaptee);
     	adapter.setResource(res);
     	register.put(adaptee, adapter);
-    	return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.almostuml.VertexAdapter) adapter;
+    	return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.almostuml.FinalStateAdapter) adapter;
     }
   }
   
@@ -219,33 +254,18 @@ public class StateMachinesMTAdaptersFactory implements AdaptersFactory {
     }
   }
   
-  public FinalStateAdapter createFinalStateAdapter(final FinalState adaptee, final Resource res) {
+  public BehaviorAdapter createBehaviorAdapter(final Behavior adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
     EObjectAdapter adapter = register.get(adaptee);
     if(adapter != null)
-    	 return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.almostuml.FinalStateAdapter) adapter;
+    	 return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.almostuml.BehaviorAdapter) adapter;
     else {
-    	adapter = new org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.almostuml.FinalStateAdapter();
+    	adapter = new org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.almostuml.BehaviorAdapter();
     	adapter.setAdaptee(adaptee);
     	adapter.setResource(res);
     	register.put(adaptee, adapter);
-    	return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.almostuml.FinalStateAdapter) adapter;
-    }
-  }
-  
-  public PseudostateAdapter createPseudostateAdapter(final Pseudostate adaptee, final Resource res) {
-    if (adaptee == null)
-    	return null;
-    EObjectAdapter adapter = register.get(adaptee);
-    if(adapter != null)
-    	 return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.almostuml.PseudostateAdapter) adapter;
-    else {
-    	adapter = new org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.almostuml.PseudostateAdapter();
-    	adapter.setAdaptee(adaptee);
-    	adapter.setResource(res);
-    	register.put(adaptee, adapter);
-    	return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.almostuml.PseudostateAdapter) adapter;
+    	return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.almostuml.BehaviorAdapter) adapter;
     }
   }
   

@@ -59,13 +59,14 @@ public class AlmostumlFactoryImpl extends EFactoryImpl implements AlmostumlFacto
 		switch (eClass.getClassifierID()) {
 			case AlmostumlPackage.STATE_MACHINE: return createStateMachine();
 			case AlmostumlPackage.REGION: return createRegion();
-			case AlmostumlPackage.STATE: return createState();
 			case AlmostumlPackage.VERTEX: return createVertex();
+			case AlmostumlPackage.PSEUDOSTATE: return createPseudostate();
+			case AlmostumlPackage.STATE: return createState();
+			case AlmostumlPackage.FINAL_STATE: return createFinalState();
 			case AlmostumlPackage.TRANSITION: return createTransition();
 			case AlmostumlPackage.TRIGGER: return createTrigger();
 			case AlmostumlPackage.COMPLETION_EVENT: return createCompletionEvent();
-			case AlmostumlPackage.FINAL_STATE: return createFinalState();
-			case AlmostumlPackage.PSEUDOSTATE: return createPseudostate();
+			case AlmostumlPackage.BEHAVIOR: return createBehavior();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -165,6 +166,15 @@ public class AlmostumlFactoryImpl extends EFactoryImpl implements AlmostumlFacto
 	 * @generated
 	 */
 	public CompletionEvent createCompletionEvent() {
+		throw new UnsupportedOperationException("Cannot invoke element creation on a model type");
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Behavior createBehavior() {
 		throw new UnsupportedOperationException("Cannot invoke element creation on a model type");
 	}
 

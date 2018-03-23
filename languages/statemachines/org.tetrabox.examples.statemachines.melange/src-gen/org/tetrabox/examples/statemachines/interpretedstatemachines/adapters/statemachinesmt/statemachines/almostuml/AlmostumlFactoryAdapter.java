@@ -5,6 +5,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.StateMachinesMTAdaptersFactory;
 import statemachines.almostuml.AlmostumlFactory;
 import statemachines.almostuml.AlmostumlPackage;
+import statemachines.almostuml.Behavior;
 import statemachines.almostuml.CompletionEvent;
 import statemachines.almostuml.FinalState;
 import statemachines.almostuml.Pseudostate;
@@ -31,8 +32,18 @@ public class AlmostumlFactoryAdapter extends EFactoryImpl implements AlmostumlFa
   }
   
   @Override
+  public Pseudostate createPseudostate() {
+    return adaptersFactory.createPseudostateAdapter(almostumlAdaptee.createPseudostate(), null);
+  }
+  
+  @Override
   public State createState() {
     return adaptersFactory.createStateAdapter(almostumlAdaptee.createState(), null);
+  }
+  
+  @Override
+  public FinalState createFinalState() {
+    return adaptersFactory.createFinalStateAdapter(almostumlAdaptee.createFinalState(), null);
   }
   
   @Override
@@ -51,13 +62,8 @@ public class AlmostumlFactoryAdapter extends EFactoryImpl implements AlmostumlFa
   }
   
   @Override
-  public FinalState createFinalState() {
-    return adaptersFactory.createFinalStateAdapter(almostumlAdaptee.createFinalState(), null);
-  }
-  
-  @Override
-  public Pseudostate createPseudostate() {
-    return adaptersFactory.createPseudostateAdapter(almostumlAdaptee.createPseudostate(), null);
+  public Behavior createBehavior() {
+    return adaptersFactory.createBehaviorAdapter(almostumlAdaptee.createBehavior(), null);
   }
   
   @Override

@@ -15,12 +15,5 @@ import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachi
  * @generated
  */
 public interface FinalState extends State {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void enter(Transition enteringTransition, EventOccurrence eventOccurrence, Region leastCommonAncestor);
 
 } // FinalState

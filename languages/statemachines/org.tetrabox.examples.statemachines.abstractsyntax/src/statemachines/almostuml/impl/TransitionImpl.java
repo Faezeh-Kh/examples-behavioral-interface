@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import statemachines.almostuml.AlmostumlPackage;
+import statemachines.almostuml.Behavior;
 import statemachines.almostuml.Region;
 import statemachines.almostuml.Transition;
 import statemachines.almostuml.TransitionKind;
@@ -38,6 +39,7 @@ import statemachines.almostuml.Vertex;
  *   <li>{@link statemachines.almostuml.impl.TransitionImpl#getTriggers <em>Triggers</em>}</li>
  *   <li>{@link statemachines.almostuml.impl.TransitionImpl#getContainer <em>Container</em>}</li>
  *   <li>{@link statemachines.almostuml.impl.TransitionImpl#getKind <em>Kind</em>}</li>
+ *   <li>{@link statemachines.almostuml.impl.TransitionImpl#getEffect <em>Effect</em>}</li>
  * </ul>
  *
  * @generated
@@ -92,6 +94,16 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 	 * @ordered
 	 */
 	protected TransitionKind kind = KIND_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getEffect() <em>Effect</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEffect()
+	 * @generated
+	 * @ordered
+	 */
+	protected Behavior effect;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -311,6 +323,49 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Behavior getEffect() {
+		return effect;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetEffect(Behavior newEffect, NotificationChain msgs) {
+		Behavior oldEffect = effect;
+		effect = newEffect;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlmostumlPackage.TRANSITION__EFFECT, oldEffect, newEffect);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEffect(Behavior newEffect) {
+		if (newEffect != effect) {
+			NotificationChain msgs = null;
+			if (effect != null)
+				msgs = ((InternalEObject)effect).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlmostumlPackage.TRANSITION__EFFECT, null, msgs);
+			if (newEffect != null)
+				msgs = ((InternalEObject)newEffect).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlmostumlPackage.TRANSITION__EFFECT, null, msgs);
+			msgs = basicSetEffect(newEffect, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AlmostumlPackage.TRANSITION__EFFECT, newEffect, newEffect));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -346,6 +401,8 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 				return ((InternalEList<?>)getTriggers()).basicRemove(otherEnd, msgs);
 			case AlmostumlPackage.TRANSITION__CONTAINER:
 				return basicSetContainer(null, msgs);
+			case AlmostumlPackage.TRANSITION__EFFECT:
+				return basicSetEffect(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -384,6 +441,8 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 				return getContainer();
 			case AlmostumlPackage.TRANSITION__KIND:
 				return getKind();
+			case AlmostumlPackage.TRANSITION__EFFECT:
+				return getEffect();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -413,6 +472,9 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 			case AlmostumlPackage.TRANSITION__KIND:
 				setKind((TransitionKind)newValue);
 				return;
+			case AlmostumlPackage.TRANSITION__EFFECT:
+				setEffect((Behavior)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -440,6 +502,9 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 			case AlmostumlPackage.TRANSITION__KIND:
 				setKind(KIND_EDEFAULT);
 				return;
+			case AlmostumlPackage.TRANSITION__EFFECT:
+				setEffect((Behavior)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -462,6 +527,8 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 				return getContainer() != null;
 			case AlmostumlPackage.TRANSITION__KIND:
 				return kind != KIND_EDEFAULT;
+			case AlmostumlPackage.TRANSITION__EFFECT:
+				return effect != null;
 		}
 		return super.eIsSet(featureID);
 	}

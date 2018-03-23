@@ -82,6 +82,22 @@ public class AlmostumlSwitch<T> extends Switch<T> {
 			case AlmostumlPackage.REGION: {
 				Region region = (Region)theEObject;
 				T result = caseRegion(region);
+				if (result == null) result = caseNamedElement(region);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AlmostumlPackage.VERTEX: {
+				Vertex vertex = (Vertex)theEObject;
+				T result = caseVertex(vertex);
+				if (result == null) result = caseNamedElement(vertex);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AlmostumlPackage.PSEUDOSTATE: {
+				Pseudostate pseudostate = (Pseudostate)theEObject;
+				T result = casePseudostate(pseudostate);
+				if (result == null) result = caseVertex(pseudostate);
+				if (result == null) result = caseNamedElement(pseudostate);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -93,10 +109,12 @@ public class AlmostumlSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AlmostumlPackage.VERTEX: {
-				Vertex vertex = (Vertex)theEObject;
-				T result = caseVertex(vertex);
-				if (result == null) result = caseNamedElement(vertex);
+			case AlmostumlPackage.FINAL_STATE: {
+				FinalState finalState = (FinalState)theEObject;
+				T result = caseFinalState(finalState);
+				if (result == null) result = caseState(finalState);
+				if (result == null) result = caseVertex(finalState);
+				if (result == null) result = caseNamedElement(finalState);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -129,20 +147,10 @@ public class AlmostumlSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AlmostumlPackage.FINAL_STATE: {
-				FinalState finalState = (FinalState)theEObject;
-				T result = caseFinalState(finalState);
-				if (result == null) result = caseState(finalState);
-				if (result == null) result = caseVertex(finalState);
-				if (result == null) result = caseNamedElement(finalState);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case AlmostumlPackage.PSEUDOSTATE: {
-				Pseudostate pseudostate = (Pseudostate)theEObject;
-				T result = casePseudostate(pseudostate);
-				if (result == null) result = caseVertex(pseudostate);
-				if (result == null) result = caseNamedElement(pseudostate);
+			case AlmostumlPackage.BEHAVIOR: {
+				Behavior behavior = (Behavior)theEObject;
+				T result = caseBehavior(behavior);
+				if (result == null) result = caseNamedElement(behavior);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -282,6 +290,21 @@ public class AlmostumlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCompletionEvent(CompletionEvent object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Behavior</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Behavior</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBehavior(Behavior object) {
 		return null;
 	}
 

@@ -80,12 +80,20 @@ public class AlmostumlAdapterFactory extends AdapterFactoryImpl {
 				return createRegionAdapter();
 			}
 			@Override
+			public Adapter caseVertex(Vertex object) {
+				return createVertexAdapter();
+			}
+			@Override
+			public Adapter casePseudostate(Pseudostate object) {
+				return createPseudostateAdapter();
+			}
+			@Override
 			public Adapter caseState(State object) {
 				return createStateAdapter();
 			}
 			@Override
-			public Adapter caseVertex(Vertex object) {
-				return createVertexAdapter();
+			public Adapter caseFinalState(FinalState object) {
+				return createFinalStateAdapter();
 			}
 			@Override
 			public Adapter caseTransition(Transition object) {
@@ -104,12 +112,8 @@ public class AlmostumlAdapterFactory extends AdapterFactoryImpl {
 				return createCompletionEventAdapter();
 			}
 			@Override
-			public Adapter caseFinalState(FinalState object) {
-				return createFinalStateAdapter();
-			}
-			@Override
-			public Adapter casePseudostate(Pseudostate object) {
-				return createPseudostateAdapter();
+			public Adapter caseBehavior(Behavior object) {
+				return createBehaviorAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -254,6 +258,20 @@ public class AlmostumlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCompletionEventAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link statemachines.almostuml.Behavior <em>Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see statemachines.almostuml.Behavior
+	 * @generated
+	 */
+	public Adapter createBehaviorAdapter() {
 		return null;
 	}
 

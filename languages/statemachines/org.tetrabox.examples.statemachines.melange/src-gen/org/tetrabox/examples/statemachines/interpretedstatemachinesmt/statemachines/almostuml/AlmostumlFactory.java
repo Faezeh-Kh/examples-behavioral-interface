@@ -85,6 +85,15 @@ public interface AlmostumlFactory extends EFactory {
 	CompletionEvent createCompletionEvent();
 
 	/**
+	 * Returns a new object of class '<em>Behavior</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Behavior</em>'.
+	 * @generated
+	 */
+	Behavior createBehavior();
+
+	/**
 	 * Returns a new object of class '<em>Final State</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

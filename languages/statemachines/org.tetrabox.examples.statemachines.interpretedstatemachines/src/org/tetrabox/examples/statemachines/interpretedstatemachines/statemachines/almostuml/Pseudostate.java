@@ -2,7 +2,6 @@
  */
 package org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml;
 
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence;
 
 /**
  * <!-- begin-user-doc -->
@@ -49,13 +48,5 @@ public interface Pseudostate extends Vertex {
 	 * @generated
 	 */
 	void setKind(PseudostateKind value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void enter(Transition enteringTransition, EventOccurrence eventOccurrence, Region leastCommonAncestor);
 
 } // Pseudostate

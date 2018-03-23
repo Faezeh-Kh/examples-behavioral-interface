@@ -20,6 +20,16 @@ public class RegionAdapter extends EObjectAdapter<Region> implements statemachin
     adaptersFactory = org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.StateMachinesMTAdaptersFactory.getInstance();
   }
   
+  @Override
+  public String getName() {
+    return adaptee.getName();
+  }
+  
+  @Override
+  public void setName(final String o) {
+    adaptee.setName(o);
+  }
+  
   private EList<Vertex> vertice_;
   
   @Override
@@ -62,6 +72,8 @@ public class RegionAdapter extends EObjectAdapter<Region> implements statemachin
     else adaptee.setState(null);
   }
   
+  protected final static String NAME_EDEFAULT = null;
+  
   @Override
   public EClass eClass() {
     return statemachines.almostuml.AlmostumlPackage.eINSTANCE.getRegion();
@@ -70,6 +82,8 @@ public class RegionAdapter extends EObjectAdapter<Region> implements statemachin
   @Override
   public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
     switch (featureID) {
+    	case statemachines.almostuml.AlmostumlPackage.REGION__NAME:
+    		return getName();
     	case statemachines.almostuml.AlmostumlPackage.REGION__VERTICE:
     		return getVertice();
     	case statemachines.almostuml.AlmostumlPackage.REGION__TRANSITIONS:
@@ -86,6 +100,8 @@ public class RegionAdapter extends EObjectAdapter<Region> implements statemachin
   @Override
   public boolean eIsSet(final int featureID) {
     switch (featureID) {
+    	case statemachines.almostuml.AlmostumlPackage.REGION__NAME:
+    		return getName() != NAME_EDEFAULT;
     	case statemachines.almostuml.AlmostumlPackage.REGION__VERTICE:
     		return getVertice() != null && !getVertice().isEmpty();
     	case statemachines.almostuml.AlmostumlPackage.REGION__TRANSITIONS:
@@ -102,6 +118,11 @@ public class RegionAdapter extends EObjectAdapter<Region> implements statemachin
   @Override
   public void eSet(final int featureID, final Object newValue) {
     switch (featureID) {
+    	case statemachines.almostuml.AlmostumlPackage.REGION__NAME:
+    		setName(
+    		(java.lang.String)
+    		 newValue);
+    		return;
     	case statemachines.almostuml.AlmostumlPackage.REGION__VERTICE:
     		getVertice().clear();
     		getVertice().addAll((Collection) newValue);

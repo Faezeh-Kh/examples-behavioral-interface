@@ -3,7 +3,6 @@
 package org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -141,16 +140,6 @@ public interface StatemachinesPackage extends EPackage {
 	 */
 	int EVENT_OCCURRENCE_FEATURE_COUNT = 0;
 
-	/**
-	 * The meta object id for the '<em>Iterable</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.lang.Iterable
-	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StatemachinesPackageImpl#getIterable()
-	 * @generated
-	 */
-	int ITERABLE = 3;
-
 
 	/**
 	 * Returns the meta object for class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CustomSystem <em>Custom System</em>}'.
@@ -203,17 +192,6 @@ public interface StatemachinesPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEventOccurrence();
-
-	/**
-	 * Returns the meta object for data type '{@link java.lang.Iterable <em>Iterable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Iterable</em>'.
-	 * @see java.lang.Iterable
-	 * @model instanceClass="java.lang.Iterable"
-	 * @generated
-	 */
-	EDataType getIterable();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -282,16 +260,6 @@ public interface StatemachinesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass EVENT_OCCURRENCE = eINSTANCE.getEventOccurrence();
-
-		/**
-		 * The meta object literal for the '<em>Iterable</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.lang.Iterable
-		 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StatemachinesPackageImpl#getIterable()
-		 * @generated
-		 */
-		EDataType ITERABLE = eINSTANCE.getIterable();
 
 	}
 

@@ -40,6 +40,24 @@ public interface AlmostumlFactory extends EFactory {
 	Region createRegion();
 
 	/**
+	 * Returns a new object of class '<em>Vertex</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Vertex</em>'.
+	 * @generated
+	 */
+	Vertex createVertex();
+
+	/**
+	 * Returns a new object of class '<em>Pseudostate</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Pseudostate</em>'.
+	 * @generated
+	 */
+	Pseudostate createPseudostate();
+
+	/**
 	 * Returns a new object of class '<em>State</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -49,13 +67,13 @@ public interface AlmostumlFactory extends EFactory {
 	State createState();
 
 	/**
-	 * Returns a new object of class '<em>Vertex</em>'.
+	 * Returns a new object of class '<em>Final State</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Vertex</em>'.
+	 * @return a new object of class '<em>Final State</em>'.
 	 * @generated
 	 */
-	Vertex createVertex();
+	FinalState createFinalState();
 
 	/**
 	 * Returns a new object of class '<em>Transition</em>'.
@@ -85,22 +103,13 @@ public interface AlmostumlFactory extends EFactory {
 	CompletionEvent createCompletionEvent();
 
 	/**
-	 * Returns a new object of class '<em>Final State</em>'.
+	 * Returns a new object of class '<em>Behavior</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Final State</em>'.
+	 * @return a new object of class '<em>Behavior</em>'.
 	 * @generated
 	 */
-	FinalState createFinalState();
-
-	/**
-	 * Returns a new object of class '<em>Pseudostate</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Pseudostate</em>'.
-	 * @generated
-	 */
-	Pseudostate createPseudostate();
+	Behavior createBehavior();
 
 	/**
 	 * Returns the package supported by this factory.

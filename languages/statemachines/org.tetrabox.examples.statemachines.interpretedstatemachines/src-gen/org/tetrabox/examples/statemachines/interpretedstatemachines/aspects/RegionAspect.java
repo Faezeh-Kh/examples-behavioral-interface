@@ -3,7 +3,6 @@ package org.tetrabox.examples.statemachines.interpretedstatemachines.aspects;
 import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
-import fr.inria.diverse.k3.al.annotationprocessor.Step;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -25,67 +24,41 @@ import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachine
 @Aspect(className = Region.class)
 @SuppressWarnings("all")
 public class RegionAspect {
-  @Step
-  public static void enter(final Region _self, final Transition enteringTransition, final EventOccurrence eventOccurrence) {
-	final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectContext
-			.getSelf(_self);
-	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
-		@Override
-		public void execute() {
-			_privk3_enter(_self_, _self, enteringTransition, eventOccurrence);
-		}
-	};
-	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager manager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry
-			.getInstance().findStepManager(_self);
-	if (manager != null) {
-		manager.executeStep(_self, command, "Region", "enter");
-	} else {
-		command.execute();
-	}
-	;
-	;
-}
+  protected static void enter(final Region _self, final Transition enteringTransition, final EventOccurrence eventOccurrence) {
+    final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectContext.getSelf(_self);
+    _privk3_enter(_self_, _self,enteringTransition,eventOccurrence);;
+  }
   
-  public static void exit(final Region _self, final Transition exitingTransition, final EventOccurrence eventOccurrence) {
-	final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectContext
-			.getSelf(_self);
-	_privk3_exit(_self_, _self, exitingTransition, eventOccurrence);
-	;
-}
+  protected static void exit(final Region _self, final Transition exitingTransition, final EventOccurrence eventOccurrence) {
+    final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectContext.getSelf(_self);
+    _privk3_exit(_self_, _self,exitingTransition,eventOccurrence);;
+  }
   
-  public static void terminate(final Region _self) {
-	final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectContext
-			.getSelf(_self);
-	_privk3_terminate(_self_, _self);
-	;
-}
+  protected static void terminate(final Region _self) {
+    final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectContext.getSelf(_self);
+    _privk3_terminate(_self_, _self);;
+  }
   
-  public static StateMachine getContainingStateMachine(final Region _self) {
-	final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectContext
-			.getSelf(_self);
-	Object result = null;
-	result = _privk3_getContainingStateMachine(_self_, _self);
-	;
-	return (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.StateMachine) result;
-}
+  protected static StateMachine getContainingStateMachine(final Region _self) {
+    final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectContext.getSelf(_self);
+    Object result = null;
+    result = _privk3_getContainingStateMachine(_self_, _self);;
+    return (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.StateMachine)result;
+  }
   
-  public static Iterable<Vertex> getActiveVertice(final Region _self) {
-	final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectContext
-			.getSelf(_self);
-	Object result = null;
-	result = _privk3_getActiveVertice(_self_, _self);
-	;
-	return (java.lang.Iterable) result;
-}
+  protected static Iterable<Vertex> getActiveVertice(final Region _self) {
+    final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectContext.getSelf(_self);
+    Object result = null;
+    result = _privk3_getActiveVertice(_self_, _self);;
+    return (java.lang.Iterable<org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex>)result;
+  }
   
-  public static boolean contains(final Region _self, final Vertex vertex) {
-	final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectContext
-			.getSelf(_self);
-	Object result = null;
-	result = _privk3_contains(_self_, _self, vertex);
-	;
-	return (boolean) result;
-}
+  protected static boolean contains(final Region _self, final Vertex vertex) {
+    final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectContext.getSelf(_self);
+    Object result = null;
+    result = _privk3_contains(_self_, _self,vertex);;
+    return (boolean)result;
+  }
   
   protected static boolean completed(final Region _self) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectContext.getSelf(_self);
@@ -99,26 +72,48 @@ public class RegionAspect {
     _privk3_completed(_self_, _self,completed);;
   }
   
+  public static Vertex currentVertex(final Region _self) {
+	final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectContext
+			.getSelf(_self);
+	Object result = null;
+	result = _privk3_currentVertex(_self_, _self);
+	;
+	return (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex) result;
+}
+  
+  public static void currentVertex(final Region _self, final Vertex currentVertex) {
+	final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectContext
+			.getSelf(_self);
+	_privk3_currentVertex(_self_, _self, currentVertex);
+	;
+}
+  
   protected static void _privk3_enter(final RegionAspectRegionAspectProperties _self_, final Region _self, final Transition enteringTransition, final EventOccurrence eventOccurrence) {
-    final Function1<Pseudostate, Boolean> _function = (Pseudostate it) -> {
-      PseudostateKind _kind = it.getKind();
-      return Boolean.valueOf(Objects.equal(_kind, PseudostateKind.INITIAL));
-    };
-    final Pseudostate initialState = IterableExtensions.<Pseudostate>findFirst(Iterables.<Pseudostate>filter(_self.getVertice(), Pseudostate.class), _function);
-    if ((initialState != null)) {
-      VertexAspect.enter(initialState, enteringTransition, eventOccurrence, null);
-    } else {
-      if (((_self.getState() != null) && StateAspect.hasCompleted(_self.getState()))) {
-        StateAspect.complete(_self.getState());
+    if (((enteringTransition == null) || (!RegionAspect.contains(_self, enteringTransition.getTarget())))) {
+      final Function1<Pseudostate, Boolean> _function = (Pseudostate it) -> {
+        PseudostateKind _kind = it.getKind();
+        return Boolean.valueOf(Objects.equal(_kind, PseudostateKind.INITIAL));
+      };
+      final Pseudostate initialState = IterableExtensions.<Pseudostate>findFirst(Iterables.<Pseudostate>filter(_self.getVertice(), Pseudostate.class), _function);
+      if ((initialState != null)) {
+        VertexAspect.enter(initialState, enteringTransition, eventOccurrence, null);
+      } else {
+        RegionAspect.completed(_self, true);
+        if (((_self.getState() != null) && StateAspect.hasCompleted(_self.getState()))) {
+          StateAspect.complete(_self.getState());
+        }
       }
     }
   }
   
   protected static void _privk3_exit(final RegionAspectRegionAspectProperties _self_, final Region _self, final Transition exitingTransition, final EventOccurrence eventOccurrence) {
-    final Consumer<Vertex> _function = (Vertex it) -> {
+    final Function1<Vertex, Boolean> _function = (Vertex v) -> {
+      return Boolean.valueOf(VertexAspect.isExitable(v, exitingTransition));
+    };
+    final Consumer<Vertex> _function_1 = (Vertex it) -> {
       VertexAspect.exit(it, exitingTransition, eventOccurrence, null);
     };
-    _self.getVertice().forEach(_function);
+    IterableExtensions.<Vertex>filter(_self.getVertice(), _function).forEach(_function_1);
   }
   
   protected static void _privk3_terminate(final RegionAspectRegionAspectProperties _self_, final Region _self) {
@@ -186,6 +181,43 @@ public class RegionAspect {
     }
     if (!setterCalled) {
     	_self_.completed = completed;
+    }
+  }
+  
+  protected static Vertex _privk3_currentVertex(final RegionAspectRegionAspectProperties _self_, final Region _self) {
+    try {
+    	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
+    		if (m.getName().equals("getCurrentVertex") &&
+    			m.getParameterTypes().length == 0) {
+    				Object ret = m.invoke(_self);
+    				if (ret != null) {
+    					return (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex) ret;
+    				} else {
+    					return null;
+    				}
+    		}
+    	}
+    } catch (Exception e) {
+    	// Chut !
+    }
+    return _self_.currentVertex;
+  }
+  
+  protected static void _privk3_currentVertex(final RegionAspectRegionAspectProperties _self_, final Region _self, final Vertex currentVertex) {
+    boolean setterCalled = false;
+    try {
+    	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
+    		if (m.getName().equals("setCurrentVertex")
+    				&& m.getParameterTypes().length == 1) {
+    			m.invoke(_self, currentVertex);
+    			setterCalled = true;
+    		}
+    	}
+    } catch (Exception e) {
+    	// Chut !
+    }
+    if (!setterCalled) {
+    	_self_.currentVertex = currentVertex;
     }
   }
 }

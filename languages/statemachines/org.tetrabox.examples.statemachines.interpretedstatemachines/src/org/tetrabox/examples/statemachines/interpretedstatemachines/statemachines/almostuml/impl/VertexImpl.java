@@ -18,8 +18,6 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence;
-
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.AlmostumlPackage;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Region;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Transition;
@@ -143,39 +141,6 @@ public class VertexImpl extends NamedElementImpl implements Vertex {
 			incomingTransitions = new EObjectWithInverseResolvingEList<Transition>(Transition.class, this, AlmostumlPackage.VERTEX__INCOMING_TRANSITIONS, AlmostumlPackage.TRANSITION__TARGET);
 		}
 		return incomingTransitions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void enter(Transition enteringTransition, EventOccurrence eventOccurrence, Region leastCommonAncestor) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void exit(Transition exitingTransition, EventOccurrence eventOccurrence, Region leastCommonAncestor) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void terminate() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

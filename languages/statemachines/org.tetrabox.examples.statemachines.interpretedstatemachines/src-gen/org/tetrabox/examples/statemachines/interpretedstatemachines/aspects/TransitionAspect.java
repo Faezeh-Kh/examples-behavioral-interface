@@ -5,12 +5,14 @@ import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.Step;
 import java.util.ArrayList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspect;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectProperties;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspect;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Behavior;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Region;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.State;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.StateMachine;
@@ -81,10 +83,17 @@ public class TransitionAspect {
   
   protected static void _privk3_fire(final TransitionAspectTransitionAspectProperties _self_, final Transition _self, final EventOccurrence eventOccurrence) {
     TransitionAspect.exitSource(_self, eventOccurrence);
+    Behavior _effect = _self.getEffect();
+    boolean _tripleNotEquals = (_effect != null);
+    if (_tripleNotEquals) {
+      String _name = _self.getName();
+      String _plus = (_name + "(");
+      String _name_1 = _self.getEffect().getName();
+      String _plus_1 = (_plus + _name_1);
+      String _plus_2 = (_plus_1 + ")");
+      InputOutput.<String>println(_plus_2);
+    }
     TransitionAspect.traversed(_self, true);
-    String _name = _self.getName();
-    String _plus = ("Traversed " + _name);
-    InputOutput.<String>println(_plus);
     TransitionAspect.enterTarget(_self, eventOccurrence);
   }
   
@@ -109,19 +118,19 @@ public class TransitionAspect {
           boolean _isExitable_1 = VertexAspect.isExitable(_self.getSource(), _self);
           if (_isExitable_1) {
             final State containingState = TransitionAspect.getContainingState(_self);
-            final ArrayList<Vertex> hierarchy = new ArrayList<Vertex>();
-            EObject currentElement = _self.getTarget();
-            while ((!Objects.equal(currentElement, containingState))) {
-              {
-                currentElement = currentElement.eContainer();
-                if ((currentElement instanceof Vertex)) {
-                  hierarchy.add(((Vertex)currentElement));
-                }
+            final Function1<Region, Boolean> _function = (Region r) -> {
+              Region _container = _self.getTarget().getContainer();
+              return Boolean.valueOf(Objects.equal(r, _container));
+            };
+            final Region containingRegion = IterableExtensions.<Region>findFirst(containingState.getRegions(), _function);
+            if ((containingRegion != null)) {
+              final Function1<Vertex, Boolean> _function_1 = (Vertex it) -> {
+                return Boolean.valueOf(VertexAspect.isActive(it));
+              };
+              final Vertex vertexToExit = IterableExtensions.<Vertex>findFirst(containingRegion.getVertice(), _function_1);
+              if ((vertexToExit != null)) {
+                VertexAspect.exit(vertexToExit, _self, eventOccurrence, null);
               }
-            }
-            final Vertex vertexToExit = IterableExtensions.<Vertex>last(hierarchy);
-            if ((vertexToExit != null)) {
-              VertexAspect.exit(vertexToExit, _self, eventOccurrence, null);
             }
             Vertex _source = _self.getSource();
             boolean _notEquals = (!Objects.equal(_source, containingState));
@@ -212,12 +221,14 @@ public class TransitionAspect {
       }
     }
     Region result = null;
-    for (int i = 0; (((i < sourceAncestors.size()) && (i < targetAncestors.size())) && (result == null)); i++) {
-      Region _get = sourceAncestors.get(i);
-      Region _get_1 = targetAncestors.get(i);
-      boolean _equals = Objects.equal(_get, _get_1);
-      if (_equals) {
-        result = sourceAncestors.get(i);
+    for (int i = 0; ((i < sourceAncestors.size()) && (result == null)); i++) {
+      for (int j = 0; ((j < targetAncestors.size()) && (result == null)); j++) {
+        Region _get = sourceAncestors.get(i);
+        Region _get_1 = targetAncestors.get(j);
+        boolean _equals = Objects.equal(_get, _get_1);
+        if (_equals) {
+          result = sourceAncestors.get(i);
+        }
       }
     }
     return result;

@@ -2,13 +2,7 @@
  */
 package org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml;
 
-import java.lang.Iterable;
-
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
-
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,13 +17,14 @@ import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachine
  *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Region#getTransitions <em>Transitions</em>}</li>
  *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Region#getStateMachine <em>State Machine</em>}</li>
  *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Region#getState <em>State</em>}</li>
+ *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Region#getCurrentVertex <em>Current Vertex</em>}</li>
  * </ul>
  *
  * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.AlmostumlPackage#getRegion()
  * @model
  * @generated
  */
-public interface Region extends EObject {
+public interface Region extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Vertice</b></em>' containment reference list.
 	 * The list contents are of type {@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex}.
@@ -123,51 +118,29 @@ public interface Region extends EObject {
 	void setState(State value);
 
 	/**
+	 * Returns the value of the '<em><b>Current Vertex</b></em>' reference.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Current Vertex</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Current Vertex</em>' reference.
+	 * @see #setCurrentVertex(Vertex)
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.AlmostumlPackage#getRegion_CurrentVertex()
 	 * @model
 	 * @generated
 	 */
-	void enter(Transition enteringTransition, EventOccurrence eventOccurrence);
+	Vertex getCurrentVertex();
 
 	/**
+	 * Sets the value of the '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Region#getCurrentVertex <em>Current Vertex</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @param value the new value of the '<em>Current Vertex</em>' reference.
+	 * @see #getCurrentVertex()
 	 * @generated
 	 */
-	void exit(Transition exitingTransition, EventOccurrence eventOccurrence);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void terminate();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 * @generated
-	 */
-	StateMachine getContainingStateMachine();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" dataType="org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Iterable"
-	 * @generated
-	 */
-	Iterable getActiveVertice();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	boolean contains(Vertex vertex);
+	void setCurrentVertex(Vertex value);
 
 } // Region

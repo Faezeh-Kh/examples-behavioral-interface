@@ -55,13 +55,6 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 	private EClass eventOccurrenceEClass = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EDataType iterableEDataType = null;
-
-	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -111,18 +104,18 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 		EcorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		AlmostumlPackageImpl theAlmostumlPackage = (AlmostumlPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AlmostumlPackage.eNS_URI) instanceof AlmostumlPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AlmostumlPackage.eNS_URI) : AlmostumlPackage.eINSTANCE);
 		StatemachinesexecutiondataPackageImpl theStatemachinesexecutiondataPackage = (StatemachinesexecutiondataPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StatemachinesexecutiondataPackage.eNS_URI) instanceof StatemachinesexecutiondataPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StatemachinesexecutiondataPackage.eNS_URI) : StatemachinesexecutiondataPackage.eINSTANCE);
+		AlmostumlPackageImpl theAlmostumlPackage = (AlmostumlPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AlmostumlPackage.eNS_URI) instanceof AlmostumlPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AlmostumlPackage.eNS_URI) : AlmostumlPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theStatemachinesPackage.createPackageContents();
-		theAlmostumlPackage.createPackageContents();
 		theStatemachinesexecutiondataPackage.createPackageContents();
+		theAlmostumlPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theStatemachinesPackage.initializePackageContents();
-		theAlmostumlPackage.initializePackageContents();
 		theStatemachinesexecutiondataPackage.initializePackageContents();
+		theAlmostumlPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theStatemachinesPackage.freeze();
@@ -183,15 +176,6 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EDataType getIterable() {
-		return iterableEDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public StatemachinesFactory getStatemachinesFactory() {
 		return (StatemachinesFactory)getEFactoryInstance();
 	}
@@ -222,9 +206,6 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 		customEventEClass = createEClass(CUSTOM_EVENT);
 
 		eventOccurrenceEClass = createEClass(EVENT_OCCURRENCE);
-
-		// Create data types
-		iterableEDataType = createEDataType(ITERABLE);
 	}
 
 	/**
@@ -272,9 +253,6 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 
 		initEClass(eventOccurrenceEClass, EventOccurrence.class, "EventOccurrence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		// Initialize data types
-		initEDataType(iterableEDataType, Iterable.class, "Iterable", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-
 		// Create resource
 		createResource(eNS_URI);
 
@@ -293,11 +271,6 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 		String source = "aspect";	
 		addAnnotation
 		  (eventOccurrenceEClass, 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (iterableEDataType, 
 		   source, 
 		   new String[] {
 		   });

@@ -2,10 +2,7 @@
  */
 package org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl;
 
-import java.lang.Iterable;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -52,13 +49,6 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 	 * @generated
 	 */
 	private EClass eventOccurrenceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EDataType iterableEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -179,15 +169,6 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EDataType getIterable() {
-		return iterableEDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public StatemachinesFactory getStatemachinesFactory() {
 		return (StatemachinesFactory)getEFactoryInstance();
 	}
@@ -218,9 +199,6 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 		customEventEClass = createEClass(CUSTOM_EVENT);
 
 		eventOccurrenceEClass = createEClass(EVENT_OCCURRENCE);
-
-		// Create data types
-		iterableEDataType = createEDataType(ITERABLE);
 	}
 
 	/**
@@ -268,9 +246,6 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 
 		initEClass(eventOccurrenceEClass, EventOccurrence.class, "EventOccurrence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		// Initialize data types
-		initEDataType(iterableEDataType, Iterable.class, "Iterable", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-
 		// Create resource
 		createResource(eNS_URI);
 
@@ -289,11 +264,6 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 		String source = "aspect";	
 		addAnnotation
 		  (eventOccurrenceEClass, 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (iterableEDataType, 
 		   source, 
 		   new String[] {
 		   });

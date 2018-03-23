@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -41,7 +40,7 @@ import statemachines.almostuml.Vertex;
  *
  * @generated
  */
-public class RegionImpl extends MinimalEObjectImpl.Container implements Region {
+public class RegionImpl extends NamedElementImpl implements Region {
 	/**
 	 * The cached value of the '{@link #getVertice() <em>Vertice</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

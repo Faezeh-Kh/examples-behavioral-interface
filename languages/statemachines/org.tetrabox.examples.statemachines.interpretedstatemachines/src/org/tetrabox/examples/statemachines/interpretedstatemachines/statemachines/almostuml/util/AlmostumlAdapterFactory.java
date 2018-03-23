@@ -80,12 +80,20 @@ public class AlmostumlAdapterFactory extends AdapterFactoryImpl {
 				return createRegionAdapter();
 			}
 			@Override
+			public Adapter caseVertex(Vertex object) {
+				return createVertexAdapter();
+			}
+			@Override
+			public Adapter casePseudostate(Pseudostate object) {
+				return createPseudostateAdapter();
+			}
+			@Override
 			public Adapter caseState(State object) {
 				return createStateAdapter();
 			}
 			@Override
-			public Adapter caseVertex(Vertex object) {
-				return createVertexAdapter();
+			public Adapter caseFinalState(FinalState object) {
+				return createFinalStateAdapter();
 			}
 			@Override
 			public Adapter caseTransition(Transition object) {
@@ -104,12 +112,8 @@ public class AlmostumlAdapterFactory extends AdapterFactoryImpl {
 				return createCompletionEventAdapter();
 			}
 			@Override
-			public Adapter caseFinalState(FinalState object) {
-				return createFinalStateAdapter();
-			}
-			@Override
-			public Adapter casePseudostate(Pseudostate object) {
-				return createPseudostateAdapter();
+			public Adapter caseBehavior(Behavior object) {
+				return createBehaviorAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -174,6 +178,34 @@ public class AlmostumlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex <em>Vertex</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex
+	 * @generated
+	 */
+	public Adapter createVertexAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate <em>Pseudostate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate
+	 * @generated
+	 */
+	public Adapter createPseudostateAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.State <em>State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -188,16 +220,16 @@ public class AlmostumlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex <em>Vertex</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.FinalState <em>Final State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.FinalState
 	 * @generated
 	 */
-	public Adapter createVertexAdapter() {
+	public Adapter createFinalStateAdapter() {
 		return null;
 	}
 
@@ -258,30 +290,16 @@ public class AlmostumlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.FinalState <em>Final State</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Behavior <em>Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.FinalState
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Behavior
 	 * @generated
 	 */
-	public Adapter createFinalStateAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate <em>Pseudostate</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate
-	 * @generated
-	 */
-	public Adapter createPseudostateAdapter() {
+	public Adapter createBehaviorAdapter() {
 		return null;
 	}
 

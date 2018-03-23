@@ -20,6 +20,7 @@ import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachi
  *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.Transition#getTriggers <em>Triggers</em>}</li>
  *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.Transition#getContainer <em>Container</em>}</li>
  *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.Transition#getKind <em>Kind</em>}</li>
+ *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.Transition#getEffect <em>Effect</em>}</li>
  * </ul>
  *
  * @see org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.AlmostumlPackage#getTransition()
@@ -155,6 +156,32 @@ public interface Transition extends NamedElement {
 	 * @generated
 	 */
 	void setKind(TransitionKind value);
+
+	/**
+	 * Returns the value of the '<em><b>Effect</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Effect</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Effect</em>' containment reference.
+	 * @see #setEffect(Behavior)
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.AlmostumlPackage#getTransition_Effect()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Behavior getEffect();
+
+	/**
+	 * Sets the value of the '{@link org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.Transition#getEffect <em>Effect</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Effect</em>' containment reference.
+	 * @see #getEffect()
+	 * @generated
+	 */
+	void setEffect(Behavior value);
 
 	/**
 	 * <!-- begin-user-doc -->

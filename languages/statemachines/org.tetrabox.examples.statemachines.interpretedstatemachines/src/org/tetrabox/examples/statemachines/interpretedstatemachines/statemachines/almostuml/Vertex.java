@@ -4,8 +4,6 @@ package org.tetrabox.examples.statemachines.interpretedstatemachines.statemachin
 
 import org.eclipse.emf.common.util.EList;
 
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Vertex</b></em>'.
@@ -88,29 +86,5 @@ public interface Vertex extends NamedElement {
 	 * @generated
 	 */
 	EList<Transition> getIncomingTransitions();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void enter(Transition enteringTransition, EventOccurrence eventOccurrence, Region leastCommonAncestor);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void exit(Transition exitingTransition, EventOccurrence eventOccurrence, Region leastCommonAncestor);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void terminate();
 
 } // Vertex

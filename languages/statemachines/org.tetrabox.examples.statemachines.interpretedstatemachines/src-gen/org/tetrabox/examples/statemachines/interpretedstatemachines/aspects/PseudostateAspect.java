@@ -21,12 +21,14 @@ import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachine
 @SuppressWarnings("all")
 public class PseudostateAspect extends VertexAspect {
   @OverrideAspectMethod
-  public static void enter(final Pseudostate _self, final Transition enteringTransition, final EventOccurrence eventOccurrence, final Region leastCommonAncestor) {
-	final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.PseudostateAspectPseudostateAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.PseudostateAspectPseudostateAspectContext
-			.getSelf(_self);
-	_privk3_enter(_self_, _self, enteringTransition, eventOccurrence, leastCommonAncestor);
-	;
-}
+  protected static void enter(final Pseudostate _self, final Transition enteringTransition, final EventOccurrence eventOccurrence, final Region leastCommonAncestor) {
+    final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.PseudostateAspectPseudostateAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.PseudostateAspectPseudostateAspectContext.getSelf(_self);
+     if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate){
+    					org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.PseudostateAspect._privk3_enter(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate)_self,enteringTransition,eventOccurrence,leastCommonAncestor);
+    } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex){
+    					org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspect.enter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex)_self,enteringTransition,eventOccurrence,leastCommonAncestor);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+  }
   
   @OverrideAspectMethod
   protected static boolean isEnterable(final Pseudostate _self, final Transition enteringTransition) {
@@ -62,6 +64,8 @@ public class PseudostateAspect extends VertexAspect {
     if (_kind != null) {
       switch (_kind) {
         case INITIAL:
+          Region _container = _self.getContainer();
+          RegionAspect.currentVertex(_container, _self);
           int _size = _self.getOutgoingTransitions().size();
           boolean _equals = (_size == 1);
           if (_equals) {
@@ -69,6 +73,7 @@ public class PseudostateAspect extends VertexAspect {
           }
           break;
         case FORK:
+          PseudostateAspect.super_enter(_self, enteringTransition, eventOccurrence, leastCommonAncestor);
           final Consumer<Transition> _function = (Transition it) -> {
             TransitionAspect.fire(it, eventOccurrence);
           };

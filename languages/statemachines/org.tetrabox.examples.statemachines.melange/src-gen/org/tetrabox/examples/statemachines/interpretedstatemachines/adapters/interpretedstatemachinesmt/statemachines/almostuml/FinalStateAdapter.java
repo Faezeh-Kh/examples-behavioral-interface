@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.InterpretedStateMachinesMTAdaptersFactory;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.FinalState;
 import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.Behavior;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.Pseudostate;
 import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.Region;
 import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.Transition;
 import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.Trigger;
@@ -114,6 +115,15 @@ public class FinalStateAdapter extends EObjectAdapter<FinalState> implements org
     return deferrableTriggers_;
   }
   
+  private EList<Pseudostate> connectionPoint_;
+  
+  @Override
+  public EList<Pseudostate> getConnectionPoint() {
+    if (connectionPoint_ == null)
+    	connectionPoint_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getConnectionPoint(), adaptersFactory, eResource);
+    return connectionPoint_;
+  }
+  
   @Override
   public boolean isIsDoActivityCompleted() {
     return org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect.isDoActivityCompleted(adaptee);
@@ -181,6 +191,8 @@ public class FinalStateAdapter extends EObjectAdapter<FinalState> implements org
     		return getExit();
     	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.AlmostumlPackage.FINAL_STATE__DEFERRABLE_TRIGGERS:
     		return getDeferrableTriggers();
+    	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.AlmostumlPackage.FINAL_STATE__CONNECTION_POINT:
+    		return getConnectionPoint();
     	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.AlmostumlPackage.FINAL_STATE__IS_ENTRY_COMPLETED:
     		return isIsEntryCompleted() ? Boolean.TRUE : Boolean.FALSE;
     	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.AlmostumlPackage.FINAL_STATE__IS_DO_ACTIVITY_COMPLETED:
@@ -213,6 +225,8 @@ public class FinalStateAdapter extends EObjectAdapter<FinalState> implements org
     		return getExit() != null;
     	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.AlmostumlPackage.FINAL_STATE__DEFERRABLE_TRIGGERS:
     		return getDeferrableTriggers() != null && !getDeferrableTriggers().isEmpty();
+    	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.AlmostumlPackage.FINAL_STATE__CONNECTION_POINT:
+    		return getConnectionPoint() != null && !getConnectionPoint().isEmpty();
     	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.AlmostumlPackage.FINAL_STATE__IS_ENTRY_COMPLETED:
     		return isIsEntryCompleted() != IS_ENTRY_COMPLETED_EDEFAULT;
     	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.AlmostumlPackage.FINAL_STATE__IS_DO_ACTIVITY_COMPLETED:
@@ -267,6 +281,10 @@ public class FinalStateAdapter extends EObjectAdapter<FinalState> implements org
     	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.AlmostumlPackage.FINAL_STATE__DEFERRABLE_TRIGGERS:
     		getDeferrableTriggers().clear();
     		getDeferrableTriggers().addAll((Collection) newValue);
+    		return;
+    	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.AlmostumlPackage.FINAL_STATE__CONNECTION_POINT:
+    		getConnectionPoint().clear();
+    		getConnectionPoint().addAll((Collection) newValue);
     		return;
     	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.AlmostumlPackage.FINAL_STATE__IS_ENTRY_COMPLETED:
     		setIsEntryCompleted(((java.lang.Boolean) newValue).booleanValue());

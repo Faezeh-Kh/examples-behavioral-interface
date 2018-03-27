@@ -16,11 +16,6 @@ public class InterpretedStateMachinesAdapter extends ResourceAdapter implements 
   }
   
   @Override
-  public StatemachinesexecutiondataFactory getStatemachinesexecutiondataFactory() {
-    return new org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachinesexecutiondata.StatemachinesexecutiondataFactoryAdapter();
-  }
-  
-  @Override
   public StatemachinesFactory getStatemachinesFactory() {
     return new org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.StatemachinesFactoryAdapter();
   }
@@ -31,11 +26,16 @@ public class InterpretedStateMachinesAdapter extends ResourceAdapter implements 
   }
   
   @Override
+  public StatemachinesexecutiondataFactory getStatemachinesexecutiondataFactory() {
+    return new org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachinesexecutiondata.StatemachinesexecutiondataFactoryAdapter();
+  }
+  
+  @Override
   public Set getFactories() {
     java.util.Set<org.eclipse.emf.ecore.EFactory> res = new java.util.HashSet<org.eclipse.emf.ecore.EFactory>();
-    res.add(getStatemachinesexecutiondataFactory());
     res.add(getStatemachinesFactory());
     res.add(getAlmostumlFactory());
+    res.add(getStatemachinesexecutiondataFactory());
     return res;
   }
   

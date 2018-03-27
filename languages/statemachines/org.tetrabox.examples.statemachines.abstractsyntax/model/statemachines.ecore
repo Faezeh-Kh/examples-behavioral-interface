@@ -27,6 +27,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Pseudostate" eSuperTypes="//almostuml/Vertex">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1" eType="//almostuml/PseudostateKind"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="//almostuml/State" eOpposite="//almostuml/State/connectionPoint"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="//almostuml/Vertex">
       <eStructuralFeatures xsi:type="ecore:EReference" name="regions" upperBound="-1" eType="//almostuml/Region" containment="true" eOpposite="//almostuml/Region/state"/>
@@ -34,6 +35,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="doActivity" eType="//almostuml/Behavior" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="exit" eType="//almostuml/Behavior" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="deferrableTriggers" upperBound="-1" eType="//almostuml/Trigger" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="connectionPoint" upperBound="-1" eType="//almostuml/Pseudostate" containment="true" eOpposite="//almostuml/Pseudostate/state"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FinalState" eSuperTypes="//almostuml/State"/>
     <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="//almostuml/NamedElement">
@@ -57,6 +59,8 @@
       <eLiterals name="join" value="1"/>
       <eLiterals name="fork" value="2"/>
       <eLiterals name="terminate" value="3"/>
+      <eLiterals name="entrypoint" value="4"/>
+      <eLiterals name="exitpoint" value="5"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="TransitionKind">
       <eLiterals name="internal"/>

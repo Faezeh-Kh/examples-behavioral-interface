@@ -359,6 +359,15 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getPseudostate_State() {
+		return (EReference)pseudostateEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getState() {
 		return stateEClass;
 	}
@@ -413,8 +422,8 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getState_IsEntryCompleted() {
-		return (EAttribute)stateEClass.getEStructuralFeatures().get(5);
+	public EReference getState_ConnectionPoint() {
+		return (EReference)stateEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -422,7 +431,7 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getState_IsDoActivityCompleted() {
+	public EAttribute getState_IsEntryCompleted() {
 		return (EAttribute)stateEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -431,8 +440,17 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getState_IsExitCompleted() {
+	public EAttribute getState_IsDoActivityCompleted() {
 		return (EAttribute)stateEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getState_IsExitCompleted() {
+		return (EAttribute)stateEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -627,6 +645,7 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 
 		pseudostateEClass = createEClass(PSEUDOSTATE);
 		createEAttribute(pseudostateEClass, PSEUDOSTATE__KIND);
+		createEReference(pseudostateEClass, PSEUDOSTATE__STATE);
 
 		stateEClass = createEClass(STATE);
 		createEReference(stateEClass, STATE__REGIONS);
@@ -634,6 +653,7 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 		createEReference(stateEClass, STATE__DO_ACTIVITY);
 		createEReference(stateEClass, STATE__EXIT);
 		createEReference(stateEClass, STATE__DEFERRABLE_TRIGGERS);
+		createEReference(stateEClass, STATE__CONNECTION_POINT);
 		createEAttribute(stateEClass, STATE__IS_ENTRY_COMPLETED);
 		createEAttribute(stateEClass, STATE__IS_DO_ACTIVITY_COMPLETED);
 		createEAttribute(stateEClass, STATE__IS_EXIT_COMPLETED);
@@ -732,6 +752,7 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 
 		initEClass(pseudostateEClass, Pseudostate.class, "Pseudostate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPseudostate_Kind(), this.getPseudostateKind(), "kind", null, 1, 1, Pseudostate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPseudostate_State(), this.getState(), this.getState_ConnectionPoint(), "state", null, 0, 1, Pseudostate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getState_Regions(), this.getRegion(), this.getRegion_State(), "regions", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -739,6 +760,7 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 		initEReference(getState_DoActivity(), this.getBehavior(), null, "doActivity", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getState_Exit(), this.getBehavior(), null, "exit", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getState_DeferrableTriggers(), this.getTrigger(), null, "deferrableTriggers", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getState_ConnectionPoint(), this.getPseudostate(), this.getPseudostate_State(), "connectionPoint", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getState_IsEntryCompleted(), ecorePackage.getEBoolean(), "isEntryCompleted", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getState_IsDoActivityCompleted(), ecorePackage.getEBoolean(), "isDoActivityCompleted", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getState_IsExitCompleted(), ecorePackage.getEBoolean(), "isExitCompleted", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -772,6 +794,8 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 		addEEnumLiteral(pseudostateKindEEnum, PseudostateKind.JOIN);
 		addEEnumLiteral(pseudostateKindEEnum, PseudostateKind.FORK);
 		addEEnumLiteral(pseudostateKindEEnum, PseudostateKind.TERMINATE);
+		addEEnumLiteral(pseudostateKindEEnum, PseudostateKind.ENTRYPOINT);
+		addEEnumLiteral(pseudostateKindEEnum, PseudostateKind.EXITPOINT);
 
 		initEEnum(transitionKindEEnum, TransitionKind.class, "TransitionKind");
 		addEEnumLiteral(transitionKindEEnum, TransitionKind.INTERNAL);

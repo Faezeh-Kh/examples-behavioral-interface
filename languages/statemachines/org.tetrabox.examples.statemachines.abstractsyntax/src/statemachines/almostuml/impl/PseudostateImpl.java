@@ -3,11 +3,15 @@
 package statemachines.almostuml.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import statemachines.almostuml.AlmostumlPackage;
 import statemachines.almostuml.Pseudostate;
 import statemachines.almostuml.PseudostateKind;
+import statemachines.almostuml.State;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,6 +22,7 @@ import statemachines.almostuml.PseudostateKind;
  * </p>
  * <ul>
  *   <li>{@link statemachines.almostuml.impl.PseudostateImpl#getKind <em>Kind</em>}</li>
+ *   <li>{@link statemachines.almostuml.impl.PseudostateImpl#getState <em>State</em>}</li>
  * </ul>
  *
  * @generated
@@ -88,11 +93,98 @@ public class PseudostateImpl extends VertexImpl implements Pseudostate {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public State getState() {
+		if (eContainerFeatureID() != AlmostumlPackage.PSEUDOSTATE__STATE) return null;
+		return (State)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetState(State newState, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newState, AlmostumlPackage.PSEUDOSTATE__STATE, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setState(State newState) {
+		if (newState != eInternalContainer() || (eContainerFeatureID() != AlmostumlPackage.PSEUDOSTATE__STATE && newState != null)) {
+			if (EcoreUtil.isAncestor(this, newState))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newState != null)
+				msgs = ((InternalEObject)newState).eInverseAdd(this, AlmostumlPackage.STATE__CONNECTION_POINT, State.class, msgs);
+			msgs = basicSetState(newState, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AlmostumlPackage.PSEUDOSTATE__STATE, newState, newState));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case AlmostumlPackage.PSEUDOSTATE__STATE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetState((State)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case AlmostumlPackage.PSEUDOSTATE__STATE:
+				return basicSetState(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case AlmostumlPackage.PSEUDOSTATE__STATE:
+				return eInternalContainer().eInverseRemove(this, AlmostumlPackage.STATE__CONNECTION_POINT, State.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case AlmostumlPackage.PSEUDOSTATE__KIND:
 				return getKind();
+			case AlmostumlPackage.PSEUDOSTATE__STATE:
+				return getState();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -107,6 +199,9 @@ public class PseudostateImpl extends VertexImpl implements Pseudostate {
 		switch (featureID) {
 			case AlmostumlPackage.PSEUDOSTATE__KIND:
 				setKind((PseudostateKind)newValue);
+				return;
+			case AlmostumlPackage.PSEUDOSTATE__STATE:
+				setState((State)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -123,6 +218,9 @@ public class PseudostateImpl extends VertexImpl implements Pseudostate {
 			case AlmostumlPackage.PSEUDOSTATE__KIND:
 				setKind(KIND_EDEFAULT);
 				return;
+			case AlmostumlPackage.PSEUDOSTATE__STATE:
+				setState((State)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -137,6 +235,8 @@ public class PseudostateImpl extends VertexImpl implements Pseudostate {
 		switch (featureID) {
 			case AlmostumlPackage.PSEUDOSTATE__KIND:
 				return kind != KIND_EDEFAULT;
+			case AlmostumlPackage.PSEUDOSTATE__STATE:
+				return getState() != null;
 		}
 		return super.eIsSet(featureID);
 	}

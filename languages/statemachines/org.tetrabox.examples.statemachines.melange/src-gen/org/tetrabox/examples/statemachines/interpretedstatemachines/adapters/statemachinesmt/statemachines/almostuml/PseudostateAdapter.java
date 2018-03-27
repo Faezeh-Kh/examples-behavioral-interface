@@ -8,6 +8,7 @@ import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.sta
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate;
 import statemachines.almostuml.PseudostateKind;
 import statemachines.almostuml.Region;
+import statemachines.almostuml.State;
 import statemachines.almostuml.Transition;
 
 @SuppressWarnings("all")
@@ -67,6 +68,18 @@ public class PseudostateAdapter extends EObjectAdapter<Pseudostate> implements s
     if (incomingTransitions_ == null)
     	incomingTransitions_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getIncomingTransitions(), adaptersFactory, eResource);
     return incomingTransitions_;
+  }
+  
+  @Override
+  public State getState() {
+    return (State) adaptersFactory.createAdapter(adaptee.getState(), eResource);
+  }
+  
+  @Override
+  public void setState(final State o) {
+    if (o != null)
+    	adaptee.setState(((org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.almostuml.StateAdapter) o).getAdaptee());
+    else adaptee.setState(null);
   }
   
   protected final static String NAME_EDEFAULT = null;

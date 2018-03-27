@@ -8,6 +8,7 @@ import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.int
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate;
 import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.PseudostateKind;
 import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.Region;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.State;
 import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.Transition;
 
 @SuppressWarnings("all")
@@ -69,6 +70,18 @@ public class PseudostateAdapter extends EObjectAdapter<Pseudostate> implements o
     return incomingTransitions_;
   }
   
+  @Override
+  public State getState() {
+    return (State) adaptersFactory.createAdapter(adaptee.getState(), eResource);
+  }
+  
+  @Override
+  public void setState(final State o) {
+    if (o != null)
+    	adaptee.setState(((org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.almostuml.StateAdapter) o).getAdaptee());
+    else adaptee.setState(null);
+  }
+  
   protected final static String NAME_EDEFAULT = null;
   
   protected final static PseudostateKind KIND_EDEFAULT = org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.PseudostateKind.INITIAL;
@@ -91,6 +104,8 @@ public class PseudostateAdapter extends EObjectAdapter<Pseudostate> implements o
     		return getIncomingTransitions();
     	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.AlmostumlPackage.PSEUDOSTATE__KIND:
     		return getKind();
+    	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.AlmostumlPackage.PSEUDOSTATE__STATE:
+    		return getState();
     }
     
     return super.eGet(featureID, resolve, coreType);
@@ -109,6 +124,8 @@ public class PseudostateAdapter extends EObjectAdapter<Pseudostate> implements o
     		return getIncomingTransitions() != null && !getIncomingTransitions().isEmpty();
     	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.AlmostumlPackage.PSEUDOSTATE__KIND:
     		return getKind() != KIND_EDEFAULT;
+    	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.AlmostumlPackage.PSEUDOSTATE__STATE:
+    		return getState() != null;
     }
     
     return super.eIsSet(featureID);
@@ -138,6 +155,11 @@ public class PseudostateAdapter extends EObjectAdapter<Pseudostate> implements o
     	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.AlmostumlPackage.PSEUDOSTATE__KIND:
     		setKind(
     		(org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.PseudostateKind)
+    		 newValue);
+    		return;
+    	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.AlmostumlPackage.PSEUDOSTATE__STATE:
+    		setState(
+    		(org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.State)
     		 newValue);
     		return;
     }

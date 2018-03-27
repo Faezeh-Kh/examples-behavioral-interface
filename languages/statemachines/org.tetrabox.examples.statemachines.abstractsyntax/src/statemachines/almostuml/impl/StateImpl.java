@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import statemachines.almostuml.AlmostumlPackage;
 import statemachines.almostuml.Behavior;
+import statemachines.almostuml.Pseudostate;
 import statemachines.almostuml.Region;
 import statemachines.almostuml.State;
 import statemachines.almostuml.Trigger;
@@ -31,6 +32,7 @@ import statemachines.almostuml.Trigger;
  *   <li>{@link statemachines.almostuml.impl.StateImpl#getDoActivity <em>Do Activity</em>}</li>
  *   <li>{@link statemachines.almostuml.impl.StateImpl#getExit <em>Exit</em>}</li>
  *   <li>{@link statemachines.almostuml.impl.StateImpl#getDeferrableTriggers <em>Deferrable Triggers</em>}</li>
+ *   <li>{@link statemachines.almostuml.impl.StateImpl#getConnectionPoint <em>Connection Point</em>}</li>
  * </ul>
  *
  * @generated
@@ -83,6 +85,16 @@ public class StateImpl extends VertexImpl implements State {
 	 * @ordered
 	 */
 	protected EList<Trigger> deferrableTriggers;
+
+	/**
+	 * The cached value of the '{@link #getConnectionPoint() <em>Connection Point</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConnectionPoint()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Pseudostate> connectionPoint;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -261,12 +273,26 @@ public class StateImpl extends VertexImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Pseudostate> getConnectionPoint() {
+		if (connectionPoint == null) {
+			connectionPoint = new EObjectContainmentWithInverseEList<Pseudostate>(Pseudostate.class, this, AlmostumlPackage.STATE__CONNECTION_POINT, AlmostumlPackage.PSEUDOSTATE__STATE);
+		}
+		return connectionPoint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case AlmostumlPackage.STATE__REGIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRegions()).basicAdd(otherEnd, msgs);
+			case AlmostumlPackage.STATE__CONNECTION_POINT:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConnectionPoint()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -289,6 +315,8 @@ public class StateImpl extends VertexImpl implements State {
 				return basicSetExit(null, msgs);
 			case AlmostumlPackage.STATE__DEFERRABLE_TRIGGERS:
 				return ((InternalEList<?>)getDeferrableTriggers()).basicRemove(otherEnd, msgs);
+			case AlmostumlPackage.STATE__CONNECTION_POINT:
+				return ((InternalEList<?>)getConnectionPoint()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -311,6 +339,8 @@ public class StateImpl extends VertexImpl implements State {
 				return getExit();
 			case AlmostumlPackage.STATE__DEFERRABLE_TRIGGERS:
 				return getDeferrableTriggers();
+			case AlmostumlPackage.STATE__CONNECTION_POINT:
+				return getConnectionPoint();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -341,6 +371,10 @@ public class StateImpl extends VertexImpl implements State {
 				getDeferrableTriggers().clear();
 				getDeferrableTriggers().addAll((Collection<? extends Trigger>)newValue);
 				return;
+			case AlmostumlPackage.STATE__CONNECTION_POINT:
+				getConnectionPoint().clear();
+				getConnectionPoint().addAll((Collection<? extends Pseudostate>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -368,6 +402,9 @@ public class StateImpl extends VertexImpl implements State {
 			case AlmostumlPackage.STATE__DEFERRABLE_TRIGGERS:
 				getDeferrableTriggers().clear();
 				return;
+			case AlmostumlPackage.STATE__CONNECTION_POINT:
+				getConnectionPoint().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -390,6 +427,8 @@ public class StateImpl extends VertexImpl implements State {
 				return exit != null;
 			case AlmostumlPackage.STATE__DEFERRABLE_TRIGGERS:
 				return deferrableTriggers != null && !deferrableTriggers.isEmpty();
+			case AlmostumlPackage.STATE__CONNECTION_POINT:
+				return connectionPoint != null && !connectionPoint.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

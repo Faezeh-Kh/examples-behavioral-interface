@@ -19,10 +19,10 @@ public class VertexAspect {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspectVertexAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspectVertexAspectContext.getSelf(_self);
      if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.FinalState){
     					org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.FimalStateAspect.enter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.FinalState)_self,enteringTransition,eventOccurrence,leastCommonAncestor);
-    } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.State){
-    					org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect.enter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.State)_self,enteringTransition,eventOccurrence,leastCommonAncestor);
     } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate){
     					org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.PseudostateAspect.enter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate)_self,enteringTransition,eventOccurrence,leastCommonAncestor);
+    } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.State){
+    					org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect.enter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.State)_self,enteringTransition,eventOccurrence,leastCommonAncestor);
     } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex){
     					org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspect._privk3_enter(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex)_self,enteringTransition,eventOccurrence,leastCommonAncestor);
     } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
@@ -56,10 +56,10 @@ public class VertexAspect {
   protected static boolean isEnterable(final Vertex _self, final Transition enteringTransition) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspectVertexAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspectVertexAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.State){
-    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect.isEnterable((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.State)_self,enteringTransition);
-    } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate){
+     if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate){
     					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.PseudostateAspect.isEnterable((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate)_self,enteringTransition);
+    } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.State){
+    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect.isEnterable((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.State)_self,enteringTransition);
     } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex){
     					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspect._privk3_isEnterable(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex)_self,enteringTransition);
     } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
@@ -69,10 +69,10 @@ public class VertexAspect {
   protected static boolean isExitable(final Vertex _self, final Transition exitingTransition) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspectVertexAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspectVertexAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.State){
-    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect.isExitable((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.State)_self,exitingTransition);
-    } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate){
+     if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate){
     					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.PseudostateAspect.isExitable((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate)_self,exitingTransition);
+    } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.State){
+    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect.isExitable((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.State)_self,exitingTransition);
     } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex){
     					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspect._privk3_isExitable(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex)_self,exitingTransition);
     } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };

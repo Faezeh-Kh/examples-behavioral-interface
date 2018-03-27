@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore">
-  <ecore:EPackage name="statemachinesexecutiondata" nsURI="http://org.tetrabox.examples.statemachines.interpretedstatemachinesmt/statemachinesexecutiondata/" nsPrefix="statemachinesexecutiondata">
-    <eClassifiers xsi:type="ecore:EClass" name="EventOccurrence">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="event" lowerBound="1" eType="/1/CustomEvent"/>
-    </eClassifiers>
-  </ecore:EPackage>
   <ecore:EPackage name="statemachines" nsURI="http://org.tetrabox.examples.statemachines.interpretedstatemachinesmt/statemachines/" nsPrefix="statemachines">
     <eClassifiers xsi:type="ecore:EClass" name="CustomSystem">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="statemachine" lowerBound="1" eType="/1/almostuml/StateMachine" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1" eType="/1/CustomEvent" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="statemachine" lowerBound="1" eType="/0/almostuml/StateMachine" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1" eType="/0/CustomEvent" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="CustomEvent" eSuperTypes="/1/almostuml/Event"/>
+    <eClassifiers xsi:type="ecore:EClass" name="CustomEvent" eSuperTypes="/0/almostuml/Event"/>
     <eClassifiers xsi:type="ecore:EClass" name="EventOccurrence">
       <eAnnotations source="aspect"/>
     </eClassifiers>
@@ -20,39 +15,41 @@
           <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="StateMachine" eSuperTypes="/1/almostuml/NamedElement">
+      <eClassifiers xsi:type="ecore:EClass" name="StateMachine" eSuperTypes="/0/almostuml/NamedElement">
         <eOperations name="run">
           <eAnnotations source="aspect"/>
         </eOperations>
         <eOperations name="eventOccurrenceReceived">
           <eAnnotations source="aspect"/>
-          <eParameters name="eventType" eType="/1/CustomEvent"/>
+          <eParameters name="eventType" eType="/0/CustomEvent"/>
         </eOperations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="regions" lowerBound="1" upperBound="-1" eType="/1/almostuml/Region" containment="true" eOpposite="/1/almostuml/Region/stateMachine"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="regions" lowerBound="1" upperBound="-1" eType="/0/almostuml/Region" containment="true" eOpposite="/0/almostuml/Region/stateMachine"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Region" eSuperTypes="/1/almostuml/NamedElement">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="vertice" upperBound="-1" eType="/1/almostuml/Vertex" containment="true" eOpposite="/1/almostuml/Vertex/container"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="transitions" upperBound="-1" eType="/1/almostuml/Transition" containment="true" eOpposite="/1/almostuml/Transition/container"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="stateMachine" eType="/1/almostuml/StateMachine" eOpposite="/1/almostuml/StateMachine/regions"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="/1/almostuml/State" eOpposite="/1/almostuml/State/regions"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="currentVertex" unique="false" eType="/1/almostuml/Vertex">
+      <eClassifiers xsi:type="ecore:EClass" name="Region" eSuperTypes="/0/almostuml/NamedElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="vertice" upperBound="-1" eType="/0/almostuml/Vertex" containment="true" eOpposite="/0/almostuml/Vertex/container"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="transitions" upperBound="-1" eType="/0/almostuml/Transition" containment="true" eOpposite="/0/almostuml/Transition/container"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="stateMachine" eType="/0/almostuml/StateMachine" eOpposite="/0/almostuml/StateMachine/regions"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="/0/almostuml/State" eOpposite="/0/almostuml/State/regions"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="currentVertex" unique="false" eType="/0/almostuml/Vertex">
           <eAnnotations source="aspect"/>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Vertex" eSuperTypes="/1/almostuml/NamedElement">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="container" eType="/1/almostuml/Region" eOpposite="/1/almostuml/Region/vertice"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingTransitions" upperBound="-1" eType="/1/almostuml/Transition" eOpposite="/1/almostuml/Transition/source"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="incomingTransitions" upperBound="-1" eType="/1/almostuml/Transition" eOpposite="/1/almostuml/Transition/target"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Vertex" eSuperTypes="/0/almostuml/NamedElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="container" eType="/0/almostuml/Region" eOpposite="/0/almostuml/Region/vertice"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingTransitions" upperBound="-1" eType="/0/almostuml/Transition" eOpposite="/0/almostuml/Transition/source"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="incomingTransitions" upperBound="-1" eType="/0/almostuml/Transition" eOpposite="/0/almostuml/Transition/target"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Pseudostate" eSuperTypes="/1/almostuml/Vertex">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1" eType="/1/almostuml/PseudostateKind"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Pseudostate" eSuperTypes="/0/almostuml/Vertex">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1" eType="/0/almostuml/PseudostateKind"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="/0/almostuml/State" eOpposite="/0/almostuml/State/connectionPoint"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="/1/almostuml/Vertex">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="regions" upperBound="-1" eType="/1/almostuml/Region" containment="true" eOpposite="/1/almostuml/Region/state"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="entry" eType="/1/almostuml/Behavior" containment="true"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="doActivity" eType="/1/almostuml/Behavior" containment="true"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="exit" eType="/1/almostuml/Behavior" containment="true"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="deferrableTriggers" upperBound="-1" eType="/1/almostuml/Trigger" containment="true"/>
+      <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="/0/almostuml/Vertex">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="regions" upperBound="-1" eType="/0/almostuml/Region" containment="true" eOpposite="/0/almostuml/Region/state"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="entry" eType="/0/almostuml/Behavior" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="doActivity" eType="/0/almostuml/Behavior" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="exit" eType="/0/almostuml/Behavior" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="deferrableTriggers" upperBound="-1" eType="/0/almostuml/Trigger" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="connectionPoint" upperBound="-1" eType="/0/almostuml/Pseudostate" containment="true" eOpposite="/0/almostuml/Pseudostate/state"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="isEntryCompleted" unique="false">
           <eAnnotations source="aspect"/>
           <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -66,32 +63,34 @@
           <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="FinalState" eSuperTypes="/1/almostuml/State"/>
-      <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="/1/almostuml/NamedElement">
+      <eClassifiers xsi:type="ecore:EClass" name="FinalState" eSuperTypes="/0/almostuml/State"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="/0/almostuml/NamedElement">
         <eOperations name="fire">
           <eAnnotations source="aspect"/>
-          <eParameters name="eventOccurrence" eType="/1/EventOccurrence"/>
+          <eParameters name="eventOccurrence" eType="/0/EventOccurrence"/>
         </eOperations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1" eType="/1/almostuml/Vertex" eOpposite="/1/almostuml/Vertex/outgoingTransitions"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1" eType="/1/almostuml/Vertex" eOpposite="/1/almostuml/Vertex/incomingTransitions"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="triggers" upperBound="-1" eType="/1/almostuml/Trigger" containment="true"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="container" lowerBound="1" eType="/1/almostuml/Region" eOpposite="/1/almostuml/Region/transitions"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="/1/almostuml/TransitionKind"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="effect" eType="/1/almostuml/Behavior" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1" eType="/0/almostuml/Vertex" eOpposite="/0/almostuml/Vertex/outgoingTransitions"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1" eType="/0/almostuml/Vertex" eOpposite="/0/almostuml/Vertex/incomingTransitions"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="triggers" upperBound="-1" eType="/0/almostuml/Trigger" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="container" lowerBound="1" eType="/0/almostuml/Region" eOpposite="/0/almostuml/Region/transitions"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="/0/almostuml/TransitionKind"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="effect" eType="/0/almostuml/Behavior" containment="true"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Trigger" eSuperTypes="/1/almostuml/NamedElement">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="event" lowerBound="1" eType="/1/almostuml/Event"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Trigger" eSuperTypes="/0/almostuml/NamedElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="event" lowerBound="1" eType="/0/almostuml/Event"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Event" abstract="true" eSuperTypes="/1/almostuml/NamedElement"/>
-      <eClassifiers xsi:type="ecore:EClass" name="CompletionEvent" eSuperTypes="/1/almostuml/Event">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1" eType="/1/almostuml/State"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Event" abstract="true" eSuperTypes="/0/almostuml/NamedElement"/>
+      <eClassifiers xsi:type="ecore:EClass" name="CompletionEvent" eSuperTypes="/0/almostuml/Event">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1" eType="/0/almostuml/State"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Behavior" eSuperTypes="/1/almostuml/NamedElement"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Behavior" eSuperTypes="/0/almostuml/NamedElement"/>
       <eClassifiers xsi:type="ecore:EEnum" name="PseudostateKind">
         <eLiterals name="initial"/>
         <eLiterals name="join" value="1"/>
         <eLiterals name="fork" value="2"/>
         <eLiterals name="terminate" value="3"/>
+        <eLiterals name="entrypoint" value="4"/>
+        <eLiterals name="exitpoint" value="5"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EEnum" name="TransitionKind">
         <eLiterals name="internal"/>
@@ -99,5 +98,10 @@
         <eLiterals name="external" value="2"/>
       </eClassifiers>
     </eSubpackages>
+  </ecore:EPackage>
+  <ecore:EPackage name="statemachinesexecutiondata" nsURI="http://org.tetrabox.examples.statemachines.interpretedstatemachinesmt/statemachinesexecutiondata/" nsPrefix="statemachinesexecutiondata">
+    <eClassifiers xsi:type="ecore:EClass" name="EventOccurrence">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="event" lowerBound="1" eType="/0/CustomEvent"/>
+    </eClassifiers>
   </ecore:EPackage>
 </xmi:XMI>

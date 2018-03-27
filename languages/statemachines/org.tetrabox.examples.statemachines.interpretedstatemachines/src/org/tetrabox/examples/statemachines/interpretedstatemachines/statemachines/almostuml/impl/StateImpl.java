@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.AlmostumlPackage;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Behavior;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Region;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.State;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Trigger;
@@ -37,6 +38,7 @@ import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachine
  *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.impl.StateImpl#getDoActivity <em>Do Activity</em>}</li>
  *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.impl.StateImpl#getExit <em>Exit</em>}</li>
  *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.impl.StateImpl#getDeferrableTriggers <em>Deferrable Triggers</em>}</li>
+ *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.impl.StateImpl#getConnectionPoint <em>Connection Point</em>}</li>
  *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.impl.StateImpl#isIsEntryCompleted <em>Is Entry Completed</em>}</li>
  *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.impl.StateImpl#isIsDoActivityCompleted <em>Is Do Activity Completed</em>}</li>
  *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.impl.StateImpl#isIsExitCompleted <em>Is Exit Completed</em>}</li>
@@ -94,6 +96,16 @@ public class StateImpl extends VertexImpl implements State {
 	 * @ordered
 	 */
 	protected EList<Trigger> deferrableTriggers;
+
+	/**
+	 * The cached value of the '{@link #getConnectionPoint() <em>Connection Point</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConnectionPoint()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Pseudostate> connectionPoint;
 
 	/**
 	 * The default value of the '{@link #isIsEntryCompleted() <em>Is Entry Completed</em>}' attribute.
@@ -332,6 +344,18 @@ public class StateImpl extends VertexImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Pseudostate> getConnectionPoint() {
+		if (connectionPoint == null) {
+			connectionPoint = new EObjectContainmentWithInverseEList<Pseudostate>(Pseudostate.class, this, AlmostumlPackage.STATE__CONNECTION_POINT, AlmostumlPackage.PSEUDOSTATE__STATE);
+		}
+		return connectionPoint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isIsEntryCompleted() {
 		return isEntryCompleted;
 	}
@@ -401,6 +425,8 @@ public class StateImpl extends VertexImpl implements State {
 		switch (featureID) {
 			case AlmostumlPackage.STATE__REGIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRegions()).basicAdd(otherEnd, msgs);
+			case AlmostumlPackage.STATE__CONNECTION_POINT:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConnectionPoint()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -423,6 +449,8 @@ public class StateImpl extends VertexImpl implements State {
 				return basicSetExit(null, msgs);
 			case AlmostumlPackage.STATE__DEFERRABLE_TRIGGERS:
 				return ((InternalEList<?>)getDeferrableTriggers()).basicRemove(otherEnd, msgs);
+			case AlmostumlPackage.STATE__CONNECTION_POINT:
+				return ((InternalEList<?>)getConnectionPoint()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -445,6 +473,8 @@ public class StateImpl extends VertexImpl implements State {
 				return getExit();
 			case AlmostumlPackage.STATE__DEFERRABLE_TRIGGERS:
 				return getDeferrableTriggers();
+			case AlmostumlPackage.STATE__CONNECTION_POINT:
+				return getConnectionPoint();
 			case AlmostumlPackage.STATE__IS_ENTRY_COMPLETED:
 				return isIsEntryCompleted();
 			case AlmostumlPackage.STATE__IS_DO_ACTIVITY_COMPLETED:
@@ -480,6 +510,10 @@ public class StateImpl extends VertexImpl implements State {
 			case AlmostumlPackage.STATE__DEFERRABLE_TRIGGERS:
 				getDeferrableTriggers().clear();
 				getDeferrableTriggers().addAll((Collection<? extends Trigger>)newValue);
+				return;
+			case AlmostumlPackage.STATE__CONNECTION_POINT:
+				getConnectionPoint().clear();
+				getConnectionPoint().addAll((Collection<? extends Pseudostate>)newValue);
 				return;
 			case AlmostumlPackage.STATE__IS_ENTRY_COMPLETED:
 				setIsEntryCompleted((Boolean)newValue);
@@ -517,6 +551,9 @@ public class StateImpl extends VertexImpl implements State {
 			case AlmostumlPackage.STATE__DEFERRABLE_TRIGGERS:
 				getDeferrableTriggers().clear();
 				return;
+			case AlmostumlPackage.STATE__CONNECTION_POINT:
+				getConnectionPoint().clear();
+				return;
 			case AlmostumlPackage.STATE__IS_ENTRY_COMPLETED:
 				setIsEntryCompleted(IS_ENTRY_COMPLETED_EDEFAULT);
 				return;
@@ -548,6 +585,8 @@ public class StateImpl extends VertexImpl implements State {
 				return exit != null;
 			case AlmostumlPackage.STATE__DEFERRABLE_TRIGGERS:
 				return deferrableTriggers != null && !deferrableTriggers.isEmpty();
+			case AlmostumlPackage.STATE__CONNECTION_POINT:
+				return connectionPoint != null && !connectionPoint.isEmpty();
 			case AlmostumlPackage.STATE__IS_ENTRY_COMPLETED:
 				return isEntryCompleted != IS_ENTRY_COMPLETED_EDEFAULT;
 			case AlmostumlPackage.STATE__IS_DO_ACTIVITY_COMPLETED:

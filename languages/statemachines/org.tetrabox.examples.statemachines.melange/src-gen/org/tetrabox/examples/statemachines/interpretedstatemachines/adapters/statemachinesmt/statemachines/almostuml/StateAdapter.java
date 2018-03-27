@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.StateMachinesMTAdaptersFactory;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.State;
 import statemachines.almostuml.Behavior;
+import statemachines.almostuml.Pseudostate;
 import statemachines.almostuml.Region;
 import statemachines.almostuml.Transition;
 import statemachines.almostuml.Trigger;
@@ -112,6 +113,15 @@ public class StateAdapter extends EObjectAdapter<State> implements statemachines
     if (deferrableTriggers_ == null)
     	deferrableTriggers_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getDeferrableTriggers(), adaptersFactory, eResource);
     return deferrableTriggers_;
+  }
+  
+  private EList<Pseudostate> connectionPoint_;
+  
+  @Override
+  public EList<Pseudostate> getConnectionPoint() {
+    if (connectionPoint_ == null)
+    	connectionPoint_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getConnectionPoint(), adaptersFactory, eResource);
+    return connectionPoint_;
   }
   
   protected final static String NAME_EDEFAULT = null;

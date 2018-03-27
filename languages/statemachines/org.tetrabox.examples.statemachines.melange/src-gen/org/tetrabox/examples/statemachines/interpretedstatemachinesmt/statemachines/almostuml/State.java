@@ -21,6 +21,7 @@ import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachi
  *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.State#getDoActivity <em>Do Activity</em>}</li>
  *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.State#getExit <em>Exit</em>}</li>
  *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.State#getDeferrableTriggers <em>Deferrable Triggers</em>}</li>
+ *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.State#getConnectionPoint <em>Connection Point</em>}</li>
  *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.State#isIsEntryCompleted <em>Is Entry Completed</em>}</li>
  *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.State#isIsDoActivityCompleted <em>Is Do Activity Completed</em>}</li>
  *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.State#isIsExitCompleted <em>Is Exit Completed</em>}</li>
@@ -142,6 +143,24 @@ public interface State extends Vertex {
 	 * @generated
 	 */
 	EList<Trigger> getDeferrableTriggers();
+
+	/**
+	 * Returns the value of the '<em><b>Connection Point</b></em>' containment reference list.
+	 * The list contents are of type {@link org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.Pseudostate}.
+	 * It is bidirectional and its opposite is '{@link org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.Pseudostate#getState <em>State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Connection Point</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Connection Point</em>' containment reference list.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.AlmostumlPackage#getState_ConnectionPoint()
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.Pseudostate#getState
+	 * @model opposite="state" containment="true"
+	 * @generated
+	 */
+	EList<Pseudostate> getConnectionPoint();
 
 	/**
 	 * Returns the value of the '<em><b>Is Entry Completed</b></em>' attribute.

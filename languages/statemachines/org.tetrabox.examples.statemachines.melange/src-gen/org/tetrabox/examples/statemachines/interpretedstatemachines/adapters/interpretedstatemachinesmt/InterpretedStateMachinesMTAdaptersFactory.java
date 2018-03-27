@@ -54,6 +54,18 @@ public class InterpretedStateMachinesMTAdaptersFactory implements AdaptersFactor
   }
   
   public EObjectAdapter createAdapter(final EObject o, final Resource res) {
+    if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachinesexecutiondata.EventOccurrence){
+    	return createEventOccurrenceAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachinesexecutiondata.EventOccurrence) o, res);
+    }
+    if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CustomSystem){
+    	return createCustomSystemAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CustomSystem) o, res);
+    }
+    if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CustomEvent){
+    	return createCustomEventAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CustomEvent) o, res);
+    }
+    if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence){
+    	return createEventOccurrenceAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence) o, res);
+    }
     if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.StateMachine){
     	return createStateMachineAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.StateMachine) o, res);
     }
@@ -84,20 +96,68 @@ public class InterpretedStateMachinesMTAdaptersFactory implements AdaptersFactor
     if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Behavior){
     	return createBehaviorAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Behavior) o, res);
     }
-    if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachinesexecutiondata.EventOccurrence){
-    	return createEventOccurrenceAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachinesexecutiondata.EventOccurrence) o, res);
-    }
-    if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CustomSystem){
-    	return createCustomSystemAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CustomSystem) o, res);
-    }
-    if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CustomEvent){
-    	return createCustomEventAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CustomEvent) o, res);
-    }
-    if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence){
-    	return createEventOccurrenceAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence) o, res);
-    }
     
     return null;
+  }
+  
+  public EventOccurrenceAdapter createEventOccurrenceAdapter(final EventOccurrence adaptee, final Resource res) {
+    if (adaptee == null)
+    	return null;
+    EObjectAdapter adapter = register.get(adaptee);
+    if(adapter != null)
+    	 return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachinesexecutiondata.EventOccurrenceAdapter) adapter;
+    else {
+    	adapter = new org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachinesexecutiondata.EventOccurrenceAdapter();
+    	adapter.setAdaptee(adaptee);
+    	adapter.setResource(res);
+    	register.put(adaptee, adapter);
+    	return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachinesexecutiondata.EventOccurrenceAdapter) adapter;
+    }
+  }
+  
+  public CustomSystemAdapter createCustomSystemAdapter(final CustomSystem adaptee, final Resource res) {
+    if (adaptee == null)
+    	return null;
+    EObjectAdapter adapter = register.get(adaptee);
+    if(adapter != null)
+    	 return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.CustomSystemAdapter) adapter;
+    else {
+    	adapter = new org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.CustomSystemAdapter();
+    	adapter.setAdaptee(adaptee);
+    	adapter.setResource(res);
+    	register.put(adaptee, adapter);
+    	return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.CustomSystemAdapter) adapter;
+    }
+  }
+  
+  public CustomEventAdapter createCustomEventAdapter(final CustomEvent adaptee, final Resource res) {
+    if (adaptee == null)
+    	return null;
+    EObjectAdapter adapter = register.get(adaptee);
+    if(adapter != null)
+    	 return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.CustomEventAdapter) adapter;
+    else {
+    	adapter = new org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.CustomEventAdapter();
+    	adapter.setAdaptee(adaptee);
+    	adapter.setResource(res);
+    	register.put(adaptee, adapter);
+    	return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.CustomEventAdapter) adapter;
+    }
+  }
+  
+  public org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.EventOccurrenceAdapter createEventOccurrenceAdapter(final org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence adaptee, final Resource res) {
+    if (adaptee == null)
+    	return null;
+    EObjectAdapter adapter = register.get(adaptee);
+    if(adapter != null)
+    	 return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.EventOccurrenceAdapter) adapter;
+    else {
+    	adapter = new org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.EventOccurrenceAdapter();
+    	adapter.setAdaptee(adaptee);
+    	adapter.setResource(res);
+    	register.put(adaptee, adapter);
+    	return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.EventOccurrenceAdapter) adapter;
+    }
   }
   
   public NamedElementAdapter createNamedElementAdapter(final NamedElement adaptee, final Resource res) {
@@ -277,66 +337,6 @@ public class InterpretedStateMachinesMTAdaptersFactory implements AdaptersFactor
     	adapter.setResource(res);
     	register.put(adaptee, adapter);
     	return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.almostuml.BehaviorAdapter) adapter;
-    }
-  }
-  
-  public EventOccurrenceAdapter createEventOccurrenceAdapter(final EventOccurrence adaptee, final Resource res) {
-    if (adaptee == null)
-    	return null;
-    EObjectAdapter adapter = register.get(adaptee);
-    if(adapter != null)
-    	 return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachinesexecutiondata.EventOccurrenceAdapter) adapter;
-    else {
-    	adapter = new org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachinesexecutiondata.EventOccurrenceAdapter();
-    	adapter.setAdaptee(adaptee);
-    	adapter.setResource(res);
-    	register.put(adaptee, adapter);
-    	return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachinesexecutiondata.EventOccurrenceAdapter) adapter;
-    }
-  }
-  
-  public CustomSystemAdapter createCustomSystemAdapter(final CustomSystem adaptee, final Resource res) {
-    if (adaptee == null)
-    	return null;
-    EObjectAdapter adapter = register.get(adaptee);
-    if(adapter != null)
-    	 return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.CustomSystemAdapter) adapter;
-    else {
-    	adapter = new org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.CustomSystemAdapter();
-    	adapter.setAdaptee(adaptee);
-    	adapter.setResource(res);
-    	register.put(adaptee, adapter);
-    	return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.CustomSystemAdapter) adapter;
-    }
-  }
-  
-  public CustomEventAdapter createCustomEventAdapter(final CustomEvent adaptee, final Resource res) {
-    if (adaptee == null)
-    	return null;
-    EObjectAdapter adapter = register.get(adaptee);
-    if(adapter != null)
-    	 return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.CustomEventAdapter) adapter;
-    else {
-    	adapter = new org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.CustomEventAdapter();
-    	adapter.setAdaptee(adaptee);
-    	adapter.setResource(res);
-    	register.put(adaptee, adapter);
-    	return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.CustomEventAdapter) adapter;
-    }
-  }
-  
-  public org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.EventOccurrenceAdapter createEventOccurrenceAdapter(final org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence adaptee, final Resource res) {
-    if (adaptee == null)
-    	return null;
-    EObjectAdapter adapter = register.get(adaptee);
-    if(adapter != null)
-    	 return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.EventOccurrenceAdapter) adapter;
-    else {
-    	adapter = new org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.EventOccurrenceAdapter();
-    	adapter.setAdaptee(adaptee);
-    	adapter.setResource(res);
-    	register.put(adaptee, adapter);
-    	return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.EventOccurrenceAdapter) adapter;
     }
   }
 }

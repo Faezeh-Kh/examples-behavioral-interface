@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link statemachines.almostuml.State#getDoActivity <em>Do Activity</em>}</li>
  *   <li>{@link statemachines.almostuml.State#getExit <em>Exit</em>}</li>
  *   <li>{@link statemachines.almostuml.State#getDeferrableTriggers <em>Deferrable Triggers</em>}</li>
+ *   <li>{@link statemachines.almostuml.State#getConnectionPoint <em>Connection Point</em>}</li>
  * </ul>
  *
  * @see statemachines.almostuml.AlmostumlPackage#getState()
@@ -137,5 +138,23 @@ public interface State extends Vertex {
 	 * @generated
 	 */
 	EList<Trigger> getDeferrableTriggers();
+
+	/**
+	 * Returns the value of the '<em><b>Connection Point</b></em>' containment reference list.
+	 * The list contents are of type {@link statemachines.almostuml.Pseudostate}.
+	 * It is bidirectional and its opposite is '{@link statemachines.almostuml.Pseudostate#getState <em>State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Connection Point</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Connection Point</em>' containment reference list.
+	 * @see statemachines.almostuml.AlmostumlPackage#getState_ConnectionPoint()
+	 * @see statemachines.almostuml.Pseudostate#getState
+	 * @model opposite="state" containment="true"
+	 * @generated
+	 */
+	EList<Pseudostate> getConnectionPoint();
 
 } // State

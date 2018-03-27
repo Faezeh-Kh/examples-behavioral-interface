@@ -27,6 +27,8 @@ import org.eclipse.uml2.uml.Behavior
 import org.eclipse.uml2.uml.CallEvent
 import org.eclipse.gemoc.executionframework.event.testsuite.TestsuiteFactory
 import org.tetrabox.examples.statemachines.interpretedstatemachines.event.interpretedstatemachinesevent.InterpretedstatemachineseventFactory
+import java.util.Map
+import org.eclipse.gemoc.executionframework.event.testsuite.TestSuite
 
 class ModelTransformation {
 	
@@ -60,8 +62,6 @@ class ModelTransformation {
 			(o instanceof Pseudostate && (
 				(o as Pseudostate).kind == org.eclipse.uml2.uml.PseudostateKind.DEEP_HISTORY_LITERAL ||
 				(o as Pseudostate).kind == org.eclipse.uml2.uml.PseudostateKind.CHOICE_LITERAL ||
-				(o as Pseudostate).kind == org.eclipse.uml2.uml.PseudostateKind.ENTRY_POINT_LITERAL ||
-				(o as Pseudostate).kind == org.eclipse.uml2.uml.PseudostateKind.EXIT_POINT_LITERAL ||
 				(o as Pseudostate).kind == org.eclipse.uml2.uml.PseudostateKind.JUNCTION_LITERAL ||
 				(o as Pseudostate).kind == org.eclipse.uml2.uml.PseudostateKind.SHALLOW_HISTORY_LITERAL
 			)) ||
@@ -108,6 +108,12 @@ class ModelTransformation {
 				}
 				case JOIN_LITERAL: {
 					PseudostateKind.JOIN
+				}
+				case ENTRY_POINT_LITERAL: {
+					PseudostateKind.ENTRYPOINT
+				}
+				case EXIT_POINT_LITERAL: {
+					PseudostateKind.EXITPOINT
 				}
 				default: {
 				}
@@ -192,6 +198,21 @@ class ModelTransformation {
 		URI::createFileURI('''/home/dorian/git/examples-behavioral-interface/test/org.tetrabox.examples.statemachines.test/models/StateMachineTestSuite.xmi''')
 	}
 	
+	def static URI getActualTestSuiteURI() {
+		URI::createFileURI('''/home/dorian/git/examples-behavioral-interface/test/org.tetrabox.examples.statemachines.test/models/ActualStateMachineTestSuite.xmi''')
+	}
+	
+	def static Map<String, String> parseExpectedTrace() {
+		val result = new HashMap<String, String>
+		val rs = new ResourceSetImpl
+		val res = rs.getResource(actualTestSuiteURI, true)
+		val ts = res.contents.head as TestSuite
+		ts.testCases.forEach[c|
+			result.put(c.name, c.expectedTrace)
+		]
+		return result
+	}
+	
 	def static void main(String[] args) {
 		val transformation = new ModelTransformation
 		val uri = papyrusTestSuiteURI
@@ -204,6 +225,7 @@ class ModelTransformation {
 		val model = inputResSet.getResource(uri, true).contents.head as Model
 		val testSuite = transformation.testSuiteFactory.createTestSuite
 		val toTransform = model.eAllContents.filter(StateMachine).toList
+		val traces = parseExpectedTrace
 		var i = 1
 		for (sm : toTransform) {
 			if (transformation.canTransform(sm)) {
@@ -213,6 +235,7 @@ class ModelTransformation {
 				val testCase = transformation.testSuiteFactory.createTestCase => [
 					model = system
 					name = res.URI.trimFileExtension.lastSegment
+					expectedTrace = traces.get(name)
 					scenario += transformation.eventFactory.createStateMachineRunEvent => [
 						stateMachine = system.statemachine
 					]

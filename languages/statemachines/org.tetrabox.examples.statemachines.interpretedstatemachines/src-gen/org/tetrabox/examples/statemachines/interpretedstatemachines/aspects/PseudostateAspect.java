@@ -8,6 +8,7 @@ import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.PseudostateAspectPseudostateAspectProperties;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspect;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspect;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspect;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspect;
@@ -88,6 +89,29 @@ public class PseudostateAspect extends VertexAspect {
           StateMachineAspect.terminate(RegionAspect.getContainingStateMachine(_self.getContainer()));
           VertexAspect.exit(_self, null, null, null);
           break;
+        case ENTRYPOINT:
+          PseudostateAspect.super_enter(_self, enteringTransition, eventOccurrence, leastCommonAncestor);
+          int _size_1 = _self.getState().getRegions().size();
+          boolean _greaterThan = (_size_1 > 1);
+          if (_greaterThan) {
+            final Consumer<Transition> _function_1 = (Transition it) -> {
+              TransitionAspect.fire(it, eventOccurrence);
+            };
+            _self.getOutgoingTransitions().forEach(_function_1);
+          } else {
+            TransitionAspect.fire(IterableExtensions.<Transition>head(_self.getOutgoingTransitions()), eventOccurrence);
+          }
+          break;
+        case EXITPOINT:
+          int _size_2 = _self.getOutgoingTransitions().size();
+          boolean _greaterThan_1 = (_size_2 > 0);
+          if (_greaterThan_1) {
+            Transition selectedTransition = IterableExtensions.<Transition>head(_self.getOutgoingTransitions());
+            PseudostateAspect.super_enter(_self, enteringTransition, eventOccurrence, null);
+            StateAspect.exit(_self.getState(), enteringTransition, eventOccurrence, null);
+            TransitionAspect.fire(selectedTransition, eventOccurrence);
+          }
+          break;
         default:
           PseudostateAspect.super_enter(_self, enteringTransition, eventOccurrence, leastCommonAncestor);
           break;
@@ -114,6 +138,14 @@ public class PseudostateAspect extends VertexAspect {
             return Boolean.valueOf(TransitionAspect.traversed(it));
           };
           return IterableExtensions.<Transition>forall(IterableExtensions.<Transition>filter(_self.getIncomingTransitions(), _function), _function_1);
+        case EXITPOINT:
+          final Function1<Transition, Boolean> _function_2 = (Transition it) -> {
+            return Boolean.valueOf((!Objects.equal(it, enteringTransition)));
+          };
+          final Function1<Transition, Boolean> _function_3 = (Transition it) -> {
+            return Boolean.valueOf(TransitionAspect.traversed(it));
+          };
+          return IterableExtensions.<Transition>forall(IterableExtensions.<Transition>filter(_self.getIncomingTransitions(), _function_2), _function_3);
         default:
           return PseudostateAspect.super_isEnterable(_self, enteringTransition);
       }
@@ -139,6 +171,14 @@ public class PseudostateAspect extends VertexAspect {
             return Boolean.valueOf(TransitionAspect.traversed(it));
           };
           return IterableExtensions.<Transition>forall(IterableExtensions.<Transition>filter(_self.getOutgoingTransitions(), _function), _function_1);
+        case ENTRYPOINT:
+          final Function1<Transition, Boolean> _function_2 = (Transition it) -> {
+            return Boolean.valueOf((!Objects.equal(it, exitingTransition)));
+          };
+          final Function1<Transition, Boolean> _function_3 = (Transition it) -> {
+            return Boolean.valueOf(TransitionAspect.traversed(it));
+          };
+          return IterableExtensions.<Transition>forall(IterableExtensions.<Transition>filter(_self.getOutgoingTransitions(), _function_2), _function_3);
         default:
           return PseudostateAspect.super_isExitable(_self, exitingTransition);
       }

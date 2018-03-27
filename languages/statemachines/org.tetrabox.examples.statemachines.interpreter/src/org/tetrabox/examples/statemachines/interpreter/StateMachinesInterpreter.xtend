@@ -403,6 +403,24 @@ class PseudostateAspect extends VertexAspect {
 				_self.exit(null, null, null)
 			}
 			
+			case ENTRYPOINT: {
+				_self.super_enter(enteringTransition, eventOccurrence, leastCommonAncestor)
+				if (_self.state.regions.size > 1) {
+					_self.outgoingTransitions.forEach[fire(eventOccurrence)]
+				} else {
+					_self.outgoingTransitions.head.fire(eventOccurrence)
+				}
+			}
+			
+			case EXITPOINT: {
+				if (_self.outgoingTransitions.size > 0) {
+					var selectedTransition = _self.outgoingTransitions.head
+					_self.super_enter(enteringTransition, eventOccurrence, null)
+					_self.state.exit(enteringTransition, eventOccurrence, null)
+					selectedTransition.fire(eventOccurrence)
+				}
+			}
+			
 			default: {
 				_self.super_enter(enteringTransition, eventOccurrence, leastCommonAncestor)
 			}
@@ -415,6 +433,9 @@ class PseudostateAspect extends VertexAspect {
 			case JOIN: {
 				return _self.incomingTransitions.filter[it != enteringTransition].forall[traversed]
 			}
+			case EXITPOINT: {
+				return _self.incomingTransitions.filter[it != enteringTransition].forall[traversed]
+			}
 			default: {
 				return _self.super_isEnterable(enteringTransition)
 			}
@@ -425,6 +446,9 @@ class PseudostateAspect extends VertexAspect {
 	protected def boolean isExitable(Transition exitingTransition) {
 		switch (_self.kind) {
 			case FORK: {
+				return _self.outgoingTransitions.filter[it != exitingTransition].forall[traversed]
+			}
+			case ENTRYPOINT: {
 				return _self.outgoingTransitions.filter[it != exitingTransition].forall[traversed]
 			}
 			default: {

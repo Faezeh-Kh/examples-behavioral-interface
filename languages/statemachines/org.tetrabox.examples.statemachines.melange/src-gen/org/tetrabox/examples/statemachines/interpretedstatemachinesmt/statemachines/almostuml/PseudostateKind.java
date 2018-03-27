@@ -56,7 +56,23 @@ public enum PseudostateKind implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	TERMINATE(3, "terminate", "terminate");
+	TERMINATE(3, "terminate", "terminate"), /**
+	 * The '<em><b>Entrypoint</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #ENTRYPOINT_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	ENTRYPOINT(4, "entrypoint", "entrypoint"), /**
+	 * The '<em><b>Exitpoint</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #EXITPOINT_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	EXITPOINT(5, "exitpoint", "exitpoint");
 
 	/**
 	 * The '<em><b>Initial</b></em>' literal value.
@@ -119,6 +135,36 @@ public enum PseudostateKind implements Enumerator {
 	public static final int TERMINATE_VALUE = 3;
 
 	/**
+	 * The '<em><b>Entrypoint</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Entrypoint</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #ENTRYPOINT
+	 * @model name="entrypoint"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int ENTRYPOINT_VALUE = 4;
+
+	/**
+	 * The '<em><b>Exitpoint</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Exitpoint</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #EXITPOINT
+	 * @model name="exitpoint"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int EXITPOINT_VALUE = 5;
+
+	/**
 	 * An array of all the '<em><b>Pseudostate Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -130,6 +176,8 @@ public enum PseudostateKind implements Enumerator {
 			JOIN,
 			FORK,
 			TERMINATE,
+			ENTRYPOINT,
+			EXITPOINT,
 		};
 
 	/**
@@ -190,6 +238,8 @@ public enum PseudostateKind implements Enumerator {
 			case JOIN_VALUE: return JOIN;
 			case FORK_VALUE: return FORK;
 			case TERMINATE_VALUE: return TERMINATE;
+			case ENTRYPOINT_VALUE: return ENTRYPOINT;
+			case EXITPOINT_VALUE: return EXITPOINT;
 		}
 		return null;
 	}

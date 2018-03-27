@@ -12,11 +12,11 @@ import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachi
 public interface InterpretedStateMachinesMT extends IModelType {
   public abstract EList<EObject> getContents();
   
-  public abstract StatemachinesexecutiondataFactory getStatemachinesexecutiondataFactory();
-  
   public abstract StatemachinesFactory getStatemachinesFactory();
   
   public abstract AlmostumlFactory getAlmostumlFactory();
+  
+  public abstract StatemachinesexecutiondataFactory getStatemachinesexecutiondataFactory();
   
   public abstract void save(final String uri) throws IOException;
 }

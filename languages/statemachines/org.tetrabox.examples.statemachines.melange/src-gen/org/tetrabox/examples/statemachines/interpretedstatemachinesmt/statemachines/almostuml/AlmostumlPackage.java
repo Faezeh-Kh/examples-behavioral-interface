@@ -375,13 +375,22 @@ public interface AlmostumlPackage extends EPackage {
 	int PSEUDOSTATE__KIND = VERTEX_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>State</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PSEUDOSTATE__STATE = VERTEX_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Pseudostate</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PSEUDOSTATE_FEATURE_COUNT = VERTEX_FEATURE_COUNT + 1;
+	int PSEUDOSTATE_FEATURE_COUNT = VERTEX_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -465,13 +474,22 @@ public interface AlmostumlPackage extends EPackage {
 	int STATE__DEFERRABLE_TRIGGERS = VERTEX_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Connection Point</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE__CONNECTION_POINT = VERTEX_FEATURE_COUNT + 5;
+
+	/**
 	 * The feature id for the '<em><b>Is Entry Completed</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__IS_ENTRY_COMPLETED = VERTEX_FEATURE_COUNT + 5;
+	int STATE__IS_ENTRY_COMPLETED = VERTEX_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Is Do Activity Completed</b></em>' attribute.
@@ -480,7 +498,7 @@ public interface AlmostumlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__IS_DO_ACTIVITY_COMPLETED = VERTEX_FEATURE_COUNT + 6;
+	int STATE__IS_DO_ACTIVITY_COMPLETED = VERTEX_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Is Exit Completed</b></em>' attribute.
@@ -489,7 +507,7 @@ public interface AlmostumlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__IS_EXIT_COMPLETED = VERTEX_FEATURE_COUNT + 7;
+	int STATE__IS_EXIT_COMPLETED = VERTEX_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>State</em>' class.
@@ -498,7 +516,7 @@ public interface AlmostumlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_FEATURE_COUNT = VERTEX_FEATURE_COUNT + 8;
+	int STATE_FEATURE_COUNT = VERTEX_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -580,6 +598,15 @@ public interface AlmostumlPackage extends EPackage {
 	 * @ordered
 	 */
 	int FINAL_STATE__DEFERRABLE_TRIGGERS = STATE__DEFERRABLE_TRIGGERS;
+
+	/**
+	 * The feature id for the '<em><b>Connection Point</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINAL_STATE__CONNECTION_POINT = STATE__CONNECTION_POINT;
 
 	/**
 	 * The feature id for the '<em><b>Is Entry Completed</b></em>' attribute.
@@ -973,6 +1000,17 @@ public interface AlmostumlPackage extends EPackage {
 	EReference getState_DeferrableTriggers();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.State#getConnectionPoint <em>Connection Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Connection Point</em>'.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.State#getConnectionPoint()
+	 * @see #getState()
+	 * @generated
+	 */
+	EReference getState_ConnectionPoint();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.State#isIsEntryCompleted <em>Is Entry Completed</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1218,6 +1256,17 @@ public interface AlmostumlPackage extends EPackage {
 	EAttribute getPseudostate_Kind();
 
 	/**
+	 * Returns the meta object for the container reference '{@link org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.Pseudostate#getState <em>State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>State</em>'.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.Pseudostate#getState()
+	 * @see #getPseudostate()
+	 * @generated
+	 */
+	EReference getPseudostate_State();
+
+	/**
 	 * Returns the meta object for enum '{@link org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.PseudostateKind <em>Pseudostate Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1394,6 +1443,14 @@ public interface AlmostumlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference STATE__DEFERRABLE_TRIGGERS = eINSTANCE.getState_DeferrableTriggers();
+
+		/**
+		 * The meta object literal for the '<em><b>Connection Point</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STATE__CONNECTION_POINT = eINSTANCE.getState_ConnectionPoint();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Entry Completed</b></em>' attribute feature.
@@ -1594,6 +1651,14 @@ public interface AlmostumlPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PSEUDOSTATE__KIND = eINSTANCE.getPseudostate_Kind();
+
+		/**
+		 * The meta object literal for the '<em><b>State</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PSEUDOSTATE__STATE = eINSTANCE.getPseudostate_State();
 
 		/**
 		 * The meta object literal for the '{@link org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.PseudostateKind <em>Pseudostate Kind</em>}' enum.

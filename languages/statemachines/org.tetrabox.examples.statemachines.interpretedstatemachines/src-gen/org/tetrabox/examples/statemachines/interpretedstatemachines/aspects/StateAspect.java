@@ -257,24 +257,31 @@ public class StateAspect extends VertexAspect {
   protected static void _privk3_enterRegions(final StateAspectStateAspectProperties _self_, final State _self, final Transition enteringTransition, final EventOccurrence eventOccurrence) {
     final ArrayList<Vertex> targetedVertice = new ArrayList<Vertex>();
     final Vertex source = enteringTransition.getSource();
+    final Vertex target = enteringTransition.getTarget();
     if (((source instanceof Pseudostate) && Objects.equal(((Pseudostate) source).getKind(), PseudostateKind.FORK))) {
-      final Function1<Transition, Vertex> _function = (Transition it) -> {
-        return it.getTarget();
+      final Function1<Transition, Vertex> _function = (Transition t) -> {
+        return t.getTarget();
       };
       targetedVertice.addAll(ListExtensions.<Transition, Vertex>map(source.getOutgoingTransitions(), _function));
     } else {
       targetedVertice.add(enteringTransition.getTarget());
     }
-    final Function1<Region, Boolean> _function_1 = (Region r) -> {
+    if (((target instanceof Pseudostate) && Objects.equal(((Pseudostate) target).getKind(), PseudostateKind.ENTRYPOINT))) {
+      final Function1<Transition, Vertex> _function_1 = (Transition t) -> {
+        return t.getTarget();
+      };
+      targetedVertice.addAll(ListExtensions.<Transition, Vertex>map(target.getOutgoingTransitions(), _function_1));
+    }
+    final Function1<Region, Boolean> _function_2 = (Region r) -> {
       EList<Vertex> _vertice = r.getVertice();
       final ArrayList<Vertex> vertice = new ArrayList<Vertex>(_vertice);
       vertice.retainAll(targetedVertice);
       return Boolean.valueOf(vertice.isEmpty());
     };
-    final Consumer<Region> _function_2 = (Region it) -> {
+    final Consumer<Region> _function_3 = (Region it) -> {
       RegionAspect.enter(it, enteringTransition, eventOccurrence);
     };
-    IterableExtensions.<Region>filter(_self.getRegions(), _function_1).forEach(_function_2);
+    IterableExtensions.<Region>filter(_self.getRegions(), _function_2).forEach(_function_3);
   }
   
   protected static void _privk3_tryExecuteEntry(final StateAspectStateAspectProperties _self_, final State _self) {
@@ -364,15 +371,13 @@ public class StateAspect extends VertexAspect {
   }
   
   protected static boolean _privk3_contains(final StateAspectStateAspectProperties _self_, final State _self, final Vertex vertex) {
-    boolean _equals = Objects.equal(_self, vertex);
-    if (_equals) {
+    if ((Objects.equal(_self, vertex) || Objects.equal(_self, vertex.eContainer()))) {
       return true;
-    } else {
-      final Function1<Region, Boolean> _function = (Region it) -> {
-        return Boolean.valueOf(RegionAspect.contains(it, vertex));
-      };
-      return IterableExtensions.<Region>exists(_self.getRegions(), _function);
     }
+    final Function1<Region, Boolean> _function = (Region it) -> {
+      return Boolean.valueOf(RegionAspect.contains(it, vertex));
+    };
+    return IterableExtensions.<Region>exists(_self.getRegions(), _function);
   }
   
   protected static boolean _privk3_canDefer(final StateAspectStateAspectProperties _self_, final State _self, final CustomEvent eventType) {

@@ -26,7 +26,6 @@ import static extension org.tetrabox.examples.statemachines.interpreter.StateAsp
 import static extension org.tetrabox.examples.statemachines.interpreter.StateMachineAspect.*
 import static extension org.tetrabox.examples.statemachines.interpreter.TransitionAspect.*
 import static extension org.tetrabox.examples.statemachines.interpreter.VertexAspect.*
-import org.eclipse.gemoc.executionframework.engine.annotations.EventEmitter
 
 @Aspect(className=StateMachine)
 class StateMachineAspect {
@@ -96,9 +95,11 @@ class StateMachineAspect {
 	private def void dispatchCompletionEvents() {
 		while (!_self.completionEvents.empty) {
 			val event = _self.completionEvents.remove(0)
-			val transition = event.state.outgoingTransitions.filter[triggers === null || triggers.empty].head
-			if (transition !== null) {
-				transition.fire(null)
+			if (_self.activeVertice.contains(event.state)) {
+				val transition = event.state.outgoingTransitions.filter[triggers === null || triggers.empty].head
+				if (transition !== null) {
+					transition.fire(null)
+				}
 			}
 		}
 	}
@@ -199,13 +200,13 @@ class VertexAspect {
 				containingState.enter(enteringTransition, eventOccurrence, leastCommonAncestor)
 			}
 		}
-		_self.container.currentVertex = _self
-		_self.container.containingStateMachine.activeVertice.add(_self)
+		_self.containingRegion.currentVertex = _self
+		_self.containingRegion.containingStateMachine.activeVertice.add(_self)
 	}
 	
 	protected def void exit(Transition exitingTransition, EventOccurrence eventOccurrence, Region leastCommonAncestor) {
-		_self.container.currentVertex = null
-		_self.container.containingStateMachine.activeVertice.remove(_self)
+		_self.containingRegion.currentVertex = null
+		_self.containingRegion.containingStateMachine.activeVertice.remove(_self)
 		if(leastCommonAncestor !== null && _self.container !== null && leastCommonAncestor != _self.container){
 			var containingState = _self.container.state
 			if(containingState !== null){
@@ -232,6 +233,14 @@ class VertexAspect {
 	
 	protected def boolean contains(Vertex vertex) {
 		return false
+	}
+	
+	protected def Region getContainingRegion() {
+		return _self.container
+	}
+	
+	protected def State getParentState() {
+		return _self.container.state
 	}
 }
 
@@ -272,10 +281,14 @@ class StateAspect extends VertexAspect {
 	protected def void enterRegions(Transition enteringTransition, EventOccurrence eventOccurrence) {
 		val targetedVertice = new ArrayList
 		val source = enteringTransition.source
+		val target = enteringTransition.target
 		if (source instanceof Pseudostate && (source as Pseudostate).kind == PseudostateKind.FORK) {
-			targetedVertice.addAll(source.outgoingTransitions.map[target])
+			targetedVertice.addAll(source.outgoingTransitions.map[t|t.target])
 		} else {
 			targetedVertice.add(enteringTransition.target)
+		}
+		if (target instanceof Pseudostate && (target as Pseudostate).kind == PseudostateKind.ENTRYPOINT) {
+			targetedVertice.addAll(target.outgoingTransitions.map[t|t.target])
 		}
 		_self.regions.filter[r|
 			val vertice = new ArrayList(r.vertice)
@@ -328,11 +341,9 @@ class StateAspect extends VertexAspect {
 	
 	@OverrideAspectMethod
 	protected def boolean contains(Vertex vertex) {
-		if (_self == vertex) {
+		if (_self == vertex || _self == vertex.eContainer)
 			return true
-		} else {
-			return _self.regions.exists[contains(vertex)]
-		}
+		return _self.regions.exists[contains(vertex)]
 	}
 	
 	protected def boolean canDefer(CustomEvent eventType) {
@@ -404,11 +415,14 @@ class PseudostateAspect extends VertexAspect {
 			}
 			
 			case ENTRYPOINT: {
-				_self.super_enter(enteringTransition, eventOccurrence, leastCommonAncestor)
+				_self.state.enter(enteringTransition, eventOccurrence, leastCommonAncestor)
+				_self.state.container.currentVertex = _self
+				_self.state.container.containingStateMachine.activeVertice.add(_self)
+//				_self.super_enter(enteringTransition, eventOccurrence, leastCommonAncestor)
 				if (_self.state.regions.size > 1) {
 					_self.outgoingTransitions.forEach[fire(eventOccurrence)]
 				} else {
-					_self.outgoingTransitions.head.fire(eventOccurrence)
+					_self.outgoingTransitions.head?.fire(eventOccurrence)
 				}
 			}
 			
@@ -426,6 +440,17 @@ class PseudostateAspect extends VertexAspect {
 			}
 		}
 	}
+	
+	@OverrideAspectMethod
+	protected def void exit(Transition exitingTransition, EventOccurrence eventOccurrence, Region leastCommonAncestor) {
+		if (_self.kind == PseudostateKind.ENTRYPOINT) {
+			_self.super_exit(exitingTransition, eventOccurrence, null)
+		} else {
+			_self.super_exit(exitingTransition, eventOccurrence, leastCommonAncestor)
+		}
+	}
+	
+	
 	
 	@OverrideAspectMethod
 	protected def boolean isEnterable(Transition enteringTransition) {
@@ -456,12 +481,36 @@ class PseudostateAspect extends VertexAspect {
 			}
 		}
 	}
+	
+	@OverrideAspectMethod
+	protected def boolean isActive() {
+		if (_self.kind == PseudostateKind.ENTRYPOINT || _self.kind == PseudostateKind.EXITPOINT) {
+			return _self.state.container.containingStateMachine.activeVertice.contains(_self)
+		} else {
+			return _self.super_isActive
+		}
+	}
+	
+	@OverrideAspectMethod
+	protected def Region getContainingRegion() {
+		if (_self.state !== null)
+			return _self.state.container
+		return _self.container
+	}
+	
+	@OverrideAspectMethod
+	protected def Vertex getParentState() {
+		if (_self.state !== null)
+			return _self.state
+		return _self.container.state
+	}
 }
 
 @Aspect(className=Transition)
 class TransitionAspect {
 
 	protected boolean traversed = false
+	private Region _leastCommonAncestor = null
 
 	@Step
 	def void fire(EventOccurrence eventOccurrence) {
@@ -533,40 +582,62 @@ class TransitionAspect {
 	}
 	
 	private def State getContainingState() {
-		var State containingState = null
-		if (_self.source.contains(_self.target)) {
-			containingState = _self.source as State
-		} else {
-			containingState = _self.target as State
+		if (_self.source instanceof Pseudostate && (_self.source as Pseudostate).kind == PseudostateKind.ENTRYPOINT)
+			return (_self.source as Pseudostate).state
+		if (_self.source.contains(_self.target))
+			return _self.source as State
+		return _self.target as State
+	}
+	
+	private def Region getRegion(EObject object) {
+		if (object instanceof Region) {
+			return object as Region
+		} else if (object instanceof State) {
+			return (object as State).container
 		}
-		return containingState
 	}
 	
 	private def Region getLeastCommonAncestor() {
-		val sourceAncestors = new ArrayList<Region>()
-		val targetAncestors = new ArrayList<Region>()
-		var EObject currentAncestor = _self.source.container
-		while (!(currentAncestor instanceof StateMachine)) {
-			if (currentAncestor instanceof Region) {
-				sourceAncestors.add(currentAncestor)
-			}
-			currentAncestor = currentAncestor.eContainer
-		}
-		currentAncestor = _self.target.container
-		while (!(currentAncestor instanceof StateMachine)) {
-			if (currentAncestor instanceof Region) {
-				targetAncestors.add(currentAncestor)
-			}
-			currentAncestor = currentAncestor.eContainer
-		}
-		var Region result = null
-		for (var i = 0; i < sourceAncestors.size && result === null; i++) {
-			for (var j = 0; j < targetAncestors.size && result === null; j++) {
-				if (sourceAncestors.get(i) == targetAncestors.get(j)) {
-					result = sourceAncestors.get(i)
+		if (_self.source.parentState != _self.target.parentState) {
+			if (_self._leastCommonAncestor === null) {
+				var Region result = null
+				var parentSourceState = _self.source.parentState
+				var parentTargetState = _self.target.parentState
+				if (parentSourceState !== null && parentSourceState.connectionPoint.contains(_self.source) &&
+						parentSourceState.contains(_self.target)) {
+					result = parentSourceState.regions.findFirst[contains(_self.target)]
+				} else if (parentTargetState !== null && parentTargetState.connectionPoint.contains(_self.target) &&
+						parentTargetState.contains(_self.source)) {
+					result = parentTargetState.regions.findFirst[contains(_self.source)]
+				} else {
+					val sourceAncestors = new ArrayList<EObject>()
+					val targetAncestors = new ArrayList<EObject>()
+					var EObject currentAncestor = _self.source.eContainer
+					while (!(currentAncestor instanceof StateMachine)) {
+						if (currentAncestor instanceof Region || currentAncestor instanceof State) {
+							sourceAncestors.add(currentAncestor)
+						}
+						currentAncestor = currentAncestor.eContainer
+					}
+					currentAncestor = _self.target.eContainer
+					while (!(currentAncestor instanceof StateMachine)) {
+						if (currentAncestor instanceof Region || currentAncestor instanceof State) {
+							targetAncestors.add(currentAncestor)
+						}
+						currentAncestor = currentAncestor.eContainer
+					}
+					for (var i = 0; i < sourceAncestors.size && result === null; i++) {
+						for (var j = 0; j < targetAncestors.size && result === null; j++) {
+							if (sourceAncestors.get(i) == targetAncestors.get(j)) {
+								result = _self.getRegion(sourceAncestors.get(i))
+							}
+						}
+					}
 				}
+				
+				_self._leastCommonAncestor = result
 			}
 		}
-		return result
+		return _self._leastCommonAncestor
 	}
 }

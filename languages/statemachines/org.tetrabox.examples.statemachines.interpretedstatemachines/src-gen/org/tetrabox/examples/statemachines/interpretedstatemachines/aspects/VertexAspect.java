@@ -30,7 +30,9 @@ public class VertexAspect {
   
   protected static void exit(final Vertex _self, final Transition exitingTransition, final EventOccurrence eventOccurrence, final Region leastCommonAncestor) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspectVertexAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspectVertexAspectContext.getSelf(_self);
-     if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.State){
+     if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate){
+    					org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.PseudostateAspect.exit((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate)_self,exitingTransition,eventOccurrence,leastCommonAncestor);
+    } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.State){
     					org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect.exit((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.State)_self,exitingTransition,eventOccurrence,leastCommonAncestor);
     } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex){
     					org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspect._privk3_exit(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex)_self,exitingTransition,eventOccurrence,leastCommonAncestor);
@@ -49,7 +51,11 @@ public class VertexAspect {
   protected static boolean isActive(final Vertex _self) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspectVertexAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspectVertexAspectContext.getSelf(_self);
     Object result = null;
-    result = _privk3_isActive(_self_, _self);;
+     if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate){
+    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.PseudostateAspect.isActive((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate)_self);
+    } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex){
+    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspect._privk3_isActive(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex)_self);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
     return (boolean)result;
   }
   
@@ -90,6 +96,28 @@ public class VertexAspect {
     return (boolean)result;
   }
   
+  protected static Region getContainingRegion(final Vertex _self) {
+    final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspectVertexAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspectVertexAspectContext.getSelf(_self);
+    Object result = null;
+     if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate){
+    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.PseudostateAspect.getContainingRegion((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate)_self);
+    } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex){
+    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspect._privk3_getContainingRegion(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex)_self);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    return (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Region)result;
+  }
+  
+  protected static State getParentState(final Vertex _self) {
+    final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspectVertexAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspectVertexAspectContext.getSelf(_self);
+    Object result = null;
+     if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate){
+    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.PseudostateAspect.getParentState((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate)_self);
+    } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex){
+    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspect._privk3_getParentState(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex)_self);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    return (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.State)result;
+  }
+  
   protected static void _privk3_enter(final VertexAspectVertexAspectProperties _self_, final Vertex _self, final Transition enteringTransition, final EventOccurrence eventOccurrence, final Region leastCommonAncestor) {
     if ((((leastCommonAncestor != null) && (_self.getContainer() != null)) && (!Objects.equal(_self.getContainer(), leastCommonAncestor)))) {
       State containingState = _self.getContainer().getState();
@@ -97,15 +125,15 @@ public class VertexAspect {
         StateAspect.enter(containingState, enteringTransition, eventOccurrence, leastCommonAncestor);
       }
     }
-    Region _container = _self.getContainer();
-    RegionAspect.currentVertex(_container, _self);
-    StateMachineAspect.activeVertice(RegionAspect.getContainingStateMachine(_self.getContainer())).add(_self);
+    Region _containingRegion = VertexAspect.getContainingRegion(_self);
+    RegionAspect.currentVertex(_containingRegion, _self);
+    StateMachineAspect.activeVertice(RegionAspect.getContainingStateMachine(VertexAspect.getContainingRegion(_self))).add(_self);
   }
   
   protected static void _privk3_exit(final VertexAspectVertexAspectProperties _self_, final Vertex _self, final Transition exitingTransition, final EventOccurrence eventOccurrence, final Region leastCommonAncestor) {
-    Region _container = _self.getContainer();
-    RegionAspect.currentVertex(_container, null);
-    StateMachineAspect.activeVertice(RegionAspect.getContainingStateMachine(_self.getContainer())).remove(_self);
+    Region _containingRegion = VertexAspect.getContainingRegion(_self);
+    RegionAspect.currentVertex(_containingRegion, null);
+    StateMachineAspect.activeVertice(RegionAspect.getContainingStateMachine(VertexAspect.getContainingRegion(_self))).remove(_self);
     if ((((leastCommonAncestor != null) && (_self.getContainer() != null)) && (!Objects.equal(leastCommonAncestor, _self.getContainer())))) {
       State containingState = _self.getContainer().getState();
       if ((containingState != null)) {
@@ -132,5 +160,13 @@ public class VertexAspect {
   
   protected static boolean _privk3_contains(final VertexAspectVertexAspectProperties _self_, final Vertex _self, final Vertex vertex) {
     return false;
+  }
+  
+  protected static Region _privk3_getContainingRegion(final VertexAspectVertexAspectProperties _self_, final Vertex _self) {
+    return _self.getContainer();
+  }
+  
+  protected static State _privk3_getParentState(final VertexAspectVertexAspectProperties _self_, final Vertex _self) {
+    return _self.getContainer().getState();
   }
 }

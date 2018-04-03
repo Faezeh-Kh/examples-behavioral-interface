@@ -2,11 +2,19 @@ package org.tetrabox.examples.statemachines.test
 
 import java.util.Collections
 import java.util.HashMap
+import java.util.List
+import java.util.Map
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
+import org.eclipse.gemoc.executionframework.event.model.event.EventPackage
+import org.eclipse.gemoc.executionframework.event.testsuite.TestSuite
+import org.eclipse.gemoc.executionframework.event.testsuite.TestsuiteFactory
+import org.eclipse.gemoc.executionframework.event.testsuite.TestsuitePackage
 import org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.StylesheetsPackage
+import org.eclipse.uml2.uml.Behavior
+import org.eclipse.uml2.uml.CallEvent
 import org.eclipse.uml2.uml.Event
 import org.eclipse.uml2.uml.FinalState
 import org.eclipse.uml2.uml.Model
@@ -18,17 +26,16 @@ import org.eclipse.uml2.uml.Transition
 import org.eclipse.uml2.uml.Trigger
 import org.eclipse.uml2.uml.UMLPackage
 import org.eclipse.uml2.uml.Vertex
+import org.tetrabox.examples.statemachines.interpretedstatemachines.event.interpretedstatemachinesevent.InterpretedstatemachineseventFactory
+import org.tetrabox.examples.statemachines.interpretedstatemachines.event.interpretedstatemachinesevent.InterpretedstatemachineseventPackage
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CustomSystem
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StatemachinesFactory
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.AlmostumlFactory
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.PseudostateKind
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.TransitionKind
-import org.eclipse.uml2.uml.Behavior
-import org.eclipse.uml2.uml.CallEvent
-import org.eclipse.gemoc.executionframework.event.testsuite.TestsuiteFactory
-import org.tetrabox.examples.statemachines.interpretedstatemachines.event.interpretedstatemachinesevent.InterpretedstatemachineseventFactory
-import java.util.Map
-import org.eclipse.gemoc.executionframework.event.testsuite.TestSuite
+import java.util.ArrayList
+import org.tetrabox.examples.statemachines.interpretedstatemachines.event.interpretedstatemachinesevent.StateMachineRunEvent
+import org.tetrabox.examples.statemachines.interpretedstatemachines.event.interpretedstatemachinesevent.StateMachineEventOccurrenceReceivedEvent
 
 class ModelTransformation {
 	
@@ -137,6 +144,7 @@ class ModelTransformation {
 			exit = state.exit.transformBehavior
 			deferrableTriggers.addAll(state.deferrableTriggers.map[transformTrigger])
 			regions.addAll(state.regions.map[transformRegion])
+			connectionPoint.addAll(state.connectionPoints.map[transformVertex as org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate])
 		]
 	}
 	
@@ -191,29 +199,38 @@ class ModelTransformation {
 	}
 	
 	def static URI getStateMachineURI(StateMachine stateMachine) {
-		URI::createFileURI('''/home/dorian/git/examples-behavioral-interface/test/org.tetrabox.examples.statemachines.test/models/«stateMachine.name».xmi''')
+		URI::createFileURI('''/home/dorian/git/examples-behavioral-interface/test/statemachines/org.tetrabox.examples.statemachines.test/models/«stateMachine.name».xmi''')
 	}
 	
 	def static URI getTestSuiteURI() {
-		URI::createFileURI('''/home/dorian/git/examples-behavioral-interface/test/org.tetrabox.examples.statemachines.test/models/StateMachineTestSuite.xmi''')
+		URI::createFileURI('''/home/dorian/git/examples-behavioral-interface/test/statemachines/org.tetrabox.examples.statemachines.test/models/StateMachineTestSuite.xmi''')
 	}
 	
 	def static URI getActualTestSuiteURI() {
-		URI::createFileURI('''/home/dorian/git/examples-behavioral-interface/test/org.tetrabox.examples.statemachines.test/models/ActualStateMachineTestSuite.xmi''')
+		URI::createFileURI('''/home/dorian/git/examples-behavioral-interface/test/statemachines/org.tetrabox.examples.statemachines.test/models/ActualStateMachineTestSuite.xmi''')
 	}
 	
-	def static Map<String, String> parseExpectedTrace() {
-		val result = new HashMap<String, String>
+	def static void parsePreviousTestSuite(Map<String, String> expectedTraces, Map<String, List<org.eclipse.gemoc.executionframework.event.model.event.Event>> events) {
 		val rs = new ResourceSetImpl
+		val p1 = TestsuitePackage.eINSTANCE
+		val p2 = EventPackage.eINSTANCE
+		val p3 = InterpretedstatemachineseventPackage.eINSTANCE
+		rs.getPackageRegistry().put(p1.getNsURI(), p1);
+		rs.getPackageRegistry().put(p2.getNsURI(), p2);
+		rs.getPackageRegistry().put(p3.getNsURI(), p3);
+		rs.resourceFactoryRegistry.extensionToFactoryMap.put("xmi", new XMIResourceFactoryImpl)
 		val res = rs.getResource(actualTestSuiteURI, true)
 		val ts = res.contents.head as TestSuite
 		ts.testCases.forEach[c|
-			result.put(c.name, c.expectedTrace)
+			expectedTraces.put(c.name, c.expectedTrace)
+			events.put(c.name, new ArrayList(c.scenario.toArray))
 		]
-		return result
 	}
 	
 	def static void main(String[] args) {
+		val traces = new HashMap<String, String>
+		val events = new HashMap<String, List<org.eclipse.gemoc.executionframework.event.model.event.Event>>
+		ModelTransformation.parsePreviousTestSuite(traces, events)
 		val transformation = new ModelTransformation
 		val uri = papyrusTestSuiteURI
 		val inputResSet = new ResourceSetImpl
@@ -225,7 +242,6 @@ class ModelTransformation {
 		val model = inputResSet.getResource(uri, true).contents.head as Model
 		val testSuite = transformation.testSuiteFactory.createTestSuite
 		val toTransform = model.eAllContents.filter(StateMachine).toList
-		val traces = parseExpectedTrace
 		var i = 1
 		for (sm : toTransform) {
 			if (transformation.canTransform(sm)) {
@@ -236,15 +252,30 @@ class ModelTransformation {
 					model = system
 					name = res.URI.trimFileExtension.lastSegment
 					expectedTrace = traces.get(name)
-					scenario += transformation.eventFactory.createStateMachineRunEvent => [
-						stateMachine = system.statemachine
-					]
-					system.events.forEach[e|
-						scenario += transformation.eventFactory.createStateMachineEventOccurrenceReceivedEvent => [
-							stateMachine = system.statemachine
-							eventType = e
+					if (events.get(name) !== null) {
+						events.get(name).forEach[evt|
+							if (evt instanceof StateMachineRunEvent) {
+								scenario += transformation.eventFactory.createStateMachineRunEvent => [
+									stateMachine = system.statemachine
+								]
+							} else if (evt instanceof StateMachineEventOccurrenceReceivedEvent) {
+								scenario += transformation.eventFactory.createStateMachineEventOccurrenceReceivedEvent => [
+									stateMachine = system.statemachine
+									eventType = evt.eventType
+								]
+							}
 						]
-					]
+					} else {
+						scenario += transformation.eventFactory.createStateMachineRunEvent => [
+							stateMachine = system.statemachine
+						]
+						system.events.forEach[e|
+							scenario += transformation.eventFactory.createStateMachineEventOccurrenceReceivedEvent => [
+								stateMachine = system.statemachine
+								eventType = e
+							]
+						]
+					}
 				]
 				testSuite.testCases += testCase
 				i++

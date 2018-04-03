@@ -192,18 +192,18 @@ public class AlmostumlPackageImpl extends EPackageImpl implements AlmostumlPacka
 		EcorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		StatemachinesPackageImpl theStatemachinesPackage = (StatemachinesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StatemachinesPackage.eNS_URI) instanceof StatemachinesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StatemachinesPackage.eNS_URI) : StatemachinesPackage.eINSTANCE);
 		StatemachinesexecutiondataPackageImpl theStatemachinesexecutiondataPackage = (StatemachinesexecutiondataPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StatemachinesexecutiondataPackage.eNS_URI) instanceof StatemachinesexecutiondataPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StatemachinesexecutiondataPackage.eNS_URI) : StatemachinesexecutiondataPackage.eINSTANCE);
+		StatemachinesPackageImpl theStatemachinesPackage = (StatemachinesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StatemachinesPackage.eNS_URI) instanceof StatemachinesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StatemachinesPackage.eNS_URI) : StatemachinesPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theAlmostumlPackage.createPackageContents();
-		theStatemachinesPackage.createPackageContents();
 		theStatemachinesexecutiondataPackage.createPackageContents();
+		theStatemachinesPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theAlmostumlPackage.initializePackageContents();
-		theStatemachinesPackage.initializePackageContents();
 		theStatemachinesexecutiondataPackage.initializePackageContents();
+		theStatemachinesPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theAlmostumlPackage.freeze();

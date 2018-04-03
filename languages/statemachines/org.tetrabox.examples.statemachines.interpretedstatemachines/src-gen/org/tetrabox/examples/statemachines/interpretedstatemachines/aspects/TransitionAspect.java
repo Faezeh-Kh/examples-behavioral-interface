@@ -13,6 +13,8 @@ import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.Stat
 import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectProperties;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspect;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Behavior;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.PseudostateKind;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Region;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.State;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.StateMachine;
@@ -62,6 +64,13 @@ public class TransitionAspect {
     return (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.State)result;
   }
   
+  private static Region getRegion(final Transition _self, final EObject object) {
+    final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectContext.getSelf(_self);
+    Object result = null;
+    result = _privk3_getRegion(_self_, _self,object);;
+    return (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Region)result;
+  }
+  
   private static Region getLeastCommonAncestor(final Transition _self) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectContext.getSelf(_self);
     Object result = null;
@@ -79,6 +88,18 @@ public class TransitionAspect {
   protected static void traversed(final Transition _self, final boolean traversed) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectContext.getSelf(_self);
     _privk3_traversed(_self_, _self,traversed);;
+  }
+  
+  private static Region _leastCommonAncestor(final Transition _self) {
+    final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectContext.getSelf(_self);
+    Object result = null;
+    result = _privk3__leastCommonAncestor(_self_, _self);;
+    return (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Region)result;
+  }
+  
+  private static void _leastCommonAncestor(final Transition _self, final Region _leastCommonAncestor) {
+    final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectContext.getSelf(_self);
+    _privk3__leastCommonAncestor(_self_, _self,_leastCommonAncestor);;
   }
   
   protected static void _privk3_fire(final TransitionAspectTransitionAspectProperties _self_, final Transition _self, final EventOccurrence eventOccurrence) {
@@ -187,51 +208,91 @@ public class TransitionAspect {
   }
   
   protected static State _privk3_getContainingState(final TransitionAspectTransitionAspectProperties _self_, final Transition _self) {
-    State containingState = null;
+    if (((_self.getSource() instanceof Pseudostate) && Objects.equal(((Pseudostate) _self.getSource()).getKind(), PseudostateKind.ENTRYPOINT))) {
+      Vertex _source = _self.getSource();
+      return ((Pseudostate) _source).getState();
+    }
     boolean _contains = VertexAspect.contains(_self.getSource(), _self.getTarget());
     if (_contains) {
-      Vertex _source = _self.getSource();
-      containingState = ((State) _source);
-    } else {
-      Vertex _target = _self.getTarget();
-      containingState = ((State) _target);
+      Vertex _source_1 = _self.getSource();
+      return ((State) _source_1);
     }
-    return containingState;
+    Vertex _target = _self.getTarget();
+    return ((State) _target);
+  }
+  
+  protected static Region _privk3_getRegion(final TransitionAspectTransitionAspectProperties _self_, final Transition _self, final EObject object) {
+    if ((object instanceof Region)) {
+      return ((Region) object);
+    } else {
+      if ((object instanceof State)) {
+        return ((State) object).getContainer();
+      }
+    }
+    return null;
   }
   
   protected static Region _privk3_getLeastCommonAncestor(final TransitionAspectTransitionAspectProperties _self_, final Transition _self) {
-    final ArrayList<Region> sourceAncestors = new ArrayList<Region>();
-    final ArrayList<Region> targetAncestors = new ArrayList<Region>();
-    EObject currentAncestor = _self.getSource().getContainer();
-    while ((!(currentAncestor instanceof StateMachine))) {
-      {
-        if ((currentAncestor instanceof Region)) {
-          sourceAncestors.add(((Region)currentAncestor));
+    State _parentState = VertexAspect.getParentState(_self.getSource());
+    State _parentState_1 = VertexAspect.getParentState(_self.getTarget());
+    boolean _notEquals = (!Objects.equal(_parentState, _parentState_1));
+    if (_notEquals) {
+      Region __leastCommonAncestor = TransitionAspect._leastCommonAncestor(_self);
+      boolean _tripleEquals = (__leastCommonAncestor == null);
+      if (_tripleEquals) {
+        Region result = null;
+        State parentSourceState = VertexAspect.getParentState(_self.getSource());
+        State parentTargetState = VertexAspect.getParentState(_self.getTarget());
+        if ((((parentSourceState != null) && parentSourceState.getConnectionPoint().contains(_self.getSource())) && 
+          StateAspect.contains(parentSourceState, _self.getTarget()))) {
+          final Function1<Region, Boolean> _function = (Region it) -> {
+            return Boolean.valueOf(RegionAspect.contains(it, _self.getTarget()));
+          };
+          result = IterableExtensions.<Region>findFirst(parentSourceState.getRegions(), _function);
+        } else {
+          if ((((parentTargetState != null) && parentTargetState.getConnectionPoint().contains(_self.getTarget())) && 
+            StateAspect.contains(parentTargetState, _self.getSource()))) {
+            final Function1<Region, Boolean> _function_1 = (Region it) -> {
+              return Boolean.valueOf(RegionAspect.contains(it, _self.getSource()));
+            };
+            result = IterableExtensions.<Region>findFirst(parentTargetState.getRegions(), _function_1);
+          } else {
+            final ArrayList<EObject> sourceAncestors = new ArrayList<EObject>();
+            final ArrayList<EObject> targetAncestors = new ArrayList<EObject>();
+            EObject currentAncestor = _self.getSource().eContainer();
+            while ((!(currentAncestor instanceof StateMachine))) {
+              {
+                if (((currentAncestor instanceof Region) || (currentAncestor instanceof State))) {
+                  sourceAncestors.add(currentAncestor);
+                }
+                currentAncestor = currentAncestor.eContainer();
+              }
+            }
+            currentAncestor = _self.getTarget().eContainer();
+            while ((!(currentAncestor instanceof StateMachine))) {
+              {
+                if (((currentAncestor instanceof Region) || (currentAncestor instanceof State))) {
+                  targetAncestors.add(currentAncestor);
+                }
+                currentAncestor = currentAncestor.eContainer();
+              }
+            }
+            for (int i = 0; ((i < sourceAncestors.size()) && (result == null)); i++) {
+              for (int j = 0; ((j < targetAncestors.size()) && (result == null)); j++) {
+                EObject _get = sourceAncestors.get(i);
+                EObject _get_1 = targetAncestors.get(j);
+                boolean _equals = Objects.equal(_get, _get_1);
+                if (_equals) {
+                  result = TransitionAspect.getRegion(_self, sourceAncestors.get(i));
+                }
+              }
+            }
+          }
         }
-        currentAncestor = currentAncestor.eContainer();
+        TransitionAspect._leastCommonAncestor(_self, result);
       }
     }
-    currentAncestor = _self.getTarget().getContainer();
-    while ((!(currentAncestor instanceof StateMachine))) {
-      {
-        if ((currentAncestor instanceof Region)) {
-          targetAncestors.add(((Region)currentAncestor));
-        }
-        currentAncestor = currentAncestor.eContainer();
-      }
-    }
-    Region result = null;
-    for (int i = 0; ((i < sourceAncestors.size()) && (result == null)); i++) {
-      for (int j = 0; ((j < targetAncestors.size()) && (result == null)); j++) {
-        Region _get = sourceAncestors.get(i);
-        Region _get_1 = targetAncestors.get(j);
-        boolean _equals = Objects.equal(_get, _get_1);
-        if (_equals) {
-          result = sourceAncestors.get(i);
-        }
-      }
-    }
-    return result;
+    return TransitionAspect._leastCommonAncestor(_self);
   }
   
   protected static boolean _privk3_traversed(final TransitionAspectTransitionAspectProperties _self_, final Transition _self) {
@@ -265,6 +326,43 @@ public class TransitionAspect {
     }
     if (!setterCalled) {
     	_self_.traversed = traversed;
+    }
+  }
+  
+  protected static Region _privk3__leastCommonAncestor(final TransitionAspectTransitionAspectProperties _self_, final Transition _self) {
+    try {
+    	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
+    		if (m.getName().equals("get_leastCommonAncestor") &&
+    			m.getParameterTypes().length == 0) {
+    				Object ret = m.invoke(_self);
+    				if (ret != null) {
+    					return (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Region) ret;
+    				} else {
+    					return null;
+    				}
+    		}
+    	}
+    } catch (Exception e) {
+    	// Chut !
+    }
+    return _self_._leastCommonAncestor;
+  }
+  
+  protected static void _privk3__leastCommonAncestor(final TransitionAspectTransitionAspectProperties _self_, final Transition _self, final Region _leastCommonAncestor) {
+    boolean setterCalled = false;
+    try {
+    	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
+    		if (m.getName().equals("set_leastCommonAncestor")
+    				&& m.getParameterTypes().length == 1) {
+    			m.invoke(_self, _leastCommonAncestor);
+    			setterCalled = true;
+    		}
+    	}
+    } catch (Exception e) {
+    	// Chut !
+    }
+    if (!setterCalled) {
+    	_self_._leastCommonAncestor = _leastCommonAncestor;
     }
   }
 }

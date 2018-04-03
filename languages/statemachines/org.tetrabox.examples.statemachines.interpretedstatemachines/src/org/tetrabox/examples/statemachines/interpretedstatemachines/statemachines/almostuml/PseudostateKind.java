@@ -56,7 +56,9 @@ public enum PseudostateKind implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	TERMINATE(3, "terminate", "terminate"), /**
+	TERMINATE(3, "terminate", "terminate"),
+
+	/**
 	 * The '<em><b>Entrypoint</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -64,7 +66,9 @@ public enum PseudostateKind implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ENTRYPOINT(4, "entrypoint", "entrypoint"), /**
+	ENTRYPOINT(4, "entrypoint", "entrypoint"),
+
+	/**
 	 * The '<em><b>Exitpoint</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

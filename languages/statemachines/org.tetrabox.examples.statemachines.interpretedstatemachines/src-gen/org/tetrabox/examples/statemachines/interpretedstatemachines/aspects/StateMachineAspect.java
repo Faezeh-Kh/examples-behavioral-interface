@@ -255,12 +255,15 @@ public class StateMachineAspect {
     while ((!StateMachineAspect.completionEvents(_self).isEmpty())) {
       {
         final CompletionEvent event = StateMachineAspect.completionEvents(_self).remove(0);
-        final Function1<Transition, Boolean> _function = (Transition it) -> {
-          return Boolean.valueOf(((it.getTriggers() == null) || it.getTriggers().isEmpty()));
-        };
-        final Transition transition = IterableExtensions.<Transition>head(IterableExtensions.<Transition>filter(event.getState().getOutgoingTransitions(), _function));
-        if ((transition != null)) {
-          TransitionAspect.fire(transition, null);
+        boolean _contains = StateMachineAspect.activeVertice(_self).contains(event.getState());
+        if (_contains) {
+          final Function1<Transition, Boolean> _function = (Transition it) -> {
+            return Boolean.valueOf(((it.getTriggers() == null) || it.getTriggers().isEmpty()));
+          };
+          final Transition transition = IterableExtensions.<Transition>head(IterableExtensions.<Transition>filter(event.getState().getOutgoingTransitions(), _function));
+          if ((transition != null)) {
+            TransitionAspect.fire(transition, null);
+          }
         }
       }
     }

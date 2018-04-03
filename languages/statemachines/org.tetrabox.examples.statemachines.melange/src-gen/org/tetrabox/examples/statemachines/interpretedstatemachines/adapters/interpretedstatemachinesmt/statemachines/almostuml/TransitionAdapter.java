@@ -6,12 +6,12 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.InterpretedStateMachinesMTAdaptersFactory;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Transition;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.EventOccurrence;
 import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.Behavior;
 import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.Region;
 import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.TransitionKind;
 import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.Trigger;
 import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.Vertex;
-import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachinesexecutiondata.EventOccurrence;
 
 @SuppressWarnings("all")
 public class TransitionAdapter extends EObjectAdapter<Transition> implements org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.Transition {

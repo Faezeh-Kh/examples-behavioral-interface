@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.CustomEventAdapter;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.CustomSystemAdapter;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.EventOccurrenceAdapter;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.almostuml.BehaviorAdapter;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.almostuml.CompletionEventAdapter;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.almostuml.EventAdapter;
@@ -19,9 +20,9 @@ import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.int
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.almostuml.TransitionAdapter;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.almostuml.TriggerAdapter;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.almostuml.VertexAdapter;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachinesexecutiondata.EventOccurrenceAdapter;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CustomEvent;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CustomSystem;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Behavior;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.CompletionEvent;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Event;
@@ -34,7 +35,6 @@ import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachine
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Transition;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Trigger;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachinesexecutiondata.EventOccurrence;
 
 @SuppressWarnings("all")
 public class InterpretedStateMachinesMTAdaptersFactory implements AdaptersFactory {
@@ -54,9 +54,6 @@ public class InterpretedStateMachinesMTAdaptersFactory implements AdaptersFactor
   }
   
   public EObjectAdapter createAdapter(final EObject o, final Resource res) {
-    if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachinesexecutiondata.EventOccurrence){
-    	return createEventOccurrenceAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachinesexecutiondata.EventOccurrence) o, res);
-    }
     if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CustomSystem){
     	return createCustomSystemAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CustomSystem) o, res);
     }
@@ -96,23 +93,11 @@ public class InterpretedStateMachinesMTAdaptersFactory implements AdaptersFactor
     if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Behavior){
     	return createBehaviorAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Behavior) o, res);
     }
+    if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachinesexecutiondata.EventOccurrence){
+    	return createEventOccurrenceAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachinesexecutiondata.EventOccurrence) o, res);
+    }
     
     return null;
-  }
-  
-  public EventOccurrenceAdapter createEventOccurrenceAdapter(final EventOccurrence adaptee, final Resource res) {
-    if (adaptee == null)
-    	return null;
-    EObjectAdapter adapter = register.get(adaptee);
-    if(adapter != null)
-    	 return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachinesexecutiondata.EventOccurrenceAdapter) adapter;
-    else {
-    	adapter = new org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachinesexecutiondata.EventOccurrenceAdapter();
-    	adapter.setAdaptee(adaptee);
-    	adapter.setResource(res);
-    	register.put(adaptee, adapter);
-    	return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachinesexecutiondata.EventOccurrenceAdapter) adapter;
-    }
   }
   
   public CustomSystemAdapter createCustomSystemAdapter(final CustomSystem adaptee, final Resource res) {
@@ -145,7 +130,7 @@ public class InterpretedStateMachinesMTAdaptersFactory implements AdaptersFactor
     }
   }
   
-  public org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.EventOccurrenceAdapter createEventOccurrenceAdapter(final org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence adaptee, final Resource res) {
+  public EventOccurrenceAdapter createEventOccurrenceAdapter(final EventOccurrence adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
     EObjectAdapter adapter = register.get(adaptee);
@@ -337,6 +322,21 @@ public class InterpretedStateMachinesMTAdaptersFactory implements AdaptersFactor
     	adapter.setResource(res);
     	register.put(adaptee, adapter);
     	return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.almostuml.BehaviorAdapter) adapter;
+    }
+  }
+  
+  public org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachinesexecutiondata.EventOccurrenceAdapter createEventOccurrenceAdapter(final org.tetrabox.examples.statemachines.interpretedstatemachines.statemachinesexecutiondata.EventOccurrence adaptee, final Resource res) {
+    if (adaptee == null)
+    	return null;
+    EObjectAdapter adapter = register.get(adaptee);
+    if(adapter != null)
+    	 return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachinesexecutiondata.EventOccurrenceAdapter) adapter;
+    else {
+    	adapter = new org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachinesexecutiondata.EventOccurrenceAdapter();
+    	adapter.setAdaptee(adaptee);
+    	adapter.setResource(res);
+    	register.put(adaptee, adapter);
+    	return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachinesexecutiondata.EventOccurrenceAdapter) adapter;
     }
   }
 }

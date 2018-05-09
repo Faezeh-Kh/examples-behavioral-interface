@@ -6,8 +6,6 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.StateMachine;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Custom System</b></em>'.
@@ -18,7 +16,8 @@ import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachine
  * </p>
  * <ul>
  *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CustomSystem#getStatemachine <em>Statemachine</em>}</li>
- *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CustomSystem#getEvents <em>Events</em>}</li>
+ *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CustomSystem#getSignals <em>Signals</em>}</li>
+ *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CustomSystem#getOperations <em>Operations</em>}</li>
  * </ul>
  *
  * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StatemachinesPackage#getCustomSystem()
@@ -53,19 +52,35 @@ public interface CustomSystem extends EObject {
 	void setStatemachine(StateMachine value);
 
 	/**
-	 * Returns the value of the '<em><b>Events</b></em>' containment reference list.
-	 * The list contents are of type {@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CustomEvent}.
+	 * Returns the value of the '<em><b>Signals</b></em>' containment reference list.
+	 * The list contents are of type {@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Signal}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Events</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Signals</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Events</em>' containment reference list.
-	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StatemachinesPackage#getCustomSystem_Events()
+	 * @return the value of the '<em>Signals</em>' containment reference list.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StatemachinesPackage#getCustomSystem_Signals()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<CustomEvent> getEvents();
+	EList<Signal> getSignals();
+
+	/**
+	 * Returns the value of the '<em><b>Operations</b></em>' containment reference list.
+	 * The list contents are of type {@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Operation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Operations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Operations</em>' containment reference list.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StatemachinesPackage#getCustomSystem_Operations()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Operation> getOperations();
 
 } // CustomSystem

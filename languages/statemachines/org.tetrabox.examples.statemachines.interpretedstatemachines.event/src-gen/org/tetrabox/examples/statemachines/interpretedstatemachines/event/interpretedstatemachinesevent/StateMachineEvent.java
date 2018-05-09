@@ -2,7 +2,7 @@
  */
 package org.tetrabox.examples.statemachines.interpretedstatemachines.event.interpretedstatemachinesevent;
 
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.StateMachine;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine;
 
 /**
  * <!-- begin-user-doc -->

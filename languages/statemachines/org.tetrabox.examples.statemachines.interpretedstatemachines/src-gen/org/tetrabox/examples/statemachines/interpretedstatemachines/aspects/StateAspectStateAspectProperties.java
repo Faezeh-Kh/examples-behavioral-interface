@@ -2,7 +2,7 @@ package org.tetrabox.examples.statemachines.interpretedstatemachines.aspects;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachinesexecutiondata.EventOccurrence;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence;
 
 @SuppressWarnings("all")
 public class StateAspectStateAspectProperties {

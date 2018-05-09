@@ -19,10 +19,6 @@ import org.tetrabox.examples.statemachines.interpretedstatemachines.event.interp
 
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StatemachinesPackage;
 
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.AlmostumlPackage;
-
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachinesexecutiondata.StatemachinesexecutiondataPackage;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
@@ -107,7 +103,6 @@ public class InterpretedstatemachineseventPackageImpl extends EPackageImpl imple
 		// Initialize simple dependencies
 		EventPackage.eINSTANCE.eClass();
 		StatemachinesPackage.eINSTANCE.eClass();
-		StatemachinesexecutiondataPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theInterpretedstatemachineseventPackage.createPackageContents();
@@ -165,7 +160,7 @@ public class InterpretedstatemachineseventPackageImpl extends EPackageImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStateMachineEventOccurrenceReceivedEvent_EventType() {
+	public EReference getStateMachineEventOccurrenceReceivedEvent_Event() {
 		return (EReference)stateMachineEventOccurrenceReceivedEventEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -212,7 +207,7 @@ public class InterpretedstatemachineseventPackageImpl extends EPackageImpl imple
 		createEReference(stateMachineEventEClass, STATE_MACHINE_EVENT__STATE_MACHINE);
 
 		stateMachineEventOccurrenceReceivedEventEClass = createEClass(STATE_MACHINE_EVENT_OCCURRENCE_RECEIVED_EVENT);
-		createEReference(stateMachineEventOccurrenceReceivedEventEClass, STATE_MACHINE_EVENT_OCCURRENCE_RECEIVED_EVENT__EVENT_TYPE);
+		createEReference(stateMachineEventOccurrenceReceivedEventEClass, STATE_MACHINE_EVENT_OCCURRENCE_RECEIVED_EVENT__EVENT);
 
 		stateMachineRunEventEClass = createEClass(STATE_MACHINE_RUN_EVENT);
 	}
@@ -242,7 +237,6 @@ public class InterpretedstatemachineseventPackageImpl extends EPackageImpl imple
 
 		// Obtain other dependent packages
 		EventPackage theEventPackage = (EventPackage)EPackage.Registry.INSTANCE.getEPackage(EventPackage.eNS_URI);
-		AlmostumlPackage theAlmostumlPackage = (AlmostumlPackage)EPackage.Registry.INSTANCE.getEPackage(AlmostumlPackage.eNS_URI);
 		StatemachinesPackage theStatemachinesPackage = (StatemachinesPackage)EPackage.Registry.INSTANCE.getEPackage(StatemachinesPackage.eNS_URI);
 
 		// Create type parameters
@@ -259,10 +253,10 @@ public class InterpretedstatemachineseventPackageImpl extends EPackageImpl imple
 		initEClass(interpretedStateMachinesDSLEventEClass, InterpretedStateMachinesDSLEvent.class, "InterpretedStateMachinesDSLEvent", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(stateMachineEventEClass, StateMachineEvent.class, "StateMachineEvent", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStateMachineEvent_StateMachine(), theAlmostumlPackage.getStateMachine(), null, "stateMachine", null, 1, 1, StateMachineEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStateMachineEvent_StateMachine(), theStatemachinesPackage.getStateMachine(), null, "stateMachine", null, 1, 1, StateMachineEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stateMachineEventOccurrenceReceivedEventEClass, StateMachineEventOccurrenceReceivedEvent.class, "StateMachineEventOccurrenceReceivedEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStateMachineEventOccurrenceReceivedEvent_EventType(), theStatemachinesPackage.getCustomEvent(), null, "eventType", null, 0, 1, StateMachineEventOccurrenceReceivedEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStateMachineEventOccurrenceReceivedEvent_Event(), theStatemachinesPackage.getEventOccurrence(), null, "event", null, 0, 1, StateMachineEventOccurrenceReceivedEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stateMachineRunEventEClass, StateMachineRunEvent.class, "StateMachineRunEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

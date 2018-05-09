@@ -2,7 +2,7 @@
  */
 package org.tetrabox.examples.statemachines.interpretedstatemachines.event.interpretedstatemachinesevent;
 
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CustomEvent;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,7 +13,7 @@ import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachine
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachines.event.interpretedstatemachinesevent.StateMachineEventOccurrenceReceivedEvent#getEventType <em>Event Type</em>}</li>
+ *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachines.event.interpretedstatemachinesevent.StateMachineEventOccurrenceReceivedEvent#getEvent <em>Event</em>}</li>
  * </ul>
  *
  * @see org.tetrabox.examples.statemachines.interpretedstatemachines.event.interpretedstatemachinesevent.InterpretedstatemachineseventPackage#getStateMachineEventOccurrenceReceivedEvent()
@@ -22,29 +22,29 @@ import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachine
  */
 public interface StateMachineEventOccurrenceReceivedEvent extends StateMachineEvent {
 	/**
-	 * Returns the value of the '<em><b>Event Type</b></em>' reference.
+	 * Returns the value of the '<em><b>Event</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Event Type</em>' reference isn't clear,
+	 * If the meaning of the '<em>Event</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Event Type</em>' reference.
-	 * @see #setEventType(CustomEvent)
-	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.event.interpretedstatemachinesevent.InterpretedstatemachineseventPackage#getStateMachineEventOccurrenceReceivedEvent_EventType()
-	 * @model
+	 * @return the value of the '<em>Event</em>' containment reference.
+	 * @see #setEvent(EventOccurrence)
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.event.interpretedstatemachinesevent.InterpretedstatemachineseventPackage#getStateMachineEventOccurrenceReceivedEvent_Event()
+	 * @model containment="true"
 	 * @generated
 	 */
-	CustomEvent getEventType();
+	EventOccurrence getEvent();
 
 	/**
-	 * Sets the value of the '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.event.interpretedstatemachinesevent.StateMachineEventOccurrenceReceivedEvent#getEventType <em>Event Type</em>}' reference.
+	 * Sets the value of the '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.event.interpretedstatemachinesevent.StateMachineEventOccurrenceReceivedEvent#getEvent <em>Event</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Event Type</em>' reference.
-	 * @see #getEventType()
+	 * @param value the new value of the '<em>Event</em>' containment reference.
+	 * @see #getEvent()
 	 * @generated
 	 */
-	void setEventType(CustomEvent value);
+	void setEvent(EventOccurrence value);
 
 } // StateMachineEventOccurrenceReceivedEvent

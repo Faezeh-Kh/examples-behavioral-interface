@@ -18,11 +18,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import statemachines.CustomEvent;
 import statemachines.CustomSystem;
+import statemachines.Operation;
+import statemachines.Signal;
+import statemachines.StateMachine;
 import statemachines.StatemachinesPackage;
-
-import statemachines.almostuml.StateMachine;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +33,8 @@ import statemachines.almostuml.StateMachine;
  * </p>
  * <ul>
  *   <li>{@link statemachines.impl.CustomSystemImpl#getStatemachine <em>Statemachine</em>}</li>
- *   <li>{@link statemachines.impl.CustomSystemImpl#getEvents <em>Events</em>}</li>
+ *   <li>{@link statemachines.impl.CustomSystemImpl#getSignals <em>Signals</em>}</li>
+ *   <li>{@link statemachines.impl.CustomSystemImpl#getOperations <em>Operations</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,14 +51,24 @@ public class CustomSystemImpl extends MinimalEObjectImpl.Container implements Cu
 	protected StateMachine statemachine;
 
 	/**
-	 * The cached value of the '{@link #getEvents() <em>Events</em>}' containment reference list.
+	 * The cached value of the '{@link #getSignals() <em>Signals</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEvents()
+	 * @see #getSignals()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CustomEvent> events;
+	protected EList<Signal> signals;
+
+	/**
+	 * The cached value of the '{@link #getOperations() <em>Operations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOperations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Operation> operations;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -126,11 +137,23 @@ public class CustomSystemImpl extends MinimalEObjectImpl.Container implements Cu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CustomEvent> getEvents() {
-		if (events == null) {
-			events = new EObjectContainmentEList<CustomEvent>(CustomEvent.class, this, StatemachinesPackage.CUSTOM_SYSTEM__EVENTS);
+	public EList<Signal> getSignals() {
+		if (signals == null) {
+			signals = new EObjectContainmentEList<Signal>(Signal.class, this, StatemachinesPackage.CUSTOM_SYSTEM__SIGNALS);
 		}
-		return events;
+		return signals;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Operation> getOperations() {
+		if (operations == null) {
+			operations = new EObjectContainmentEList<Operation>(Operation.class, this, StatemachinesPackage.CUSTOM_SYSTEM__OPERATIONS);
+		}
+		return operations;
 	}
 
 	/**
@@ -143,8 +166,10 @@ public class CustomSystemImpl extends MinimalEObjectImpl.Container implements Cu
 		switch (featureID) {
 			case StatemachinesPackage.CUSTOM_SYSTEM__STATEMACHINE:
 				return basicSetStatemachine(null, msgs);
-			case StatemachinesPackage.CUSTOM_SYSTEM__EVENTS:
-				return ((InternalEList<?>)getEvents()).basicRemove(otherEnd, msgs);
+			case StatemachinesPackage.CUSTOM_SYSTEM__SIGNALS:
+				return ((InternalEList<?>)getSignals()).basicRemove(otherEnd, msgs);
+			case StatemachinesPackage.CUSTOM_SYSTEM__OPERATIONS:
+				return ((InternalEList<?>)getOperations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -159,8 +184,10 @@ public class CustomSystemImpl extends MinimalEObjectImpl.Container implements Cu
 		switch (featureID) {
 			case StatemachinesPackage.CUSTOM_SYSTEM__STATEMACHINE:
 				return getStatemachine();
-			case StatemachinesPackage.CUSTOM_SYSTEM__EVENTS:
-				return getEvents();
+			case StatemachinesPackage.CUSTOM_SYSTEM__SIGNALS:
+				return getSignals();
+			case StatemachinesPackage.CUSTOM_SYSTEM__OPERATIONS:
+				return getOperations();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -177,9 +204,13 @@ public class CustomSystemImpl extends MinimalEObjectImpl.Container implements Cu
 			case StatemachinesPackage.CUSTOM_SYSTEM__STATEMACHINE:
 				setStatemachine((StateMachine)newValue);
 				return;
-			case StatemachinesPackage.CUSTOM_SYSTEM__EVENTS:
-				getEvents().clear();
-				getEvents().addAll((Collection<? extends CustomEvent>)newValue);
+			case StatemachinesPackage.CUSTOM_SYSTEM__SIGNALS:
+				getSignals().clear();
+				getSignals().addAll((Collection<? extends Signal>)newValue);
+				return;
+			case StatemachinesPackage.CUSTOM_SYSTEM__OPERATIONS:
+				getOperations().clear();
+				getOperations().addAll((Collection<? extends Operation>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -196,8 +227,11 @@ public class CustomSystemImpl extends MinimalEObjectImpl.Container implements Cu
 			case StatemachinesPackage.CUSTOM_SYSTEM__STATEMACHINE:
 				setStatemachine((StateMachine)null);
 				return;
-			case StatemachinesPackage.CUSTOM_SYSTEM__EVENTS:
-				getEvents().clear();
+			case StatemachinesPackage.CUSTOM_SYSTEM__SIGNALS:
+				getSignals().clear();
+				return;
+			case StatemachinesPackage.CUSTOM_SYSTEM__OPERATIONS:
+				getOperations().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -213,8 +247,10 @@ public class CustomSystemImpl extends MinimalEObjectImpl.Container implements Cu
 		switch (featureID) {
 			case StatemachinesPackage.CUSTOM_SYSTEM__STATEMACHINE:
 				return statemachine != null;
-			case StatemachinesPackage.CUSTOM_SYSTEM__EVENTS:
-				return events != null && !events.isEmpty();
+			case StatemachinesPackage.CUSTOM_SYSTEM__SIGNALS:
+				return signals != null && !signals.isEmpty();
+			case StatemachinesPackage.CUSTOM_SYSTEM__OPERATIONS:
+				return operations != null && !operations.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -6,8 +6,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.InterpretedStateMachinesMTAdaptersFactory;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CustomSystem;
-import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.CustomEvent;
-import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.StateMachine;
 
 @SuppressWarnings("all")
 public class CustomSystemAdapter extends EObjectAdapter<CustomSystem> implements org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.CustomSystem {
@@ -19,24 +17,33 @@ public class CustomSystemAdapter extends EObjectAdapter<CustomSystem> implements
   }
   
   @Override
-  public StateMachine getStatemachine() {
-    return (StateMachine) adaptersFactory.createAdapter(adaptee.getStatemachine(), eResource);
+  public org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StateMachine getStatemachine() {
+    return () adaptersFactory.createAdapter(adaptee.getStatemachine(), eResource);
   }
   
   @Override
-  public void setStatemachine(final StateMachine o) {
+  public void setStatemachine(final org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StateMachine o) {
     if (o != null)
-    	adaptee.setStatemachine(((org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.almostuml.StateMachineAdapter) o).getAdaptee());
+    	adaptee.setStatemachine(((org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.StateMachineAdapter) o).getAdaptee());
     else adaptee.setStatemachine(null);
   }
   
-  private EList<CustomEvent> events_;
+  private /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Signal> */Object signals_;
   
   @Override
-  public EList<CustomEvent> getEvents() {
-    if (events_ == null)
-    	events_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getEvents(), adaptersFactory, eResource);
-    return events_;
+  public /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Signal> */Object getSignals() {
+    if (signals_ == null)
+    	signals_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getSignals(), adaptersFactory, eResource);
+    return signals_;
+  }
+  
+  private /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Operation> */Object operations_;
+  
+  @Override
+  public /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Operation> */Object getOperations() {
+    if (operations_ == null)
+    	operations_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getOperations(), adaptersFactory, eResource);
+    return operations_;
   }
   
   @Override
@@ -49,8 +56,10 @@ public class CustomSystemAdapter extends EObjectAdapter<CustomSystem> implements
     switch (featureID) {
     	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StatemachinesPackage.CUSTOM_SYSTEM__STATEMACHINE:
     		return getStatemachine();
-    	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StatemachinesPackage.CUSTOM_SYSTEM__EVENTS:
-    		return getEvents();
+    	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StatemachinesPackage.CUSTOM_SYSTEM__SIGNALS:
+    		return getSignals();
+    	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StatemachinesPackage.CUSTOM_SYSTEM__OPERATIONS:
+    		return getOperations();
     }
     
     return super.eGet(featureID, resolve, coreType);
@@ -61,8 +70,10 @@ public class CustomSystemAdapter extends EObjectAdapter<CustomSystem> implements
     switch (featureID) {
     	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StatemachinesPackage.CUSTOM_SYSTEM__STATEMACHINE:
     		return getStatemachine() != null;
-    	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StatemachinesPackage.CUSTOM_SYSTEM__EVENTS:
-    		return getEvents() != null && !getEvents().isEmpty();
+    	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StatemachinesPackage.CUSTOM_SYSTEM__SIGNALS:
+    		return getSignals() != null && !getSignals().isEmpty();
+    	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StatemachinesPackage.CUSTOM_SYSTEM__OPERATIONS:
+    		return getOperations() != null && !getOperations().isEmpty();
     }
     
     return super.eIsSet(featureID);
@@ -73,12 +84,16 @@ public class CustomSystemAdapter extends EObjectAdapter<CustomSystem> implements
     switch (featureID) {
     	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StatemachinesPackage.CUSTOM_SYSTEM__STATEMACHINE:
     		setStatemachine(
-    		(org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.StateMachine)
+    		(org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StateMachine)
     		 newValue);
     		return;
-    	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StatemachinesPackage.CUSTOM_SYSTEM__EVENTS:
-    		getEvents().clear();
-    		getEvents().addAll((Collection) newValue);
+    	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StatemachinesPackage.CUSTOM_SYSTEM__SIGNALS:
+    		getSignals().clear();
+    		getSignals().addAll((Collection) newValue);
+    		return;
+    	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StatemachinesPackage.CUSTOM_SYSTEM__OPERATIONS:
+    		getOperations().clear();
+    		getOperations().addAll((Collection) newValue);
     		return;
     }
     

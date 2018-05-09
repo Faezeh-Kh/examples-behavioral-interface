@@ -19,13 +19,7 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-ActivationPolicy: lazy
 Export-Package: org.tetrabox.examples.statemachines.interpretedstatemachines.aspects,
  org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines,
- org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml,
- org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.impl,
- org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.util,
  org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl,
- org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.util,
- org.tetrabox.examples.statemachines.interpretedstatemachines.statemachinesexecutiondata,
- org.tetrabox.examples.statemachines.interpretedstatemachines.statemachinesexecutiondata.impl,
- org.tetrabox.examples.statemachines.interpretedstatemachines.statemachinesexecutiondata.util
+ org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.util
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 

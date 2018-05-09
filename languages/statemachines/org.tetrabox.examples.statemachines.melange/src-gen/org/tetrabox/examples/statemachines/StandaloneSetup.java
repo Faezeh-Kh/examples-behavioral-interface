@@ -21,20 +21,8 @@ public class StandaloneSetup {
     	statemachines.StatemachinesPackage.eINSTANCE
     );
     EPackage.Registry.INSTANCE.put(
-    	statemachines.almostuml.AlmostumlPackage.eNS_URI,
-    	statemachines.almostuml.AlmostumlPackage.eINSTANCE
-    );
-    EPackage.Registry.INSTANCE.put(
-    	org.tetrabox.examples.statemachines.interpretedstatemachines.statemachinesexecutiondata.StatemachinesexecutiondataPackage.eNS_URI,
-    	org.tetrabox.examples.statemachines.interpretedstatemachines.statemachinesexecutiondata.StatemachinesexecutiondataPackage.eINSTANCE
-    );
-    EPackage.Registry.INSTANCE.put(
     	org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StatemachinesPackage.eNS_URI,
     	org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StatemachinesPackage.eINSTANCE
-    );
-    EPackage.Registry.INSTANCE.put(
-    	org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.AlmostumlPackage.eNS_URI,
-    	org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.AlmostumlPackage.eINSTANCE
     );
     
     Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put(
@@ -56,7 +44,7 @@ public class StandaloneSetup {
     	stateMachines
     );
     MelangeRegistry.LanguageDescriptor interpretedStateMachines = new MelangeRegistryImpl.LanguageDescriptorImpl(
-    	"org.tetrabox.examples.statemachines.InterpretedStateMachines", "", "http://org.tetrabox.examples.statemachines.interpretedstatemachines/statemachinesexecutiondata/", "org.tetrabox.examples.statemachines.InterpretedStateMachinesMT"
+    	"org.tetrabox.examples.statemachines.InterpretedStateMachines", "", "http://org.tetrabox.examples.statemachines.interpretedstatemachines/statemachines/", "org.tetrabox.examples.statemachines.InterpretedStateMachinesMT"
     );
     interpretedStateMachines.addAdapter("org.tetrabox.examples.statemachines.StateMachinesMT", org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.InterpretedStateMachinesAdapter.class);
     interpretedStateMachines.addAdapter("org.tetrabox.examples.statemachines.InterpretedStateMachinesMT", org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.InterpretedStateMachinesAdapter.class);

@@ -12,10 +12,10 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.gemoc.executionframework.event.manager.IBehavioralAPI;
 import org.eclipse.gemoc.executionframework.event.model.event.Event;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.event.interpretedstatemachinesevent.InterpretedstatemachineseventPackage;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.event.interpretedstatemachinesevent.StateMachineRunEvent;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.event.interpretedstatemachinesevent.StateMachineEventOccurrenceReceivedEvent;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CustomEvent;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.StateMachine;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.event.interpretedstatemachinesevent.StateMachineRunEvent;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StatemachinesPackage;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspect;
 
@@ -26,16 +26,16 @@ public class InterpretedStateMachinesBehavioralAPI implements IBehavioralAPI {
 	private final Set<EClass> interruptibleEventClasses = new HashSet<>();
 	
 	public InterpretedStateMachinesBehavioralAPI() {
-		eventClasses.add(InterpretedstatemachineseventPackage.eINSTANCE.getStateMachineRunEvent());
 		eventClasses.add(InterpretedstatemachineseventPackage.eINSTANCE.getStateMachineEventOccurrenceReceivedEvent());
+		eventClasses.add(InterpretedstatemachineseventPackage.eINSTANCE.getStateMachineRunEvent());
 	}
 	
 	@Override
 	public boolean canSendEvent(Event _event) {
-		if (_event instanceof StateMachineRunEvent) {
+		if (_event instanceof StateMachineEventOccurrenceReceivedEvent) {
 			return true;
 		} else
-		if (_event instanceof StateMachineEventOccurrenceReceivedEvent) {
+		if (_event instanceof StateMachineRunEvent) {
 			return true;
 		}
 		return false;
@@ -58,23 +58,23 @@ public class InterpretedStateMachinesBehavioralAPI implements IBehavioralAPI {
 	
 	@Override
 	public void dispatchEvent(Event _event) {
-		if (_event instanceof StateMachineRunEvent) {
-			handleStateMachineRunEvent((StateMachineRunEvent) _event);
-		} else
 		if (_event instanceof StateMachineEventOccurrenceReceivedEvent) {
 			handleStateMachineEventOccurrenceReceivedEvent((StateMachineEventOccurrenceReceivedEvent) _event);
+		} else
+		if (_event instanceof StateMachineRunEvent) {
+			handleStateMachineRunEvent((StateMachineRunEvent) _event);
 		}
+	}
+	
+	private void handleStateMachineEventOccurrenceReceivedEvent(StateMachineEventOccurrenceReceivedEvent _event) {
+		final StateMachine stateMachine = _event.getStateMachine();
+		final EventOccurrence event = _event.getEvent();
+		StateMachineAspect.eventOccurrenceReceived(stateMachine, event);
 	}
 	
 	private void handleStateMachineRunEvent(StateMachineRunEvent _event) {
 		final StateMachine stateMachine = _event.getStateMachine();
 		StateMachineAspect.run(stateMachine);
-	}
-	
-	private void handleStateMachineEventOccurrenceReceivedEvent(StateMachineEventOccurrenceReceivedEvent _event) {
-		final StateMachine stateMachine = _event.getStateMachine();
-		final CustomEvent eventType = _event.getEventType();
-		StateMachineAspect.eventOccurrenceReceived(stateMachine, eventType);
 	}
 	
 	@Override

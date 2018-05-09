@@ -1,6 +1,5 @@
 package org.tetrabox.examples.statemachines.interpretedstatemachines.aspects;
 
-import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.Step;
@@ -10,23 +9,22 @@ import java.util.function.Consumer;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.gemoc.executionframework.engine.annotations.EventHandler;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.CallEventOccurrenceAspect;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspect;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectProperties;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspect;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CustomEvent;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.CompletionEvent;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Event;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Region;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.State;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.StateMachine;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Transition;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Trigger;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachinesexecutiondata.EventOccurrence;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachinesexecutiondata.StatemachinesexecutiondataFactory;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CallEventOccurrence;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CompletionEventOccurrence;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Region;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Vertex;
 
 @Aspect(className = StateMachine.class)
 @SuppressWarnings("all")
@@ -55,13 +53,13 @@ public class StateMachineAspect {
   
   @Step
   @EventHandler
-  public static void eventOccurrenceReceived(final StateMachine _self, final CustomEvent eventType) {
+  public static void eventOccurrenceReceived(final StateMachine _self, final EventOccurrence event) {
 	final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectContext
 			.getSelf(_self);
 	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
 		@Override
 		public void execute() {
-			_privk3_eventOccurrenceReceived(_self_, _self, eventType);
+			_privk3_eventOccurrenceReceived(_self_, _self, event);
 		}
 	};
 	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager manager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry
@@ -75,33 +73,33 @@ public class StateMachineAspect {
 	;
 }
   
-  private static List<Transition> selectTransitions(final StateMachine _self, final CustomEvent eventType) {
+  private static List<Transition> selectTransitions(final StateMachine _self, final EventOccurrence event) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectContext.getSelf(_self);
     Object result = null;
-    result = _privk3_selectTransitions(_self_, _self,eventType);;
-    return (java.util.List<org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Transition>)result;
+    result = _privk3_selectTransitions(_self_, _self,event);;
+    return (java.util.List<org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition>)result;
   }
   
-  private static List<Transition> _selectTransitions(final StateMachine _self, final List<Vertex> vertice, final CustomEvent eventType) {
+  private static List<Transition> _selectTransitions(final StateMachine _self, final List<Vertex> vertice, final EventOccurrence event) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.StateMachine){
-    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspect._privk3__selectTransitions(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.StateMachine)_self,vertice,eventType);
-    } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.StateMachine){
-    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspect._privk3__selectTransitions(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.StateMachine)_self,vertice,eventType);
+     if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine){
+    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspect._privk3__selectTransitions(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine)_self,vertice,event);
+    } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine){
+    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspect._privk3__selectTransitions(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine)_self,vertice,event);
     } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
-    return (java.util.List<org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Transition>)result;
+    return (java.util.List<org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition>)result;
   }
   
-  private static List<Transition> _selectTransitions(final StateMachine _self, final Vertex vertex, final CustomEvent eventType) {
+  private static List<Transition> _selectTransitions(final StateMachine _self, final Vertex vertex, final EventOccurrence event) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.StateMachine){
-    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspect._privk3__selectTransitions(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.StateMachine)_self,vertex,eventType);
-    } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.StateMachine){
-    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspect._privk3__selectTransitions(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.StateMachine)_self,vertex,eventType);
+     if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine){
+    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspect._privk3__selectTransitions(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine)_self,vertex,event);
+    } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine){
+    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspect._privk3__selectTransitions(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine)_self,vertex,event);
     } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
-    return (java.util.List<org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Transition>)result;
+    return (java.util.List<org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition>)result;
   }
   
   private static void dispatchEventOccurrence(final StateMachine _self, final EventOccurrence eventOccurrence) {
@@ -119,18 +117,18 @@ public class StateMachineAspect {
     _privk3_dispatchDeferredEvents(_self_, _self);;
   }
   
-  private static State getDeferringState(final StateMachine _self, final CustomEvent eventType) {
+  private static State getDeferringState(final StateMachine _self, final EventOccurrence event) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectContext.getSelf(_self);
     Object result = null;
-    result = _privk3_getDeferringState(_self_, _self,eventType);;
-    return (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.State)result;
+    result = _privk3_getDeferringState(_self_, _self,event);;
+    return (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State)result;
   }
   
-  private static State _getDeferringState(final StateMachine _self, final CustomEvent eventType, final State state) {
+  private static State _getDeferringState(final StateMachine _self, final EventOccurrence event, final State state) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectContext.getSelf(_self);
     Object result = null;
-    result = _privk3__getDeferringState(_self_, _self,eventType,state);;
-    return (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.State)result;
+    result = _privk3__getDeferringState(_self_, _self,event,state);;
+    return (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State)result;
   }
   
   @Step
@@ -151,25 +149,25 @@ public class StateMachineAspect {
     ;;
   }
   
-  protected static List<CompletionEvent> completionEvents(final StateMachine _self) {
+  protected static List<CompletionEventOccurrence> completionEvents(final StateMachine _self) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectContext.getSelf(_self);
     Object result = null;
     result = _privk3_completionEvents(_self_, _self);;
-    return (java.util.List<org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.CompletionEvent>)result;
+    return (java.util.List<org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CompletionEventOccurrence>)result;
   }
   
   protected static List<EventOccurrence> deferredEvents(final StateMachine _self) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectContext.getSelf(_self);
     Object result = null;
     result = _privk3_deferredEvents(_self_, _self);;
-    return (java.util.List<org.tetrabox.examples.statemachines.interpretedstatemachines.statemachinesexecutiondata.EventOccurrence>)result;
+    return (java.util.List<org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence>)result;
   }
   
   protected static List<Vertex> activeVertice(final StateMachine _self) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectContext.getSelf(_self);
     Object result = null;
     result = _privk3_activeVertice(_self_, _self);;
-    return (java.util.List<org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex>)result;
+    return (java.util.List<org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Vertex>)result;
   }
   
   protected static void _privk3_run(final StateMachineAspectStateMachineAspectProperties _self_, final StateMachine _self) {
@@ -180,70 +178,71 @@ public class StateMachineAspect {
     StateMachineAspect.dispatchCompletionEvents(_self);
   }
   
-  protected static void _privk3_eventOccurrenceReceived(final StateMachineAspectStateMachineAspectProperties _self_, final StateMachine _self, final CustomEvent eventType) {
-    final EventOccurrence eventOccurrence = StatemachinesexecutiondataFactory.eINSTANCE.createEventOccurrence();
-    eventOccurrence.setEvent(eventType);
-    StateMachineAspect.dispatchEventOccurrence(_self, eventOccurrence);
+  protected static void _privk3_eventOccurrenceReceived(final StateMachineAspectStateMachineAspectProperties _self_, final StateMachine _self, final EventOccurrence event) {
+    StateMachineAspect.dispatchEventOccurrence(_self, event);
   }
   
-  protected static List<Transition> _privk3_selectTransitions(final StateMachineAspectStateMachineAspectProperties _self_, final StateMachine _self, final CustomEvent eventType) {
+  protected static List<Transition> _privk3_selectTransitions(final StateMachineAspectStateMachineAspectProperties _self_, final StateMachine _self, final EventOccurrence event) {
     final Function1<Region, List<Transition>> _function = (Region r) -> {
-      return StateMachineAspect._selectTransitions(_self, r.getVertice(), eventType);
+      return StateMachineAspect._selectTransitions(_self, r.getVertice(), event);
     };
     return IterableExtensions.<Transition>toList(Iterables.<Transition>concat(ListExtensions.<Region, List<Transition>>map(_self.getRegions(), _function)));
   }
   
-  protected static List<Transition> _privk3__selectTransitions(final StateMachineAspectStateMachineAspectProperties _self_, final StateMachine _self, final List<Vertex> vertice, final CustomEvent eventType) {
+  protected static List<Transition> _privk3__selectTransitions(final StateMachineAspectStateMachineAspectProperties _self_, final StateMachine _self, final List<Vertex> vertice, final EventOccurrence event) {
     final Function1<Vertex, Boolean> _function = (Vertex v) -> {
       return Boolean.valueOf(StateMachineAspect.activeVertice(_self).contains(v));
     };
     final Function1<Vertex, List<Transition>> _function_1 = (Vertex v) -> {
-      return StateMachineAspect._selectTransitions(_self, v, eventType);
+      return StateMachineAspect._selectTransitions(_self, v, event);
     };
     return IterableExtensions.<Transition>toList(Iterables.<Transition>concat(IterableExtensions.<Vertex, List<Transition>>map(IterableExtensions.<Vertex>filter(vertice, _function), _function_1)));
   }
   
-  protected static List<Transition> _privk3__selectTransitions(final StateMachineAspectStateMachineAspectProperties _self_, final StateMachine _self, final Vertex vertex, final CustomEvent eventType) {
+  protected static List<Transition> _privk3__selectTransitions(final StateMachineAspectStateMachineAspectProperties _self_, final StateMachine _self, final Vertex vertex, final EventOccurrence event) {
     final ArrayList<Transition> transitions = new ArrayList<Transition>();
     if ((vertex instanceof State)) {
       EList<Region> _regions = ((State)vertex).getRegions();
       boolean _tripleNotEquals = (_regions != null);
       if (_tripleNotEquals) {
         final Function1<Region, List<Transition>> _function = (Region r) -> {
-          return StateMachineAspect._selectTransitions(_self, r.getVertice(), eventType);
+          return StateMachineAspect._selectTransitions(_self, r.getVertice(), event);
         };
         Iterables.<Transition>addAll(transitions, Iterables.<Transition>concat(ListExtensions.<Region, List<Transition>>map(((State)vertex).getRegions(), _function)));
       }
     }
     boolean _isEmpty = transitions.isEmpty();
     if (_isEmpty) {
-      final Function1<Transition, Boolean> _function_1 = (Transition t) -> {
-        final Function1<Trigger, Boolean> _function_2 = (Trigger it) -> {
-          Event _event = it.getEvent();
-          return Boolean.valueOf(Objects.equal(_event, eventType));
-        };
-        return Boolean.valueOf(IterableExtensions.<Trigger>exists(t.getTriggers(), _function_2));
+      final Function1<Transition, Boolean> _function_1 = (Transition it) -> {
+        return Boolean.valueOf(TransitionAspect.canFireOn(it, event));
       };
       Iterables.<Transition>addAll(transitions, IterableExtensions.<Transition>filter(vertex.getOutgoingTransitions(), _function_1));
       int _size = transitions.size();
       boolean _greaterThan = (_size > 1);
       if (_greaterThan) {
-        final Transition electedTransition = IterableExtensions.<Transition>head(transitions);
+        final Transition selectedTransition = IterableExtensions.<Transition>head(transitions);
         transitions.clear();
-        transitions.add(electedTransition);
+        transitions.add(selectedTransition);
       }
     }
     return transitions;
   }
   
   protected static void _privk3_dispatchEventOccurrence(final StateMachineAspectStateMachineAspectProperties _self_, final StateMachine _self, final EventOccurrence eventOccurrence) {
-    final CustomEvent eventType = eventOccurrence.getEvent();
-    final State deferringState = StateMachineAspect.getDeferringState(_self, eventType);
+    final State deferringState = StateMachineAspect.getDeferringState(_self, eventOccurrence);
     if ((deferringState == null)) {
       final Consumer<Transition> _function = (Transition t) -> {
         TransitionAspect.fire(t, eventOccurrence);
       };
-      StateMachineAspect.selectTransitions(_self, eventType).forEach(_function);
+      StateMachineAspect.selectTransitions(_self, eventOccurrence).forEach(_function);
+      if (((eventOccurrence != null) && (eventOccurrence instanceof CallEventOccurrence))) {
+        final String out = CallEventOccurrenceAspect.getOutValues(((CallEventOccurrence) eventOccurrence));
+        boolean _isEmpty = out.isEmpty();
+        boolean _not = (!_isEmpty);
+        if (_not) {
+          InputOutput.<String>println(out);
+        }
+      }
       StateMachineAspect.dispatchCompletionEvents(_self);
       StateMachineAspect.dispatchDeferredEvents(_self);
     } else {
@@ -254,11 +253,11 @@ public class StateMachineAspect {
   protected static void _privk3_dispatchCompletionEvents(final StateMachineAspectStateMachineAspectProperties _self_, final StateMachine _self) {
     while ((!StateMachineAspect.completionEvents(_self).isEmpty())) {
       {
-        final CompletionEvent event = StateMachineAspect.completionEvents(_self).remove(0);
+        final CompletionEventOccurrence event = StateMachineAspect.completionEvents(_self).remove(0);
         boolean _contains = StateMachineAspect.activeVertice(_self).contains(event.getState());
         if (_contains) {
           final Function1<Transition, Boolean> _function = (Transition it) -> {
-            return Boolean.valueOf(((it.getTriggers() == null) || it.getTriggers().isEmpty()));
+            return Boolean.valueOf(TransitionAspect.canFireOn(it, null));
           };
           final Transition transition = IterableExtensions.<Transition>head(IterableExtensions.<Transition>filter(event.getState().getOutgoingTransitions(), _function));
           if ((transition != null)) {
@@ -279,7 +278,7 @@ public class StateMachineAspect {
     toDispatch.forEach(_function);
   }
   
-  protected static State _privk3_getDeferringState(final StateMachineAspectStateMachineAspectProperties _self_, final StateMachine _self, final CustomEvent eventType) {
+  protected static State _privk3_getDeferringState(final StateMachineAspectStateMachineAspectProperties _self_, final StateMachine _self, final EventOccurrence event) {
     final Function1<Region, EList<Vertex>> _function = (Region it) -> {
       return it.getVertice();
     };
@@ -287,12 +286,12 @@ public class StateMachineAspect {
       return Boolean.valueOf(StateMachineAspect.activeVertice(_self).contains(s));
     };
     final Function1<State, State> _function_2 = (State s) -> {
-      return StateMachineAspect._getDeferringState(_self, eventType, s);
+      return StateMachineAspect._getDeferringState(_self, event, s);
     };
     return IterableExtensions.<State>head(IterableExtensions.<State>filterNull(IterableExtensions.<State, State>map(IterableExtensions.<State>filter(Iterables.<State>filter(Iterables.<Vertex>concat(ListExtensions.<Region, EList<Vertex>>map(_self.getRegions(), _function)), State.class), _function_1), _function_2)));
   }
   
-  protected static State _privk3__getDeferringState(final StateMachineAspectStateMachineAspectProperties _self_, final StateMachine _self, final CustomEvent eventType, final State state) {
+  protected static State _privk3__getDeferringState(final StateMachineAspectStateMachineAspectProperties _self_, final StateMachine _self, final EventOccurrence event, final State state) {
     final Function1<Region, EList<Vertex>> _function = (Region it) -> {
       return it.getVertice();
     };
@@ -300,11 +299,11 @@ public class StateMachineAspect {
       return Boolean.valueOf(StateMachineAspect.activeVertice(_self).contains(s));
     };
     final Function1<State, State> _function_2 = (State s) -> {
-      return StateMachineAspect._getDeferringState(_self, eventType, s);
+      return StateMachineAspect._getDeferringState(_self, event, s);
     };
     State deferred = IterableExtensions.<State>head(IterableExtensions.<State>filterNull(IterableExtensions.<State, State>map(IterableExtensions.<State>filter(Iterables.<State>filter(Iterables.<Vertex>concat(ListExtensions.<Region, EList<Vertex>>map(state.getRegions(), _function)), State.class), _function_1), _function_2)));
-    if (((deferred == null) && StateAspect.canDefer(state, eventType))) {
-      boolean _isEmpty = StateMachineAspect._selectTransitions(_self, state, eventType).isEmpty();
+    if (((deferred == null) && StateAspect.canDefer(state, event))) {
+      boolean _isEmpty = StateMachineAspect._selectTransitions(_self, state, event).isEmpty();
       if (_isEmpty) {
         deferred = state;
       }
@@ -319,7 +318,7 @@ public class StateMachineAspect {
     _self.getRegions().forEach(_function);
   }
   
-  protected static List<CompletionEvent> _privk3_completionEvents(final StateMachineAspectStateMachineAspectProperties _self_, final StateMachine _self) {
+  protected static List<CompletionEventOccurrence> _privk3_completionEvents(final StateMachineAspectStateMachineAspectProperties _self_, final StateMachine _self) {
     try {
     	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
     		if (m.getName().equals("getCompletionEvents") &&

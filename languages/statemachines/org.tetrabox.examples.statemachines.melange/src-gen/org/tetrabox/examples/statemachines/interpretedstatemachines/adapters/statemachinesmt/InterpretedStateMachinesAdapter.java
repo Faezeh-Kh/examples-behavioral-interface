@@ -6,7 +6,6 @@ import java.util.Set;
 import org.eclipse.emf.common.util.URI;
 import org.tetrabox.examples.statemachines.StateMachinesMT;
 import statemachines.StatemachinesFactory;
-import statemachines.almostuml.AlmostumlFactory;
 
 @SuppressWarnings("all")
 public class InterpretedStateMachinesAdapter extends ResourceAdapter implements StateMachinesMT {
@@ -20,15 +19,9 @@ public class InterpretedStateMachinesAdapter extends ResourceAdapter implements 
   }
   
   @Override
-  public AlmostumlFactory getAlmostumlFactory() {
-    return new org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.almostuml.AlmostumlFactoryAdapter();
-  }
-  
-  @Override
   public Set getFactories() {
     java.util.Set<org.eclipse.emf.ecore.EFactory> res = new java.util.HashSet<org.eclipse.emf.ecore.EFactory>();
     res.add(getStatemachinesFactory());
-    res.add(getAlmostumlFactory());
     return res;
   }
   

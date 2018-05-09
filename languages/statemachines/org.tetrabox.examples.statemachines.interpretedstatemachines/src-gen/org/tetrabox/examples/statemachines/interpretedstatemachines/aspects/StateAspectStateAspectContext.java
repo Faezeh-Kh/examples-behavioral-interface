@@ -2,7 +2,7 @@ package org.tetrabox.examples.statemachines.interpretedstatemachines.aspects;
 
 import java.util.Map;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectProperties;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.State;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State;
 
 @SuppressWarnings("all")
 public class StateAspectStateAspectContext {
@@ -14,7 +14,7 @@ public class StateAspectStateAspectContext {
     		return INSTANCE.map.get(_self);
   }
   
-  private Map<State, StateAspectStateAspectProperties> map = new java.util.WeakHashMap<org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.State, org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectProperties>();
+  private Map<State, StateAspectStateAspectProperties> map = new java.util.WeakHashMap<org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State, org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectProperties>();
   
   public Map<State, StateAspectStateAspectProperties> getMap() {
     return map;

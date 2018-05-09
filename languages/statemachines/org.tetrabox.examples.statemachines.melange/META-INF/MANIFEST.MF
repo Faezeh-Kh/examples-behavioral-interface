@@ -20,26 +20,16 @@ Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.7.0";visibility:="privat
  org.eclipse.gemoc.executionframework.extensions.sirius;bundle-version="0.0.0";visibility:=reexport,
  org.tetrabox.examples.statemachines.abstractsyntax;bundle-version="0.0.0";visibility:="reexport",
  org.tetrabox.examples.statemachines.interpreter;bundle-version="0.0.0";visibility:="reexport",
- org.tetrabox.examples.statemachines.executiondata;bundle-version="0.1.0",
  org.tetrabox.examples.statemachines.interpretedstatemachines
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
-Export-Package: org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.impl,
- org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.util,
- org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml,
- org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachinesexecutiondata.util,
+Export-Package: org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.util,
  org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines,
- org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachinesexecutiondata,
  org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.impl,
- org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.almostuml.util,
- org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachinesexecutiondata.impl,
  org.tetrabox.examples.statemachines,
- org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachinesexecutiondata,
  org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt,
  org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines,
  org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt,
- org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines,
- org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.almostuml,
- org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.almostuml
+ org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines
 

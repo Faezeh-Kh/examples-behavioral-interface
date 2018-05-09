@@ -123,13 +123,13 @@ public interface InterpretedstatemachineseventPackage extends EPackage {
 	int STATE_MACHINE_EVENT_OCCURRENCE_RECEIVED_EVENT__STATE_MACHINE = STATE_MACHINE_EVENT__STATE_MACHINE;
 
 	/**
-	 * The feature id for the '<em><b>Event Type</b></em>' reference.
+	 * The feature id for the '<em><b>Event</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_MACHINE_EVENT_OCCURRENCE_RECEIVED_EVENT__EVENT_TYPE = STATE_MACHINE_EVENT_FEATURE_COUNT + 0;
+	int STATE_MACHINE_EVENT_OCCURRENCE_RECEIVED_EVENT__EVENT = STATE_MACHINE_EVENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>State Machine Event Occurrence Received Event</em>' class.
@@ -211,15 +211,15 @@ public interface InterpretedstatemachineseventPackage extends EPackage {
 	EClass getStateMachineEventOccurrenceReceivedEvent();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.event.interpretedstatemachinesevent.StateMachineEventOccurrenceReceivedEvent#getEventType <em>Event Type</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.event.interpretedstatemachinesevent.StateMachineEventOccurrenceReceivedEvent#getEvent <em>Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Event Type</em>'.
-	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.event.interpretedstatemachinesevent.StateMachineEventOccurrenceReceivedEvent#getEventType()
+	 * @return the meta object for the containment reference '<em>Event</em>'.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.event.interpretedstatemachinesevent.StateMachineEventOccurrenceReceivedEvent#getEvent()
 	 * @see #getStateMachineEventOccurrenceReceivedEvent()
 	 * @generated
 	 */
-	EReference getStateMachineEventOccurrenceReceivedEvent_EventType();
+	EReference getStateMachineEventOccurrenceReceivedEvent_Event();
 
 	/**
 	 * Returns the meta object for class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.event.interpretedstatemachinesevent.StateMachineRunEvent <em>State Machine Run Event</em>}'.
@@ -292,12 +292,12 @@ public interface InterpretedstatemachineseventPackage extends EPackage {
 		EClass STATE_MACHINE_EVENT_OCCURRENCE_RECEIVED_EVENT = eINSTANCE.getStateMachineEventOccurrenceReceivedEvent();
 
 		/**
-		 * The meta object literal for the '<em><b>Event Type</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Event</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STATE_MACHINE_EVENT_OCCURRENCE_RECEIVED_EVENT__EVENT_TYPE = eINSTANCE.getStateMachineEventOccurrenceReceivedEvent_EventType();
+		EReference STATE_MACHINE_EVENT_OCCURRENCE_RECEIVED_EVENT__EVENT = eINSTANCE.getStateMachineEventOccurrenceReceivedEvent_Event();
 
 		/**
 		 * The meta object literal for the '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.event.interpretedstatemachinesevent.impl.StateMachineRunEventImpl <em>State Machine Run Event</em>}' class.

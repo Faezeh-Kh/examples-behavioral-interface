@@ -1,6 +1,6 @@
 package org.tetrabox.examples.statemachines.interpretedstatemachines.aspects;
 
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Region;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Region;
 
 @SuppressWarnings("all")
 public class TransitionAspectTransitionAspectProperties {

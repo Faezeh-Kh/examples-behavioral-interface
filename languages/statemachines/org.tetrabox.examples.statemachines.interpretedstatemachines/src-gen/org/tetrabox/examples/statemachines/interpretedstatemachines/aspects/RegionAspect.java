@@ -12,14 +12,14 @@ import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.Regi
 import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspect;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspect;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Pseudostate;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.PseudostateKind;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Region;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.State;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.StateMachine;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Transition;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachinesexecutiondata.EventOccurrence;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Pseudostate;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.PseudostateKind;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Region;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Vertex;
 
 @Aspect(className = Region.class)
 @SuppressWarnings("all")
@@ -43,14 +43,14 @@ public class RegionAspect {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectContext.getSelf(_self);
     Object result = null;
     result = _privk3_getContainingStateMachine(_self_, _self);;
-    return (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.StateMachine)result;
+    return (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine)result;
   }
   
   protected static Iterable<Vertex> getActiveVertice(final Region _self) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectContext.getSelf(_self);
     Object result = null;
     result = _privk3_getActiveVertice(_self_, _self);;
-    return (java.lang.Iterable<org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex>)result;
+    return (java.lang.Iterable<org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Vertex>)result;
   }
   
   protected static boolean contains(final Region _self, final Vertex vertex) {
@@ -78,7 +78,7 @@ public class RegionAspect {
 	Object result = null;
 	result = _privk3_currentVertex(_self_, _self);
 	;
-	return (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex) result;
+	return (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Vertex) result;
 }
   
   public static void currentVertex(final Region _self, final Vertex currentVertex) {
@@ -191,7 +191,7 @@ public class RegionAspect {
     			m.getParameterTypes().length == 0) {
     				Object ret = m.invoke(_self);
     				if (ret != null) {
-    					return (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex) ret;
+    					return (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Vertex) ret;
     				} else {
     					return null;
     				}

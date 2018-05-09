@@ -9,9 +9,6 @@ import org.eclipse.emf.ecore.util.Switch;
 
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.*;
 
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Event;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.NamedElement;
-
 /**
  * <!-- begin-user-doc -->
  * The <b>Switch</b> for the model's inheritance hierarchy.
@@ -25,7 +22,7 @@ import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachine
  * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StatemachinesPackage
  * @generated
  */
-public class StatemachinesSwitch<T> extends Switch<T> {
+public class StatemachinesSwitch<T1> extends Switch<T1> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -67,25 +64,215 @@ public class StatemachinesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	@Override
-	protected T doSwitch(int classifierID, EObject theEObject) {
+	protected T1 doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case StatemachinesPackage.CUSTOM_SYSTEM: {
 				CustomSystem customSystem = (CustomSystem)theEObject;
-				T result = caseCustomSystem(customSystem);
+				T1 result = caseCustomSystem(customSystem);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case StatemachinesPackage.CUSTOM_EVENT: {
-				CustomEvent customEvent = (CustomEvent)theEObject;
-				T result = caseCustomEvent(customEvent);
-				if (result == null) result = caseEvent(customEvent);
-				if (result == null) result = caseNamedElement(customEvent);
+			case StatemachinesPackage.SIGNAL: {
+				Signal signal = (Signal)theEObject;
+				T1 result = caseSignal(signal);
+				if (result == null) result = caseNamedElement(signal);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StatemachinesPackage.OPERATION: {
+				Operation operation = (Operation)theEObject;
+				T1 result = caseOperation(operation);
+				if (result == null) result = caseNamedElement(operation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StatemachinesPackage.EVENT_TYPE: {
+				EventType eventType = (EventType)theEObject;
+				T1 result = caseEventType(eventType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StatemachinesPackage.SIGNAL_EVENT_TYPE: {
+				SignalEventType signalEventType = (SignalEventType)theEObject;
+				T1 result = caseSignalEventType(signalEventType);
+				if (result == null) result = caseEventType(signalEventType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StatemachinesPackage.CALL_EVENT_TYPE: {
+				CallEventType callEventType = (CallEventType)theEObject;
+				T1 result = caseCallEventType(callEventType);
+				if (result == null) result = caseEventType(callEventType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StatemachinesPackage.ATTRIBUTE: {
+				Attribute attribute = (Attribute)theEObject;
+				T1 result = caseAttribute(attribute);
+				if (result == null) result = caseNamedElement(attribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StatemachinesPackage.BOOLEAN_ATTRIBUTE: {
+				BooleanAttribute booleanAttribute = (BooleanAttribute)theEObject;
+				T1 result = caseBooleanAttribute(booleanAttribute);
+				if (result == null) result = caseAttribute(booleanAttribute);
+				if (result == null) result = caseNamedElement(booleanAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StatemachinesPackage.INTEGER_ATTRIBUTE: {
+				IntegerAttribute integerAttribute = (IntegerAttribute)theEObject;
+				T1 result = caseIntegerAttribute(integerAttribute);
+				if (result == null) result = caseAttribute(integerAttribute);
+				if (result == null) result = caseNamedElement(integerAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StatemachinesPackage.CONSTRAINT: {
+				Constraint<?, ?> constraint = (Constraint<?, ?>)theEObject;
+				T1 result = caseConstraint(constraint);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StatemachinesPackage.BOOLEAN_CONSTRAINT: {
+				BooleanConstraint booleanConstraint = (BooleanConstraint)theEObject;
+				T1 result = caseBooleanConstraint(booleanConstraint);
+				if (result == null) result = caseConstraint(booleanConstraint);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StatemachinesPackage.INTEGER_CONSTRAINT: {
+				IntegerConstraint integerConstraint = (IntegerConstraint)theEObject;
+				T1 result = caseIntegerConstraint(integerConstraint);
+				if (result == null) result = caseConstraint(integerConstraint);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StatemachinesPackage.NAMED_ELEMENT: {
+				NamedElement namedElement = (NamedElement)theEObject;
+				T1 result = caseNamedElement(namedElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StatemachinesPackage.STATE_MACHINE: {
+				StateMachine stateMachine = (StateMachine)theEObject;
+				T1 result = caseStateMachine(stateMachine);
+				if (result == null) result = caseNamedElement(stateMachine);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StatemachinesPackage.REGION: {
+				Region region = (Region)theEObject;
+				T1 result = caseRegion(region);
+				if (result == null) result = caseNamedElement(region);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StatemachinesPackage.VERTEX: {
+				Vertex vertex = (Vertex)theEObject;
+				T1 result = caseVertex(vertex);
+				if (result == null) result = caseNamedElement(vertex);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StatemachinesPackage.PSEUDOSTATE: {
+				Pseudostate pseudostate = (Pseudostate)theEObject;
+				T1 result = casePseudostate(pseudostate);
+				if (result == null) result = caseVertex(pseudostate);
+				if (result == null) result = caseNamedElement(pseudostate);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StatemachinesPackage.STATE: {
+				State state = (State)theEObject;
+				T1 result = caseState(state);
+				if (result == null) result = caseVertex(state);
+				if (result == null) result = caseNamedElement(state);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StatemachinesPackage.FINAL_STATE: {
+				FinalState finalState = (FinalState)theEObject;
+				T1 result = caseFinalState(finalState);
+				if (result == null) result = caseState(finalState);
+				if (result == null) result = caseVertex(finalState);
+				if (result == null) result = caseNamedElement(finalState);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StatemachinesPackage.TRANSITION: {
+				Transition transition = (Transition)theEObject;
+				T1 result = caseTransition(transition);
+				if (result == null) result = caseNamedElement(transition);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StatemachinesPackage.TRIGGER: {
+				Trigger trigger = (Trigger)theEObject;
+				T1 result = caseTrigger(trigger);
+				if (result == null) result = caseNamedElement(trigger);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StatemachinesPackage.BEHAVIOR: {
+				Behavior behavior = (Behavior)theEObject;
+				T1 result = caseBehavior(behavior);
+				if (result == null) result = caseNamedElement(behavior);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StatemachinesPackage.OPERATION_BEHAVIOR: {
+				OperationBehavior operationBehavior = (OperationBehavior)theEObject;
+				T1 result = caseOperationBehavior(operationBehavior);
+				if (result == null) result = caseBehavior(operationBehavior);
+				if (result == null) result = caseNamedElement(operationBehavior);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StatemachinesPackage.ATTRIBUTE_VALUE: {
+				AttributeValue attributeValue = (AttributeValue)theEObject;
+				T1 result = caseAttributeValue(attributeValue);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StatemachinesPackage.BOOLEAN_ATTRIBUTE_VALUE: {
+				BooleanAttributeValue booleanAttributeValue = (BooleanAttributeValue)theEObject;
+				T1 result = caseBooleanAttributeValue(booleanAttributeValue);
+				if (result == null) result = caseAttributeValue(booleanAttributeValue);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StatemachinesPackage.INTEGER_ATTRIBUTE_VALUE: {
+				IntegerAttributeValue integerAttributeValue = (IntegerAttributeValue)theEObject;
+				T1 result = caseIntegerAttributeValue(integerAttributeValue);
+				if (result == null) result = caseAttributeValue(integerAttributeValue);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case StatemachinesPackage.EVENT_OCCURRENCE: {
 				EventOccurrence eventOccurrence = (EventOccurrence)theEObject;
-				T result = caseEventOccurrence(eventOccurrence);
+				T1 result = caseEventOccurrence(eventOccurrence);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StatemachinesPackage.COMPLETION_EVENT_OCCURRENCE: {
+				CompletionEventOccurrence completionEventOccurrence = (CompletionEventOccurrence)theEObject;
+				T1 result = caseCompletionEventOccurrence(completionEventOccurrence);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StatemachinesPackage.SIGNAL_EVENT_OCCURRENCE: {
+				SignalEventOccurrence signalEventOccurrence = (SignalEventOccurrence)theEObject;
+				T1 result = caseSignalEventOccurrence(signalEventOccurrence);
+				if (result == null) result = caseEventOccurrence(signalEventOccurrence);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StatemachinesPackage.CALL_EVENT_OCCURRENCE: {
+				CallEventOccurrence callEventOccurrence = (CallEventOccurrence)theEObject;
+				T1 result = caseCallEventOccurrence(callEventOccurrence);
+				if (result == null) result = caseEventOccurrence(callEventOccurrence);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -104,37 +291,172 @@ public class StatemachinesSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCustomSystem(CustomSystem object) {
+	public T1 caseCustomSystem(CustomSystem object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Custom Event</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Signal</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Custom Event</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Signal</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCustomEvent(CustomEvent object) {
+	public T1 caseSignal(Signal object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Event Occurrence</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Event Occurrence</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Operation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEventOccurrence(EventOccurrence object) {
+	public T1 caseOperation(Operation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Event Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Event Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseEventType(EventType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Signal Event Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Signal Event Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseSignalEventType(SignalEventType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Call Event Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Call Event Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseCallEventType(CallEventType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseAttribute(Attribute object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Boolean Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Boolean Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseBooleanAttribute(BooleanAttribute object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Integer Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Integer Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseIntegerAttribute(IntegerAttribute object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Constraint</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public <T, V> T1 caseConstraint(Constraint<T, V> object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Boolean Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Boolean Constraint</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseBooleanConstraint(BooleanConstraint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Integer Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Integer Constraint</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseIntegerConstraint(IntegerConstraint object) {
 		return null;
 	}
 
@@ -149,22 +471,262 @@ public class StatemachinesSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseNamedElement(NamedElement object) {
+	public T1 caseNamedElement(NamedElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Event</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>State Machine</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Event</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>State Machine</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEvent(Event object) {
+	public T1 caseStateMachine(StateMachine object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Region</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Region</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseRegion(Region object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Vertex</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Vertex</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseVertex(Vertex object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Pseudostate</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Pseudostate</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 casePseudostate(Pseudostate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>State</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>State</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseState(State object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Final State</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Final State</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseFinalState(FinalState object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Transition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseTransition(Transition object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Trigger</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Trigger</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseTrigger(Trigger object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Behavior</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Behavior</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseBehavior(Behavior object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Operation Behavior</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Operation Behavior</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseOperationBehavior(OperationBehavior object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Attribute Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Attribute Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseAttributeValue(AttributeValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Boolean Attribute Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Boolean Attribute Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseBooleanAttributeValue(BooleanAttributeValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Integer Attribute Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Integer Attribute Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseIntegerAttributeValue(IntegerAttributeValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Event Occurrence</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Event Occurrence</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseEventOccurrence(EventOccurrence object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Completion Event Occurrence</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Completion Event Occurrence</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseCompletionEventOccurrence(CompletionEventOccurrence object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Signal Event Occurrence</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Signal Event Occurrence</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseSignalEventOccurrence(SignalEventOccurrence object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Call Event Occurrence</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Call Event Occurrence</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseCallEventOccurrence(CallEventOccurrence object) {
 		return null;
 	}
 
@@ -180,7 +742,7 @@ public class StatemachinesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	@Override
-	public T defaultCase(EObject object) {
+	public T1 defaultCase(EObject object) {
 		return null;
 	}
 

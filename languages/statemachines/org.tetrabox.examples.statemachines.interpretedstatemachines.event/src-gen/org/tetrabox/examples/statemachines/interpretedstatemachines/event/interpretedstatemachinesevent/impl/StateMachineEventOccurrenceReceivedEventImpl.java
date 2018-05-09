@@ -4,6 +4,7 @@ package org.tetrabox.examples.statemachines.interpretedstatemachines.event.inter
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -12,7 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.event.interpretedstatemachinesevent.InterpretedstatemachineseventPackage;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.event.interpretedstatemachinesevent.StateMachineEventOccurrenceReceivedEvent;
 
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CustomEvent;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,21 +23,21 @@ import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachine
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachines.event.interpretedstatemachinesevent.impl.StateMachineEventOccurrenceReceivedEventImpl#getEventType <em>Event Type</em>}</li>
+ *   <li>{@link org.tetrabox.examples.statemachines.interpretedstatemachines.event.interpretedstatemachinesevent.impl.StateMachineEventOccurrenceReceivedEventImpl#getEvent <em>Event</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class StateMachineEventOccurrenceReceivedEventImpl extends StateMachineEventImpl implements StateMachineEventOccurrenceReceivedEvent {
 	/**
-	 * The cached value of the '{@link #getEventType() <em>Event Type</em>}' reference.
+	 * The cached value of the '{@link #getEvent() <em>Event</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEventType()
+	 * @see #getEvent()
 	 * @generated
 	 * @ordered
 	 */
-	protected CustomEvent eventType;
+	protected EventOccurrence event;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,16 +63,23 @@ public class StateMachineEventOccurrenceReceivedEventImpl extends StateMachineEv
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CustomEvent getEventType() {
-		if (eventType != null && eventType.eIsProxy()) {
-			InternalEObject oldEventType = (InternalEObject)eventType;
-			eventType = (CustomEvent)eResolveProxy(oldEventType);
-			if (eventType != oldEventType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InterpretedstatemachineseventPackage.STATE_MACHINE_EVENT_OCCURRENCE_RECEIVED_EVENT__EVENT_TYPE, oldEventType, eventType));
-			}
+	public EventOccurrence getEvent() {
+		return event;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetEvent(EventOccurrence newEvent, NotificationChain msgs) {
+		EventOccurrence oldEvent = event;
+		event = newEvent;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InterpretedstatemachineseventPackage.STATE_MACHINE_EVENT_OCCURRENCE_RECEIVED_EVENT__EVENT, oldEvent, newEvent);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return eventType;
+		return msgs;
 	}
 
 	/**
@@ -79,8 +87,18 @@ public class StateMachineEventOccurrenceReceivedEventImpl extends StateMachineEv
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CustomEvent basicGetEventType() {
-		return eventType;
+	public void setEvent(EventOccurrence newEvent) {
+		if (newEvent != event) {
+			NotificationChain msgs = null;
+			if (event != null)
+				msgs = ((InternalEObject)event).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InterpretedstatemachineseventPackage.STATE_MACHINE_EVENT_OCCURRENCE_RECEIVED_EVENT__EVENT, null, msgs);
+			if (newEvent != null)
+				msgs = ((InternalEObject)newEvent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InterpretedstatemachineseventPackage.STATE_MACHINE_EVENT_OCCURRENCE_RECEIVED_EVENT__EVENT, null, msgs);
+			msgs = basicSetEvent(newEvent, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InterpretedstatemachineseventPackage.STATE_MACHINE_EVENT_OCCURRENCE_RECEIVED_EVENT__EVENT, newEvent, newEvent));
 	}
 
 	/**
@@ -88,11 +106,13 @@ public class StateMachineEventOccurrenceReceivedEventImpl extends StateMachineEv
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEventType(CustomEvent newEventType) {
-		CustomEvent oldEventType = eventType;
-		eventType = newEventType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InterpretedstatemachineseventPackage.STATE_MACHINE_EVENT_OCCURRENCE_RECEIVED_EVENT__EVENT_TYPE, oldEventType, eventType));
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case InterpretedstatemachineseventPackage.STATE_MACHINE_EVENT_OCCURRENCE_RECEIVED_EVENT__EVENT:
+				return basicSetEvent(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -103,9 +123,8 @@ public class StateMachineEventOccurrenceReceivedEventImpl extends StateMachineEv
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InterpretedstatemachineseventPackage.STATE_MACHINE_EVENT_OCCURRENCE_RECEIVED_EVENT__EVENT_TYPE:
-				if (resolve) return getEventType();
-				return basicGetEventType();
+			case InterpretedstatemachineseventPackage.STATE_MACHINE_EVENT_OCCURRENCE_RECEIVED_EVENT__EVENT:
+				return getEvent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -118,8 +137,8 @@ public class StateMachineEventOccurrenceReceivedEventImpl extends StateMachineEv
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InterpretedstatemachineseventPackage.STATE_MACHINE_EVENT_OCCURRENCE_RECEIVED_EVENT__EVENT_TYPE:
-				setEventType((CustomEvent)newValue);
+			case InterpretedstatemachineseventPackage.STATE_MACHINE_EVENT_OCCURRENCE_RECEIVED_EVENT__EVENT:
+				setEvent((EventOccurrence)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -133,8 +152,8 @@ public class StateMachineEventOccurrenceReceivedEventImpl extends StateMachineEv
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InterpretedstatemachineseventPackage.STATE_MACHINE_EVENT_OCCURRENCE_RECEIVED_EVENT__EVENT_TYPE:
-				setEventType((CustomEvent)null);
+			case InterpretedstatemachineseventPackage.STATE_MACHINE_EVENT_OCCURRENCE_RECEIVED_EVENT__EVENT:
+				setEvent((EventOccurrence)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -148,8 +167,8 @@ public class StateMachineEventOccurrenceReceivedEventImpl extends StateMachineEv
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InterpretedstatemachineseventPackage.STATE_MACHINE_EVENT_OCCURRENCE_RECEIVED_EVENT__EVENT_TYPE:
-				return eventType != null;
+			case InterpretedstatemachineseventPackage.STATE_MACHINE_EVENT_OCCURRENCE_RECEIVED_EVENT__EVENT:
+				return event != null;
 		}
 		return super.eIsSet(featureID);
 	}

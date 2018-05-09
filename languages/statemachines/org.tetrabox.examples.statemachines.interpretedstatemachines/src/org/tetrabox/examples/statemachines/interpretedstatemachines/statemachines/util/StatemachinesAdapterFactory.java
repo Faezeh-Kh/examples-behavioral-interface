@@ -11,9 +11,6 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.*;
 
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Event;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.NamedElement;
-
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
@@ -75,20 +72,120 @@ public class StatemachinesAdapterFactory extends AdapterFactoryImpl {
 				return createCustomSystemAdapter();
 			}
 			@Override
-			public Adapter caseCustomEvent(CustomEvent object) {
-				return createCustomEventAdapter();
+			public Adapter caseSignal(Signal object) {
+				return createSignalAdapter();
 			}
 			@Override
-			public Adapter caseEventOccurrence(EventOccurrence object) {
-				return createEventOccurrenceAdapter();
+			public Adapter caseOperation(Operation object) {
+				return createOperationAdapter();
+			}
+			@Override
+			public Adapter caseEventType(EventType object) {
+				return createEventTypeAdapter();
+			}
+			@Override
+			public Adapter caseSignalEventType(SignalEventType object) {
+				return createSignalEventTypeAdapter();
+			}
+			@Override
+			public Adapter caseCallEventType(CallEventType object) {
+				return createCallEventTypeAdapter();
+			}
+			@Override
+			public Adapter caseAttribute(Attribute object) {
+				return createAttributeAdapter();
+			}
+			@Override
+			public Adapter caseBooleanAttribute(BooleanAttribute object) {
+				return createBooleanAttributeAdapter();
+			}
+			@Override
+			public Adapter caseIntegerAttribute(IntegerAttribute object) {
+				return createIntegerAttributeAdapter();
+			}
+			@Override
+			public <T, V> Adapter caseConstraint(Constraint<T, V> object) {
+				return createConstraintAdapter();
+			}
+			@Override
+			public Adapter caseBooleanConstraint(BooleanConstraint object) {
+				return createBooleanConstraintAdapter();
+			}
+			@Override
+			public Adapter caseIntegerConstraint(IntegerConstraint object) {
+				return createIntegerConstraintAdapter();
 			}
 			@Override
 			public Adapter caseNamedElement(NamedElement object) {
 				return createNamedElementAdapter();
 			}
 			@Override
-			public Adapter caseEvent(Event object) {
-				return createEventAdapter();
+			public Adapter caseStateMachine(StateMachine object) {
+				return createStateMachineAdapter();
+			}
+			@Override
+			public Adapter caseRegion(Region object) {
+				return createRegionAdapter();
+			}
+			@Override
+			public Adapter caseVertex(Vertex object) {
+				return createVertexAdapter();
+			}
+			@Override
+			public Adapter casePseudostate(Pseudostate object) {
+				return createPseudostateAdapter();
+			}
+			@Override
+			public Adapter caseState(State object) {
+				return createStateAdapter();
+			}
+			@Override
+			public Adapter caseFinalState(FinalState object) {
+				return createFinalStateAdapter();
+			}
+			@Override
+			public Adapter caseTransition(Transition object) {
+				return createTransitionAdapter();
+			}
+			@Override
+			public Adapter caseTrigger(Trigger object) {
+				return createTriggerAdapter();
+			}
+			@Override
+			public Adapter caseBehavior(Behavior object) {
+				return createBehaviorAdapter();
+			}
+			@Override
+			public Adapter caseOperationBehavior(OperationBehavior object) {
+				return createOperationBehaviorAdapter();
+			}
+			@Override
+			public Adapter caseAttributeValue(AttributeValue object) {
+				return createAttributeValueAdapter();
+			}
+			@Override
+			public Adapter caseBooleanAttributeValue(BooleanAttributeValue object) {
+				return createBooleanAttributeValueAdapter();
+			}
+			@Override
+			public Adapter caseIntegerAttributeValue(IntegerAttributeValue object) {
+				return createIntegerAttributeValueAdapter();
+			}
+			@Override
+			public Adapter caseEventOccurrence(EventOccurrence object) {
+				return createEventOccurrenceAdapter();
+			}
+			@Override
+			public Adapter caseCompletionEventOccurrence(CompletionEventOccurrence object) {
+				return createCompletionEventOccurrenceAdapter();
+			}
+			@Override
+			public Adapter caseSignalEventOccurrence(SignalEventOccurrence object) {
+				return createSignalEventOccurrenceAdapter();
+			}
+			@Override
+			public Adapter caseCallEventOccurrence(CallEventOccurrence object) {
+				return createCallEventOccurrenceAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -125,16 +222,352 @@ public class StatemachinesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CustomEvent <em>Custom Event</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Signal <em>Signal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CustomEvent
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Signal
 	 * @generated
 	 */
-	public Adapter createCustomEventAdapter() {
+	public Adapter createSignalAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Operation <em>Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Operation
+	 * @generated
+	 */
+	public Adapter createOperationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventType <em>Event Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventType
+	 * @generated
+	 */
+	public Adapter createEventTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.SignalEventType <em>Signal Event Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.SignalEventType
+	 * @generated
+	 */
+	public Adapter createSignalEventTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CallEventType <em>Call Event Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CallEventType
+	 * @generated
+	 */
+	public Adapter createCallEventTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Attribute <em>Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Attribute
+	 * @generated
+	 */
+	public Adapter createAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.BooleanAttribute <em>Boolean Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.BooleanAttribute
+	 * @generated
+	 */
+	public Adapter createBooleanAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.IntegerAttribute <em>Integer Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.IntegerAttribute
+	 * @generated
+	 */
+	public Adapter createIntegerAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Constraint <em>Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Constraint
+	 * @generated
+	 */
+	public Adapter createConstraintAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.BooleanConstraint <em>Boolean Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.BooleanConstraint
+	 * @generated
+	 */
+	public Adapter createBooleanConstraintAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.IntegerConstraint <em>Integer Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.IntegerConstraint
+	 * @generated
+	 */
+	public Adapter createIntegerConstraintAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.NamedElement <em>Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.NamedElement
+	 * @generated
+	 */
+	public Adapter createNamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine <em>State Machine</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine
+	 * @generated
+	 */
+	public Adapter createStateMachineAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Region <em>Region</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Region
+	 * @generated
+	 */
+	public Adapter createRegionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Vertex <em>Vertex</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Vertex
+	 * @generated
+	 */
+	public Adapter createVertexAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Pseudostate <em>Pseudostate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Pseudostate
+	 * @generated
+	 */
+	public Adapter createPseudostateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State <em>State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State
+	 * @generated
+	 */
+	public Adapter createStateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.FinalState <em>Final State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.FinalState
+	 * @generated
+	 */
+	public Adapter createFinalStateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition <em>Transition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition
+	 * @generated
+	 */
+	public Adapter createTransitionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Trigger <em>Trigger</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Trigger
+	 * @generated
+	 */
+	public Adapter createTriggerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Behavior <em>Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Behavior
+	 * @generated
+	 */
+	public Adapter createBehaviorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.OperationBehavior <em>Operation Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.OperationBehavior
+	 * @generated
+	 */
+	public Adapter createOperationBehaviorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.AttributeValue <em>Attribute Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.AttributeValue
+	 * @generated
+	 */
+	public Adapter createAttributeValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.BooleanAttributeValue <em>Boolean Attribute Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.BooleanAttributeValue
+	 * @generated
+	 */
+	public Adapter createBooleanAttributeValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.IntegerAttributeValue <em>Integer Attribute Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.IntegerAttributeValue
+	 * @generated
+	 */
+	public Adapter createIntegerAttributeValueAdapter() {
 		return null;
 	}
 
@@ -153,30 +586,44 @@ public class StatemachinesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.NamedElement <em>Named Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CompletionEventOccurrence <em>Completion Event Occurrence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.NamedElement
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CompletionEventOccurrence
 	 * @generated
 	 */
-	public Adapter createNamedElementAdapter() {
+	public Adapter createCompletionEventOccurrenceAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Event <em>Event</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.SignalEventOccurrence <em>Signal Event Occurrence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Event
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.SignalEventOccurrence
 	 * @generated
 	 */
-	public Adapter createEventAdapter() {
+	public Adapter createSignalEventOccurrenceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CallEventOccurrence <em>Call Event Occurrence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CallEventOccurrence
+	 * @generated
+	 */
+	public Adapter createCallEventOccurrenceAdapter() {
 		return null;
 	}
 

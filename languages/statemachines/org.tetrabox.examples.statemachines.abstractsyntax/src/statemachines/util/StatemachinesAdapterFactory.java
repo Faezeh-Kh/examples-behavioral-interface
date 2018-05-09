@@ -11,9 +11,6 @@ import org.eclipse.emf.ecore.EObject;
 
 import statemachines.*;
 
-import statemachines.almostuml.Event;
-import statemachines.almostuml.NamedElement;
-
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
@@ -75,16 +72,120 @@ public class StatemachinesAdapterFactory extends AdapterFactoryImpl {
 				return createCustomSystemAdapter();
 			}
 			@Override
-			public Adapter caseCustomEvent(CustomEvent object) {
-				return createCustomEventAdapter();
+			public Adapter caseSignal(Signal object) {
+				return createSignalAdapter();
+			}
+			@Override
+			public Adapter caseOperation(Operation object) {
+				return createOperationAdapter();
+			}
+			@Override
+			public Adapter caseEventType(EventType object) {
+				return createEventTypeAdapter();
+			}
+			@Override
+			public Adapter caseSignalEventType(SignalEventType object) {
+				return createSignalEventTypeAdapter();
+			}
+			@Override
+			public Adapter caseCallEventType(CallEventType object) {
+				return createCallEventTypeAdapter();
+			}
+			@Override
+			public Adapter caseAttribute(Attribute object) {
+				return createAttributeAdapter();
+			}
+			@Override
+			public Adapter caseBooleanAttribute(BooleanAttribute object) {
+				return createBooleanAttributeAdapter();
+			}
+			@Override
+			public Adapter caseIntegerAttribute(IntegerAttribute object) {
+				return createIntegerAttributeAdapter();
+			}
+			@Override
+			public <T, V> Adapter caseConstraint(Constraint<T, V> object) {
+				return createConstraintAdapter();
+			}
+			@Override
+			public Adapter caseBooleanConstraint(BooleanConstraint object) {
+				return createBooleanConstraintAdapter();
+			}
+			@Override
+			public Adapter caseIntegerConstraint(IntegerConstraint object) {
+				return createIntegerConstraintAdapter();
 			}
 			@Override
 			public Adapter caseNamedElement(NamedElement object) {
 				return createNamedElementAdapter();
 			}
 			@Override
-			public Adapter caseEvent(Event object) {
-				return createEventAdapter();
+			public Adapter caseStateMachine(StateMachine object) {
+				return createStateMachineAdapter();
+			}
+			@Override
+			public Adapter caseRegion(Region object) {
+				return createRegionAdapter();
+			}
+			@Override
+			public Adapter caseVertex(Vertex object) {
+				return createVertexAdapter();
+			}
+			@Override
+			public Adapter casePseudostate(Pseudostate object) {
+				return createPseudostateAdapter();
+			}
+			@Override
+			public Adapter caseState(State object) {
+				return createStateAdapter();
+			}
+			@Override
+			public Adapter caseFinalState(FinalState object) {
+				return createFinalStateAdapter();
+			}
+			@Override
+			public Adapter caseTransition(Transition object) {
+				return createTransitionAdapter();
+			}
+			@Override
+			public Adapter caseTrigger(Trigger object) {
+				return createTriggerAdapter();
+			}
+			@Override
+			public Adapter caseBehavior(Behavior object) {
+				return createBehaviorAdapter();
+			}
+			@Override
+			public Adapter caseOperationBehavior(OperationBehavior object) {
+				return createOperationBehaviorAdapter();
+			}
+			@Override
+			public Adapter caseAttributeValue(AttributeValue object) {
+				return createAttributeValueAdapter();
+			}
+			@Override
+			public Adapter caseBooleanAttributeValue(BooleanAttributeValue object) {
+				return createBooleanAttributeValueAdapter();
+			}
+			@Override
+			public Adapter caseIntegerAttributeValue(IntegerAttributeValue object) {
+				return createIntegerAttributeValueAdapter();
+			}
+			@Override
+			public Adapter caseEventOccurrence(EventOccurrence object) {
+				return createEventOccurrenceAdapter();
+			}
+			@Override
+			public Adapter caseCompletionEventOccurrence(CompletionEventOccurrence object) {
+				return createCompletionEventOccurrenceAdapter();
+			}
+			@Override
+			public Adapter caseSignalEventOccurrence(SignalEventOccurrence object) {
+				return createSignalEventOccurrenceAdapter();
+			}
+			@Override
+			public Adapter caseCallEventOccurrence(CallEventOccurrence object) {
+				return createCallEventOccurrenceAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -121,27 +222,167 @@ public class StatemachinesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link statemachines.CustomEvent <em>Custom Event</em>}'.
+	 * Creates a new adapter for an object of class '{@link statemachines.Signal <em>Signal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see statemachines.CustomEvent
+	 * @see statemachines.Signal
 	 * @generated
 	 */
-	public Adapter createCustomEventAdapter() {
+	public Adapter createSignalAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link statemachines.almostuml.NamedElement <em>Named Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link statemachines.Operation <em>Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see statemachines.almostuml.NamedElement
+	 * @see statemachines.Operation
+	 * @generated
+	 */
+	public Adapter createOperationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link statemachines.EventType <em>Event Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see statemachines.EventType
+	 * @generated
+	 */
+	public Adapter createEventTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link statemachines.SignalEventType <em>Signal Event Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see statemachines.SignalEventType
+	 * @generated
+	 */
+	public Adapter createSignalEventTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link statemachines.CallEventType <em>Call Event Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see statemachines.CallEventType
+	 * @generated
+	 */
+	public Adapter createCallEventTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link statemachines.Attribute <em>Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see statemachines.Attribute
+	 * @generated
+	 */
+	public Adapter createAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link statemachines.BooleanAttribute <em>Boolean Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see statemachines.BooleanAttribute
+	 * @generated
+	 */
+	public Adapter createBooleanAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link statemachines.IntegerAttribute <em>Integer Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see statemachines.IntegerAttribute
+	 * @generated
+	 */
+	public Adapter createIntegerAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link statemachines.Constraint <em>Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see statemachines.Constraint
+	 * @generated
+	 */
+	public Adapter createConstraintAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link statemachines.BooleanConstraint <em>Boolean Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see statemachines.BooleanConstraint
+	 * @generated
+	 */
+	public Adapter createBooleanConstraintAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link statemachines.IntegerConstraint <em>Integer Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see statemachines.IntegerConstraint
+	 * @generated
+	 */
+	public Adapter createIntegerConstraintAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link statemachines.NamedElement <em>Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see statemachines.NamedElement
 	 * @generated
 	 */
 	public Adapter createNamedElementAdapter() {
@@ -149,16 +390,240 @@ public class StatemachinesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link statemachines.almostuml.Event <em>Event</em>}'.
+	 * Creates a new adapter for an object of class '{@link statemachines.StateMachine <em>State Machine</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see statemachines.almostuml.Event
+	 * @see statemachines.StateMachine
 	 * @generated
 	 */
-	public Adapter createEventAdapter() {
+	public Adapter createStateMachineAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link statemachines.Region <em>Region</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see statemachines.Region
+	 * @generated
+	 */
+	public Adapter createRegionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link statemachines.Vertex <em>Vertex</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see statemachines.Vertex
+	 * @generated
+	 */
+	public Adapter createVertexAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link statemachines.Pseudostate <em>Pseudostate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see statemachines.Pseudostate
+	 * @generated
+	 */
+	public Adapter createPseudostateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link statemachines.State <em>State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see statemachines.State
+	 * @generated
+	 */
+	public Adapter createStateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link statemachines.FinalState <em>Final State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see statemachines.FinalState
+	 * @generated
+	 */
+	public Adapter createFinalStateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link statemachines.Transition <em>Transition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see statemachines.Transition
+	 * @generated
+	 */
+	public Adapter createTransitionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link statemachines.Trigger <em>Trigger</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see statemachines.Trigger
+	 * @generated
+	 */
+	public Adapter createTriggerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link statemachines.Behavior <em>Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see statemachines.Behavior
+	 * @generated
+	 */
+	public Adapter createBehaviorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link statemachines.OperationBehavior <em>Operation Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see statemachines.OperationBehavior
+	 * @generated
+	 */
+	public Adapter createOperationBehaviorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link statemachines.AttributeValue <em>Attribute Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see statemachines.AttributeValue
+	 * @generated
+	 */
+	public Adapter createAttributeValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link statemachines.BooleanAttributeValue <em>Boolean Attribute Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see statemachines.BooleanAttributeValue
+	 * @generated
+	 */
+	public Adapter createBooleanAttributeValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link statemachines.IntegerAttributeValue <em>Integer Attribute Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see statemachines.IntegerAttributeValue
+	 * @generated
+	 */
+	public Adapter createIntegerAttributeValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link statemachines.EventOccurrence <em>Event Occurrence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see statemachines.EventOccurrence
+	 * @generated
+	 */
+	public Adapter createEventOccurrenceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link statemachines.CompletionEventOccurrence <em>Completion Event Occurrence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see statemachines.CompletionEventOccurrence
+	 * @generated
+	 */
+	public Adapter createCompletionEventOccurrenceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link statemachines.SignalEventOccurrence <em>Signal Event Occurrence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see statemachines.SignalEventOccurrence
+	 * @generated
+	 */
+	public Adapter createSignalEventOccurrenceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link statemachines.CallEventOccurrence <em>Call Event Occurrence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see statemachines.CallEventOccurrence
+	 * @generated
+	 */
+	public Adapter createCallEventOccurrenceAdapter() {
 		return null;
 	}
 

@@ -1,6 +1,6 @@
 package org.tetrabox.examples.statemachines.interpretedstatemachines.aspects;
 
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.almostuml.Vertex;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Vertex;
 
 @SuppressWarnings("all")
 public class RegionAspectRegionAspectProperties {

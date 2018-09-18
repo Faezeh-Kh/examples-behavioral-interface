@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+-->
+<plugin>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated petrinet -->
+    <package uri="http://www.example.org/petrinet" class="org.tetrabox.examples.petrinet.model.petrinet.PetrinetPackage" genModel="model/petrinet.genmodel" />
+  </extension>
+  <extension point="org.eclipse.gemoc.gemoc_language_workbench.sequential.xdsml">
+    <XDSML_Definition name="org.tetrabox.examples.PetriNet" xdsmlFilePath="platform:/plugin/org.tetrabox.examples.petrinet/model/petrinet.dsl" modelLoader_class="org.eclipse.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" />
+  </extension>
+</plugin>

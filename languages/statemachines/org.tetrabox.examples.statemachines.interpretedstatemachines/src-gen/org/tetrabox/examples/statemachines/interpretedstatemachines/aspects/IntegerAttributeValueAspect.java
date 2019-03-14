@@ -14,33 +14,30 @@ public class IntegerAttributeValueAspect extends AttributeValueAspect {
   protected static int get_value(final IntegerAttributeValue _self) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.IntegerAttributeValueAspectIntegerAttributeValueAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.IntegerAttributeValueAspectIntegerAttributeValueAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.IntegerAttributeValue){
-    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.IntegerAttributeValueAspect._privk3_get_value(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.IntegerAttributeValue)_self);
-    } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.AttributeValue){
-    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.AttributeValueAspect.get_value((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.AttributeValue)_self);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    // #DispatchPointCut_before# int get_value()
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.IntegerAttributeValue){
+    	result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.IntegerAttributeValueAspect._privk3_get_value(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.IntegerAttributeValue)_self);
+    };
     return (int)result;
   }
   
   @OverrideAspectMethod
   protected static void set_value(final IntegerAttributeValue _self, final int value) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.IntegerAttributeValueAspectIntegerAttributeValueAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.IntegerAttributeValueAspectIntegerAttributeValueAspectContext.getSelf(_self);
-     if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.IntegerAttributeValue){
-    					org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.IntegerAttributeValueAspect._privk3_set_value(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.IntegerAttributeValue)_self,value);
-    } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.AttributeValue){
-    					org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.AttributeValueAspect.set_value((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.AttributeValue)_self,value);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    // #DispatchPointCut_before# void set_value(int)
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.IntegerAttributeValue){
+    	org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.IntegerAttributeValueAspect._privk3_set_value(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.IntegerAttributeValue)_self,value);
+    };
   }
   
   @OverrideAspectMethod
   protected static Attribute get_attribute(final IntegerAttributeValue _self) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.IntegerAttributeValueAspectIntegerAttributeValueAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.IntegerAttributeValueAspectIntegerAttributeValueAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.IntegerAttributeValue){
-    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.IntegerAttributeValueAspect._privk3_get_attribute(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.IntegerAttributeValue)_self);
-    } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.AttributeValue){
-    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.AttributeValueAspect.get_attribute((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.AttributeValue)_self);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    // #DispatchPointCut_before# Attribute get_attribute()
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.IntegerAttributeValue){
+    	result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.IntegerAttributeValueAspect._privk3_get_attribute(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.IntegerAttributeValue)_self);
+    };
     return (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Attribute)result;
   }
   
@@ -48,11 +45,10 @@ public class IntegerAttributeValueAspect extends AttributeValueAspect {
   protected static String getString(final IntegerAttributeValue _self) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.IntegerAttributeValueAspectIntegerAttributeValueAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.IntegerAttributeValueAspectIntegerAttributeValueAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.IntegerAttributeValue){
-    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.IntegerAttributeValueAspect._privk3_getString(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.IntegerAttributeValue)_self);
-    } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.AttributeValue){
-    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.AttributeValueAspect.getString((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.AttributeValue)_self);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    // #DispatchPointCut_before# String getString()
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.IntegerAttributeValue){
+    	result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.IntegerAttributeValueAspect._privk3_getString(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.IntegerAttributeValue)_self);
+    };
     return (java.lang.String)result;
   }
   

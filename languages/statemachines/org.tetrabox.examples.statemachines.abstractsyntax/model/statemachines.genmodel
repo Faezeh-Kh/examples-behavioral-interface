@@ -90,6 +90,9 @@
     <genClasses>
       <ecoreClass href="statemachines.ecore#//IntegerAttribute"/>
     </genClasses>
+    <genClasses>
+      <ecoreClass href="statemachines.ecore#//StringAttribute"/>
+    </genClasses>
     <genClasses image="false">
       <genTypeParameters>
         <ecoreTypeParameter href="statemachines.ecore#//Constraint/T"/>
@@ -110,6 +113,9 @@
     </genClasses>
     <genClasses>
       <ecoreClass href="statemachines.ecore#//IntegerConstraint"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="statemachines.ecore#//StringConstraint"/>
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="statemachines.ecore#//NamedElement"/>
@@ -215,6 +221,9 @@
     </genClasses>
     <genClasses>
       <ecoreClass href="statemachines.ecore#//Behavior"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="statemachines.ecore#//Behavior/emittedSignals"/>
+      </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="statemachines.ecore#//OperationBehavior"/>
@@ -244,6 +253,15 @@
       </genFeatures>
     </genClasses>
     <genClasses>
+      <ecoreClass href="statemachines.ecore#//StringAttributeValue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="statemachines.ecore#//StringAttributeValue/attribute"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="statemachines.ecore#//StringAttributeValue/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
       <ecoreClass href="statemachines.ecore#//EventOccurrence"/>
     </genClasses>
     <genClasses>
@@ -257,11 +275,23 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true">
         <ecoreFeature xsi:type="ecore:EReference" href="statemachines.ecore#//SignalEventOccurrence/signal"/>
       </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="statemachines.ecore#//SignalEventOccurrence/attributeValues"/>
+      </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="statemachines.ecore#//CallEventOccurrence"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true">
         <ecoreFeature xsi:type="ecore:EReference" href="statemachines.ecore#//CallEventOccurrence/operation"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="statemachines.ecore#//CallEventOccurrence/inParameterValues"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="statemachines.ecore#//CallEventOccurrence/outParameterValues"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="statemachines.ecore#//CallEventOccurrence/returnValue"/>
       </genFeatures>
     </genClasses>
   </genPackages>

@@ -4,6 +4,7 @@ import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import org.eclipse.emf.ecore.EClass;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.InterpretedStateMachinesMTAdaptersFactory;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.IntegerAttributeValue;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.IntegerAttribute;
 
 @SuppressWarnings("all")
 public class IntegerAttributeValueAdapter extends EObjectAdapter<IntegerAttributeValue> implements org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.IntegerAttributeValue {
@@ -25,12 +26,12 @@ public class IntegerAttributeValueAdapter extends EObjectAdapter<IntegerAttribut
   }
   
   @Override
-  public org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.IntegerAttribute getAttribute() {
-    return () adaptersFactory.createAdapter(adaptee.getAttribute(), eResource);
+  public IntegerAttribute getAttribute() {
+    return (IntegerAttribute) adaptersFactory.createAdapter(adaptee.getAttribute(), eResource);
   }
   
   @Override
-  public void setAttribute(final org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.IntegerAttribute o) {
+  public void setAttribute(final IntegerAttribute o) {
     if (o != null)
     	adaptee.setAttribute(((org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.IntegerAttributeAdapter) o).getAdaptee());
     else adaptee.setAttribute(null);

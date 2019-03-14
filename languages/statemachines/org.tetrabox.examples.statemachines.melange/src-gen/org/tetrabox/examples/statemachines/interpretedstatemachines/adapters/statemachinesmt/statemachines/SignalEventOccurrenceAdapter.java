@@ -1,6 +1,7 @@
 package org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines;
 
 import fr.inria.diverse.melange.adapters.EObjectAdapter;
+import java.util.Collection;
 import org.eclipse.emf.ecore.EClass;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.StateMachinesMTAdaptersFactory;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.SignalEventOccurrence;
@@ -37,6 +38,8 @@ public class SignalEventOccurrenceAdapter extends EObjectAdapter<SignalEventOccu
     switch (featureID) {
     	case statemachines.StatemachinesPackage.SIGNAL_EVENT_OCCURRENCE__SIGNAL:
     		return getSignal();
+    	case statemachines.StatemachinesPackage.SIGNAL_EVENT_OCCURRENCE__ATTRIBUTE_VALUES:
+    		return getAttributeValues();
     }
     
     return super.eGet(featureID, resolve, coreType);
@@ -47,6 +50,8 @@ public class SignalEventOccurrenceAdapter extends EObjectAdapter<SignalEventOccu
     switch (featureID) {
     	case statemachines.StatemachinesPackage.SIGNAL_EVENT_OCCURRENCE__SIGNAL:
     		return getSignal() != null;
+    	case statemachines.StatemachinesPackage.SIGNAL_EVENT_OCCURRENCE__ATTRIBUTE_VALUES:
+    		return getAttributeValues() != null && !getAttributeValues().isEmpty();
     }
     
     return super.eIsSet(featureID);
@@ -59,6 +64,10 @@ public class SignalEventOccurrenceAdapter extends EObjectAdapter<SignalEventOccu
     		setSignal(
     		(statemachines.Signal)
     		 newValue);
+    		return;
+    	case statemachines.StatemachinesPackage.SIGNAL_EVENT_OCCURRENCE__ATTRIBUTE_VALUES:
+    		getAttributeValues().clear();
+    		getAttributeValues().addAll((Collection) newValue);
     		return;
     }
     

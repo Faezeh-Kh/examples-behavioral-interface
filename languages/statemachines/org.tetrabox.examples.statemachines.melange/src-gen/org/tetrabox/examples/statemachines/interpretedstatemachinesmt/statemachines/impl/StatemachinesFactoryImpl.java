@@ -64,8 +64,10 @@ public class StatemachinesFactoryImpl extends EFactoryImpl implements Statemachi
 			case StatemachinesPackage.CALL_EVENT_TYPE: return createCallEventType();
 			case StatemachinesPackage.BOOLEAN_ATTRIBUTE: return createBooleanAttribute();
 			case StatemachinesPackage.INTEGER_ATTRIBUTE: return createIntegerAttribute();
+			case StatemachinesPackage.STRING_ATTRIBUTE: return createStringAttribute();
 			case StatemachinesPackage.BOOLEAN_CONSTRAINT: return createBooleanConstraint();
 			case StatemachinesPackage.INTEGER_CONSTRAINT: return createIntegerConstraint();
+			case StatemachinesPackage.STRING_CONSTRAINT: return createStringConstraint();
 			case StatemachinesPackage.STATE_MACHINE: return createStateMachine();
 			case StatemachinesPackage.REGION: return createRegion();
 			case StatemachinesPackage.VERTEX: return createVertex();
@@ -76,9 +78,9 @@ public class StatemachinesFactoryImpl extends EFactoryImpl implements Statemachi
 			case StatemachinesPackage.TRIGGER: return createTrigger();
 			case StatemachinesPackage.BEHAVIOR: return createBehavior();
 			case StatemachinesPackage.OPERATION_BEHAVIOR: return createOperationBehavior();
-			case StatemachinesPackage.ATTRIBUTE_VALUE: return createAttributeValue();
 			case StatemachinesPackage.BOOLEAN_ATTRIBUTE_VALUE: return createBooleanAttributeValue();
 			case StatemachinesPackage.INTEGER_ATTRIBUTE_VALUE: return createIntegerAttributeValue();
+			case StatemachinesPackage.STRING_ATTRIBUTE_VALUE: return createStringAttributeValue();
 			case StatemachinesPackage.EVENT_OCCURRENCE: return createEventOccurrence();
 			case StatemachinesPackage.COMPLETION_EVENT_OCCURRENCE: return createCompletionEventOccurrence();
 			case StatemachinesPackage.SIGNAL_EVENT_OCCURRENCE: return createSignalEventOccurrence();
@@ -190,6 +192,15 @@ public class StatemachinesFactoryImpl extends EFactoryImpl implements Statemachi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public StringAttribute createStringAttribute() {
+		throw new UnsupportedOperationException("Cannot invoke element creation on a model type");
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public BooleanConstraint createBooleanConstraint() {
 		throw new UnsupportedOperationException("Cannot invoke element creation on a model type");
 	}
@@ -200,6 +211,15 @@ public class StatemachinesFactoryImpl extends EFactoryImpl implements Statemachi
 	 * @generated
 	 */
 	public IntegerConstraint createIntegerConstraint() {
+		throw new UnsupportedOperationException("Cannot invoke element creation on a model type");
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StringConstraint createStringConstraint() {
 		throw new UnsupportedOperationException("Cannot invoke element creation on a model type");
 	}
 
@@ -298,15 +318,6 @@ public class StatemachinesFactoryImpl extends EFactoryImpl implements Statemachi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AttributeValue createAttributeValue() {
-		throw new UnsupportedOperationException("Cannot invoke element creation on a model type");
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public BooleanAttributeValue createBooleanAttributeValue() {
 		throw new UnsupportedOperationException("Cannot invoke element creation on a model type");
 	}
@@ -317,6 +328,15 @@ public class StatemachinesFactoryImpl extends EFactoryImpl implements Statemachi
 	 * @generated
 	 */
 	public IntegerAttributeValue createIntegerAttributeValue() {
+		throw new UnsupportedOperationException("Cannot invoke element creation on a model type");
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StringAttributeValue createStringAttributeValue() {
 		throw new UnsupportedOperationException("Cannot invoke element creation on a model type");
 	}
 

@@ -26,50 +26,74 @@ import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachine
 public class RegionAspect {
   protected static void enter(final Region _self, final Transition enteringTransition, final EventOccurrence eventOccurrence) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectContext.getSelf(_self);
-    _privk3_enter(_self_, _self,enteringTransition,eventOccurrence);;
+    // #DispatchPointCut_before# void enter(Transition,EventOccurrence)
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Region){
+    	org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspect._privk3_enter(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Region)_self,enteringTransition,eventOccurrence);
+    };
   }
   
   protected static void exit(final Region _self, final Transition exitingTransition, final EventOccurrence eventOccurrence) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectContext.getSelf(_self);
-    _privk3_exit(_self_, _self,exitingTransition,eventOccurrence);;
+    // #DispatchPointCut_before# void exit(Transition,EventOccurrence)
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Region){
+    	org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspect._privk3_exit(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Region)_self,exitingTransition,eventOccurrence);
+    };
   }
   
   protected static void terminate(final Region _self) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectContext.getSelf(_self);
-    _privk3_terminate(_self_, _self);;
+    // #DispatchPointCut_before# void terminate()
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Region){
+    	org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspect._privk3_terminate(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Region)_self);
+    };
   }
   
   protected static StateMachine getContainingStateMachine(final Region _self) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectContext.getSelf(_self);
     Object result = null;
-    result = _privk3_getContainingStateMachine(_self_, _self);;
+    // #DispatchPointCut_before# StateMachine getContainingStateMachine()
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Region){
+    	result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspect._privk3_getContainingStateMachine(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Region)_self);
+    };
     return (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine)result;
   }
   
   protected static Iterable<Vertex> getActiveVertice(final Region _self) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectContext.getSelf(_self);
     Object result = null;
-    result = _privk3_getActiveVertice(_self_, _self);;
+    // #DispatchPointCut_before# Iterable<Vertex> getActiveVertice()
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Region){
+    	result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspect._privk3_getActiveVertice(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Region)_self);
+    };
     return (java.lang.Iterable<org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Vertex>)result;
   }
   
   protected static boolean contains(final Region _self, final Vertex vertex) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectContext.getSelf(_self);
     Object result = null;
-    result = _privk3_contains(_self_, _self,vertex);;
+    // #DispatchPointCut_before# boolean contains(Vertex)
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Region){
+    	result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspect._privk3_contains(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Region)_self,vertex);
+    };
     return (boolean)result;
   }
   
   protected static boolean completed(final Region _self) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectContext.getSelf(_self);
     Object result = null;
-    result = _privk3_completed(_self_, _self);;
+    // #DispatchPointCut_before# boolean completed()
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Region){
+    	result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspect._privk3_completed(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Region)_self);
+    };
     return (boolean)result;
   }
   
   protected static void completed(final Region _self, final boolean completed) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspectRegionAspectContext.getSelf(_self);
-    _privk3_completed(_self_, _self,completed);;
+    // #DispatchPointCut_before# void completed(boolean)
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Region){
+    	org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspect._privk3_completed(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Region)_self,completed);
+    };
   }
   
   public static Vertex currentVertex(final Region _self) {

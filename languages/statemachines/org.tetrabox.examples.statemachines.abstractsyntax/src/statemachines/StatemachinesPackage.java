@@ -120,7 +120,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see statemachines.impl.StatemachinesPackageImpl#getNamedElement()
 	 * @generated
 	 */
-	int NAMED_ELEMENT = 12;
+	int NAMED_ELEMENT = 14;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -473,6 +473,43 @@ public interface StatemachinesPackage extends EPackage {
 	int INTEGER_ATTRIBUTE_OPERATION_COUNT = ATTRIBUTE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link statemachines.impl.StringAttributeImpl <em>String Attribute</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see statemachines.impl.StringAttributeImpl
+	 * @see statemachines.impl.StatemachinesPackageImpl#getStringAttribute()
+	 * @generated
+	 */
+	int STRING_ATTRIBUTE = 9;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_ATTRIBUTE__NAME = ATTRIBUTE__NAME;
+
+	/**
+	 * The number of structural features of the '<em>String Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_ATTRIBUTE_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>String Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_ATTRIBUTE_OPERATION_COUNT = ATTRIBUTE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link statemachines.impl.ConstraintImpl <em>Constraint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -480,7 +517,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see statemachines.impl.StatemachinesPackageImpl#getConstraint()
 	 * @generated
 	 */
-	int CONSTRAINT = 9;
+	int CONSTRAINT = 10;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -526,7 +563,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see statemachines.impl.StatemachinesPackageImpl#getBooleanConstraint()
 	 * @generated
 	 */
-	int BOOLEAN_CONSTRAINT = 10;
+	int BOOLEAN_CONSTRAINT = 11;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -572,7 +609,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see statemachines.impl.StatemachinesPackageImpl#getIntegerConstraint()
 	 * @generated
 	 */
-	int INTEGER_CONSTRAINT = 11;
+	int INTEGER_CONSTRAINT = 12;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -611,6 +648,52 @@ public interface StatemachinesPackage extends EPackage {
 	int INTEGER_CONSTRAINT_OPERATION_COUNT = CONSTRAINT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link statemachines.impl.StringConstraintImpl <em>String Constraint</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see statemachines.impl.StringConstraintImpl
+	 * @see statemachines.impl.StatemachinesPackageImpl#getStringConstraint()
+	 * @generated
+	 */
+	int STRING_CONSTRAINT = 13;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_CONSTRAINT__VALUE = CONSTRAINT__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_CONSTRAINT__ATTRIBUTE = CONSTRAINT__ATTRIBUTE;
+
+	/**
+	 * The number of structural features of the '<em>String Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_CONSTRAINT_FEATURE_COUNT = CONSTRAINT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>String Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_CONSTRAINT_OPERATION_COUNT = CONSTRAINT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link statemachines.impl.StateMachineImpl <em>State Machine</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -618,7 +701,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see statemachines.impl.StatemachinesPackageImpl#getStateMachine()
 	 * @generated
 	 */
-	int STATE_MACHINE = 13;
+	int STATE_MACHINE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -664,7 +747,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see statemachines.impl.StatemachinesPackageImpl#getRegion()
 	 * @generated
 	 */
-	int REGION = 14;
+	int REGION = 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -737,7 +820,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see statemachines.impl.StatemachinesPackageImpl#getVertex()
 	 * @generated
 	 */
-	int VERTEX = 15;
+	int VERTEX = 17;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -801,7 +884,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see statemachines.impl.StatemachinesPackageImpl#getPseudostate()
 	 * @generated
 	 */
-	int PSEUDOSTATE = 16;
+	int PSEUDOSTATE = 18;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -883,7 +966,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see statemachines.impl.StatemachinesPackageImpl#getState()
 	 * @generated
 	 */
-	int STATE = 17;
+	int STATE = 19;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1001,7 +1084,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see statemachines.impl.StatemachinesPackageImpl#getFinalState()
 	 * @generated
 	 */
-	int FINAL_STATE = 18;
+	int FINAL_STATE = 20;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1119,7 +1202,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see statemachines.impl.StatemachinesPackageImpl#getTransition()
 	 * @generated
 	 */
-	int TRANSITION = 19;
+	int TRANSITION = 21;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1219,7 +1302,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see statemachines.impl.StatemachinesPackageImpl#getTrigger()
 	 * @generated
 	 */
-	int TRIGGER = 20;
+	int TRIGGER = 22;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1265,7 +1348,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see statemachines.impl.StatemachinesPackageImpl#getBehavior()
 	 * @generated
 	 */
-	int BEHAVIOR = 21;
+	int BEHAVIOR = 23;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1277,13 +1360,22 @@ public interface StatemachinesPackage extends EPackage {
 	int BEHAVIOR__NAME = NAMED_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Emitted Signals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOR__EMITTED_SIGNALS = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Behavior</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIOR_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int BEHAVIOR_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Behavior</em>' class.
@@ -1302,7 +1394,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see statemachines.impl.StatemachinesPackageImpl#getOperationBehavior()
 	 * @generated
 	 */
-	int OPERATION_BEHAVIOR = 22;
+	int OPERATION_BEHAVIOR = 24;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1312,6 +1404,15 @@ public interface StatemachinesPackage extends EPackage {
 	 * @ordered
 	 */
 	int OPERATION_BEHAVIOR__NAME = BEHAVIOR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Emitted Signals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_BEHAVIOR__EMITTED_SIGNALS = BEHAVIOR__EMITTED_SIGNALS;
 
 	/**
 	 * The feature id for the '<em><b>Attribute Values</b></em>' containment reference list.
@@ -1348,7 +1449,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see statemachines.impl.StatemachinesPackageImpl#getAttributeValue()
 	 * @generated
 	 */
-	int ATTRIBUTE_VALUE = 23;
+	int ATTRIBUTE_VALUE = 25;
 
 	/**
 	 * The number of structural features of the '<em>Attribute Value</em>' class.
@@ -1376,7 +1477,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see statemachines.impl.StatemachinesPackageImpl#getBooleanAttributeValue()
 	 * @generated
 	 */
-	int BOOLEAN_ATTRIBUTE_VALUE = 24;
+	int BOOLEAN_ATTRIBUTE_VALUE = 26;
 
 	/**
 	 * The feature id for the '<em><b>Attribute</b></em>' reference.
@@ -1422,7 +1523,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see statemachines.impl.StatemachinesPackageImpl#getIntegerAttributeValue()
 	 * @generated
 	 */
-	int INTEGER_ATTRIBUTE_VALUE = 25;
+	int INTEGER_ATTRIBUTE_VALUE = 27;
 
 	/**
 	 * The feature id for the '<em><b>Attribute</b></em>' reference.
@@ -1461,6 +1562,52 @@ public interface StatemachinesPackage extends EPackage {
 	int INTEGER_ATTRIBUTE_VALUE_OPERATION_COUNT = ATTRIBUTE_VALUE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link statemachines.impl.StringAttributeValueImpl <em>String Attribute Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see statemachines.impl.StringAttributeValueImpl
+	 * @see statemachines.impl.StatemachinesPackageImpl#getStringAttributeValue()
+	 * @generated
+	 */
+	int STRING_ATTRIBUTE_VALUE = 28;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_ATTRIBUTE_VALUE__ATTRIBUTE = ATTRIBUTE_VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_ATTRIBUTE_VALUE__VALUE = ATTRIBUTE_VALUE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>String Attribute Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_ATTRIBUTE_VALUE_FEATURE_COUNT = ATTRIBUTE_VALUE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>String Attribute Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_ATTRIBUTE_VALUE_OPERATION_COUNT = ATTRIBUTE_VALUE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link statemachines.impl.EventOccurrenceImpl <em>Event Occurrence</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1468,7 +1615,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see statemachines.impl.StatemachinesPackageImpl#getEventOccurrence()
 	 * @generated
 	 */
-	int EVENT_OCCURRENCE = 26;
+	int EVENT_OCCURRENCE = 29;
 
 	/**
 	 * The number of structural features of the '<em>Event Occurrence</em>' class.
@@ -1496,7 +1643,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see statemachines.impl.StatemachinesPackageImpl#getCompletionEventOccurrence()
 	 * @generated
 	 */
-	int COMPLETION_EVENT_OCCURRENCE = 27;
+	int COMPLETION_EVENT_OCCURRENCE = 30;
 
 	/**
 	 * The feature id for the '<em><b>State</b></em>' reference.
@@ -1533,7 +1680,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see statemachines.impl.StatemachinesPackageImpl#getSignalEventOccurrence()
 	 * @generated
 	 */
-	int SIGNAL_EVENT_OCCURRENCE = 28;
+	int SIGNAL_EVENT_OCCURRENCE = 31;
 
 	/**
 	 * The feature id for the '<em><b>Signal</b></em>' reference.
@@ -1545,13 +1692,22 @@ public interface StatemachinesPackage extends EPackage {
 	int SIGNAL_EVENT_OCCURRENCE__SIGNAL = EVENT_OCCURRENCE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Attribute Values</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIGNAL_EVENT_OCCURRENCE__ATTRIBUTE_VALUES = EVENT_OCCURRENCE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Signal Event Occurrence</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SIGNAL_EVENT_OCCURRENCE_FEATURE_COUNT = EVENT_OCCURRENCE_FEATURE_COUNT + 1;
+	int SIGNAL_EVENT_OCCURRENCE_FEATURE_COUNT = EVENT_OCCURRENCE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Signal Event Occurrence</em>' class.
@@ -1570,7 +1726,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see statemachines.impl.StatemachinesPackageImpl#getCallEventOccurrence()
 	 * @generated
 	 */
-	int CALL_EVENT_OCCURRENCE = 29;
+	int CALL_EVENT_OCCURRENCE = 32;
 
 	/**
 	 * The feature id for the '<em><b>Operation</b></em>' reference.
@@ -1582,13 +1738,40 @@ public interface StatemachinesPackage extends EPackage {
 	int CALL_EVENT_OCCURRENCE__OPERATION = EVENT_OCCURRENCE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>In Parameter Values</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALL_EVENT_OCCURRENCE__IN_PARAMETER_VALUES = EVENT_OCCURRENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Out Parameter Values</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALL_EVENT_OCCURRENCE__OUT_PARAMETER_VALUES = EVENT_OCCURRENCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Return Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALL_EVENT_OCCURRENCE__RETURN_VALUE = EVENT_OCCURRENCE_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Call Event Occurrence</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CALL_EVENT_OCCURRENCE_FEATURE_COUNT = EVENT_OCCURRENCE_FEATURE_COUNT + 1;
+	int CALL_EVENT_OCCURRENCE_FEATURE_COUNT = EVENT_OCCURRENCE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Call Event Occurrence</em>' class.
@@ -1607,7 +1790,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see statemachines.impl.StatemachinesPackageImpl#getPseudostateKind()
 	 * @generated
 	 */
-	int PSEUDOSTATE_KIND = 30;
+	int PSEUDOSTATE_KIND = 33;
 
 	/**
 	 * The meta object id for the '{@link statemachines.TransitionKind <em>Transition Kind</em>}' enum.
@@ -1617,7 +1800,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see statemachines.impl.StatemachinesPackageImpl#getTransitionKind()
 	 * @generated
 	 */
-	int TRANSITION_KIND = 31;
+	int TRANSITION_KIND = 34;
 
 
 	/**
@@ -1810,6 +1993,16 @@ public interface StatemachinesPackage extends EPackage {
 	EClass getIntegerAttribute();
 
 	/**
+	 * Returns the meta object for class '{@link statemachines.StringAttribute <em>String Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>String Attribute</em>'.
+	 * @see statemachines.StringAttribute
+	 * @generated
+	 */
+	EClass getStringAttribute();
+
+	/**
 	 * Returns the meta object for class '{@link statemachines.Constraint <em>Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1860,6 +2053,16 @@ public interface StatemachinesPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getIntegerConstraint();
+
+	/**
+	 * Returns the meta object for class '{@link statemachines.StringConstraint <em>String Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>String Constraint</em>'.
+	 * @see statemachines.StringConstraint
+	 * @generated
+	 */
+	EClass getStringConstraint();
 
 	/**
 	 * Returns the meta object for class '{@link statemachines.NamedElement <em>Named Element</em>}'.
@@ -2237,6 +2440,17 @@ public interface StatemachinesPackage extends EPackage {
 	EClass getBehavior();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link statemachines.Behavior#getEmittedSignals <em>Emitted Signals</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Emitted Signals</em>'.
+	 * @see statemachines.Behavior#getEmittedSignals()
+	 * @see #getBehavior()
+	 * @generated
+	 */
+	EReference getBehavior_EmittedSignals();
+
+	/**
 	 * Returns the meta object for class '{@link statemachines.OperationBehavior <em>Operation Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2332,6 +2546,38 @@ public interface StatemachinesPackage extends EPackage {
 	EAttribute getIntegerAttributeValue_Value();
 
 	/**
+	 * Returns the meta object for class '{@link statemachines.StringAttributeValue <em>String Attribute Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>String Attribute Value</em>'.
+	 * @see statemachines.StringAttributeValue
+	 * @generated
+	 */
+	EClass getStringAttributeValue();
+
+	/**
+	 * Returns the meta object for the reference '{@link statemachines.StringAttributeValue#getAttribute <em>Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Attribute</em>'.
+	 * @see statemachines.StringAttributeValue#getAttribute()
+	 * @see #getStringAttributeValue()
+	 * @generated
+	 */
+	EReference getStringAttributeValue_Attribute();
+
+	/**
+	 * Returns the meta object for the attribute '{@link statemachines.StringAttributeValue#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see statemachines.StringAttributeValue#getValue()
+	 * @see #getStringAttributeValue()
+	 * @generated
+	 */
+	EAttribute getStringAttributeValue_Value();
+
+	/**
 	 * Returns the meta object for class '{@link statemachines.EventOccurrence <em>Event Occurrence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2384,6 +2630,17 @@ public interface StatemachinesPackage extends EPackage {
 	EReference getSignalEventOccurrence_Signal();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link statemachines.SignalEventOccurrence#getAttributeValues <em>Attribute Values</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Attribute Values</em>'.
+	 * @see statemachines.SignalEventOccurrence#getAttributeValues()
+	 * @see #getSignalEventOccurrence()
+	 * @generated
+	 */
+	EReference getSignalEventOccurrence_AttributeValues();
+
+	/**
 	 * Returns the meta object for class '{@link statemachines.CallEventOccurrence <em>Call Event Occurrence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2403,6 +2660,39 @@ public interface StatemachinesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getCallEventOccurrence_Operation();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link statemachines.CallEventOccurrence#getInParameterValues <em>In Parameter Values</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>In Parameter Values</em>'.
+	 * @see statemachines.CallEventOccurrence#getInParameterValues()
+	 * @see #getCallEventOccurrence()
+	 * @generated
+	 */
+	EReference getCallEventOccurrence_InParameterValues();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link statemachines.CallEventOccurrence#getOutParameterValues <em>Out Parameter Values</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Out Parameter Values</em>'.
+	 * @see statemachines.CallEventOccurrence#getOutParameterValues()
+	 * @see #getCallEventOccurrence()
+	 * @generated
+	 */
+	EReference getCallEventOccurrence_OutParameterValues();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link statemachines.CallEventOccurrence#getReturnValue <em>Return Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Return Value</em>'.
+	 * @see statemachines.CallEventOccurrence#getReturnValue()
+	 * @see #getCallEventOccurrence()
+	 * @generated
+	 */
+	EReference getCallEventOccurrence_ReturnValue();
 
 	/**
 	 * Returns the meta object for enum '{@link statemachines.PseudostateKind <em>Pseudostate Kind</em>}'.
@@ -2610,6 +2900,16 @@ public interface StatemachinesPackage extends EPackage {
 		EClass INTEGER_ATTRIBUTE = eINSTANCE.getIntegerAttribute();
 
 		/**
+		 * The meta object literal for the '{@link statemachines.impl.StringAttributeImpl <em>String Attribute</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see statemachines.impl.StringAttributeImpl
+		 * @see statemachines.impl.StatemachinesPackageImpl#getStringAttribute()
+		 * @generated
+		 */
+		EClass STRING_ATTRIBUTE = eINSTANCE.getStringAttribute();
+
+		/**
 		 * The meta object literal for the '{@link statemachines.impl.ConstraintImpl <em>Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2654,6 +2954,16 @@ public interface StatemachinesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass INTEGER_CONSTRAINT = eINSTANCE.getIntegerConstraint();
+
+		/**
+		 * The meta object literal for the '{@link statemachines.impl.StringConstraintImpl <em>String Constraint</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see statemachines.impl.StringConstraintImpl
+		 * @see statemachines.impl.StatemachinesPackageImpl#getStringConstraint()
+		 * @generated
+		 */
+		EClass STRING_CONSTRAINT = eINSTANCE.getStringConstraint();
 
 		/**
 		 * The meta object literal for the '{@link statemachines.impl.NamedElementImpl <em>Named Element</em>}' class.
@@ -2956,6 +3266,14 @@ public interface StatemachinesPackage extends EPackage {
 		EClass BEHAVIOR = eINSTANCE.getBehavior();
 
 		/**
+		 * The meta object literal for the '<em><b>Emitted Signals</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BEHAVIOR__EMITTED_SIGNALS = eINSTANCE.getBehavior_EmittedSignals();
+
+		/**
 		 * The meta object literal for the '{@link statemachines.impl.OperationBehaviorImpl <em>Operation Behavior</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3036,6 +3354,32 @@ public interface StatemachinesPackage extends EPackage {
 		EAttribute INTEGER_ATTRIBUTE_VALUE__VALUE = eINSTANCE.getIntegerAttributeValue_Value();
 
 		/**
+		 * The meta object literal for the '{@link statemachines.impl.StringAttributeValueImpl <em>String Attribute Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see statemachines.impl.StringAttributeValueImpl
+		 * @see statemachines.impl.StatemachinesPackageImpl#getStringAttributeValue()
+		 * @generated
+		 */
+		EClass STRING_ATTRIBUTE_VALUE = eINSTANCE.getStringAttributeValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Attribute</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRING_ATTRIBUTE_VALUE__ATTRIBUTE = eINSTANCE.getStringAttributeValue_Attribute();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRING_ATTRIBUTE_VALUE__VALUE = eINSTANCE.getStringAttributeValue_Value();
+
+		/**
 		 * The meta object literal for the '{@link statemachines.impl.EventOccurrenceImpl <em>Event Occurrence</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3082,6 +3426,14 @@ public interface StatemachinesPackage extends EPackage {
 		EReference SIGNAL_EVENT_OCCURRENCE__SIGNAL = eINSTANCE.getSignalEventOccurrence_Signal();
 
 		/**
+		 * The meta object literal for the '<em><b>Attribute Values</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SIGNAL_EVENT_OCCURRENCE__ATTRIBUTE_VALUES = eINSTANCE.getSignalEventOccurrence_AttributeValues();
+
+		/**
 		 * The meta object literal for the '{@link statemachines.impl.CallEventOccurrenceImpl <em>Call Event Occurrence</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3098,6 +3450,30 @@ public interface StatemachinesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CALL_EVENT_OCCURRENCE__OPERATION = eINSTANCE.getCallEventOccurrence_Operation();
+
+		/**
+		 * The meta object literal for the '<em><b>In Parameter Values</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CALL_EVENT_OCCURRENCE__IN_PARAMETER_VALUES = eINSTANCE.getCallEventOccurrence_InParameterValues();
+
+		/**
+		 * The meta object literal for the '<em><b>Out Parameter Values</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CALL_EVENT_OCCURRENCE__OUT_PARAMETER_VALUES = eINSTANCE.getCallEventOccurrence_OutParameterValues();
+
+		/**
+		 * The meta object literal for the '<em><b>Return Value</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CALL_EVENT_OCCURRENCE__RETURN_VALUE = eINSTANCE.getCallEventOccurrence_ReturnValue();
 
 		/**
 		 * The meta object literal for the '{@link statemachines.PseudostateKind <em>Pseudostate Kind</em>}' enum.

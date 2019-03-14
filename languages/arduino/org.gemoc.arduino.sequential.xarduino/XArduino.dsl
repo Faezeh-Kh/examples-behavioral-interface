@@ -1,0 +1,5 @@
+name = org.gemoc.arduino.sequential.XArduino
+
+ ecore = platform:/resource/org.gemoc.arduino.sequential.xarduino/model/XArduino.ecore
+
+ k3 = org.gemoc.arduino.sequential.xarduino.aspects.WhileAspect,org.gemoc.arduino.sequential.xarduino.aspects.IfAspect,org.gemoc.arduino.sequential.xarduino.aspects.ModuleGetAspect,org.gemoc.arduino.sequential.xarduino.aspects.BlockAspect,org.gemoc.arduino.sequential.xarduino.aspects.ExpressionAspect,org.gemoc.arduino.sequential.xarduino.aspects.SetLedAspect,org.gemoc.arduino.sequential.xarduino.aspects.PushButtonAspect,org.gemoc.arduino.sequential.xarduino.aspects.WaitForAspect,org.gemoc.arduino.sequential.xarduino.aspects.ConstantAspect,org.gemoc.arduino.sequential.xarduino.aspects.UnaryExpressionAspect,org.gemoc.arduino.sequential.xarduino.aspects.InstructionAspect,org.gemoc.arduino.sequential.xarduino.aspects.ModuleSetAspect,org.gemoc.arduino.sequential.xarduino.aspects.DelayAspect,org.gemoc.arduino.sequential.xarduino.aspects.BinaryExpressionAspect,org.gemoc.arduino.sequential.xarduino.aspects.ControlAspect,org.gemoc.arduino.sequential.xarduino.aspects.SketchAspect,org.gemoc.arduino.sequential.xarduino.aspects.ModuleAspect

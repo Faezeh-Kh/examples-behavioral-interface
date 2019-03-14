@@ -49,7 +49,7 @@ public interface SignalEventOccurrence extends EventOccurrence {
 	void setSignal(Signal value);
 
 	/**
-	 * Returns the value of the '<em><b>Attribute Values</b></em>' reference list.
+	 * Returns the value of the '<em><b>Attribute Values</b></em>' containment reference list.
 	 * The list contents are of type {@link org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.AttributeValue}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -57,9 +57,9 @@ public interface SignalEventOccurrence extends EventOccurrence {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Attribute Values</em>' reference list.
+	 * @return the value of the '<em>Attribute Values</em>' containment reference list.
 	 * @see org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StatemachinesPackage#getSignalEventOccurrence_AttributeValues()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<AttributeValue> getAttributeValues();

@@ -6,6 +6,9 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.InterpretedStateMachinesMTAdaptersFactory;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CustomSystem;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Operation;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Signal;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StateMachine;
 
 @SuppressWarnings("all")
 public class CustomSystemAdapter extends EObjectAdapter<CustomSystem> implements org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.CustomSystem {
@@ -17,30 +20,30 @@ public class CustomSystemAdapter extends EObjectAdapter<CustomSystem> implements
   }
   
   @Override
-  public org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StateMachine getStatemachine() {
-    return () adaptersFactory.createAdapter(adaptee.getStatemachine(), eResource);
+  public StateMachine getStatemachine() {
+    return (StateMachine) adaptersFactory.createAdapter(adaptee.getStatemachine(), eResource);
   }
   
   @Override
-  public void setStatemachine(final org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StateMachine o) {
+  public void setStatemachine(final StateMachine o) {
     if (o != null)
     	adaptee.setStatemachine(((org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.StateMachineAdapter) o).getAdaptee());
     else adaptee.setStatemachine(null);
   }
   
-  private /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Signal> */Object signals_;
+  private EList<Signal> signals_;
   
   @Override
-  public /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Signal> */Object getSignals() {
+  public EList<Signal> getSignals() {
     if (signals_ == null)
     	signals_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getSignals(), adaptersFactory, eResource);
     return signals_;
   }
   
-  private /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Operation> */Object operations_;
+  private EList<Operation> operations_;
   
   @Override
-  public /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Operation> */Object getOperations() {
+  public EList<Operation> getOperations() {
     if (operations_ == null)
     	operations_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getOperations(), adaptersFactory, eResource);
     return operations_;

@@ -6,7 +6,7 @@ import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.int
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Constraint;
 
 @SuppressWarnings("all")
-public class ConstraintAdapter<T, V> extends EObjectAdapter<Constraint<T, V>> implements org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Constraint {
+public class ConstraintAdapter<T, V> extends EObjectAdapter<Constraint<T, V>> implements org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Constraint<T, V> {
   private InterpretedStateMachinesMTAdaptersFactory adaptersFactory;
   
   public ConstraintAdapter() {

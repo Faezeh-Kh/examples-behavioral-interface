@@ -1,0 +1,22 @@
+package org.gemoc.arduino.sequential
+
+language XArduino {
+	syntax "platform:/resource/org.gemoc.arduino.sequential.model/model/arduino.ecore"
+	with org.gemoc.arduino.sequential.k3dsa.WhileAspect
+	with org.gemoc.arduino.sequential.k3dsa.IfAspect
+	with org.gemoc.arduino.sequential.k3dsa.ModuleGetAspect
+	with org.gemoc.arduino.sequential.k3dsa.BlockAspect
+	with org.gemoc.arduino.sequential.k3dsa.ExpressionAspect
+	with org.gemoc.arduino.sequential.k3dsa.SetLedAspect
+	with org.gemoc.arduino.sequential.k3dsa.PushButtonAspect
+	with org.gemoc.arduino.sequential.k3dsa.WaitForAspect
+	with org.gemoc.arduino.sequential.k3dsa.ConstantAspect
+	with org.gemoc.arduino.sequential.k3dsa.UnaryExpressionAspect
+	with org.gemoc.arduino.sequential.k3dsa.InstructionAspect
+	with org.gemoc.arduino.sequential.k3dsa.ModuleSetAspect
+	with org.gemoc.arduino.sequential.k3dsa.DelayAspect
+	with org.gemoc.arduino.sequential.k3dsa.BinaryExpressionAspect
+	with org.gemoc.arduino.sequential.k3dsa.ControlAspect
+	with org.gemoc.arduino.sequential.k3dsa.SketchAspect
+	with org.gemoc.arduino.sequential.k3dsa.ModuleAspect
+}

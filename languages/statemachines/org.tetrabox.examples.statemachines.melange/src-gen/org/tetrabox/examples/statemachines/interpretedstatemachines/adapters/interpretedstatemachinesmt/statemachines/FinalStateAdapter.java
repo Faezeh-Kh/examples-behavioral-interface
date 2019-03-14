@@ -6,6 +6,11 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.InterpretedStateMachinesMTAdaptersFactory;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.FinalState;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Behavior;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Pseudostate;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Region;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Transition;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Trigger;
 
 @SuppressWarnings("all")
 public class FinalStateAdapter extends EObjectAdapter<FinalState> implements org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.FinalState {
@@ -27,93 +32,93 @@ public class FinalStateAdapter extends EObjectAdapter<FinalState> implements org
   }
   
   @Override
-  public org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Region getContainer() {
-    return () adaptersFactory.createAdapter(adaptee.getContainer(), eResource);
+  public Region getContainer() {
+    return (Region) adaptersFactory.createAdapter(adaptee.getContainer(), eResource);
   }
   
   @Override
-  public void setContainer(final org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Region o) {
+  public void setContainer(final Region o) {
     if (o != null)
     	adaptee.setContainer(((org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.RegionAdapter) o).getAdaptee());
     else adaptee.setContainer(null);
   }
   
-  private /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Transition> */Object outgoingTransitions_;
+  private EList<Transition> outgoingTransitions_;
   
   @Override
-  public /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Transition> */Object getOutgoingTransitions() {
+  public EList<Transition> getOutgoingTransitions() {
     if (outgoingTransitions_ == null)
     	outgoingTransitions_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getOutgoingTransitions(), adaptersFactory, eResource);
     return outgoingTransitions_;
   }
   
-  private /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Transition> */Object incomingTransitions_;
+  private EList<Transition> incomingTransitions_;
   
   @Override
-  public /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Transition> */Object getIncomingTransitions() {
+  public EList<Transition> getIncomingTransitions() {
     if (incomingTransitions_ == null)
     	incomingTransitions_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getIncomingTransitions(), adaptersFactory, eResource);
     return incomingTransitions_;
   }
   
-  private /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Region> */Object regions_;
+  private EList<Region> regions_;
   
   @Override
-  public /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Region> */Object getRegions() {
+  public EList<Region> getRegions() {
     if (regions_ == null)
     	regions_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getRegions(), adaptersFactory, eResource);
     return regions_;
   }
   
   @Override
-  public org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Behavior getEntry() {
-    return () adaptersFactory.createAdapter(adaptee.getEntry(), eResource);
+  public Behavior getEntry() {
+    return (Behavior) adaptersFactory.createAdapter(adaptee.getEntry(), eResource);
   }
   
   @Override
-  public void setEntry(final org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Behavior o) {
+  public void setEntry(final Behavior o) {
     if (o != null)
     	adaptee.setEntry(((org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.BehaviorAdapter) o).getAdaptee());
     else adaptee.setEntry(null);
   }
   
   @Override
-  public org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Behavior getDoActivity() {
-    return () adaptersFactory.createAdapter(adaptee.getDoActivity(), eResource);
+  public Behavior getDoActivity() {
+    return (Behavior) adaptersFactory.createAdapter(adaptee.getDoActivity(), eResource);
   }
   
   @Override
-  public void setDoActivity(final org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Behavior o) {
+  public void setDoActivity(final Behavior o) {
     if (o != null)
     	adaptee.setDoActivity(((org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.BehaviorAdapter) o).getAdaptee());
     else adaptee.setDoActivity(null);
   }
   
   @Override
-  public org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Behavior getExit() {
-    return () adaptersFactory.createAdapter(adaptee.getExit(), eResource);
+  public Behavior getExit() {
+    return (Behavior) adaptersFactory.createAdapter(adaptee.getExit(), eResource);
   }
   
   @Override
-  public void setExit(final org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Behavior o) {
+  public void setExit(final Behavior o) {
     if (o != null)
     	adaptee.setExit(((org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.BehaviorAdapter) o).getAdaptee());
     else adaptee.setExit(null);
   }
   
-  private /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Trigger> */Object deferrableTriggers_;
+  private EList<Trigger> deferrableTriggers_;
   
   @Override
-  public /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Trigger> */Object getDeferrableTriggers() {
+  public EList<Trigger> getDeferrableTriggers() {
     if (deferrableTriggers_ == null)
     	deferrableTriggers_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getDeferrableTriggers(), adaptersFactory, eResource);
     return deferrableTriggers_;
   }
   
-  private /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Pseudostate> */Object connectionPoint_;
+  private EList<Pseudostate> connectionPoint_;
   
   @Override
-  public /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Pseudostate> */Object getConnectionPoint() {
+  public EList<Pseudostate> getConnectionPoint() {
     if (connectionPoint_ == null)
     	connectionPoint_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getConnectionPoint(), adaptersFactory, eResource);
     return connectionPoint_;

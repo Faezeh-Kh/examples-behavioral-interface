@@ -85,6 +85,15 @@ public interface StatemachinesFactory extends EFactory {
 	IntegerAttribute createIntegerAttribute();
 
 	/**
+	 * Returns a new object of class '<em>String Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>String Attribute</em>'.
+	 * @generated
+	 */
+	StringAttribute createStringAttribute();
+
+	/**
 	 * Returns a new object of class '<em>Boolean Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -101,6 +110,15 @@ public interface StatemachinesFactory extends EFactory {
 	 * @generated
 	 */
 	IntegerConstraint createIntegerConstraint();
+
+	/**
+	 * Returns a new object of class '<em>String Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>String Constraint</em>'.
+	 * @generated
+	 */
+	StringConstraint createStringConstraint();
 
 	/**
 	 * Returns a new object of class '<em>State Machine</em>'.
@@ -193,15 +211,6 @@ public interface StatemachinesFactory extends EFactory {
 	OperationBehavior createOperationBehavior();
 
 	/**
-	 * Returns a new object of class '<em>Attribute Value</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Attribute Value</em>'.
-	 * @generated
-	 */
-	AttributeValue createAttributeValue();
-
-	/**
 	 * Returns a new object of class '<em>Boolean Attribute Value</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -218,6 +227,15 @@ public interface StatemachinesFactory extends EFactory {
 	 * @generated
 	 */
 	IntegerAttributeValue createIntegerAttributeValue();
+
+	/**
+	 * Returns a new object of class '<em>String Attribute Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>String Attribute Value</em>'.
+	 * @generated
+	 */
+	StringAttributeValue createStringAttributeValue();
 
 	/**
 	 * Returns a new object of class '<em>Event Occurrence</em>'.

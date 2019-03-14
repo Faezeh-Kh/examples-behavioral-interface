@@ -1,0 +1,140 @@
+	// BeginInjectInto org.tetrabox.examples.statemachines.interpreter.AttributeValueAspect#String getString() from org.tetrabox.examples.statemachines.interpreter.IntegerAttributeValueAspect
+		if (_self instanceof statemachines.IntegerAttributeValue){
+			result = org.tetrabox.examples.statemachines.interpreter.IntegerAttributeValueAspect.getString((statemachines.IntegerAttributeValue)_self);
+		} else
+		// EndInjectInto org.tetrabox.examples.statemachines.interpreter.AttributeValueAspect#String getString() from org.tetrabox.examples.statemachines.interpreter.IntegerAttributeValueAspect
+	// BeginInjectInto org.tetrabox.examples.statemachines.interpreter.AttributeValueAspect#void set_value(int) from org.tetrabox.examples.statemachines.interpreter.IntegerAttributeValueAspect
+		if (_self instanceof statemachines.IntegerAttributeValue){
+			org.tetrabox.examples.statemachines.interpreter.IntegerAttributeValueAspect.set_value((statemachines.IntegerAttributeValue)_self,value);
+		} else
+		// EndInjectInto org.tetrabox.examples.statemachines.interpreter.AttributeValueAspect#void set_value(int) from org.tetrabox.examples.statemachines.interpreter.IntegerAttributeValueAspect
+	// BeginInjectInto org.tetrabox.examples.statemachines.interpreter.StateAspect#void enter(Transition,EventOccurrence,Region) from org.tetrabox.examples.statemachines.interpreter.FinalStateAspect
+		if (_self instanceof statemachines.FinalState){
+			org.tetrabox.examples.statemachines.interpreter.FinalStateAspect.enter((statemachines.FinalState)_self,enteringTransition,eventOccurrence,leastCommonAncestor);
+		} else
+		// EndInjectInto org.tetrabox.examples.statemachines.interpreter.StateAspect#void enter(Transition,EventOccurrence,Region) from org.tetrabox.examples.statemachines.interpreter.FinalStateAspect
+	// BeginInjectInto org.tetrabox.examples.statemachines.interpreter.AttributeValueAspect#Attribute get_attribute() from org.tetrabox.examples.statemachines.interpreter.StringAttributeValueAspect
+		if (_self instanceof statemachines.StringAttributeValue){
+			result = org.tetrabox.examples.statemachines.interpreter.StringAttributeValueAspect.get_attribute((statemachines.StringAttributeValue)_self);
+		} else
+		// EndInjectInto org.tetrabox.examples.statemachines.interpreter.AttributeValueAspect#Attribute get_attribute() from org.tetrabox.examples.statemachines.interpreter.StringAttributeValueAspect
+	// BeginInjectInto org.tetrabox.examples.statemachines.interpreter.AttributeValueAspect#void set_value(int) from org.tetrabox.examples.statemachines.interpreter.BooleanAttributeValueAspect
+		if (_self instanceof statemachines.BooleanAttributeValue){
+			org.tetrabox.examples.statemachines.interpreter.BooleanAttributeValueAspect.set_value((statemachines.BooleanAttributeValue)_self,value);
+		} else
+		// EndInjectInto org.tetrabox.examples.statemachines.interpreter.AttributeValueAspect#void set_value(int) from org.tetrabox.examples.statemachines.interpreter.BooleanAttributeValueAspect
+	// BeginInjectInto org.tetrabox.examples.statemachines.interpreter.AttributeValueAspect#String getString() from org.tetrabox.examples.statemachines.interpreter.StringAttributeValueAspect
+		if (_self instanceof statemachines.StringAttributeValue){
+			result = org.tetrabox.examples.statemachines.interpreter.StringAttributeValueAspect.getString((statemachines.StringAttributeValue)_self);
+		} else
+		// EndInjectInto org.tetrabox.examples.statemachines.interpreter.AttributeValueAspect#String getString() from org.tetrabox.examples.statemachines.interpreter.StringAttributeValueAspect
+	// BeginInjectInto org.tetrabox.examples.statemachines.interpreter.AttributeValueAspect#int get_value() from org.tetrabox.examples.statemachines.interpreter.BooleanAttributeValueAspect
+		if (_self instanceof statemachines.BooleanAttributeValue){
+			result = org.tetrabox.examples.statemachines.interpreter.BooleanAttributeValueAspect.get_value((statemachines.BooleanAttributeValue)_self);
+		} else
+		// EndInjectInto org.tetrabox.examples.statemachines.interpreter.AttributeValueAspect#int get_value() from org.tetrabox.examples.statemachines.interpreter.BooleanAttributeValueAspect
+	// BeginInjectInto org.tetrabox.examples.statemachines.interpreter.VertexAspect#void terminate() from org.tetrabox.examples.statemachines.interpreter.StateAspect
+		if (_self instanceof statemachines.State){
+			org.tetrabox.examples.statemachines.interpreter.StateAspect.terminate((statemachines.State)_self);
+		} else
+		// EndInjectInto org.tetrabox.examples.statemachines.interpreter.VertexAspect#void terminate() from org.tetrabox.examples.statemachines.interpreter.StateAspect
+	// BeginInjectInto org.tetrabox.examples.statemachines.interpreter.VertexAspect#boolean contains(Vertex) from org.tetrabox.examples.statemachines.interpreter.StateAspect
+		if (_self instanceof statemachines.State){
+			result = org.tetrabox.examples.statemachines.interpreter.StateAspect.contains((statemachines.State)_self,vertex);
+		} else
+		// EndInjectInto org.tetrabox.examples.statemachines.interpreter.VertexAspect#boolean contains(Vertex) from org.tetrabox.examples.statemachines.interpreter.StateAspect
+	// BeginInjectInto org.tetrabox.examples.statemachines.interpreter.EventOccurrenceAspect#String getParameters() from org.tetrabox.examples.statemachines.interpreter.SignalEventOccurrenceAspect
+		if (_self instanceof statemachines.SignalEventOccurrence){
+			result = org.tetrabox.examples.statemachines.interpreter.SignalEventOccurrenceAspect.getParameters((statemachines.SignalEventOccurrence)_self);
+		} else
+		// EndInjectInto org.tetrabox.examples.statemachines.interpreter.EventOccurrenceAspect#String getParameters() from org.tetrabox.examples.statemachines.interpreter.SignalEventOccurrenceAspect
+	// BeginInjectInto org.tetrabox.examples.statemachines.interpreter.AttributeValueAspect#Attribute get_attribute() from org.tetrabox.examples.statemachines.interpreter.IntegerAttributeValueAspect
+		if (_self instanceof statemachines.IntegerAttributeValue){
+			result = org.tetrabox.examples.statemachines.interpreter.IntegerAttributeValueAspect.get_attribute((statemachines.IntegerAttributeValue)_self);
+		} else
+		// EndInjectInto org.tetrabox.examples.statemachines.interpreter.AttributeValueAspect#Attribute get_attribute() from org.tetrabox.examples.statemachines.interpreter.IntegerAttributeValueAspect
+	// BeginInjectInto org.tetrabox.examples.statemachines.interpreter.AttributeValueAspect#int get_value() from org.tetrabox.examples.statemachines.interpreter.IntegerAttributeValueAspect
+		if (_self instanceof statemachines.IntegerAttributeValue){
+			result = org.tetrabox.examples.statemachines.interpreter.IntegerAttributeValueAspect.get_value((statemachines.IntegerAttributeValue)_self);
+		} else
+		// EndInjectInto org.tetrabox.examples.statemachines.interpreter.AttributeValueAspect#int get_value() from org.tetrabox.examples.statemachines.interpreter.IntegerAttributeValueAspect
+	// BeginInjectInto org.tetrabox.examples.statemachines.interpreter.VertexAspect#boolean isEnterable(Transition) from org.tetrabox.examples.statemachines.interpreter.StateAspect
+		if (_self instanceof statemachines.State){
+			result = org.tetrabox.examples.statemachines.interpreter.StateAspect.isEnterable((statemachines.State)_self,enteringTransition);
+		} else
+		// EndInjectInto org.tetrabox.examples.statemachines.interpreter.VertexAspect#boolean isEnterable(Transition) from org.tetrabox.examples.statemachines.interpreter.StateAspect
+	// BeginInjectInto org.tetrabox.examples.statemachines.interpreter.VertexAspect#State getParentState() from org.tetrabox.examples.statemachines.interpreter.PseudostateAspect
+		if (_self instanceof statemachines.Pseudostate){
+			result = org.tetrabox.examples.statemachines.interpreter.PseudostateAspect.getParentState((statemachines.Pseudostate)_self);
+		} else
+		// EndInjectInto org.tetrabox.examples.statemachines.interpreter.VertexAspect#State getParentState() from org.tetrabox.examples.statemachines.interpreter.PseudostateAspect
+	// BeginInjectInto org.tetrabox.examples.statemachines.interpreter.AttributeValueAspect#Attribute get_attribute() from org.tetrabox.examples.statemachines.interpreter.BooleanAttributeValueAspect
+		if (_self instanceof statemachines.BooleanAttributeValue){
+			result = org.tetrabox.examples.statemachines.interpreter.BooleanAttributeValueAspect.get_attribute((statemachines.BooleanAttributeValue)_self);
+		} else
+		// EndInjectInto org.tetrabox.examples.statemachines.interpreter.AttributeValueAspect#Attribute get_attribute() from org.tetrabox.examples.statemachines.interpreter.BooleanAttributeValueAspect
+	// BeginInjectInto org.tetrabox.examples.statemachines.interpreter.VertexAspect#Region getContainingRegion() from org.tetrabox.examples.statemachines.interpreter.PseudostateAspect
+		if (_self instanceof statemachines.Pseudostate){
+			result = org.tetrabox.examples.statemachines.interpreter.PseudostateAspect.getContainingRegion((statemachines.Pseudostate)_self);
+		} else
+		// EndInjectInto org.tetrabox.examples.statemachines.interpreter.VertexAspect#Region getContainingRegion() from org.tetrabox.examples.statemachines.interpreter.PseudostateAspect
+	// BeginInjectInto org.tetrabox.examples.statemachines.interpreter.AttributeValueAspect#String getString() from org.tetrabox.examples.statemachines.interpreter.BooleanAttributeValueAspect
+		if (_self instanceof statemachines.BooleanAttributeValue){
+			result = org.tetrabox.examples.statemachines.interpreter.BooleanAttributeValueAspect.getString((statemachines.BooleanAttributeValue)_self);
+		} else
+		// EndInjectInto org.tetrabox.examples.statemachines.interpreter.AttributeValueAspect#String getString() from org.tetrabox.examples.statemachines.interpreter.BooleanAttributeValueAspect
+	// BeginInjectInto org.tetrabox.examples.statemachines.interpreter.VertexAspect#void enter(Transition,EventOccurrence,Region) from org.tetrabox.examples.statemachines.interpreter.FinalStateAspect
+		if (_self instanceof statemachines.FinalState){
+			org.tetrabox.examples.statemachines.interpreter.FinalStateAspect.enter((statemachines.FinalState)_self,enteringTransition,eventOccurrence,leastCommonAncestor);
+		} else
+		// EndInjectInto org.tetrabox.examples.statemachines.interpreter.VertexAspect#void enter(Transition,EventOccurrence,Region) from org.tetrabox.examples.statemachines.interpreter.FinalStateAspect
+	// BeginInjectInto org.tetrabox.examples.statemachines.interpreter.VertexAspect#boolean isExitable(Transition) from org.tetrabox.examples.statemachines.interpreter.PseudostateAspect
+		if (_self instanceof statemachines.Pseudostate){
+			result = org.tetrabox.examples.statemachines.interpreter.PseudostateAspect.isExitable((statemachines.Pseudostate)_self,exitingTransition);
+		} else
+		// EndInjectInto org.tetrabox.examples.statemachines.interpreter.VertexAspect#boolean isExitable(Transition) from org.tetrabox.examples.statemachines.interpreter.PseudostateAspect
+	// BeginInjectInto org.tetrabox.examples.statemachines.interpreter.EventOccurrenceAspect#String getParameters() from org.tetrabox.examples.statemachines.interpreter.CallEventOccurrenceAspect
+		if (_self instanceof statemachines.CallEventOccurrence){
+			result = org.tetrabox.examples.statemachines.interpreter.CallEventOccurrenceAspect.getParameters((statemachines.CallEventOccurrence)_self);
+		} else
+		// EndInjectInto org.tetrabox.examples.statemachines.interpreter.EventOccurrenceAspect#String getParameters() from org.tetrabox.examples.statemachines.interpreter.CallEventOccurrenceAspect
+	// BeginInjectInto org.tetrabox.examples.statemachines.interpreter.BehaviorAspect#void execute(EventOccurrence) from org.tetrabox.examples.statemachines.interpreter.OperationBehaviorAspect
+		if (_self instanceof statemachines.OperationBehavior){
+			org.tetrabox.examples.statemachines.interpreter.OperationBehaviorAspect.execute((statemachines.OperationBehavior)_self,eventOccurrence);
+		} else
+		// EndInjectInto org.tetrabox.examples.statemachines.interpreter.BehaviorAspect#void execute(EventOccurrence) from org.tetrabox.examples.statemachines.interpreter.OperationBehaviorAspect
+	// BeginInjectInto org.tetrabox.examples.statemachines.interpreter.VertexAspect#void exit(Transition,EventOccurrence,Region) from org.tetrabox.examples.statemachines.interpreter.StateAspect
+		if (_self instanceof statemachines.State){
+			org.tetrabox.examples.statemachines.interpreter.StateAspect.exit((statemachines.State)_self,exitingTransition,eventOccurrence,leastCommonAncestor);
+		} else
+		// EndInjectInto org.tetrabox.examples.statemachines.interpreter.VertexAspect#void exit(Transition,EventOccurrence,Region) from org.tetrabox.examples.statemachines.interpreter.StateAspect
+	// BeginInjectInto org.tetrabox.examples.statemachines.interpreter.VertexAspect#boolean isEnterable(Transition) from org.tetrabox.examples.statemachines.interpreter.PseudostateAspect
+		if (_self instanceof statemachines.Pseudostate){
+			result = org.tetrabox.examples.statemachines.interpreter.PseudostateAspect.isEnterable((statemachines.Pseudostate)_self,enteringTransition);
+		} else
+		// EndInjectInto org.tetrabox.examples.statemachines.interpreter.VertexAspect#boolean isEnterable(Transition) from org.tetrabox.examples.statemachines.interpreter.PseudostateAspect
+	// BeginInjectInto org.tetrabox.examples.statemachines.interpreter.VertexAspect#boolean isActive() from org.tetrabox.examples.statemachines.interpreter.PseudostateAspect
+		if (_self instanceof statemachines.Pseudostate){
+			result = org.tetrabox.examples.statemachines.interpreter.PseudostateAspect.isActive((statemachines.Pseudostate)_self);
+		} else
+		// EndInjectInto org.tetrabox.examples.statemachines.interpreter.VertexAspect#boolean isActive() from org.tetrabox.examples.statemachines.interpreter.PseudostateAspect
+	// BeginInjectInto org.tetrabox.examples.statemachines.interpreter.VertexAspect#void enter(Transition,EventOccurrence,Region) from org.tetrabox.examples.statemachines.interpreter.PseudostateAspect
+		if (_self instanceof statemachines.Pseudostate){
+			org.tetrabox.examples.statemachines.interpreter.PseudostateAspect.enter((statemachines.Pseudostate)_self,enteringTransition,eventOccurrence,leastCommonAncestor);
+		} else
+		// EndInjectInto org.tetrabox.examples.statemachines.interpreter.VertexAspect#void enter(Transition,EventOccurrence,Region) from org.tetrabox.examples.statemachines.interpreter.PseudostateAspect
+	// BeginInjectInto org.tetrabox.examples.statemachines.interpreter.VertexAspect#void enter(Transition,EventOccurrence,Region) from org.tetrabox.examples.statemachines.interpreter.StateAspect
+		if (_self instanceof statemachines.State){
+			org.tetrabox.examples.statemachines.interpreter.StateAspect.enter((statemachines.State)_self,enteringTransition,eventOccurrence,leastCommonAncestor);
+		} else
+		// EndInjectInto org.tetrabox.examples.statemachines.interpreter.VertexAspect#void enter(Transition,EventOccurrence,Region) from org.tetrabox.examples.statemachines.interpreter.StateAspect
+	// BeginInjectInto org.tetrabox.examples.statemachines.interpreter.VertexAspect#void exit(Transition,EventOccurrence,Region) from org.tetrabox.examples.statemachines.interpreter.PseudostateAspect
+		if (_self instanceof statemachines.Pseudostate){
+			org.tetrabox.examples.statemachines.interpreter.PseudostateAspect.exit((statemachines.Pseudostate)_self,exitingTransition,eventOccurrence,leastCommonAncestor);
+		} else
+		// EndInjectInto org.tetrabox.examples.statemachines.interpreter.VertexAspect#void exit(Transition,EventOccurrence,Region) from org.tetrabox.examples.statemachines.interpreter.PseudostateAspect
+	// BeginInjectInto org.tetrabox.examples.statemachines.interpreter.VertexAspect#boolean isExitable(Transition) from org.tetrabox.examples.statemachines.interpreter.StateAspect
+		if (_self instanceof statemachines.State){
+			result = org.tetrabox.examples.statemachines.interpreter.StateAspect.isExitable((statemachines.State)_self,exitingTransition);
+		} else
+		// EndInjectInto org.tetrabox.examples.statemachines.interpreter.VertexAspect#boolean isExitable(Transition) from org.tetrabox.examples.statemachines.interpreter.StateAspect

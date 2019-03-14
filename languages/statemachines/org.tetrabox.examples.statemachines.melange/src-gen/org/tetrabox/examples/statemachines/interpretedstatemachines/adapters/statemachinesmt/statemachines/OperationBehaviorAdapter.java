@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.StateMachinesMTAdaptersFactory;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.OperationBehavior;
 import statemachines.AttributeValue;
+import statemachines.SignalEventOccurrence;
 
 @SuppressWarnings("all")
 public class OperationBehaviorAdapter extends EObjectAdapter<OperationBehavior> implements statemachines.OperationBehavior {
@@ -25,6 +26,15 @@ public class OperationBehaviorAdapter extends EObjectAdapter<OperationBehavior> 
   @Override
   public void setName(final String o) {
     adaptee.setName(o);
+  }
+  
+  private EList<SignalEventOccurrence> emittedSignals_;
+  
+  @Override
+  public EList<SignalEventOccurrence> getEmittedSignals() {
+    if (emittedSignals_ == null)
+    	emittedSignals_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getEmittedSignals(), adaptersFactory, eResource);
+    return emittedSignals_;
   }
   
   private EList<AttributeValue> attributeValues_;
@@ -48,6 +58,8 @@ public class OperationBehaviorAdapter extends EObjectAdapter<OperationBehavior> 
     switch (featureID) {
     	case statemachines.StatemachinesPackage.OPERATION_BEHAVIOR__NAME:
     		return getName();
+    	case statemachines.StatemachinesPackage.OPERATION_BEHAVIOR__EMITTED_SIGNALS:
+    		return getEmittedSignals();
     	case statemachines.StatemachinesPackage.OPERATION_BEHAVIOR__ATTRIBUTE_VALUES:
     		return getAttributeValues();
     }
@@ -60,6 +72,8 @@ public class OperationBehaviorAdapter extends EObjectAdapter<OperationBehavior> 
     switch (featureID) {
     	case statemachines.StatemachinesPackage.OPERATION_BEHAVIOR__NAME:
     		return getName() != NAME_EDEFAULT;
+    	case statemachines.StatemachinesPackage.OPERATION_BEHAVIOR__EMITTED_SIGNALS:
+    		return getEmittedSignals() != null && !getEmittedSignals().isEmpty();
     	case statemachines.StatemachinesPackage.OPERATION_BEHAVIOR__ATTRIBUTE_VALUES:
     		return getAttributeValues() != null && !getAttributeValues().isEmpty();
     }
@@ -74,6 +88,10 @@ public class OperationBehaviorAdapter extends EObjectAdapter<OperationBehavior> 
     		setName(
     		(java.lang.String)
     		 newValue);
+    		return;
+    	case statemachines.StatemachinesPackage.OPERATION_BEHAVIOR__EMITTED_SIGNALS:
+    		getEmittedSignals().clear();
+    		getEmittedSignals().addAll((Collection) newValue);
     		return;
     	case statemachines.StatemachinesPackage.OPERATION_BEHAVIOR__ATTRIBUTE_VALUES:
     		getAttributeValues().clear();

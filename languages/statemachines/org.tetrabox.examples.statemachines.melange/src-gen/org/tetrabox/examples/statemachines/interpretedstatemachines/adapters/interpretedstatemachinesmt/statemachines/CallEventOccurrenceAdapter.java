@@ -2,10 +2,10 @@ package org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.in
 
 import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import java.util.Collection;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.InterpretedStateMachinesMTAdaptersFactory;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CallEventOccurrence;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Operation;
 
 @SuppressWarnings("all")
 public class CallEventOccurrenceAdapter extends EObjectAdapter<CallEventOccurrence> implements org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.CallEventOccurrence {
@@ -17,36 +17,15 @@ public class CallEventOccurrenceAdapter extends EObjectAdapter<CallEventOccurren
   }
   
   @Override
-  public org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Operation getOperation() {
-    return () adaptersFactory.createAdapter(adaptee.getOperation(), eResource);
+  public Operation getOperation() {
+    return (Operation) adaptersFactory.createAdapter(adaptee.getOperation(), eResource);
   }
   
   @Override
-  public void setOperation(final org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Operation o) {
+  public void setOperation(final Operation o) {
     if (o != null)
     	adaptee.setOperation(((org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.OperationAdapter) o).getAdaptee());
     else adaptee.setOperation(null);
-  }
-  
-  @Override
-  public /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.AttributeValue> */Object getInParameterValues() {
-    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.CallEventOccurrenceAspect.inParameterValues(adaptee), adaptersFactory, eResource);
-  }
-  
-  @Override
-  public /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.AttributeValue> */Object getOutParameterValues() {
-    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.CallEventOccurrenceAspect.outParameterValues(adaptee), adaptersFactory, eResource);
-  }
-  
-  @Override
-  public org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.AttributeValue getReturnValue() {
-    org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.CallEventOccurrenceAspect.returnValue(adaptee);
-  }
-  
-  @Override
-  public void setReturnValue(final org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.AttributeValue returnValue) {
-    org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.CallEventOccurrenceAspect.returnValue(adaptee, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.AttributeValue)((EObjectAdapter)returnValue).getAdaptee()
-    );
   }
   
   @Override

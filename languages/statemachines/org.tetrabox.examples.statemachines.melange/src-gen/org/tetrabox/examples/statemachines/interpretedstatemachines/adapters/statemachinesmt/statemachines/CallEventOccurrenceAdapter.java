@@ -1,6 +1,7 @@
 package org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines;
 
 import fr.inria.diverse.melange.adapters.EObjectAdapter;
+import java.util.Collection;
 import org.eclipse.emf.ecore.EClass;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.StateMachinesMTAdaptersFactory;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CallEventOccurrence;
@@ -37,6 +38,12 @@ public class CallEventOccurrenceAdapter extends EObjectAdapter<CallEventOccurren
     switch (featureID) {
     	case statemachines.StatemachinesPackage.CALL_EVENT_OCCURRENCE__OPERATION:
     		return getOperation();
+    	case statemachines.StatemachinesPackage.CALL_EVENT_OCCURRENCE__IN_PARAMETER_VALUES:
+    		return getInParameterValues();
+    	case statemachines.StatemachinesPackage.CALL_EVENT_OCCURRENCE__OUT_PARAMETER_VALUES:
+    		return getOutParameterValues();
+    	case statemachines.StatemachinesPackage.CALL_EVENT_OCCURRENCE__RETURN_VALUE:
+    		return getReturnValue();
     }
     
     return super.eGet(featureID, resolve, coreType);
@@ -47,6 +54,12 @@ public class CallEventOccurrenceAdapter extends EObjectAdapter<CallEventOccurren
     switch (featureID) {
     	case statemachines.StatemachinesPackage.CALL_EVENT_OCCURRENCE__OPERATION:
     		return getOperation() != null;
+    	case statemachines.StatemachinesPackage.CALL_EVENT_OCCURRENCE__IN_PARAMETER_VALUES:
+    		return getInParameterValues() != null && !getInParameterValues().isEmpty();
+    	case statemachines.StatemachinesPackage.CALL_EVENT_OCCURRENCE__OUT_PARAMETER_VALUES:
+    		return getOutParameterValues() != null && !getOutParameterValues().isEmpty();
+    	case statemachines.StatemachinesPackage.CALL_EVENT_OCCURRENCE__RETURN_VALUE:
+    		return getReturnValue() != null;
     }
     
     return super.eIsSet(featureID);
@@ -58,6 +71,19 @@ public class CallEventOccurrenceAdapter extends EObjectAdapter<CallEventOccurren
     	case statemachines.StatemachinesPackage.CALL_EVENT_OCCURRENCE__OPERATION:
     		setOperation(
     		(statemachines.Operation)
+    		 newValue);
+    		return;
+    	case statemachines.StatemachinesPackage.CALL_EVENT_OCCURRENCE__IN_PARAMETER_VALUES:
+    		getInParameterValues().clear();
+    		getInParameterValues().addAll((Collection) newValue);
+    		return;
+    	case statemachines.StatemachinesPackage.CALL_EVENT_OCCURRENCE__OUT_PARAMETER_VALUES:
+    		getOutParameterValues().clear();
+    		getOutParameterValues().addAll((Collection) newValue);
+    		return;
+    	case statemachines.StatemachinesPackage.CALL_EVENT_OCCURRENCE__RETURN_VALUE:
+    		setReturnValue(
+    		(statemachines.AttributeValue)
     		 newValue);
     		return;
     }

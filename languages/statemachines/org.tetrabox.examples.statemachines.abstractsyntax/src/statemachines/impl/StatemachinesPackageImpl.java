@@ -42,6 +42,9 @@ import statemachines.State;
 import statemachines.StateMachine;
 import statemachines.StatemachinesFactory;
 import statemachines.StatemachinesPackage;
+import statemachines.StringAttribute;
+import statemachines.StringAttributeValue;
+import statemachines.StringConstraint;
 import statemachines.Transition;
 import statemachines.TransitionKind;
 import statemachines.Trigger;
@@ -122,6 +125,13 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass stringAttributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass constraintEClass = null;
 
 	/**
@@ -137,6 +147,13 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 	 * @generated
 	 */
 	private EClass integerConstraintEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass stringConstraintEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -241,6 +258,13 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass stringAttributeValueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass eventOccurrenceEClass = null;
 
 	/**
@@ -306,7 +330,7 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link StatemachinesPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -320,7 +344,8 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 		if (isInited) return (StatemachinesPackage)EPackage.Registry.INSTANCE.getEPackage(StatemachinesPackage.eNS_URI);
 
 		// Obtain or create and register package
-		StatemachinesPackageImpl theStatemachinesPackage = (StatemachinesPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof StatemachinesPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new StatemachinesPackageImpl());
+		Object registeredStatemachinesPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		StatemachinesPackageImpl theStatemachinesPackage = registeredStatemachinesPackage instanceof StatemachinesPackageImpl ? (StatemachinesPackageImpl)registeredStatemachinesPackage : new StatemachinesPackageImpl();
 
 		isInited = true;
 
@@ -333,7 +358,6 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 		// Mark meta-data to indicate it can't be changed
 		theStatemachinesPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(StatemachinesPackage.eNS_URI, theStatemachinesPackage);
 		return theStatemachinesPackage;
@@ -506,6 +530,15 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getStringAttribute() {
+		return stringAttributeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getConstraint() {
 		return constraintEClass;
 	}
@@ -544,6 +577,15 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 	 */
 	public EClass getIntegerConstraint() {
 		return integerConstraintEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getStringConstraint() {
+		return stringConstraintEClass;
 	}
 
 	/**
@@ -866,6 +908,15 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getBehavior_EmittedSignals() {
+		return (EReference)behaviorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getOperationBehavior() {
 		return operationBehaviorEClass;
 	}
@@ -947,6 +998,33 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getStringAttributeValue() {
+		return stringAttributeValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getStringAttributeValue_Attribute() {
+		return (EReference)stringAttributeValueEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStringAttributeValue_Value() {
+		return (EAttribute)stringAttributeValueEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEventOccurrence() {
 		return eventOccurrenceEClass;
 	}
@@ -992,6 +1070,15 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSignalEventOccurrence_AttributeValues() {
+		return (EReference)signalEventOccurrenceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCallEventOccurrence() {
 		return callEventOccurrenceEClass;
 	}
@@ -1003,6 +1090,33 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 	 */
 	public EReference getCallEventOccurrence_Operation() {
 		return (EReference)callEventOccurrenceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCallEventOccurrence_InParameterValues() {
+		return (EReference)callEventOccurrenceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCallEventOccurrence_OutParameterValues() {
+		return (EReference)callEventOccurrenceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCallEventOccurrence_ReturnValue() {
+		return (EReference)callEventOccurrenceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1078,6 +1192,8 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 
 		integerAttributeEClass = createEClass(INTEGER_ATTRIBUTE);
 
+		stringAttributeEClass = createEClass(STRING_ATTRIBUTE);
+
 		constraintEClass = createEClass(CONSTRAINT);
 		createEAttribute(constraintEClass, CONSTRAINT__VALUE);
 		createEReference(constraintEClass, CONSTRAINT__ATTRIBUTE);
@@ -1085,6 +1201,8 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 		booleanConstraintEClass = createEClass(BOOLEAN_CONSTRAINT);
 
 		integerConstraintEClass = createEClass(INTEGER_CONSTRAINT);
+
+		stringConstraintEClass = createEClass(STRING_CONSTRAINT);
 
 		namedElementEClass = createEClass(NAMED_ELEMENT);
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
@@ -1130,6 +1248,7 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 		createEReference(triggerEClass, TRIGGER__EVENT_TYPE);
 
 		behaviorEClass = createEClass(BEHAVIOR);
+		createEReference(behaviorEClass, BEHAVIOR__EMITTED_SIGNALS);
 
 		operationBehaviorEClass = createEClass(OPERATION_BEHAVIOR);
 		createEReference(operationBehaviorEClass, OPERATION_BEHAVIOR__ATTRIBUTE_VALUES);
@@ -1144,6 +1263,10 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 		createEReference(integerAttributeValueEClass, INTEGER_ATTRIBUTE_VALUE__ATTRIBUTE);
 		createEAttribute(integerAttributeValueEClass, INTEGER_ATTRIBUTE_VALUE__VALUE);
 
+		stringAttributeValueEClass = createEClass(STRING_ATTRIBUTE_VALUE);
+		createEReference(stringAttributeValueEClass, STRING_ATTRIBUTE_VALUE__ATTRIBUTE);
+		createEAttribute(stringAttributeValueEClass, STRING_ATTRIBUTE_VALUE__VALUE);
+
 		eventOccurrenceEClass = createEClass(EVENT_OCCURRENCE);
 
 		completionEventOccurrenceEClass = createEClass(COMPLETION_EVENT_OCCURRENCE);
@@ -1151,9 +1274,13 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 
 		signalEventOccurrenceEClass = createEClass(SIGNAL_EVENT_OCCURRENCE);
 		createEReference(signalEventOccurrenceEClass, SIGNAL_EVENT_OCCURRENCE__SIGNAL);
+		createEReference(signalEventOccurrenceEClass, SIGNAL_EVENT_OCCURRENCE__ATTRIBUTE_VALUES);
 
 		callEventOccurrenceEClass = createEClass(CALL_EVENT_OCCURRENCE);
 		createEReference(callEventOccurrenceEClass, CALL_EVENT_OCCURRENCE__OPERATION);
+		createEReference(callEventOccurrenceEClass, CALL_EVENT_OCCURRENCE__IN_PARAMETER_VALUES);
+		createEReference(callEventOccurrenceEClass, CALL_EVENT_OCCURRENCE__OUT_PARAMETER_VALUES);
+		createEReference(callEventOccurrenceEClass, CALL_EVENT_OCCURRENCE__RETURN_VALUE);
 
 		// Create enums
 		pseudostateKindEEnum = createEEnum(PSEUDOSTATE_KIND);
@@ -1197,6 +1324,7 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 		attributeEClass.getESuperTypes().add(this.getNamedElement());
 		booleanAttributeEClass.getESuperTypes().add(this.getAttribute());
 		integerAttributeEClass.getESuperTypes().add(this.getAttribute());
+		stringAttributeEClass.getESuperTypes().add(this.getAttribute());
 		EGenericType g1 = createEGenericType(this.getConstraint());
 		EGenericType g2 = createEGenericType(this.getBooleanAttribute());
 		g1.getETypeArguments().add(g2);
@@ -1209,6 +1337,12 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 		g2 = createEGenericType(ecorePackage.getEIntegerObject());
 		g1.getETypeArguments().add(g2);
 		integerConstraintEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getConstraint());
+		g2 = createEGenericType(this.getStringAttribute());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEString());
+		g1.getETypeArguments().add(g2);
+		stringConstraintEClass.getEGenericSuperTypes().add(g1);
 		stateMachineEClass.getESuperTypes().add(this.getNamedElement());
 		regionEClass.getESuperTypes().add(this.getNamedElement());
 		vertexEClass.getESuperTypes().add(this.getNamedElement());
@@ -1221,6 +1355,7 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 		operationBehaviorEClass.getESuperTypes().add(this.getBehavior());
 		booleanAttributeValueEClass.getESuperTypes().add(this.getAttributeValue());
 		integerAttributeValueEClass.getESuperTypes().add(this.getAttributeValue());
+		stringAttributeValueEClass.getESuperTypes().add(this.getAttributeValue());
 		signalEventOccurrenceEClass.getESuperTypes().add(this.getEventOccurrence());
 		callEventOccurrenceEClass.getESuperTypes().add(this.getEventOccurrence());
 
@@ -1252,6 +1387,8 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 
 		initEClass(integerAttributeEClass, IntegerAttribute.class, "IntegerAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(stringAttributeEClass, StringAttribute.class, "StringAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(constraintEClass, Constraint.class, "Constraint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		g1 = createEGenericType(constraintEClass_V);
 		initEAttribute(getConstraint_Value(), g1, "value", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1261,6 +1398,8 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 		initEClass(booleanConstraintEClass, BooleanConstraint.class, "BooleanConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(integerConstraintEClass, IntegerConstraint.class, "IntegerConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(stringConstraintEClass, StringConstraint.class, "StringConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1311,6 +1450,7 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 		initEReference(getTrigger_EventType(), this.getEventType(), null, "eventType", null, 1, 1, Trigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(behaviorEClass, Behavior.class, "Behavior", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBehavior_EmittedSignals(), this.getSignalEventOccurrence(), null, "emittedSignals", null, 0, -1, Behavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(operationBehaviorEClass, OperationBehavior.class, "OperationBehavior", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOperationBehavior_AttributeValues(), this.getAttributeValue(), null, "attributeValues", null, 0, -1, OperationBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1325,6 +1465,10 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 		initEReference(getIntegerAttributeValue_Attribute(), this.getIntegerAttribute(), null, "attribute", null, 0, 1, IntegerAttributeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIntegerAttributeValue_Value(), ecorePackage.getEIntegerObject(), "value", null, 0, 1, IntegerAttributeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(stringAttributeValueEClass, StringAttributeValue.class, "StringAttributeValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getStringAttributeValue_Attribute(), this.getStringAttribute(), null, "attribute", null, 0, 1, StringAttributeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStringAttributeValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, StringAttributeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(eventOccurrenceEClass, EventOccurrence.class, "EventOccurrence", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(completionEventOccurrenceEClass, CompletionEventOccurrence.class, "CompletionEventOccurrence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1332,9 +1476,13 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 
 		initEClass(signalEventOccurrenceEClass, SignalEventOccurrence.class, "SignalEventOccurrence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSignalEventOccurrence_Signal(), this.getSignal(), null, "signal", null, 1, 1, SignalEventOccurrence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSignalEventOccurrence_AttributeValues(), this.getAttributeValue(), null, "attributeValues", null, 0, -1, SignalEventOccurrence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(callEventOccurrenceEClass, CallEventOccurrence.class, "CallEventOccurrence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCallEventOccurrence_Operation(), this.getOperation(), null, "operation", null, 1, 1, CallEventOccurrence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCallEventOccurrence_InParameterValues(), this.getAttributeValue(), null, "inParameterValues", null, 0, -1, CallEventOccurrence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCallEventOccurrence_OutParameterValues(), this.getAttributeValue(), null, "outParameterValues", null, 0, -1, CallEventOccurrence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCallEventOccurrence_ReturnValue(), this.getAttributeValue(), null, "returnValue", null, 0, 1, CallEventOccurrence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(pseudostateKindEEnum, PseudostateKind.class, "PseudostateKind");
@@ -1365,40 +1513,65 @@ public class StatemachinesPackageImpl extends EPackageImpl implements Statemachi
 	 * @generated
 	 */
 	protected void createAspectAnnotations() {
-		String source = "aspect";	
+		String source = "aspect";
 		addAnnotation
-		  (attributeValueEClass, 
-		   source, 
+		  (attributeValueEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (booleanAttributeValueEClass, 
-		   source, 
+		  (booleanAttributeValueEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (integerAttributeValueEClass, 
-		   source, 
+		  (integerAttributeValueEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (eventOccurrenceEClass, 
-		   source, 
+		  (stringAttributeValueEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (completionEventOccurrenceEClass, 
-		   source, 
+		  (eventOccurrenceEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (signalEventOccurrenceEClass, 
-		   source, 
+		  (completionEventOccurrenceEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (callEventOccurrenceEClass, 
-		   source, 
+		  (signalEventOccurrenceEClass,
+		   source,
+		   new String[] {
+		   });
+		addAnnotation
+		  (getSignalEventOccurrence_AttributeValues(),
+		   source,
+		   new String[] {
+		   });
+		addAnnotation
+		  (callEventOccurrenceEClass,
+		   source,
+		   new String[] {
+		   });
+		addAnnotation
+		  (getCallEventOccurrence_InParameterValues(),
+		   source,
+		   new String[] {
+		   });
+		addAnnotation
+		  (getCallEventOccurrence_OutParameterValues(),
+		   source,
+		   new String[] {
+		   });
+		addAnnotation
+		  (getCallEventOccurrence_ReturnValue(),
+		   source,
 		   new String[] {
 		   });
 	}

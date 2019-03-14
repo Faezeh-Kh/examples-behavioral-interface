@@ -16,7 +16,7 @@ import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachine
  *
  * @generated
  */
-public class AttributeValueImpl extends EObjectImpl implements AttributeValue {
+public abstract class AttributeValueImpl extends EObjectImpl implements AttributeValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

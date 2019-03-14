@@ -32,6 +32,9 @@ import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.sta
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.SignalEventTypeAdapter;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.StateAdapter;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.StateMachineAdapter;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.StringAttributeAdapter;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.StringAttributeValueAdapter;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.StringConstraintAdapter;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.TransitionAdapter;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.TriggerAdapter;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.VertexAdapter;
@@ -62,6 +65,9 @@ import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachine
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.SignalEventType;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StringAttribute;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StringAttributeValue;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StringConstraint;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Trigger;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Vertex;
@@ -105,11 +111,17 @@ public class StateMachinesMTAdaptersFactory implements AdaptersFactory {
     if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.IntegerAttribute){
     	return createIntegerAttributeAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.IntegerAttribute) o, res);
     }
+    if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StringAttribute){
+    	return createStringAttributeAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StringAttribute) o, res);
+    }
     if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.BooleanConstraint){
     	return createBooleanConstraintAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.BooleanConstraint) o, res);
     }
     if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.IntegerConstraint){
     	return createIntegerConstraintAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.IntegerConstraint) o, res);
+    }
+    if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StringConstraint){
+    	return createStringConstraintAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StringConstraint) o, res);
     }
     if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine){
     	return createStateMachineAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine) o, res);
@@ -143,6 +155,9 @@ public class StateMachinesMTAdaptersFactory implements AdaptersFactory {
     }
     if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.IntegerAttributeValue){
     	return createIntegerAttributeValueAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.IntegerAttributeValue) o, res);
+    }
+    if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StringAttributeValue){
+    	return createStringAttributeValueAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StringAttributeValue) o, res);
     }
     if (o instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CompletionEventOccurrence){
     	return createCompletionEventOccurrenceAdapter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CompletionEventOccurrence) o, res);
@@ -292,6 +307,21 @@ public class StateMachinesMTAdaptersFactory implements AdaptersFactory {
     }
   }
   
+  public StringAttributeAdapter createStringAttributeAdapter(final StringAttribute adaptee, final Resource res) {
+    if (adaptee == null)
+    	return null;
+    EObjectAdapter adapter = register.get(adaptee);
+    if(adapter != null)
+    	 return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.StringAttributeAdapter) adapter;
+    else {
+    	adapter = new org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.StringAttributeAdapter();
+    	adapter.setAdaptee(adaptee);
+    	adapter.setResource(res);
+    	register.put(adaptee, adapter);
+    	return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.StringAttributeAdapter) adapter;
+    }
+  }
+  
   public ConstraintAdapter createConstraintAdapter(final Constraint adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
@@ -334,6 +364,21 @@ public class StateMachinesMTAdaptersFactory implements AdaptersFactory {
     	adapter.setResource(res);
     	register.put(adaptee, adapter);
     	return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.IntegerConstraintAdapter) adapter;
+    }
+  }
+  
+  public StringConstraintAdapter createStringConstraintAdapter(final StringConstraint adaptee, final Resource res) {
+    if (adaptee == null)
+    	return null;
+    EObjectAdapter adapter = register.get(adaptee);
+    if(adapter != null)
+    	 return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.StringConstraintAdapter) adapter;
+    else {
+    	adapter = new org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.StringConstraintAdapter();
+    	adapter.setAdaptee(adaptee);
+    	adapter.setResource(res);
+    	register.put(adaptee, adapter);
+    	return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.StringConstraintAdapter) adapter;
     }
   }
   
@@ -544,6 +589,21 @@ public class StateMachinesMTAdaptersFactory implements AdaptersFactory {
     	adapter.setResource(res);
     	register.put(adaptee, adapter);
     	return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.IntegerAttributeValueAdapter) adapter;
+    }
+  }
+  
+  public StringAttributeValueAdapter createStringAttributeValueAdapter(final StringAttributeValue adaptee, final Resource res) {
+    if (adaptee == null)
+    	return null;
+    EObjectAdapter adapter = register.get(adaptee);
+    if(adapter != null)
+    	 return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.StringAttributeValueAdapter) adapter;
+    else {
+    	adapter = new org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.StringAttributeValueAdapter();
+    	adapter.setAdaptee(adaptee);
+    	adapter.setResource(res);
+    	register.put(adaptee, adapter);
+    	return (org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.statemachinesmt.statemachines.StringAttributeValueAdapter) adapter;
     }
   }
   

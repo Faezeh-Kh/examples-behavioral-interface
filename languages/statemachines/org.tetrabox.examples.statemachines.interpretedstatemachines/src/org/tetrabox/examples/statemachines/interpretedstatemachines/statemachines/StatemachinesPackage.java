@@ -110,7 +110,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StatemachinesPackageImpl#getNamedElement()
 	 * @generated
 	 */
-	int NAMED_ELEMENT = 12;
+	int NAMED_ELEMENT = 14;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -382,6 +382,34 @@ public interface StatemachinesPackage extends EPackage {
 	int INTEGER_ATTRIBUTE_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StringAttributeImpl <em>String Attribute</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StringAttributeImpl
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StatemachinesPackageImpl#getStringAttribute()
+	 * @generated
+	 */
+	int STRING_ATTRIBUTE = 9;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_ATTRIBUTE__NAME = ATTRIBUTE__NAME;
+
+	/**
+	 * The number of structural features of the '<em>String Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_ATTRIBUTE_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.ConstraintImpl <em>Constraint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -389,7 +417,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StatemachinesPackageImpl#getConstraint()
 	 * @generated
 	 */
-	int CONSTRAINT = 9;
+	int CONSTRAINT = 10;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -426,7 +454,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StatemachinesPackageImpl#getBooleanConstraint()
 	 * @generated
 	 */
-	int BOOLEAN_CONSTRAINT = 10;
+	int BOOLEAN_CONSTRAINT = 11;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -463,7 +491,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StatemachinesPackageImpl#getIntegerConstraint()
 	 * @generated
 	 */
-	int INTEGER_CONSTRAINT = 11;
+	int INTEGER_CONSTRAINT = 12;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -493,6 +521,43 @@ public interface StatemachinesPackage extends EPackage {
 	int INTEGER_CONSTRAINT_FEATURE_COUNT = CONSTRAINT_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StringConstraintImpl <em>String Constraint</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StringConstraintImpl
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StatemachinesPackageImpl#getStringConstraint()
+	 * @generated
+	 */
+	int STRING_CONSTRAINT = 13;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_CONSTRAINT__VALUE = CONSTRAINT__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_CONSTRAINT__ATTRIBUTE = CONSTRAINT__ATTRIBUTE;
+
+	/**
+	 * The number of structural features of the '<em>String Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_CONSTRAINT_FEATURE_COUNT = CONSTRAINT_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StateMachineImpl <em>State Machine</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -500,7 +565,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StatemachinesPackageImpl#getStateMachine()
 	 * @generated
 	 */
-	int STATE_MACHINE = 13;
+	int STATE_MACHINE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -537,7 +602,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StatemachinesPackageImpl#getRegion()
 	 * @generated
 	 */
-	int REGION = 14;
+	int REGION = 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -610,7 +675,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StatemachinesPackageImpl#getVertex()
 	 * @generated
 	 */
-	int VERTEX = 15;
+	int VERTEX = 17;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -665,7 +730,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StatemachinesPackageImpl#getPseudostate()
 	 * @generated
 	 */
-	int PSEUDOSTATE = 16;
+	int PSEUDOSTATE = 18;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -738,7 +803,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StatemachinesPackageImpl#getState()
 	 * @generated
 	 */
-	int STATE = 17;
+	int STATE = 19;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -874,7 +939,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StatemachinesPackageImpl#getFinalState()
 	 * @generated
 	 */
-	int FINAL_STATE = 18;
+	int FINAL_STATE = 20;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1010,7 +1075,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StatemachinesPackageImpl#getTransition()
 	 * @generated
 	 */
-	int TRANSITION = 19;
+	int TRANSITION = 21;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1101,7 +1166,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StatemachinesPackageImpl#getTrigger()
 	 * @generated
 	 */
-	int TRIGGER = 20;
+	int TRIGGER = 22;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1138,7 +1203,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StatemachinesPackageImpl#getBehavior()
 	 * @generated
 	 */
-	int BEHAVIOR = 21;
+	int BEHAVIOR = 23;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1150,13 +1215,22 @@ public interface StatemachinesPackage extends EPackage {
 	int BEHAVIOR__NAME = NAMED_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Emitted Signals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOR__EMITTED_SIGNALS = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Behavior</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIOR_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int BEHAVIOR_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.OperationBehaviorImpl <em>Operation Behavior</em>}' class.
@@ -1166,7 +1240,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StatemachinesPackageImpl#getOperationBehavior()
 	 * @generated
 	 */
-	int OPERATION_BEHAVIOR = 22;
+	int OPERATION_BEHAVIOR = 24;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1176,6 +1250,15 @@ public interface StatemachinesPackage extends EPackage {
 	 * @ordered
 	 */
 	int OPERATION_BEHAVIOR__NAME = BEHAVIOR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Emitted Signals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_BEHAVIOR__EMITTED_SIGNALS = BEHAVIOR__EMITTED_SIGNALS;
 
 	/**
 	 * The feature id for the '<em><b>Attribute Values</b></em>' containment reference list.
@@ -1203,7 +1286,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StatemachinesPackageImpl#getAttributeValue()
 	 * @generated
 	 */
-	int ATTRIBUTE_VALUE = 23;
+	int ATTRIBUTE_VALUE = 25;
 
 	/**
 	 * The number of structural features of the '<em>Attribute Value</em>' class.
@@ -1222,7 +1305,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StatemachinesPackageImpl#getBooleanAttributeValue()
 	 * @generated
 	 */
-	int BOOLEAN_ATTRIBUTE_VALUE = 24;
+	int BOOLEAN_ATTRIBUTE_VALUE = 26;
 
 	/**
 	 * The feature id for the '<em><b>Attribute</b></em>' reference.
@@ -1259,7 +1342,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StatemachinesPackageImpl#getIntegerAttributeValue()
 	 * @generated
 	 */
-	int INTEGER_ATTRIBUTE_VALUE = 25;
+	int INTEGER_ATTRIBUTE_VALUE = 27;
 
 	/**
 	 * The feature id for the '<em><b>Attribute</b></em>' reference.
@@ -1289,6 +1372,43 @@ public interface StatemachinesPackage extends EPackage {
 	int INTEGER_ATTRIBUTE_VALUE_FEATURE_COUNT = ATTRIBUTE_VALUE_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StringAttributeValueImpl <em>String Attribute Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StringAttributeValueImpl
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StatemachinesPackageImpl#getStringAttributeValue()
+	 * @generated
+	 */
+	int STRING_ATTRIBUTE_VALUE = 28;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_ATTRIBUTE_VALUE__ATTRIBUTE = ATTRIBUTE_VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_ATTRIBUTE_VALUE__VALUE = ATTRIBUTE_VALUE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>String Attribute Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_ATTRIBUTE_VALUE_FEATURE_COUNT = ATTRIBUTE_VALUE_FEATURE_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.EventOccurrenceImpl <em>Event Occurrence</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1296,7 +1416,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StatemachinesPackageImpl#getEventOccurrence()
 	 * @generated
 	 */
-	int EVENT_OCCURRENCE = 26;
+	int EVENT_OCCURRENCE = 29;
 
 	/**
 	 * The number of structural features of the '<em>Event Occurrence</em>' class.
@@ -1315,7 +1435,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StatemachinesPackageImpl#getCompletionEventOccurrence()
 	 * @generated
 	 */
-	int COMPLETION_EVENT_OCCURRENCE = 27;
+	int COMPLETION_EVENT_OCCURRENCE = 30;
 
 	/**
 	 * The feature id for the '<em><b>State</b></em>' reference.
@@ -1343,7 +1463,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StatemachinesPackageImpl#getSignalEventOccurrence()
 	 * @generated
 	 */
-	int SIGNAL_EVENT_OCCURRENCE = 28;
+	int SIGNAL_EVENT_OCCURRENCE = 31;
 
 	/**
 	 * The feature id for the '<em><b>Signal</b></em>' reference.
@@ -1380,7 +1500,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StatemachinesPackageImpl#getCallEventOccurrence()
 	 * @generated
 	 */
-	int CALL_EVENT_OCCURRENCE = 29;
+	int CALL_EVENT_OCCURRENCE = 32;
 
 	/**
 	 * The feature id for the '<em><b>Operation</b></em>' reference.
@@ -1435,7 +1555,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StatemachinesPackageImpl#getPseudostateKind()
 	 * @generated
 	 */
-	int PSEUDOSTATE_KIND = 30;
+	int PSEUDOSTATE_KIND = 33;
 
 	/**
 	 * The meta object id for the '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.TransitionKind <em>Transition Kind</em>}' enum.
@@ -1445,7 +1565,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StatemachinesPackageImpl#getTransitionKind()
 	 * @generated
 	 */
-	int TRANSITION_KIND = 31;
+	int TRANSITION_KIND = 34;
 
 
 	/**
@@ -1638,6 +1758,16 @@ public interface StatemachinesPackage extends EPackage {
 	EClass getIntegerAttribute();
 
 	/**
+	 * Returns the meta object for class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StringAttribute <em>String Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>String Attribute</em>'.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StringAttribute
+	 * @generated
+	 */
+	EClass getStringAttribute();
+
+	/**
 	 * Returns the meta object for class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Constraint <em>Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1688,6 +1818,16 @@ public interface StatemachinesPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getIntegerConstraint();
+
+	/**
+	 * Returns the meta object for class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StringConstraint <em>String Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>String Constraint</em>'.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StringConstraint
+	 * @generated
+	 */
+	EClass getStringConstraint();
 
 	/**
 	 * Returns the meta object for class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.NamedElement <em>Named Element</em>}'.
@@ -2109,6 +2249,17 @@ public interface StatemachinesPackage extends EPackage {
 	EClass getBehavior();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Behavior#getEmittedSignals <em>Emitted Signals</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Emitted Signals</em>'.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Behavior#getEmittedSignals()
+	 * @see #getBehavior()
+	 * @generated
+	 */
+	EReference getBehavior_EmittedSignals();
+
+	/**
 	 * Returns the meta object for class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.OperationBehavior <em>Operation Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2202,6 +2353,38 @@ public interface StatemachinesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getIntegerAttributeValue_Value();
+
+	/**
+	 * Returns the meta object for class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StringAttributeValue <em>String Attribute Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>String Attribute Value</em>'.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StringAttributeValue
+	 * @generated
+	 */
+	EClass getStringAttributeValue();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StringAttributeValue#getAttribute <em>Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Attribute</em>'.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StringAttributeValue#getAttribute()
+	 * @see #getStringAttributeValue()
+	 * @generated
+	 */
+	EReference getStringAttributeValue_Attribute();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StringAttributeValue#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StringAttributeValue#getValue()
+	 * @see #getStringAttributeValue()
+	 * @generated
+	 */
+	EAttribute getStringAttributeValue_Value();
 
 	/**
 	 * Returns the meta object for class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence <em>Event Occurrence</em>}'.
@@ -2525,6 +2708,16 @@ public interface StatemachinesPackage extends EPackage {
 		EClass INTEGER_ATTRIBUTE = eINSTANCE.getIntegerAttribute();
 
 		/**
+		 * The meta object literal for the '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StringAttributeImpl <em>String Attribute</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StringAttributeImpl
+		 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StatemachinesPackageImpl#getStringAttribute()
+		 * @generated
+		 */
+		EClass STRING_ATTRIBUTE = eINSTANCE.getStringAttribute();
+
+		/**
 		 * The meta object literal for the '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.ConstraintImpl <em>Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2569,6 +2762,16 @@ public interface StatemachinesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass INTEGER_CONSTRAINT = eINSTANCE.getIntegerConstraint();
+
+		/**
+		 * The meta object literal for the '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StringConstraintImpl <em>String Constraint</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StringConstraintImpl
+		 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StatemachinesPackageImpl#getStringConstraint()
+		 * @generated
+		 */
+		EClass STRING_CONSTRAINT = eINSTANCE.getStringConstraint();
 
 		/**
 		 * The meta object literal for the '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.NamedElementImpl <em>Named Element</em>}' class.
@@ -2903,6 +3106,14 @@ public interface StatemachinesPackage extends EPackage {
 		EClass BEHAVIOR = eINSTANCE.getBehavior();
 
 		/**
+		 * The meta object literal for the '<em><b>Emitted Signals</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BEHAVIOR__EMITTED_SIGNALS = eINSTANCE.getBehavior_EmittedSignals();
+
+		/**
 		 * The meta object literal for the '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.OperationBehaviorImpl <em>Operation Behavior</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2981,6 +3192,32 @@ public interface StatemachinesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute INTEGER_ATTRIBUTE_VALUE__VALUE = eINSTANCE.getIntegerAttributeValue_Value();
+
+		/**
+		 * The meta object literal for the '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StringAttributeValueImpl <em>String Attribute Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StringAttributeValueImpl
+		 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.StatemachinesPackageImpl#getStringAttributeValue()
+		 * @generated
+		 */
+		EClass STRING_ATTRIBUTE_VALUE = eINSTANCE.getStringAttributeValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Attribute</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRING_ATTRIBUTE_VALUE__ATTRIBUTE = eINSTANCE.getStringAttributeValue_Attribute();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRING_ATTRIBUTE_VALUE__VALUE = eINSTANCE.getStringAttributeValue_Value();
 
 		/**
 		 * The meta object literal for the '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.impl.EventOccurrenceImpl <em>Event Occurrence</em>}' class.

@@ -6,6 +6,10 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.InterpretedStateMachinesMTAdaptersFactory;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Pseudostate;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.PseudostateKind;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Region;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.State;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Transition;
 
 @SuppressWarnings("all")
 public class PseudostateAdapter extends EObjectAdapter<Pseudostate> implements org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Pseudostate {
@@ -27,52 +31,52 @@ public class PseudostateAdapter extends EObjectAdapter<Pseudostate> implements o
   }
   
   @Override
-  public org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.PseudostateKind getKind() {
+  public PseudostateKind getKind() {
     return org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.PseudostateKind.get(adaptee.getKind().getValue());
   }
   
   @Override
-  public void setKind(final org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.PseudostateKind o) {
+  public void setKind(final PseudostateKind o) {
     adaptee.setKind(org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.PseudostateKind.get(o.getValue()));
   }
   
   @Override
-  public org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Region getContainer() {
-    return () adaptersFactory.createAdapter(adaptee.getContainer(), eResource);
+  public Region getContainer() {
+    return (Region) adaptersFactory.createAdapter(adaptee.getContainer(), eResource);
   }
   
   @Override
-  public void setContainer(final org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Region o) {
+  public void setContainer(final Region o) {
     if (o != null)
     	adaptee.setContainer(((org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.RegionAdapter) o).getAdaptee());
     else adaptee.setContainer(null);
   }
   
-  private /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Transition> */Object outgoingTransitions_;
+  private EList<Transition> outgoingTransitions_;
   
   @Override
-  public /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Transition> */Object getOutgoingTransitions() {
+  public EList<Transition> getOutgoingTransitions() {
     if (outgoingTransitions_ == null)
     	outgoingTransitions_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getOutgoingTransitions(), adaptersFactory, eResource);
     return outgoingTransitions_;
   }
   
-  private /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Transition> */Object incomingTransitions_;
+  private EList<Transition> incomingTransitions_;
   
   @Override
-  public /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Transition> */Object getIncomingTransitions() {
+  public EList<Transition> getIncomingTransitions() {
     if (incomingTransitions_ == null)
     	incomingTransitions_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getIncomingTransitions(), adaptersFactory, eResource);
     return incomingTransitions_;
   }
   
   @Override
-  public org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.State getState() {
-    return () adaptersFactory.createAdapter(adaptee.getState(), eResource);
+  public State getState() {
+    return (State) adaptersFactory.createAdapter(adaptee.getState(), eResource);
   }
   
   @Override
-  public void setState(final org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.State o) {
+  public void setState(final State o) {
     if (o != null)
     	adaptee.setState(((org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.StateAdapter) o).getAdaptee());
     else adaptee.setState(null);
@@ -80,7 +84,7 @@ public class PseudostateAdapter extends EObjectAdapter<Pseudostate> implements o
   
   protected final static String NAME_EDEFAULT = null;
   
-  protected final static org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.PseudostateKind KIND_EDEFAULT = org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.PseudostateKind.INITIAL;
+  protected final static PseudostateKind KIND_EDEFAULT = org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.PseudostateKind.INITIAL;
   
   @Override
   public EClass eClass() {

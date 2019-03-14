@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<statemachines:SignalEventOccurrence xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:statemachines="http://org.tetrabox.examples.statemachines.interpretedstatemachines/statemachines/">
+  <signal href="models/Behavior001_Test$behavior$1.xmi#//@signals.0"/>
+</statemachines:SignalEventOccurrence>

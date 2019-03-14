@@ -104,6 +104,10 @@ public class StatemachinesAdapterFactory extends AdapterFactoryImpl {
 				return createIntegerAttributeAdapter();
 			}
 			@Override
+			public Adapter caseStringAttribute(StringAttribute object) {
+				return createStringAttributeAdapter();
+			}
+			@Override
 			public <T, V> Adapter caseConstraint(Constraint<T, V> object) {
 				return createConstraintAdapter();
 			}
@@ -114,6 +118,10 @@ public class StatemachinesAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseIntegerConstraint(IntegerConstraint object) {
 				return createIntegerConstraintAdapter();
+			}
+			@Override
+			public Adapter caseStringConstraint(StringConstraint object) {
+				return createStringConstraintAdapter();
 			}
 			@Override
 			public Adapter caseNamedElement(NamedElement object) {
@@ -170,6 +178,10 @@ public class StatemachinesAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseIntegerAttributeValue(IntegerAttributeValue object) {
 				return createIntegerAttributeValueAdapter();
+			}
+			@Override
+			public Adapter caseStringAttributeValue(StringAttributeValue object) {
+				return createStringAttributeValueAdapter();
 			}
 			@Override
 			public Adapter caseEventOccurrence(EventOccurrence object) {
@@ -334,6 +346,20 @@ public class StatemachinesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StringAttribute <em>String Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StringAttribute
+	 * @generated
+	 */
+	public Adapter createStringAttributeAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Constraint <em>Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -372,6 +398,20 @@ public class StatemachinesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createIntegerConstraintAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StringConstraint <em>String Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StringConstraint
+	 * @generated
+	 */
+	public Adapter createStringConstraintAdapter() {
 		return null;
 	}
 
@@ -568,6 +608,20 @@ public class StatemachinesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createIntegerAttributeValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StringAttributeValue <em>String Attribute Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StringAttributeValue
+	 * @generated
+	 */
+	public Adapter createStringAttributeValueAdapter() {
 		return null;
 	}
 

@@ -1,9 +1,12 @@
 package org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines;
 
 import fr.inria.diverse.melange.adapters.EObjectAdapter;
+import java.util.Collection;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.InterpretedStateMachinesMTAdaptersFactory;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Behavior;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.SignalEventOccurrence;
 
 @SuppressWarnings("all")
 public class BehaviorAdapter extends EObjectAdapter<Behavior> implements org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Behavior {
@@ -24,6 +27,15 @@ public class BehaviorAdapter extends EObjectAdapter<Behavior> implements org.tet
     adaptee.setName(o);
   }
   
+  private EList<SignalEventOccurrence> emittedSignals_;
+  
+  @Override
+  public EList<SignalEventOccurrence> getEmittedSignals() {
+    if (emittedSignals_ == null)
+    	emittedSignals_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getEmittedSignals(), adaptersFactory, eResource);
+    return emittedSignals_;
+  }
+  
   protected final static String NAME_EDEFAULT = null;
   
   @Override
@@ -36,6 +48,8 @@ public class BehaviorAdapter extends EObjectAdapter<Behavior> implements org.tet
     switch (featureID) {
     	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StatemachinesPackage.BEHAVIOR__NAME:
     		return getName();
+    	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StatemachinesPackage.BEHAVIOR__EMITTED_SIGNALS:
+    		return getEmittedSignals();
     }
     
     return super.eGet(featureID, resolve, coreType);
@@ -46,6 +60,8 @@ public class BehaviorAdapter extends EObjectAdapter<Behavior> implements org.tet
     switch (featureID) {
     	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StatemachinesPackage.BEHAVIOR__NAME:
     		return getName() != NAME_EDEFAULT;
+    	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StatemachinesPackage.BEHAVIOR__EMITTED_SIGNALS:
+    		return getEmittedSignals() != null && !getEmittedSignals().isEmpty();
     }
     
     return super.eIsSet(featureID);
@@ -58,6 +74,10 @@ public class BehaviorAdapter extends EObjectAdapter<Behavior> implements org.tet
     		setName(
     		(java.lang.String)
     		 newValue);
+    		return;
+    	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StatemachinesPackage.BEHAVIOR__EMITTED_SIGNALS:
+    		getEmittedSignals().clear();
+    		getEmittedSignals().addAll((Collection) newValue);
     		return;
     }
     

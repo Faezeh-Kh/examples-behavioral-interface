@@ -6,6 +6,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.InterpretedStateMachinesMTAdaptersFactory;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Signal;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Attribute;
 
 @SuppressWarnings("all")
 public class SignalAdapter extends EObjectAdapter<Signal> implements org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Signal {
@@ -26,10 +27,10 @@ public class SignalAdapter extends EObjectAdapter<Signal> implements org.tetrabo
     adaptee.setName(o);
   }
   
-  private /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Attribute> */Object attributes_;
+  private EList<Attribute> attributes_;
   
   @Override
-  public /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Attribute> */Object getAttributes() {
+  public EList<Attribute> getAttributes() {
     if (attributes_ == null)
     	attributes_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getAttributes(), adaptersFactory, eResource);
     return attributes_;

@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  *
  * @see org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StatemachinesPackage#getAttributeValue()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface AttributeValue extends EObject {

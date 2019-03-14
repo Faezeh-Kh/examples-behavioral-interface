@@ -51,7 +51,7 @@ public interface CallEventOccurrence extends EventOccurrence {
 	void setOperation(Operation value);
 
 	/**
-	 * Returns the value of the '<em><b>In Parameter Values</b></em>' reference list.
+	 * Returns the value of the '<em><b>In Parameter Values</b></em>' containment reference list.
 	 * The list contents are of type {@link org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.AttributeValue}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -59,15 +59,15 @@ public interface CallEventOccurrence extends EventOccurrence {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>In Parameter Values</em>' reference list.
+	 * @return the value of the '<em>In Parameter Values</em>' containment reference list.
 	 * @see org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StatemachinesPackage#getCallEventOccurrence_InParameterValues()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<AttributeValue> getInParameterValues();
 
 	/**
-	 * Returns the value of the '<em><b>Out Parameter Values</b></em>' reference list.
+	 * Returns the value of the '<em><b>Out Parameter Values</b></em>' containment reference list.
 	 * The list contents are of type {@link org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.AttributeValue}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -75,34 +75,34 @@ public interface CallEventOccurrence extends EventOccurrence {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Out Parameter Values</em>' reference list.
+	 * @return the value of the '<em>Out Parameter Values</em>' containment reference list.
 	 * @see org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StatemachinesPackage#getCallEventOccurrence_OutParameterValues()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<AttributeValue> getOutParameterValues();
 
 	/**
-	 * Returns the value of the '<em><b>Return Value</b></em>' reference.
+	 * Returns the value of the '<em><b>Return Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Return Value</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Return Value</em>' reference.
+	 * @return the value of the '<em>Return Value</em>' containment reference.
 	 * @see #setReturnValue(AttributeValue)
 	 * @see org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StatemachinesPackage#getCallEventOccurrence_ReturnValue()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	AttributeValue getReturnValue();
 
 	/**
-	 * Sets the value of the '{@link org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.CallEventOccurrence#getReturnValue <em>Return Value</em>}' reference.
+	 * Sets the value of the '{@link org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.CallEventOccurrence#getReturnValue <em>Return Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Return Value</em>' reference.
+	 * @param value the new value of the '<em>Return Value</em>' containment reference.
 	 * @see #getReturnValue()
 	 * @generated
 	 */

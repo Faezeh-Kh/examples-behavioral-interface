@@ -10,39 +10,43 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.gemoc.executionframework.engine.annotations.EventHandler
 import statemachines.Attribute
 import statemachines.AttributeValue
+import statemachines.Behavior
+import statemachines.BooleanAttribute
 import statemachines.BooleanAttributeValue
+import statemachines.CallEventOccurrence
+import statemachines.CallEventType
 import statemachines.CompletionEventOccurrence
 import statemachines.Constraint
 import statemachines.EventOccurrence
 import statemachines.FinalState
+import statemachines.IntegerAttribute
 import statemachines.IntegerAttributeValue
+import statemachines.OperationBehavior
 import statemachines.Pseudostate
 import statemachines.PseudostateKind
 import statemachines.Region
+import statemachines.SignalEventOccurrence
+import statemachines.SignalEventType
 import statemachines.State
 import statemachines.StateMachine
 import statemachines.StatemachinesFactory
+import statemachines.StringAttribute
+import statemachines.StringAttributeValue
 import statemachines.Transition
 import statemachines.Vertex
 
 import static extension org.tetrabox.examples.statemachines.interpreter.AttributeValueAspect.*
-import static extension org.tetrabox.examples.statemachines.interpreter.ConstraintAspect.*
-import static extension org.tetrabox.examples.statemachines.interpreter.OperationBehaviorAspect.*
-import static extension org.tetrabox.examples.statemachines.interpreter.EventOccurrenceAspect.*
+import static extension org.tetrabox.examples.statemachines.interpreter.BehaviorAspect.*
 import static extension org.tetrabox.examples.statemachines.interpreter.CallEventOccurrenceAspect.*
-import static extension org.tetrabox.examples.statemachines.interpreter.SigmalEventOccurrenceAspect.*
+import static extension org.tetrabox.examples.statemachines.interpreter.ConstraintAspect.*
+import static extension org.tetrabox.examples.statemachines.interpreter.EventOccurrenceAspect.*
 import static extension org.tetrabox.examples.statemachines.interpreter.RegionAspect.*
+import static extension org.tetrabox.examples.statemachines.interpreter.SignalEventOccurrenceAspect.*
 import static extension org.tetrabox.examples.statemachines.interpreter.StateAspect.*
 import static extension org.tetrabox.examples.statemachines.interpreter.StateMachineAspect.*
 import static extension org.tetrabox.examples.statemachines.interpreter.TransitionAspect.*
 import static extension org.tetrabox.examples.statemachines.interpreter.VertexAspect.*
-import statemachines.SignalEventOccurrence
-import statemachines.CallEventOccurrence
-import statemachines.SignalEventType
-import statemachines.CallEventType
-import statemachines.OperationBehavior
-import statemachines.BooleanAttribute
-import statemachines.IntegerAttribute
+import statemachines.NamedElement
 
 @Aspect(className=StateMachine)
 class StateMachineAspect {
@@ -317,10 +321,11 @@ class StateAspect extends VertexAspect {
 
 	private def void tryExecuteEntry(EventOccurrence eventOccurrence) {
 		if (!_self.entryCompleted) {
-			if (_self.entry instanceof OperationBehavior) {
-				(_self.entry as OperationBehavior).execute(eventOccurrence as CallEventOccurrence)
-			}
-			println(_self.name + "(" + _self.entry.name + ")" + if (eventOccurrence !== null) {eventOccurrence.parameters} else {""})
+			_self.entry.execute(eventOccurrence)
+//			if (_self.entry instanceof OperationBehavior) {
+//				(_self.entry as OperationBehavior).execute(eventOccurrence as CallEventOccurrence)
+//			}
+//			println(_self.name + "(" + _self.entry.name + ")" + if (eventOccurrence !== null) {eventOccurrence.parameters} else {""})
 			_self.isEntryCompleted = true
 			if (_self.hasCompleted) {
 				_self.complete
@@ -330,10 +335,11 @@ class StateAspect extends VertexAspect {
 
 	private def void tryExecuteDoActivity(EventOccurrence eventOccurrence) {
 		if (!_self.doActivityCompleted) {
-			if (_self.doActivity instanceof OperationBehavior) {
-				(_self.doActivity as OperationBehavior).execute(eventOccurrence as CallEventOccurrence)
-			}
-			println(_self.name + "(" + _self.doActivity.name + ")" + if (eventOccurrence !== null) {eventOccurrence.parameters} else {""})
+			_self.doActivity.execute(eventOccurrence)
+//			if (_self.doActivity instanceof OperationBehavior) {
+//				(_self.doActivity as OperationBehavior).execute(eventOccurrence as CallEventOccurrence)
+//			}
+//			println(_self.name + "(" + _self.doActivity.name + ")" + if (eventOccurrence !== null) {eventOccurrence.parameters} else {""})
 			_self.isDoActivityCompleted = true
 			if (_self.hasCompleted) {
 				_self.complete
@@ -343,10 +349,11 @@ class StateAspect extends VertexAspect {
 	
 	private def void tryExecuteExit(EventOccurrence eventOccurrence) {
 		if (!_self.exitCompleted) {
-			if (_self.exit instanceof OperationBehavior) {
-				(_self.exit as OperationBehavior).execute(eventOccurrence as CallEventOccurrence)
-			}
-			println(_self.name + "(" + _self.exit.name + ")" + if (eventOccurrence !== null) {eventOccurrence.parameters} else {""})
+			_self.exit.execute(eventOccurrence)
+//			if (_self.exit instanceof OperationBehavior) {
+//				(_self.exit as OperationBehavior).execute(eventOccurrence as CallEventOccurrence)
+//			}
+//			println(_self.name + "(" + _self.exit.name + ")" + if (eventOccurrence !== null) {eventOccurrence.parameters} else {""})
 			_self.isExitCompleted = true
 		}
 	}
@@ -407,7 +414,7 @@ class StateAspect extends VertexAspect {
 }
 
 @Aspect(className=FinalState)
-class FimalStateAspect extends StateAspect {
+class FinalStateAspect extends StateAspect {
 	
 	@OverrideAspectMethod
 	protected def void enter(Transition enteringTransition, EventOccurrence eventOccurrence, Region leastCommonAncestor) {
@@ -538,7 +545,7 @@ class PseudostateAspect extends VertexAspect {
 	}
 	
 	@OverrideAspectMethod
-	protected def Vertex getParentState() {
+	protected def State getParentState() {
 		if (_self.state !== null)
 			return _self.state
 		return _self.container.state
@@ -549,17 +556,18 @@ class PseudostateAspect extends VertexAspect {
 class TransitionAspect {
 
 	protected boolean traversed = false
-	private Region _leastCommonAncestor = null
+	Region _leastCommonAncestor = null
 
 	@Step
 	def void fire(EventOccurrence eventOccurrence) {
 		_self.exitSource(eventOccurrence)
 		//TODO execute effect behavior
 		if (_self.effect !== null) {
-			if (_self.effect instanceof OperationBehavior) {
-				(_self.effect as OperationBehavior).execute(eventOccurrence as CallEventOccurrence)
-			}
-			println(_self.name + "(" + _self.effect.name + ")" + if (eventOccurrence !== null) {eventOccurrence.parameters} else {""})
+			_self.effect.execute(eventOccurrence)
+//			if (_self.effect instanceof OperationBehavior) {
+//				(_self.effect as OperationBehavior).execute(eventOccurrence as CallEventOccurrence)
+//			}
+//			println(_self.name + "(" + _self.effect.name + ")" + if (eventOccurrence !== null) {eventOccurrence.parameters} else {""})
 		}
 		_self.traversed = true
 		_self.enterTarget(eventOccurrence)
@@ -712,9 +720,23 @@ class TransitionAspect {
 	}
 }
 
+
+@Aspect(className=Behavior)
+class BehaviorAspect {
+	@Step
+	protected def void execute(EventOccurrence eventOccurrence) {
+		println((_self.eContainer as NamedElement).name +
+				"(" + _self.name + ")" + if (eventOccurrence !== null)
+				{eventOccurrence.parameters} else {""})
+	}
+}
+
 @Aspect(className=OperationBehavior)
-class OperationBehaviorAspect {
-	protected def void execute(CallEventOccurrence callEventOccurrence) {
+class OperationBehaviorAspect extends BehaviorAspect {
+	@Step
+	@OverrideAspectMethod
+	protected def void execute(EventOccurrence eventOccurrence) {
+		val callEventOccurrence = eventOccurrence as CallEventOccurrence
 		val op = callEventOccurrence.operation
 		val outParameters = new ArrayList(op.outParameters)
 		val returnParameter = op.^return
@@ -726,9 +748,12 @@ class OperationBehaviorAspect {
 				if (attribute instanceof BooleanAttribute) {
 					paramValue = StatemachinesFactory::eINSTANCE.createBooleanAttributeValue;
 					(paramValue as BooleanAttributeValue).attribute = attribute
-				} else {
+				} else if (attribute instanceof IntegerAttribute) {
 					paramValue = StatemachinesFactory::eINSTANCE.createIntegerAttributeValue;
 					(paramValue as IntegerAttributeValue).attribute = (attribute as IntegerAttribute)
+				} else {
+					paramValue = StatemachinesFactory::eINSTANCE.createStringAttributeValue;
+					(paramValue as StringAttributeValue).attribute = (attribute as StringAttribute)
 				}
 				if (outParameters.contains(attribute)) {
 					callEventOccurrence.outParameterValues.add(paramValue)
@@ -738,6 +763,9 @@ class OperationBehaviorAspect {
 			}
 			paramValue.set_value(value)
 		]
+		println((_self.eContainer as NamedElement).name +
+				"(" + _self.name + ")" + if (eventOccurrence !== null)
+				{eventOccurrence.parameters} else {""})
 	}
 }
 
@@ -775,9 +803,7 @@ abstract class EventOccurrenceAspect {
 }
 
 @Aspect(className=SignalEventOccurrence)
-class SigmalEventOccurrenceAspect extends EventOccurrenceAspect {
-	@Containment
-	public List<AttributeValue> attributeValues
+class SignalEventOccurrenceAspect extends EventOccurrenceAspect {
 	@OverrideAspectMethod
 	protected def String getParameters() {
 		return "" + _self.attributeValues.filter[v|v._attribute !== null].map[v|"[in=" + v.string + "]"].join
@@ -786,12 +812,6 @@ class SigmalEventOccurrenceAspect extends EventOccurrenceAspect {
 
 @Aspect(className=CallEventOccurrence)
 class CallEventOccurrenceAspect extends EventOccurrenceAspect {
-	@Containment
-	public List<AttributeValue> inParameterValues
-	@Containment
-	public List<AttributeValue> outParameterValues
-	@Containment
-	public AttributeValue returnValue
 	@OverrideAspectMethod
 	protected def String getParameters() {
 		val inString = "" + _self.inParameterValues.filter[v|v._attribute !== null].map[v|"[in=" + v.string + "]"].join
@@ -858,5 +878,28 @@ class IntegerAttributeValueAspect extends AttributeValueAspect {
 	@OverrideAspectMethod
 	protected def String getString() {
 		return "" + _self.value
+	}
+}
+
+@Aspect(className=StringAttributeValue)
+class StringAttributeValueAspect extends AttributeValueAspect {
+	@OverrideAspectMethod
+	protected def String get_value() {
+		return _self.value
+	}
+	
+	@OverrideAspectMethod
+	protected def void set_value(String value) {
+		_self.value = value
+	}
+	
+	@OverrideAspectMethod
+	protected def Attribute get_attribute() {
+		return _self.attribute
+	}
+	
+	@OverrideAspectMethod
+	protected def String getString() {
+		return _self.value
 	}
 }

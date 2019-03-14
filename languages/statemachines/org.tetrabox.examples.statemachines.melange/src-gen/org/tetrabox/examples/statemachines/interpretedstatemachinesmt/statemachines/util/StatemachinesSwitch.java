@@ -129,6 +129,14 @@ public class StatemachinesSwitch<T1> extends Switch<T1> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case StatemachinesPackage.STRING_ATTRIBUTE: {
+				StringAttribute stringAttribute = (StringAttribute)theEObject;
+				T1 result = caseStringAttribute(stringAttribute);
+				if (result == null) result = caseAttribute(stringAttribute);
+				if (result == null) result = caseNamedElement(stringAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case StatemachinesPackage.CONSTRAINT: {
 				Constraint<?, ?> constraint = (Constraint<?, ?>)theEObject;
 				T1 result = caseConstraint(constraint);
@@ -146,6 +154,13 @@ public class StatemachinesSwitch<T1> extends Switch<T1> {
 				IntegerConstraint integerConstraint = (IntegerConstraint)theEObject;
 				T1 result = caseIntegerConstraint(integerConstraint);
 				if (result == null) result = caseConstraint(integerConstraint);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StatemachinesPackage.STRING_CONSTRAINT: {
+				StringConstraint stringConstraint = (StringConstraint)theEObject;
+				T1 result = caseStringConstraint(stringConstraint);
+				if (result == null) result = caseConstraint(stringConstraint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -247,6 +262,13 @@ public class StatemachinesSwitch<T1> extends Switch<T1> {
 				IntegerAttributeValue integerAttributeValue = (IntegerAttributeValue)theEObject;
 				T1 result = caseIntegerAttributeValue(integerAttributeValue);
 				if (result == null) result = caseAttributeValue(integerAttributeValue);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StatemachinesPackage.STRING_ATTRIBUTE_VALUE: {
+				StringAttributeValue stringAttributeValue = (StringAttributeValue)theEObject;
+				T1 result = caseStringAttributeValue(stringAttributeValue);
+				if (result == null) result = caseAttributeValue(stringAttributeValue);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -416,6 +438,21 @@ public class StatemachinesSwitch<T1> extends Switch<T1> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>String Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>String Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseStringAttribute(StringAttribute object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -457,6 +494,21 @@ public class StatemachinesSwitch<T1> extends Switch<T1> {
 	 * @generated
 	 */
 	public T1 caseIntegerConstraint(IntegerConstraint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>String Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>String Constraint</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseStringConstraint(StringConstraint object) {
 		return null;
 	}
 
@@ -667,6 +719,21 @@ public class StatemachinesSwitch<T1> extends Switch<T1> {
 	 * @generated
 	 */
 	public T1 caseIntegerAttributeValue(IntegerAttributeValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>String Attribute Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>String Attribute Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseStringAttributeValue(StringAttributeValue object) {
 		return null;
 	}
 

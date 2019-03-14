@@ -2,10 +2,10 @@ package org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.in
 
 import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import java.util.Collection;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.InterpretedStateMachinesMTAdaptersFactory;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.SignalEventOccurrence;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Signal;
 
 @SuppressWarnings("all")
 public class SignalEventOccurrenceAdapter extends EObjectAdapter<SignalEventOccurrence> implements org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.SignalEventOccurrence {
@@ -17,20 +17,15 @@ public class SignalEventOccurrenceAdapter extends EObjectAdapter<SignalEventOccu
   }
   
   @Override
-  public org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Signal getSignal() {
-    return () adaptersFactory.createAdapter(adaptee.getSignal(), eResource);
+  public Signal getSignal() {
+    return (Signal) adaptersFactory.createAdapter(adaptee.getSignal(), eResource);
   }
   
   @Override
-  public void setSignal(final org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Signal o) {
+  public void setSignal(final Signal o) {
     if (o != null)
     	adaptee.setSignal(((org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.SignalAdapter) o).getAdaptee());
     else adaptee.setSignal(null);
-  }
-  
-  @Override
-  public /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.AttributeValue> */Object getAttributeValues() {
-    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.SigmalEventOccurrenceAspect.attributeValues(adaptee), adaptersFactory, eResource);
   }
   
   @Override

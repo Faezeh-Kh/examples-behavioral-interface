@@ -2,6 +2,8 @@
  */
 package statemachines;
 
+import org.eclipse.emf.common.util.EList;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -13,6 +15,7 @@ package statemachines;
  * </p>
  * <ul>
  *   <li>{@link statemachines.SignalEventOccurrence#getSignal <em>Signal</em>}</li>
+ *   <li>{@link statemachines.SignalEventOccurrence#getAttributeValues <em>Attribute Values</em>}</li>
  * </ul>
  *
  * @see statemachines.StatemachinesPackage#getSignalEventOccurrence()
@@ -45,5 +48,21 @@ public interface SignalEventOccurrence extends EventOccurrence {
 	 * @generated
 	 */
 	void setSignal(Signal value);
+
+	/**
+	 * Returns the value of the '<em><b>Attribute Values</b></em>' containment reference list.
+	 * The list contents are of type {@link statemachines.AttributeValue}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Attribute Values</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Attribute Values</em>' containment reference list.
+	 * @see statemachines.StatemachinesPackage#getSignalEventOccurrence_AttributeValues()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<AttributeValue> getAttributeValues();
 
 } // SignalEventOccurrence

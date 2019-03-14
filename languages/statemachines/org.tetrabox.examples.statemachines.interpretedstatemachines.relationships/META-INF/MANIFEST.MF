@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Relationships
+Bundle-SymbolicName: org.tetrabox.examples.statemachines.interpretedstatemachines.relationships;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: org.tetrabox.examples.statemachines.interpretedstatemachines.relationships
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.gemoc.executionframework.event.manager,
+ org.eclipse.gemoc.xdsmlframework.behavioralinterface;bundle-version="1.0.0",
+ org.tetrabox.examples.statemachines.interpretedstatemachines,
+ org.eclipse.gemoc.executionframework.event.model;bundle-version="4.0.0",
+ com.google.guava
+Export-Package: org.tetrabox.examples.statemachines.interpretedstatemachines.relationships
+Bundle-ClassPath: .

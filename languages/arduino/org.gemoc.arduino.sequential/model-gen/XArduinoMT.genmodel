@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.gemoc.arduino.sequential/src-gen" modelPluginID="org.gemoc.arduino.sequential" modelName="XArduinoMT" complianceLevel="7.0" copyrightFields="false">
+  <foreignModel>platform:/resource/org.gemoc.arduino.sequential/model-gen/XArduinoMT.ecore</foreignModel>
+  <genPackages prefix="Arduino" basePackage="org.gemoc.arduino.sequential.xarduinomt" disposableProviderFactory="true">
+    <ecorePackage href="XArduinoMT.ecore#/"/>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="XArduinoMT.ecore#//UnaryOperatorKind"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="XArduinoMT.ecore#//UnaryOperatorKind/minus"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="XArduinoMT.ecore#//UnaryOperatorKind/neg"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="XArduinoMT.ecore#//BinaryOperatorKind"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="XArduinoMT.ecore#//BinaryOperatorKind/sub"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="XArduinoMT.ecore#//BinaryOperatorKind/add"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="XArduinoMT.ecore#//BinaryOperatorKind/mul"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="XArduinoMT.ecore#//BinaryOperatorKind/div"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="XArduinoMT.ecore#//BinaryOperatorKind/min"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="XArduinoMT.ecore#//BinaryOperatorKind/max"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="XArduinoMT.ecore#//BinaryOperatorKind/mod"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="XArduinoMT.ecore#//BinaryOperatorKind/lt"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="XArduinoMT.ecore#//BinaryOperatorKind/le"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="XArduinoMT.ecore#//BinaryOperatorKind/eq"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="XArduinoMT.ecore#//BinaryOperatorKind/ge"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="XArduinoMT.ecore#//BinaryOperatorKind/gt"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="XArduinoMT.ecore#//BinaryOperatorKind/neq"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genClasses image="false">
+      <ecoreClass href="XArduinoMT.ecore#//NamedElement"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XArduinoMT.ecore#//NamedElement/name"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XArduinoMT.ecore#//Project"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XArduinoMT.ecore#//Project/board"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XArduinoMT.ecore#//Project/sketch"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XArduinoMT.ecore#//Board"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XArduinoMT.ecore#//Board/modules"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="XArduinoMT.ecore#//Module"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XArduinoMT.ecore#//Module/level"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="XArduinoMT.ecore#//OutputModule"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XArduinoMT.ecore#//Led"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="XArduinoMT.ecore#//InputModule"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XArduinoMT.ecore#//PushButton"/>
+      <genOperations>
+        <ecoreOperation href="XArduinoMT.ecore#//PushButton/press"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XArduinoMT.ecore#//PushButton/release"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XArduinoMT.ecore#//Sketch"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XArduinoMT.ecore#//Sketch/block"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XArduinoMT.ecore#//Sketch/execute"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XArduinoMT.ecore#//Block"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XArduinoMT.ecore#//Block/instructions"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XArduinoMT.ecore#//Block/execute"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="XArduinoMT.ecore#//Instruction"/>
+      <genOperations>
+        <ecoreOperation href="XArduinoMT.ecore#//Instruction/execute"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XArduinoMT.ecore#//Instruction/finalize"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="XArduinoMT.ecore#//Control"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XArduinoMT.ecore#//Control/block"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XArduinoMT.ecore#//Control/execute"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XArduinoMT.ecore#//If"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XArduinoMT.ecore#//If/condition"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XArduinoMT.ecore#//If/elseBlock"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XArduinoMT.ecore#//If/execute"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XArduinoMT.ecore#//While"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XArduinoMT.ecore#//While/condition"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XArduinoMT.ecore#//While/execute"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="XArduinoMT.ecore#//ModuleSet"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XArduinoMT.ecore#//ModuleSet/value"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XArduinoMT.ecore#//ModuleSet/execute"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XArduinoMT.ecore#//SetLed"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XArduinoMT.ecore#//SetLed/led"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XArduinoMT.ecore#//SetLed/execute"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XArduinoMT.ecore#//Delay"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XArduinoMT.ecore#//Delay/value"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XArduinoMT.ecore#//Delay/execute"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XArduinoMT.ecore#//WaitFor"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XArduinoMT.ecore#//WaitFor/module"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XArduinoMT.ecore#//WaitFor/execute"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XArduinoMT.ecore#//WaitFor/setActivated"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="XArduinoMT.ecore#//Expression"/>
+      <genOperations>
+        <ecoreOperation href="XArduinoMT.ecore#//Expression/evaluate"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XArduinoMT.ecore#//Constant"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XArduinoMT.ecore#//Constant/value"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XArduinoMT.ecore#//Constant/evaluate"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XArduinoMT.ecore#//UnaryExpression"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XArduinoMT.ecore#//UnaryExpression/operator"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XArduinoMT.ecore#//UnaryExpression/operand"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XArduinoMT.ecore#//UnaryExpression/evaluate"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XArduinoMT.ecore#//BinaryExpression"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XArduinoMT.ecore#//BinaryExpression/operator"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XArduinoMT.ecore#//BinaryExpression/left"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XArduinoMT.ecore#//BinaryExpression/right"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XArduinoMT.ecore#//BinaryExpression/evaluate"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XArduinoMT.ecore#//ModuleGet"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XArduinoMT.ecore#//ModuleGet/module"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XArduinoMT.ecore#//ModuleGet/evaluate"/>
+      </genOperations>
+    </genClasses>
+  </genPackages>
+  <usedGenPackages href="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"/>
+</genmodel:GenModel>

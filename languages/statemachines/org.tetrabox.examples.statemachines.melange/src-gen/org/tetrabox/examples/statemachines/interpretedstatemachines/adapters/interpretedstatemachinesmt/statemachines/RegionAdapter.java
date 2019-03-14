@@ -6,6 +6,10 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.InterpretedStateMachinesMTAdaptersFactory;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Region;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.State;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StateMachine;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Transition;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Vertex;
 
 @SuppressWarnings("all")
 public class RegionAdapter extends EObjectAdapter<Region> implements org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Region {
@@ -26,55 +30,55 @@ public class RegionAdapter extends EObjectAdapter<Region> implements org.tetrabo
     adaptee.setName(o);
   }
   
-  private /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Vertex> */Object vertice_;
+  private EList<Vertex> vertice_;
   
   @Override
-  public /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Vertex> */Object getVertice() {
+  public EList<Vertex> getVertice() {
     if (vertice_ == null)
     	vertice_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getVertice(), adaptersFactory, eResource);
     return vertice_;
   }
   
-  private /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Transition> */Object transitions_;
+  private EList<Transition> transitions_;
   
   @Override
-  public /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Transition> */Object getTransitions() {
+  public EList<Transition> getTransitions() {
     if (transitions_ == null)
     	transitions_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getTransitions(), adaptersFactory, eResource);
     return transitions_;
   }
   
   @Override
-  public org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StateMachine getStateMachine() {
-    return () adaptersFactory.createAdapter(adaptee.getStateMachine(), eResource);
+  public StateMachine getStateMachine() {
+    return (StateMachine) adaptersFactory.createAdapter(adaptee.getStateMachine(), eResource);
   }
   
   @Override
-  public void setStateMachine(final org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StateMachine o) {
+  public void setStateMachine(final StateMachine o) {
     if (o != null)
     	adaptee.setStateMachine(((org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.StateMachineAdapter) o).getAdaptee());
     else adaptee.setStateMachine(null);
   }
   
   @Override
-  public org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.State getState() {
-    return () adaptersFactory.createAdapter(adaptee.getState(), eResource);
+  public State getState() {
+    return (State) adaptersFactory.createAdapter(adaptee.getState(), eResource);
   }
   
   @Override
-  public void setState(final org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.State o) {
+  public void setState(final State o) {
     if (o != null)
     	adaptee.setState(((org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.StateAdapter) o).getAdaptee());
     else adaptee.setState(null);
   }
   
   @Override
-  public org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Vertex getCurrentVertex() {
-    org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspect.currentVertex(adaptee);
+  public Vertex getCurrentVertex() {
+    return (Vertex) adaptersFactory.createAdapter(org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspect.currentVertex(adaptee), eResource);
   }
   
   @Override
-  public void setCurrentVertex(final org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Vertex currentVertex) {
+  public void setCurrentVertex(final Vertex currentVertex) {
     org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspect.currentVertex(adaptee, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Vertex)((EObjectAdapter)currentVertex).getAdaptee()
     );
   }

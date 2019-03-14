@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.4"?><plugin>
+  <extension point="org.eclipse.gemoc.gemoc_language_workbench.sequential.xdsml">
+    <XDSML_Definition modelLoader_class="org.eclipse.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="org.gemoc.arduino.sequential.XArduino" xdsmlFilePath="/org.gemoc.arduino.sequential/bin/org/gemoc/arduino/sequential/Main.melange">
+      <XDSML_Definition_Customization fileExtensions="xsarduino"/>
+    </XDSML_Definition>
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated XArduinoMT -->
+    <package class="org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage" genModel="model-gen/XArduinoMT.genmodel" uri="http://org.gemoc.arduino.sequential.xarduinomt/arduino/"/>
+  </extension>
+  
+<extension point="fr.inria.diverse.melange.modeltype">
+    <modeltype id="org.gemoc.arduino.sequential.XArduinoMT" uri="http://org.gemoc.arduino.sequential.xarduinomt/"/>
+  </extension>
+  <extension point="fr.inria.diverse.melange.language">
+    <language aspects="ModuleGet:org.gemoc.arduino.sequential.xarduino.aspects.ModuleGetAspect;Constant:org.gemoc.arduino.sequential.xarduino.aspects.ConstantAspect;UnaryExpression:org.gemoc.arduino.sequential.xarduino.aspects.UnaryExpressionAspect;While:org.gemoc.arduino.sequential.xarduino.aspects.WhileAspect;Instruction:org.gemoc.arduino.sequential.xarduino.aspects.InstructionAspect;SetLed:org.gemoc.arduino.sequential.xarduino.aspects.SetLedAspect;Delay:org.gemoc.arduino.sequential.xarduino.aspects.DelayAspect;Control:org.gemoc.arduino.sequential.xarduino.aspects.ControlAspect;BinaryExpression:org.gemoc.arduino.sequential.xarduino.aspects.BinaryExpressionAspect;Expression:org.gemoc.arduino.sequential.xarduino.aspects.ExpressionAspect;WaitFor:org.gemoc.arduino.sequential.xarduino.aspects.WaitForAspect;Block:org.gemoc.arduino.sequential.xarduino.aspects.BlockAspect;ModuleSet:org.gemoc.arduino.sequential.xarduino.aspects.ModuleSetAspect;Sketch:org.gemoc.arduino.sequential.xarduino.aspects.SketchAspect;PushButton:org.gemoc.arduino.sequential.xarduino.aspects.PushButtonAspect;Module:org.gemoc.arduino.sequential.xarduino.aspects.ModuleAspect;If:org.gemoc.arduino.sequential.xarduino.aspects.IfAspect" entryPoints="" exactType="org.gemoc.arduino.sequential.XArduinoMT" id="org.gemoc.arduino.sequential.XArduino" uri="http://org.gemoc.arduino.sequential.xarduino/arduino/">
+      <adapter class="org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoAdapter" modeltypeId="org.gemoc.arduino.sequential.XArduinoMT"/>
+    </language>
+  </extension>
+</plugin>

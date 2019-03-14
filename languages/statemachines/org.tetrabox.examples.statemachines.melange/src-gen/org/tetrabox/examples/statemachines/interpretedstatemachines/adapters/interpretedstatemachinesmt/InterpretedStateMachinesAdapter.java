@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Set;
 import org.eclipse.emf.common.util.URI;
 import org.tetrabox.examples.statemachines.InterpretedStateMachinesMT;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StatemachinesFactory;
 
 @SuppressWarnings("all")
 public class InterpretedStateMachinesAdapter extends ResourceAdapter implements InterpretedStateMachinesMT {
@@ -13,7 +14,7 @@ public class InterpretedStateMachinesAdapter extends ResourceAdapter implements 
   }
   
   @Override
-  public org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StatemachinesFactory getStatemachinesFactory() {
+  public StatemachinesFactory getStatemachinesFactory() {
     return new org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.StatemachinesFactoryAdapter();
   }
   

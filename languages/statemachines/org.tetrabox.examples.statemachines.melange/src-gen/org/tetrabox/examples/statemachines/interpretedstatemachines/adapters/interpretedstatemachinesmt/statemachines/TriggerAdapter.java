@@ -4,6 +4,7 @@ import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import org.eclipse.emf.ecore.EClass;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.InterpretedStateMachinesMTAdaptersFactory;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Trigger;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.EventType;
 
 @SuppressWarnings("all")
 public class TriggerAdapter extends EObjectAdapter<Trigger> implements org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Trigger {
@@ -25,12 +26,12 @@ public class TriggerAdapter extends EObjectAdapter<Trigger> implements org.tetra
   }
   
   @Override
-  public org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.EventType getEventType() {
-    return () adaptersFactory.createAdapter(adaptee.getEventType(), eResource);
+  public EventType getEventType() {
+    return (EventType) adaptersFactory.createAdapter(adaptee.getEventType(), eResource);
   }
   
   @Override
-  public void setEventType(final org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.EventType o) {
+  public void setEventType(final EventType o) {
     if (o != null)
     	adaptee.setEventType(((org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.EventTypeAdapter) o).getAdaptee());
     else adaptee.setEventType(null);

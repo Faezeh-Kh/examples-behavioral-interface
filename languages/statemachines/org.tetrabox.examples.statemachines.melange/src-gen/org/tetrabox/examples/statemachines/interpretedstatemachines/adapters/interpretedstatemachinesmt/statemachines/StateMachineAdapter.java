@@ -6,6 +6,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.InterpretedStateMachinesMTAdaptersFactory;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.EventOccurrence;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Region;
 
 @SuppressWarnings("all")
 public class StateMachineAdapter extends EObjectAdapter<StateMachine> implements org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StateMachine {
@@ -26,17 +28,17 @@ public class StateMachineAdapter extends EObjectAdapter<StateMachine> implements
     adaptee.setName(o);
   }
   
-  private /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Region> */Object regions_;
+  private EList<Region> regions_;
   
   @Override
-  public /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Region> */Object getRegions() {
+  public EList<Region> getRegions() {
     if (regions_ == null)
     	regions_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getRegions(), adaptersFactory, eResource);
     return regions_;
   }
   
   @Override
-  public void eventOccurrenceReceived(final org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.EventOccurrence event) {
+  public void eventOccurrenceReceived(final EventOccurrence event) {
     org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspect.eventOccurrenceReceived(adaptee, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence)((EObjectAdapter)event).getAdaptee()
     );
   }

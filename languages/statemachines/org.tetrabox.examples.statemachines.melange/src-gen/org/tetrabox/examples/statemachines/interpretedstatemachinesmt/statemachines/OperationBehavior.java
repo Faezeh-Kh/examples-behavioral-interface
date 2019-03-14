@@ -4,7 +4,6 @@ package org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemach
 
 import org.eclipse.emf.common.util.EList;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Operation Behavior</b></em>'.

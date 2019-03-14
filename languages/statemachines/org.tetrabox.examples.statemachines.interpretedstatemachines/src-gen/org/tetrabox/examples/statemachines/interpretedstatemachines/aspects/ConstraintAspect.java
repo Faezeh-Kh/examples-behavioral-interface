@@ -3,13 +3,11 @@ package org.tetrabox.examples.statemachines.interpretedstatemachines.aspects;
 import com.google.common.base.Objects;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import java.util.ArrayList;
-import java.util.List;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.AttributeValueAspect;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.CallEventOccurrenceAspect;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.ConstraintAspectConstraintAspectProperties;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.SigmalEventOccurrenceAspect;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Attribute;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.AttributeValue;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CallEventOccurrence;
@@ -23,7 +21,10 @@ public class ConstraintAspect {
   protected static boolean evaluate(final Constraint _self, final EventOccurrence eventOccurrence) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.ConstraintAspectConstraintAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.ConstraintAspectConstraintAspectContext.getSelf(_self);
     Object result = null;
-    result = _privk3_evaluate(_self_, _self,eventOccurrence);;
+    // #DispatchPointCut_before# boolean evaluate(EventOccurrence)
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Constraint){
+    	result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.ConstraintAspect._privk3_evaluate(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Constraint)_self,eventOccurrence);
+    };
     return (boolean)result;
   }
   
@@ -34,17 +35,17 @@ public class ConstraintAspect {
     }
     ArrayList<AttributeValue> _xifexpression = null;
     if ((eventOccurrence instanceof SignalEventOccurrence)) {
-      List<AttributeValue> _attributeValues = SigmalEventOccurrenceAspect.attributeValues(((SignalEventOccurrence)eventOccurrence));
+      EList<AttributeValue> _attributeValues = ((SignalEventOccurrence)eventOccurrence).getAttributeValues();
       _xifexpression = new ArrayList<AttributeValue>(_attributeValues);
     } else {
       ArrayList<AttributeValue> _xifexpression_1 = null;
       if ((eventOccurrence instanceof CallEventOccurrence)) {
         ArrayList<AttributeValue> _xblockexpression = null;
         {
-          List<AttributeValue> _inParameterValues = CallEventOccurrenceAspect.inParameterValues(((CallEventOccurrence)eventOccurrence));
+          EList<AttributeValue> _inParameterValues = ((CallEventOccurrence)eventOccurrence).getInParameterValues();
           final ArrayList<AttributeValue> result = new ArrayList<AttributeValue>(_inParameterValues);
-          result.addAll(CallEventOccurrenceAspect.outParameterValues(((CallEventOccurrence)eventOccurrence)));
-          result.add(CallEventOccurrenceAspect.returnValue(((CallEventOccurrence)eventOccurrence)));
+          result.addAll(((CallEventOccurrence)eventOccurrence).getOutParameterValues());
+          result.add(((CallEventOccurrence)eventOccurrence).getReturnValue());
           _xblockexpression = result;
         }
         _xifexpression_1 = _xblockexpression;

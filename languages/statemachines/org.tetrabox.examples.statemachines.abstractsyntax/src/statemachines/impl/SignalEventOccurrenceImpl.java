@@ -2,13 +2,19 @@
  */
 package statemachines.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+import statemachines.AttributeValue;
 import statemachines.Signal;
 import statemachines.SignalEventOccurrence;
 import statemachines.StatemachinesPackage;
@@ -22,6 +28,7 @@ import statemachines.StatemachinesPackage;
  * </p>
  * <ul>
  *   <li>{@link statemachines.impl.SignalEventOccurrenceImpl#getSignal <em>Signal</em>}</li>
+ *   <li>{@link statemachines.impl.SignalEventOccurrenceImpl#getAttributeValues <em>Attribute Values</em>}</li>
  * </ul>
  *
  * @generated
@@ -36,6 +43,16 @@ public class SignalEventOccurrenceImpl extends EventOccurrenceImpl implements Si
 	 * @ordered
 	 */
 	protected Signal signal;
+
+	/**
+	 * The cached value of the '{@link #getAttributeValues() <em>Attribute Values</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAttributeValues()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<AttributeValue> attributeValues;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -99,12 +116,40 @@ public class SignalEventOccurrenceImpl extends EventOccurrenceImpl implements Si
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<AttributeValue> getAttributeValues() {
+		if (attributeValues == null) {
+			attributeValues = new EObjectContainmentEList<AttributeValue>(AttributeValue.class, this, StatemachinesPackage.SIGNAL_EVENT_OCCURRENCE__ATTRIBUTE_VALUES);
+		}
+		return attributeValues;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case StatemachinesPackage.SIGNAL_EVENT_OCCURRENCE__ATTRIBUTE_VALUES:
+				return ((InternalEList<?>)getAttributeValues()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case StatemachinesPackage.SIGNAL_EVENT_OCCURRENCE__SIGNAL:
 				if (resolve) return getSignal();
 				return basicGetSignal();
+			case StatemachinesPackage.SIGNAL_EVENT_OCCURRENCE__ATTRIBUTE_VALUES:
+				return getAttributeValues();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -114,11 +159,16 @@ public class SignalEventOccurrenceImpl extends EventOccurrenceImpl implements Si
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case StatemachinesPackage.SIGNAL_EVENT_OCCURRENCE__SIGNAL:
 				setSignal((Signal)newValue);
+				return;
+			case StatemachinesPackage.SIGNAL_EVENT_OCCURRENCE__ATTRIBUTE_VALUES:
+				getAttributeValues().clear();
+				getAttributeValues().addAll((Collection<? extends AttributeValue>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -135,6 +185,9 @@ public class SignalEventOccurrenceImpl extends EventOccurrenceImpl implements Si
 			case StatemachinesPackage.SIGNAL_EVENT_OCCURRENCE__SIGNAL:
 				setSignal((Signal)null);
 				return;
+			case StatemachinesPackage.SIGNAL_EVENT_OCCURRENCE__ATTRIBUTE_VALUES:
+				getAttributeValues().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -149,6 +202,8 @@ public class SignalEventOccurrenceImpl extends EventOccurrenceImpl implements Si
 		switch (featureID) {
 			case StatemachinesPackage.SIGNAL_EVENT_OCCURRENCE__SIGNAL:
 				return signal != null;
+			case StatemachinesPackage.SIGNAL_EVENT_OCCURRENCE__ATTRIBUTE_VALUES:
+				return attributeValues != null && !attributeValues.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

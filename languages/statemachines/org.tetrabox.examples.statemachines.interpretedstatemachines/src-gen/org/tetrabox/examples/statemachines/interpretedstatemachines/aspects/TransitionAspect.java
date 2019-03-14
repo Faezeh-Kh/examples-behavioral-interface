@@ -6,11 +6,9 @@ import fr.inria.diverse.k3.al.annotationprocessor.Step;
 import java.util.ArrayList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
-import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.BehaviorAspect;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.ConstraintAspect;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.EventOccurrenceAspect;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.OperationBehaviorAspect;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspect;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectProperties;
@@ -21,7 +19,6 @@ import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachine
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Constraint;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventType;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.OperationBehavior;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Pseudostate;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.PseudostateKind;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Region;
@@ -61,63 +58,93 @@ public class TransitionAspect {
   protected static boolean canFireOn(final Transition _self, final EventOccurrence eventOccurrence) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectContext.getSelf(_self);
     Object result = null;
-    result = _privk3_canFireOn(_self_, _self,eventOccurrence);;
+    // #DispatchPointCut_before# boolean canFireOn(EventOccurrence)
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition){
+    	result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspect._privk3_canFireOn(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition)_self,eventOccurrence);
+    };
     return (boolean)result;
   }
   
   private static void exitSource(final Transition _self, final EventOccurrence eventOccurrence) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectContext.getSelf(_self);
-    _privk3_exitSource(_self_, _self,eventOccurrence);;
+    // #DispatchPointCut_before# void exitSource(EventOccurrence)
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition){
+    	org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspect._privk3_exitSource(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition)_self,eventOccurrence);
+    };
   }
   
   private static void enterTarget(final Transition _self, final EventOccurrence eventOccurrence) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectContext.getSelf(_self);
-    _privk3_enterTarget(_self_, _self,eventOccurrence);;
+    // #DispatchPointCut_before# void enterTarget(EventOccurrence)
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition){
+    	org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspect._privk3_enterTarget(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition)_self,eventOccurrence);
+    };
   }
   
   private static State getContainingState(final Transition _self) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectContext.getSelf(_self);
     Object result = null;
-    result = _privk3_getContainingState(_self_, _self);;
+    // #DispatchPointCut_before# State getContainingState()
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition){
+    	result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspect._privk3_getContainingState(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition)_self);
+    };
     return (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State)result;
   }
   
   private static Region getRegion(final Transition _self, final EObject object) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectContext.getSelf(_self);
     Object result = null;
-    result = _privk3_getRegion(_self_, _self,object);;
+    // #DispatchPointCut_before# Region getRegion(EObject)
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition){
+    	result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspect._privk3_getRegion(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition)_self,object);
+    };
     return (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Region)result;
   }
   
   private static Region getLeastCommonAncestor(final Transition _self) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectContext.getSelf(_self);
     Object result = null;
-    result = _privk3_getLeastCommonAncestor(_self_, _self);;
+    // #DispatchPointCut_before# Region getLeastCommonAncestor()
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition){
+    	result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspect._privk3_getLeastCommonAncestor(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition)_self);
+    };
     return (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Region)result;
   }
   
   protected static boolean traversed(final Transition _self) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectContext.getSelf(_self);
     Object result = null;
-    result = _privk3_traversed(_self_, _self);;
+    // #DispatchPointCut_before# boolean traversed()
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition){
+    	result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspect._privk3_traversed(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition)_self);
+    };
     return (boolean)result;
   }
   
   protected static void traversed(final Transition _self, final boolean traversed) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectContext.getSelf(_self);
-    _privk3_traversed(_self_, _self,traversed);;
+    // #DispatchPointCut_before# void traversed(boolean)
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition){
+    	org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspect._privk3_traversed(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition)_self,traversed);
+    };
   }
   
   private static Region _leastCommonAncestor(final Transition _self) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectContext.getSelf(_self);
     Object result = null;
-    result = _privk3__leastCommonAncestor(_self_, _self);;
+    // #DispatchPointCut_before# Region _leastCommonAncestor()
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition){
+    	result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspect._privk3__leastCommonAncestor(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition)_self);
+    };
     return (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Region)result;
   }
   
   private static void _leastCommonAncestor(final Transition _self, final Region _leastCommonAncestor) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspectTransitionAspectContext.getSelf(_self);
-    _privk3__leastCommonAncestor(_self_, _self,_leastCommonAncestor);;
+    // #DispatchPointCut_before# void _leastCommonAncestor(Region)
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition){
+    	org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspect._privk3__leastCommonAncestor(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition)_self,_leastCommonAncestor);
+    };
   }
   
   protected static void _privk3_fire(final TransitionAspectTransitionAspectProperties _self_, final Transition _self, final EventOccurrence eventOccurrence) {
@@ -125,24 +152,7 @@ public class TransitionAspect {
     Behavior _effect = _self.getEffect();
     boolean _tripleNotEquals = (_effect != null);
     if (_tripleNotEquals) {
-      Behavior _effect_1 = _self.getEffect();
-      if ((_effect_1 instanceof OperationBehavior)) {
-        Behavior _effect_2 = _self.getEffect();
-        OperationBehaviorAspect.execute(((OperationBehavior) _effect_2), ((CallEventOccurrence) eventOccurrence));
-      }
-      String _name = _self.getName();
-      String _plus = (_name + "(");
-      String _name_1 = _self.getEffect().getName();
-      String _plus_1 = (_plus + _name_1);
-      String _plus_2 = (_plus_1 + ")");
-      String _xifexpression = null;
-      if ((eventOccurrence != null)) {
-        _xifexpression = EventOccurrenceAspect.getParameters(eventOccurrence);
-      } else {
-        _xifexpression = "";
-      }
-      String _plus_3 = (_plus_2 + _xifexpression);
-      InputOutput.<String>println(_plus_3);
+      BehaviorAspect.execute(_self.getEffect(), eventOccurrence);
     }
     TransitionAspect.traversed(_self, true);
     TransitionAspect.enterTarget(_self, eventOccurrence);

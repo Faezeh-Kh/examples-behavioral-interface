@@ -4,6 +4,7 @@ import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import org.eclipse.emf.ecore.EClass;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.InterpretedStateMachinesMTAdaptersFactory;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CompletionEventOccurrence;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.State;
 
 @SuppressWarnings("all")
 public class CompletionEventOccurrenceAdapter extends EObjectAdapter<CompletionEventOccurrence> implements org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.CompletionEventOccurrence {
@@ -15,12 +16,12 @@ public class CompletionEventOccurrenceAdapter extends EObjectAdapter<CompletionE
   }
   
   @Override
-  public org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.State getState() {
-    return () adaptersFactory.createAdapter(adaptee.getState(), eResource);
+  public State getState() {
+    return (State) adaptersFactory.createAdapter(adaptee.getState(), eResource);
   }
   
   @Override
-  public void setState(final org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.State o) {
+  public void setState(final State o) {
     if (o != null)
     	adaptee.setState(((org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.StateAdapter) o).getAdaptee());
     else adaptee.setState(null);

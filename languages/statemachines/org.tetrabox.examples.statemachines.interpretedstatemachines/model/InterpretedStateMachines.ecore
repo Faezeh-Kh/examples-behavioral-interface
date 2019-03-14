@@ -23,6 +23,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Attribute" abstract="true" eSuperTypes="//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="BooleanAttribute" eSuperTypes="//Attribute"/>
   <eClassifiers xsi:type="ecore:EClass" name="IntegerAttribute" eSuperTypes="//Attribute"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StringAttribute" eSuperTypes="//Attribute"/>
   <eClassifiers xsi:type="ecore:EClass" name="Constraint" abstract="true">
     <eTypeParameters name="T"/>
     <eTypeParameters name="V"/>
@@ -46,6 +47,14 @@
       <eTypeArguments eClassifier="//IntegerAttribute"/>
       <eTypeArguments>
         <eClassifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+      </eTypeArguments>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringConstraint">
+    <eGenericSuperTypes eClassifier="//Constraint">
+      <eTypeArguments eClassifier="//StringAttribute"/>
+      <eTypeArguments>
+        <eClassifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eTypeArguments>
     </eGenericSuperTypes>
   </eClassifiers>
@@ -124,11 +133,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="Trigger" eSuperTypes="//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="eventType" lowerBound="1" eType="//EventType" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Behavior" eSuperTypes="//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Behavior" eSuperTypes="//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="emittedSignals" upperBound="-1" eType="//SignalEventOccurrence" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OperationBehavior" eSuperTypes="//Behavior">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributeValues" upperBound="-1" eType="//AttributeValue" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AttributeValue">
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeValue" abstract="true">
     <eAnnotations source="aspect"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BooleanAttributeValue" eSuperTypes="//AttributeValue">
@@ -143,6 +154,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="//IntegerAttribute"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value">
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringAttributeValue" eSuperTypes="//AttributeValue">
+    <eAnnotations source="aspect"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="//StringAttribute"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EventOccurrence">
@@ -168,7 +186,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="outParameterValues" upperBound="-1" eType="//AttributeValue" containment="true">
       <eAnnotations source="aspect"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="returnValue" unique="false" eType="//AttributeValue" containment="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="returnValue" eType="//AttributeValue" containment="true">
       <eAnnotations source="aspect"/>
     </eStructuralFeatures>
   </eClassifiers>

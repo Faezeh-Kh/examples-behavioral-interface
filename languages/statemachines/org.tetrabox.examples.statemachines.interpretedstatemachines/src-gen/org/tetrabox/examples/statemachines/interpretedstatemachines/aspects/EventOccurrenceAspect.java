@@ -12,13 +12,20 @@ public abstract class EventOccurrenceAspect {
   protected static String getParameters(final EventOccurrence _self) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.EventOccurrenceAspectEventOccurrenceAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.EventOccurrenceAspectEventOccurrenceAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CallEventOccurrence){
-    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.CallEventOccurrenceAspect.getParameters((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CallEventOccurrence)_self);
-    } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.SignalEventOccurrence){
-    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.SigmalEventOccurrenceAspect.getParameters((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.SignalEventOccurrence)_self);
-    } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence){
-    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.EventOccurrenceAspect._privk3_getParameters(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence)_self);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    	// BeginInjectInto org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.EventOccurrenceAspect#String getParameters() from org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.SignalEventOccurrenceAspect
+    		if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.SignalEventOccurrence){
+    			result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.SignalEventOccurrenceAspect.getParameters((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.SignalEventOccurrence)_self);
+    		} else
+    		// EndInjectInto org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.EventOccurrenceAspect#String getParameters() from org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.SignalEventOccurrenceAspect
+    	// BeginInjectInto org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.EventOccurrenceAspect#String getParameters() from org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.CallEventOccurrenceAspect
+    		if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CallEventOccurrence){
+    			result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.CallEventOccurrenceAspect.getParameters((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CallEventOccurrence)_self);
+    		} else
+    		// EndInjectInto org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.EventOccurrenceAspect#String getParameters() from org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.CallEventOccurrenceAspect
+    // #DispatchPointCut_before# String getParameters()
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence){
+    	result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.EventOccurrenceAspect._privk3_getParameters(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence)_self);
+    };
     return (java.lang.String)result;
   }
   

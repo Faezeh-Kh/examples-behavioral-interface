@@ -4,6 +4,7 @@ import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import org.eclipse.emf.ecore.EClass;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.InterpretedStateMachinesMTAdaptersFactory;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.SignalEventType;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Signal;
 
 @SuppressWarnings("all")
 public class SignalEventTypeAdapter extends EObjectAdapter<SignalEventType> implements org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.SignalEventType {
@@ -15,12 +16,12 @@ public class SignalEventTypeAdapter extends EObjectAdapter<SignalEventType> impl
   }
   
   @Override
-  public org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Signal getSignal() {
-    return () adaptersFactory.createAdapter(adaptee.getSignal(), eResource);
+  public Signal getSignal() {
+    return (Signal) adaptersFactory.createAdapter(adaptee.getSignal(), eResource);
   }
   
   @Override
-  public void setSignal(final org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Signal o) {
+  public void setSignal(final Signal o) {
     if (o != null)
     	adaptee.setSignal(((org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.SignalAdapter) o).getAdaptee());
     else adaptee.setSignal(null);

@@ -26,6 +26,9 @@ import statemachines.State;
 import statemachines.StateMachine;
 import statemachines.StatemachinesFactory;
 import statemachines.StatemachinesPackage;
+import statemachines.StringAttribute;
+import statemachines.StringAttributeValue;
+import statemachines.StringConstraint;
 import statemachines.Transition;
 import statemachines.Trigger;
 
@@ -71,6 +74,11 @@ public class StatemachinesFactoryAdapter extends EFactoryImpl implements Statema
   }
   
   @Override
+  public StringAttribute createStringAttribute() {
+    return adaptersFactory.createStringAttributeAdapter(statemachinesAdaptee.createStringAttribute(), null);
+  }
+  
+  @Override
   public BooleanConstraint createBooleanConstraint() {
     return adaptersFactory.createBooleanConstraintAdapter(statemachinesAdaptee.createBooleanConstraint(), null);
   }
@@ -78,6 +86,11 @@ public class StatemachinesFactoryAdapter extends EFactoryImpl implements Statema
   @Override
   public IntegerConstraint createIntegerConstraint() {
     return adaptersFactory.createIntegerConstraintAdapter(statemachinesAdaptee.createIntegerConstraint(), null);
+  }
+  
+  @Override
+  public StringConstraint createStringConstraint() {
+    return adaptersFactory.createStringConstraintAdapter(statemachinesAdaptee.createStringConstraint(), null);
   }
   
   @Override
@@ -133,6 +146,11 @@ public class StatemachinesFactoryAdapter extends EFactoryImpl implements Statema
   @Override
   public IntegerAttributeValue createIntegerAttributeValue() {
     return adaptersFactory.createIntegerAttributeValueAdapter(statemachinesAdaptee.createIntegerAttributeValue(), null);
+  }
+  
+  @Override
+  public StringAttributeValue createStringAttributeValue() {
+    return adaptersFactory.createStringAttributeValueAdapter(statemachinesAdaptee.createStringAttributeValue(), null);
   }
   
   @Override

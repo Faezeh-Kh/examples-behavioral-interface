@@ -1,0 +1,85 @@
+package org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino;
+
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+import java.util.Collection;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory;
+import org.gemoc.arduino.sequential.xarduino.arduino.Board;
+
+@SuppressWarnings("all")
+public class BoardAdapter extends EObjectAdapter<Board> implements org.gemoc.arduino.sequential.xarduinomt.arduino.Board {
+  private XArduinoMTAdaptersFactory adaptersFactory;
+  
+  public BoardAdapter() {
+    super(org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance());
+    adaptersFactory = org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory.getInstance();
+  }
+  
+  @Override
+  public String getName() {
+    return adaptee.getName();
+  }
+  
+  @Override
+  public void setName(final String o) {
+    adaptee.setName(o);
+  }
+  
+  private EList<org.gemoc.arduino.sequential.xarduinomt.arduino.Module> modules_;
+  
+  @Override
+  public EList<org.gemoc.arduino.sequential.xarduinomt.arduino.Module> getModules() {
+    if (modules_ == null)
+    	modules_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getModules(), adaptersFactory, eResource);
+    return modules_;
+  }
+  
+  protected final static String NAME_EDEFAULT = null;
+  
+  @Override
+  public EClass eClass() {
+    return org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage.eINSTANCE.getBoard();
+  }
+  
+  @Override
+  public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
+    switch (featureID) {
+    	case org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage.BOARD__NAME:
+    		return getName();
+    	case org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage.BOARD__MODULES:
+    		return getModules();
+    }
+    
+    return super.eGet(featureID, resolve, coreType);
+  }
+  
+  @Override
+  public boolean eIsSet(final int featureID) {
+    switch (featureID) {
+    	case org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage.BOARD__NAME:
+    		return getName() != NAME_EDEFAULT;
+    	case org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage.BOARD__MODULES:
+    		return getModules() != null && !getModules().isEmpty();
+    }
+    
+    return super.eIsSet(featureID);
+  }
+  
+  @Override
+  public void eSet(final int featureID, final Object newValue) {
+    switch (featureID) {
+    	case org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage.BOARD__NAME:
+    		setName(
+    		(java.lang.String)
+    		 newValue);
+    		return;
+    	case org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage.BOARD__MODULES:
+    		getModules().clear();
+    		getModules().addAll((Collection) newValue);
+    		return;
+    }
+    
+    super.eSet(featureID, newValue);
+  }
+}

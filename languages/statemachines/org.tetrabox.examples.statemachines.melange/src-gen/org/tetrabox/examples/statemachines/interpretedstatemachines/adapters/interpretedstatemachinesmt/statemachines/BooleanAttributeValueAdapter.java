@@ -4,6 +4,7 @@ import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import org.eclipse.emf.ecore.EClass;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.InterpretedStateMachinesMTAdaptersFactory;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.BooleanAttributeValue;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.BooleanAttribute;
 
 @SuppressWarnings("all")
 public class BooleanAttributeValueAdapter extends EObjectAdapter<BooleanAttributeValue> implements org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.BooleanAttributeValue {
@@ -25,12 +26,12 @@ public class BooleanAttributeValueAdapter extends EObjectAdapter<BooleanAttribut
   }
   
   @Override
-  public org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.BooleanAttribute getAttribute() {
-    return () adaptersFactory.createAdapter(adaptee.getAttribute(), eResource);
+  public BooleanAttribute getAttribute() {
+    return (BooleanAttribute) adaptersFactory.createAdapter(adaptee.getAttribute(), eResource);
   }
   
   @Override
-  public void setAttribute(final org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.BooleanAttribute o) {
+  public void setAttribute(final BooleanAttribute o) {
     if (o != null)
     	adaptee.setAttribute(((org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.BooleanAttributeAdapter) o).getAdaptee());
     else adaptee.setAttribute(null);

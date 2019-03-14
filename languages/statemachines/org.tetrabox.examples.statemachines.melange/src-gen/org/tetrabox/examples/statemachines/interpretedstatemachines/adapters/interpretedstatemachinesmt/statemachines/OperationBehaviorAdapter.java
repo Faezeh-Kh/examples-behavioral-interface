@@ -6,6 +6,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.InterpretedStateMachinesMTAdaptersFactory;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.OperationBehavior;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.AttributeValue;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.SignalEventOccurrence;
 
 @SuppressWarnings("all")
 public class OperationBehaviorAdapter extends EObjectAdapter<OperationBehavior> implements org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.OperationBehavior {
@@ -26,10 +28,19 @@ public class OperationBehaviorAdapter extends EObjectAdapter<OperationBehavior> 
     adaptee.setName(o);
   }
   
-  private /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.AttributeValue> */Object attributeValues_;
+  private EList<SignalEventOccurrence> emittedSignals_;
   
   @Override
-  public /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.AttributeValue> */Object getAttributeValues() {
+  public EList<SignalEventOccurrence> getEmittedSignals() {
+    if (emittedSignals_ == null)
+    	emittedSignals_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getEmittedSignals(), adaptersFactory, eResource);
+    return emittedSignals_;
+  }
+  
+  private EList<AttributeValue> attributeValues_;
+  
+  @Override
+  public EList<AttributeValue> getAttributeValues() {
     if (attributeValues_ == null)
     	attributeValues_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getAttributeValues(), adaptersFactory, eResource);
     return attributeValues_;
@@ -47,6 +58,8 @@ public class OperationBehaviorAdapter extends EObjectAdapter<OperationBehavior> 
     switch (featureID) {
     	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StatemachinesPackage.OPERATION_BEHAVIOR__NAME:
     		return getName();
+    	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StatemachinesPackage.OPERATION_BEHAVIOR__EMITTED_SIGNALS:
+    		return getEmittedSignals();
     	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StatemachinesPackage.OPERATION_BEHAVIOR__ATTRIBUTE_VALUES:
     		return getAttributeValues();
     }
@@ -59,6 +72,8 @@ public class OperationBehaviorAdapter extends EObjectAdapter<OperationBehavior> 
     switch (featureID) {
     	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StatemachinesPackage.OPERATION_BEHAVIOR__NAME:
     		return getName() != NAME_EDEFAULT;
+    	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StatemachinesPackage.OPERATION_BEHAVIOR__EMITTED_SIGNALS:
+    		return getEmittedSignals() != null && !getEmittedSignals().isEmpty();
     	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StatemachinesPackage.OPERATION_BEHAVIOR__ATTRIBUTE_VALUES:
     		return getAttributeValues() != null && !getAttributeValues().isEmpty();
     }
@@ -73,6 +88,10 @@ public class OperationBehaviorAdapter extends EObjectAdapter<OperationBehavior> 
     		setName(
     		(java.lang.String)
     		 newValue);
+    		return;
+    	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StatemachinesPackage.OPERATION_BEHAVIOR__EMITTED_SIGNALS:
+    		getEmittedSignals().clear();
+    		getEmittedSignals().addAll((Collection) newValue);
     		return;
     	case org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.StatemachinesPackage.OPERATION_BEHAVIOR__ATTRIBUTE_VALUES:
     		getAttributeValues().clear();

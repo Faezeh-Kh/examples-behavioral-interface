@@ -6,6 +6,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.InterpretedStateMachinesMTAdaptersFactory;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Operation;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Attribute;
 
 @SuppressWarnings("all")
 public class OperationAdapter extends EObjectAdapter<Operation> implements org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Operation {
@@ -26,31 +27,31 @@ public class OperationAdapter extends EObjectAdapter<Operation> implements org.t
     adaptee.setName(o);
   }
   
-  private /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Attribute> */Object inParameters_;
+  private EList<Attribute> inParameters_;
   
   @Override
-  public /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Attribute> */Object getInParameters() {
+  public EList<Attribute> getInParameters() {
     if (inParameters_ == null)
     	inParameters_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getInParameters(), adaptersFactory, eResource);
     return inParameters_;
   }
   
-  private /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Attribute> */Object outParameters_;
+  private EList<Attribute> outParameters_;
   
   @Override
-  public /* EList<org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Attribute> */Object getOutParameters() {
+  public EList<Attribute> getOutParameters() {
     if (outParameters_ == null)
     	outParameters_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getOutParameters(), adaptersFactory, eResource);
     return outParameters_;
   }
   
   @Override
-  public org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Attribute getReturn() {
-    return () adaptersFactory.createAdapter(adaptee.getReturn(), eResource);
+  public Attribute getReturn() {
+    return (Attribute) adaptersFactory.createAdapter(adaptee.getReturn(), eResource);
   }
   
   @Override
-  public void setReturn(final org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Attribute o) {
+  public void setReturn(final Attribute o) {
     if (o != null)
     	adaptee.setReturn(((org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.AttributeAdapter) o).getAdaptee());
     else adaptee.setReturn(null);

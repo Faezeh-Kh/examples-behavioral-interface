@@ -76,97 +76,125 @@ public class StateMachineAspect {
   private static List<Transition> selectTransitions(final StateMachine _self, final EventOccurrence event) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectContext.getSelf(_self);
     Object result = null;
-    result = _privk3_selectTransitions(_self_, _self,event);;
+    // #DispatchPointCut_before# List<Transition> selectTransitions(EventOccurrence)
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine){
+    	result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspect._privk3_selectTransitions(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine)_self,event);
+    };
     return (java.util.List<org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition>)result;
   }
   
   private static List<Transition> _selectTransitions(final StateMachine _self, final List<Vertex> vertice, final EventOccurrence event) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine){
-    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspect._privk3__selectTransitions(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine)_self,vertice,event);
-    } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine){
-    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspect._privk3__selectTransitions(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine)_self,vertice,event);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    // #DispatchPointCut_before# List<Transition> _selectTransitions(List<Vertex>,EventOccurrence)
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine){
+    	result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspect._privk3__selectTransitions(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine)_self,vertice,event);
+    };
     return (java.util.List<org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition>)result;
   }
   
   private static List<Transition> _selectTransitions(final StateMachine _self, final Vertex vertex, final EventOccurrence event) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine){
-    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspect._privk3__selectTransitions(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine)_self,vertex,event);
-    } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine){
-    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspect._privk3__selectTransitions(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine)_self,vertex,event);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    // #DispatchPointCut_before# List<Transition> _selectTransitions(Vertex,EventOccurrence)
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine){
+    	result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspect._privk3__selectTransitions(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine)_self,vertex,event);
+    };
     return (java.util.List<org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition>)result;
   }
   
   private static void dispatchEventOccurrence(final StateMachine _self, final EventOccurrence eventOccurrence) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectContext.getSelf(_self);
-    _privk3_dispatchEventOccurrence(_self_, _self,eventOccurrence);;
+    // #DispatchPointCut_before# void dispatchEventOccurrence(EventOccurrence)
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine){
+    	org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspect._privk3_dispatchEventOccurrence(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine)_self,eventOccurrence);
+    };
   }
   
   private static void dispatchCompletionEvents(final StateMachine _self) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectContext.getSelf(_self);
-    _privk3_dispatchCompletionEvents(_self_, _self);;
+    // #DispatchPointCut_before# void dispatchCompletionEvents()
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine){
+    	org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspect._privk3_dispatchCompletionEvents(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine)_self);
+    };
   }
   
   private static void dispatchDeferredEvents(final StateMachine _self) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectContext.getSelf(_self);
-    _privk3_dispatchDeferredEvents(_self_, _self);;
+    // #DispatchPointCut_before# void dispatchDeferredEvents()
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine){
+    	org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspect._privk3_dispatchDeferredEvents(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine)_self);
+    };
   }
   
   private static State getDeferringState(final StateMachine _self, final EventOccurrence event) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectContext.getSelf(_self);
     Object result = null;
-    result = _privk3_getDeferringState(_self_, _self,event);;
+    // #DispatchPointCut_before# State getDeferringState(EventOccurrence)
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine){
+    	result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspect._privk3_getDeferringState(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine)_self,event);
+    };
     return (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State)result;
   }
   
   private static State _getDeferringState(final StateMachine _self, final EventOccurrence event, final State state) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectContext.getSelf(_self);
     Object result = null;
-    result = _privk3__getDeferringState(_self_, _self,event,state);;
+    // #DispatchPointCut_before# State _getDeferringState(EventOccurrence,State)
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine){
+    	result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspect._privk3__getDeferringState(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine)_self,event,state);
+    };
     return (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State)result;
   }
   
   @Step
   protected static void terminate(final StateMachine _self) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectContext.getSelf(_self);
-    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
-    	@Override
-    	public void execute() {
-    		_privk3_terminate(_self_, _self);
+    // #DispatchPointCut_before# void terminate()
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine){
+    	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
+    		@Override
+    		public void execute() {
+    			org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspect._privk3_terminate(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine)_self);
+    		}
+    	};
+    	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager stepManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
+    	if (stepManager != null) {
+    		stepManager.executeStep(_self, new Object[] {_self}, command, "StateMachine", "terminate");
+    	} else {
+    		command.execute();
     	}
+    	;
     };
-    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager stepManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
-    if (stepManager != null) {
-    	stepManager.executeStep(_self, new Object[] {_self}, command, "StateMachine", "terminate");
-    } else {
-    	command.execute();
-    }
-    ;;
   }
   
   protected static List<CompletionEventOccurrence> completionEvents(final StateMachine _self) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectContext.getSelf(_self);
     Object result = null;
-    result = _privk3_completionEvents(_self_, _self);;
+    // #DispatchPointCut_before# List<CompletionEventOccurrence> completionEvents()
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine){
+    	result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspect._privk3_completionEvents(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine)_self);
+    };
     return (java.util.List<org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CompletionEventOccurrence>)result;
   }
   
   protected static List<EventOccurrence> deferredEvents(final StateMachine _self) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectContext.getSelf(_self);
     Object result = null;
-    result = _privk3_deferredEvents(_self_, _self);;
+    // #DispatchPointCut_before# List<EventOccurrence> deferredEvents()
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine){
+    	result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspect._privk3_deferredEvents(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine)_self);
+    };
     return (java.util.List<org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence>)result;
   }
   
   protected static List<Vertex> activeVertice(final StateMachine _self) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectContext.getSelf(_self);
     Object result = null;
-    result = _privk3_activeVertice(_self_, _self);;
+    // #DispatchPointCut_before# List<Vertex> activeVertice()
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine){
+    	result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspect._privk3_activeVertice(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StateMachine)_self);
+    };
     return (java.util.List<org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Vertex>)result;
   }
   

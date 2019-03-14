@@ -4,6 +4,7 @@ import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import org.eclipse.emf.ecore.EClass;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.InterpretedStateMachinesMTAdaptersFactory;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CallEventType;
+import org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Operation;
 
 @SuppressWarnings("all")
 public class CallEventTypeAdapter extends EObjectAdapter<CallEventType> implements org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.CallEventType {
@@ -15,12 +16,12 @@ public class CallEventTypeAdapter extends EObjectAdapter<CallEventType> implemen
   }
   
   @Override
-  public org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Operation getOperation() {
-    return () adaptersFactory.createAdapter(adaptee.getOperation(), eResource);
+  public Operation getOperation() {
+    return (Operation) adaptersFactory.createAdapter(adaptee.getOperation(), eResource);
   }
   
   @Override
-  public void setOperation(final org.tetrabox.examples.statemachines.interpretedstatemachinesmt.statemachines.Operation o) {
+  public void setOperation(final Operation o) {
     if (o != null)
     	adaptee.setOperation(((org.tetrabox.examples.statemachines.interpretedstatemachines.adapters.interpretedstatemachinesmt.statemachines.OperationAdapter) o).getAdaptee());
     else adaptee.setOperation(null);

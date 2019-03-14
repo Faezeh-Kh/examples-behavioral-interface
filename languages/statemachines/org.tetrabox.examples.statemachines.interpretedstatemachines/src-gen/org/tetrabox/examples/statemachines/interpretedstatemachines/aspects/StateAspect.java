@@ -9,13 +9,11 @@ import java.util.List;
 import java.util.function.Consumer;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
-import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.EventOccurrenceAspect;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.OperationBehaviorAspect;
+import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.BehaviorAspect;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspect;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectProperties;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspect;
@@ -26,7 +24,6 @@ import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachine
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CompletionEventOccurrence;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventType;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.OperationBehavior;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Pseudostate;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.PseudostateKind;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Region;
@@ -44,64 +41,75 @@ public class StateAspect extends VertexAspect {
   @OverrideAspectMethod
   protected static void enter(final State _self, final Transition enteringTransition, final EventOccurrence eventOccurrence, final Region leastCommonAncestor) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectContext.getSelf(_self);
-     if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.FinalState){
-    					org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.FimalStateAspect.enter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.FinalState)_self,enteringTransition,eventOccurrence,leastCommonAncestor);
-    } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State){
-    					org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect._privk3_enter(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State)_self,enteringTransition,eventOccurrence,leastCommonAncestor);
-    } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Vertex){
-    					org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspect.enter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Vertex)_self,enteringTransition,eventOccurrence,leastCommonAncestor);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    	// BeginInjectInto org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect#void enter(Transition,EventOccurrence,Region) from org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.FinalStateAspect
+    		if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.FinalState){
+    			org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.FinalStateAspect.enter((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.FinalState)_self,enteringTransition,eventOccurrence,leastCommonAncestor);
+    		} else
+    		// EndInjectInto org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect#void enter(Transition,EventOccurrence,Region) from org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.FinalStateAspect
+    // #DispatchPointCut_before# void enter(Transition,EventOccurrence,Region)
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State){
+    	org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect._privk3_enter(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State)_self,enteringTransition,eventOccurrence,leastCommonAncestor);
+    };
   }
   
   @OverrideAspectMethod
   protected static void exit(final State _self, final Transition exitingTransition, final EventOccurrence eventOccurrence, final Region leastCommonAncestor) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectContext.getSelf(_self);
-     if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State){
-    					org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect._privk3_exit(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State)_self,exitingTransition,eventOccurrence,leastCommonAncestor);
-    } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Vertex){
-    					org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspect.exit((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Vertex)_self,exitingTransition,eventOccurrence,leastCommonAncestor);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    // #DispatchPointCut_before# void exit(Transition,EventOccurrence,Region)
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State){
+    	org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect._privk3_exit(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State)_self,exitingTransition,eventOccurrence,leastCommonAncestor);
+    };
   }
   
   protected static void enterRegions(final State _self, final Transition enteringTransition, final EventOccurrence eventOccurrence) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectContext.getSelf(_self);
-    _privk3_enterRegions(_self_, _self,enteringTransition,eventOccurrence);;
+    // #DispatchPointCut_before# void enterRegions(Transition,EventOccurrence)
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State){
+    	org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect._privk3_enterRegions(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State)_self,enteringTransition,eventOccurrence);
+    };
   }
   
   private static void tryExecuteEntry(final State _self, final EventOccurrence eventOccurrence) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectContext.getSelf(_self);
-    _privk3_tryExecuteEntry(_self_, _self,eventOccurrence);;
+    // #DispatchPointCut_before# void tryExecuteEntry(EventOccurrence)
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State){
+    	org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect._privk3_tryExecuteEntry(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State)_self,eventOccurrence);
+    };
   }
   
   private static void tryExecuteDoActivity(final State _self, final EventOccurrence eventOccurrence) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectContext.getSelf(_self);
-    _privk3_tryExecuteDoActivity(_self_, _self,eventOccurrence);;
+    // #DispatchPointCut_before# void tryExecuteDoActivity(EventOccurrence)
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State){
+    	org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect._privk3_tryExecuteDoActivity(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State)_self,eventOccurrence);
+    };
   }
   
   private static void tryExecuteExit(final State _self, final EventOccurrence eventOccurrence) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectContext.getSelf(_self);
-    _privk3_tryExecuteExit(_self_, _self,eventOccurrence);;
+    // #DispatchPointCut_before# void tryExecuteExit(EventOccurrence)
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State){
+    	org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect._privk3_tryExecuteExit(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State)_self,eventOccurrence);
+    };
   }
   
   @OverrideAspectMethod
   protected static void terminate(final State _self) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectContext.getSelf(_self);
-     if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State){
-    					org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect._privk3_terminate(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State)_self);
-    } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Vertex){
-    					org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspect.terminate((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Vertex)_self);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    // #DispatchPointCut_before# void terminate()
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State){
+    	org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect._privk3_terminate(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State)_self);
+    };
   }
   
   @OverrideAspectMethod
   protected static boolean isEnterable(final State _self, final Transition enteringTransition) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State){
-    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect._privk3_isEnterable(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State)_self,enteringTransition);
-    } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Vertex){
-    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspect.isEnterable((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Vertex)_self,enteringTransition);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    // #DispatchPointCut_before# boolean isEnterable(Transition)
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State){
+    	result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect._privk3_isEnterable(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State)_self,enteringTransition);
+    };
     return (boolean)result;
   }
   
@@ -109,11 +117,10 @@ public class StateAspect extends VertexAspect {
   protected static boolean isExitable(final State _self, final Transition exitingTransition) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State){
-    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect._privk3_isExitable(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State)_self,exitingTransition);
-    } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Vertex){
-    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspect.isExitable((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Vertex)_self,exitingTransition);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    // #DispatchPointCut_before# boolean isExitable(Transition)
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State){
+    	result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect._privk3_isExitable(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State)_self,exitingTransition);
+    };
     return (boolean)result;
   }
   
@@ -121,38 +128,49 @@ public class StateAspect extends VertexAspect {
   protected static boolean contains(final State _self, final Vertex vertex) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State){
-    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect._privk3_contains(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State)_self,vertex);
-    } else  if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Vertex){
-    					result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.VertexAspect.contains((org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Vertex)_self,vertex);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    // #DispatchPointCut_before# boolean contains(Vertex)
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State){
+    	result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect._privk3_contains(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State)_self,vertex);
+    };
     return (boolean)result;
   }
   
   protected static boolean canDefer(final State _self, final EventOccurrence eventOccurrence) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectContext.getSelf(_self);
     Object result = null;
-    result = _privk3_canDefer(_self_, _self,eventOccurrence);;
+    // #DispatchPointCut_before# boolean canDefer(EventOccurrence)
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State){
+    	result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect._privk3_canDefer(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State)_self,eventOccurrence);
+    };
     return (boolean)result;
   }
   
   protected static List<Vertex> getActiveVertice(final State _self) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectContext.getSelf(_self);
     Object result = null;
-    result = _privk3_getActiveVertice(_self_, _self);;
+    // #DispatchPointCut_before# List<Vertex> getActiveVertice()
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State){
+    	result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect._privk3_getActiveVertice(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State)_self);
+    };
     return (java.util.List<org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Vertex>)result;
   }
   
   protected static boolean hasCompleted(final State _self) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectContext.getSelf(_self);
     Object result = null;
-    result = _privk3_hasCompleted(_self_, _self);;
+    // #DispatchPointCut_before# boolean hasCompleted()
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State){
+    	result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect._privk3_hasCompleted(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State)_self);
+    };
     return (boolean)result;
   }
   
   protected static void complete(final State _self) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectContext.getSelf(_self);
-    _privk3_complete(_self_, _self);;
+    // #DispatchPointCut_before# void complete()
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State){
+    	org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect._privk3_complete(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State)_self);
+    };
   }
   
   public static boolean isEntryCompleted(final State _self) {
@@ -206,13 +224,19 @@ public class StateAspect extends VertexAspect {
   protected static List<EventOccurrence> deferredEvents(final State _self) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectContext.getSelf(_self);
     Object result = null;
-    result = _privk3_deferredEvents(_self_, _self);;
+    // #DispatchPointCut_before# List<EventOccurrence> deferredEvents()
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State){
+    	result = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect._privk3_deferredEvents(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State)_self);
+    };
     return (java.util.List<org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence>)result;
   }
   
   protected static void deferredEvents(final State _self, final List<EventOccurrence> deferredEvents) {
     final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspectStateAspectContext.getSelf(_self);
-    _privk3_deferredEvents(_self_, _self,deferredEvents);;
+    // #DispatchPointCut_before# void deferredEvents(List<EventOccurrence>)
+    if (_self instanceof org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State){
+    	org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect._privk3_deferredEvents(_self_, (org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.State)_self,deferredEvents);
+    };
   }
   
   private static void super_enter(final State _self, final Transition enteringTransition, final EventOccurrence eventOccurrence, final Region leastCommonAncestor) {
@@ -294,24 +318,7 @@ public class StateAspect extends VertexAspect {
     boolean _isEntryCompleted = StateAspect.isEntryCompleted(_self);
     boolean _not = (!_isEntryCompleted);
     if (_not) {
-      Behavior _entry = _self.getEntry();
-      if ((_entry instanceof OperationBehavior)) {
-        Behavior _entry_1 = _self.getEntry();
-        OperationBehaviorAspect.execute(((OperationBehavior) _entry_1), ((CallEventOccurrence) eventOccurrence));
-      }
-      String _name = _self.getName();
-      String _plus = (_name + "(");
-      String _name_1 = _self.getEntry().getName();
-      String _plus_1 = (_plus + _name_1);
-      String _plus_2 = (_plus_1 + ")");
-      String _xifexpression = null;
-      if ((eventOccurrence != null)) {
-        _xifexpression = EventOccurrenceAspect.getParameters(eventOccurrence);
-      } else {
-        _xifexpression = "";
-      }
-      String _plus_3 = (_plus_2 + _xifexpression);
-      InputOutput.<String>println(_plus_3);
+      BehaviorAspect.execute(_self.getEntry(), eventOccurrence);
       StateAspect.isEntryCompleted(_self, true);
       boolean _hasCompleted = StateAspect.hasCompleted(_self);
       if (_hasCompleted) {
@@ -324,24 +331,7 @@ public class StateAspect extends VertexAspect {
     boolean _isDoActivityCompleted = StateAspect.isDoActivityCompleted(_self);
     boolean _not = (!_isDoActivityCompleted);
     if (_not) {
-      Behavior _doActivity = _self.getDoActivity();
-      if ((_doActivity instanceof OperationBehavior)) {
-        Behavior _doActivity_1 = _self.getDoActivity();
-        OperationBehaviorAspect.execute(((OperationBehavior) _doActivity_1), ((CallEventOccurrence) eventOccurrence));
-      }
-      String _name = _self.getName();
-      String _plus = (_name + "(");
-      String _name_1 = _self.getDoActivity().getName();
-      String _plus_1 = (_plus + _name_1);
-      String _plus_2 = (_plus_1 + ")");
-      String _xifexpression = null;
-      if ((eventOccurrence != null)) {
-        _xifexpression = EventOccurrenceAspect.getParameters(eventOccurrence);
-      } else {
-        _xifexpression = "";
-      }
-      String _plus_3 = (_plus_2 + _xifexpression);
-      InputOutput.<String>println(_plus_3);
+      BehaviorAspect.execute(_self.getDoActivity(), eventOccurrence);
       StateAspect.isDoActivityCompleted(_self, true);
       boolean _hasCompleted = StateAspect.hasCompleted(_self);
       if (_hasCompleted) {
@@ -354,24 +344,7 @@ public class StateAspect extends VertexAspect {
     boolean _isExitCompleted = StateAspect.isExitCompleted(_self);
     boolean _not = (!_isExitCompleted);
     if (_not) {
-      Behavior _exit = _self.getExit();
-      if ((_exit instanceof OperationBehavior)) {
-        Behavior _exit_1 = _self.getExit();
-        OperationBehaviorAspect.execute(((OperationBehavior) _exit_1), ((CallEventOccurrence) eventOccurrence));
-      }
-      String _name = _self.getName();
-      String _plus = (_name + "(");
-      String _name_1 = _self.getExit().getName();
-      String _plus_1 = (_plus + _name_1);
-      String _plus_2 = (_plus_1 + ")");
-      String _xifexpression = null;
-      if ((eventOccurrence != null)) {
-        _xifexpression = EventOccurrenceAspect.getParameters(eventOccurrence);
-      } else {
-        _xifexpression = "";
-      }
-      String _plus_3 = (_plus_2 + _xifexpression);
-      InputOutput.<String>println(_plus_3);
+      BehaviorAspect.execute(_self.getExit(), eventOccurrence);
       StateAspect.isExitCompleted(_self, true);
     }
   }

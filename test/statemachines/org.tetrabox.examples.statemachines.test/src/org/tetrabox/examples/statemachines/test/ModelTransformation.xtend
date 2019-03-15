@@ -1,6 +1,37 @@
 package org.tetrabox.examples.statemachines.test
 
+import org.eclipse.emf.common.util.URI
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
+import org.eclipse.gemoc.commons.value.model.value.ValuePackage
+import org.eclipse.gemoc.executionframework.event.model.event.EventPackage
+import org.eclipse.gemoc.executionframework.event.testsuite.TestSuite
+import org.eclipse.gemoc.executionframework.event.testsuite.TestsuitePackage
+
 class ModelTransformation {
+	
+	def static void main(String[] args) {
+
+	}
+	
+	def static URI getTestSuiteURI() {
+		URI::createFileURI('''/home/dorian/git/examples-behavioral-interface/test/statemachines/org.tetrabox.examples.statemachines.test/models/StateMachineTestSuite.xmi''')
+	}
+	
+	def static TestSuite getTestSuite() {
+		val rs = new ResourceSetImpl
+		val p1 = TestsuitePackage.eINSTANCE
+		val p2 = EventPackage.eINSTANCE
+		val p4 = ValuePackage.eINSTANCE
+		rs.getPackageRegistry().put(p1.getNsURI(), p1);
+		rs.getPackageRegistry().put(p2.getNsURI(), p2);
+		rs.getPackageRegistry().put(p4.getNsURI(), p4);
+		rs.resourceFactoryRegistry.extensionToFactoryMap.put("xmi", new XMIResourceFactoryImpl)
+		val res = rs.getResource(testSuiteURI, true)
+		return res.contents.head as TestSuite 
+	}
+	
+	
 	
 //	private val factory = StatemachinesFactory::eINSTANCE
 //	private val testSuiteFactory = TestsuiteFactory::eINSTANCE

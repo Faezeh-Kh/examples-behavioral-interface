@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite:TestSuite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:event="http://www.eclipse.org/gemoc/event" xmlns:testsuite="http://http://www.eclipse.org/gemoc/event/testsuite" xmlns:value="http://www.eclipse.org/gemoc/value">
+  <testCases name="blink-1">
+    <model href="../loop.xarduino#/"/>
+    <scenario>
+      <event href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.0"/>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.0/@params.0"/>
+        <value xsi:type="value:SingleReferenceValue">
+          <referenceValue href="../loop.xarduino#//@sketch"/>
+        </value>
+      </args>
+    </scenario>
+    <scenario>
+      <event href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.1"/>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.1/@params.0"/>
+        <value xsi:type="value:SingleReferenceValue">
+          <referenceValue href="../loop.xarduino#//@board/@modules.2"/>
+        </value>
+      </args>
+    </scenario>
+    <scenario type="EXPOSED">
+      <event href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3"/>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.0"/>
+        <value xsi:type="value:SingleReferenceValue">
+          <referenceValue href="../loop.xarduino#//@board/@modules.1"/>
+        </value>
+      </args>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.1"/>
+        <value xsi:type="value:IntegerAttributeValue" attributeValue="1"/>
+      </args>
+    </scenario>
+    <scenario type="EXPOSED">
+      <event href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3"/>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.0"/>
+        <value xsi:type="value:SingleReferenceValue">
+          <referenceValue href="../loop.xarduino#//@board/@modules.0"/>
+        </value>
+      </args>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.1"/>
+        <value xsi:type="value:IntegerAttributeValue" attributeValue="1"/>
+      </args>
+    </scenario>
+    <scenario type="EXPOSED">
+      <event href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3"/>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.0"/>
+        <value xsi:type="value:SingleReferenceValue">
+          <referenceValue href="../loop.xarduino#//@board/@modules.0"/>
+        </value>
+      </args>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.1"/>
+        <value xsi:type="value:IntegerAttributeValue"/>
+      </args>
+    </scenario>
+    <scenario type="EXPOSED">
+      <event href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3"/>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.0"/>
+        <value xsi:type="value:SingleReferenceValue">
+          <referenceValue href="../loop.xarduino#//@board/@modules.1"/>
+        </value>
+      </args>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.1"/>
+        <value xsi:type="value:IntegerAttributeValue"/>
+      </args>
+    </scenario>
+    <scenario>
+      <event href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.2"/>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.2/@params.0"/>
+        <value xsi:type="value:SingleReferenceValue">
+          <referenceValue href="../loop.xarduino#//@board/@modules.2"/>
+        </value>
+      </args>
+    </scenario>
+    <scenario xsi:type="event:StopEventOccurrence"/>
+  </testCases>
+  <testCases name="blink-2">
+    <model href="../loop.xarduino#/"/>
+    <scenario>
+      <event href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.0"/>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.0/@params.0"/>
+        <value xsi:type="value:SingleReferenceValue">
+          <referenceValue href="../loop.xarduino#//@sketch"/>
+        </value>
+      </args>
+    </scenario>
+    <scenario>
+      <event href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.1"/>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.1/@params.0"/>
+        <value xsi:type="value:SingleReferenceValue">
+          <referenceValue href="../loop.xarduino#//@board/@modules.2"/>
+        </value>
+      </args>
+    </scenario>
+    <scenario type="EXPOSED">
+      <event href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3"/>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.0"/>
+        <value xsi:type="value:SingleReferenceValue">
+          <referenceValue href="../loop.xarduino#//@board/@modules.1"/>
+        </value>
+      </args>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.1"/>
+        <value xsi:type="value:IntegerAttributeValue" attributeValue="1"/>
+      </args>
+    </scenario>
+    <scenario type="EXPOSED">
+      <event href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3"/>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.0"/>
+        <value xsi:type="value:SingleReferenceValue">
+          <referenceValue href="../loop.xarduino#//@board/@modules.0"/>
+        </value>
+      </args>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.1"/>
+        <value xsi:type="value:IntegerAttributeValue" attributeValue="1"/>
+      </args>
+    </scenario>
+    <scenario type="EXPOSED">
+      <event href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3"/>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.0"/>
+        <value xsi:type="value:SingleReferenceValue">
+          <referenceValue href="../loop.xarduino#//@board/@modules.0"/>
+        </value>
+      </args>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.1"/>
+        <value xsi:type="value:IntegerAttributeValue"/>
+      </args>
+    </scenario>
+    <scenario type="EXPOSED">
+      <event href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3"/>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.0"/>
+        <value xsi:type="value:SingleReferenceValue">
+          <referenceValue href="../loop.xarduino#//@board/@modules.1"/>
+        </value>
+      </args>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.1"/>
+        <value xsi:type="value:IntegerAttributeValue"/>
+      </args>
+    </scenario>
+    <scenario type="EXPOSED">
+      <event href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3"/>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.0"/>
+        <value xsi:type="value:SingleReferenceValue">
+          <referenceValue href="../loop.xarduino#//@board/@modules.1"/>
+        </value>
+      </args>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.1"/>
+        <value xsi:type="value:IntegerAttributeValue" attributeValue="1"/>
+      </args>
+    </scenario>
+    <scenario type="EXPOSED">
+      <event href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3"/>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.0"/>
+        <value xsi:type="value:SingleReferenceValue">
+          <referenceValue href="../loop.xarduino#//@board/@modules.0"/>
+        </value>
+      </args>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.1"/>
+        <value xsi:type="value:IntegerAttributeValue" attributeValue="1"/>
+      </args>
+    </scenario>
+    <scenario type="EXPOSED">
+      <event href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3"/>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.0"/>
+        <value xsi:type="value:SingleReferenceValue">
+          <referenceValue href="../loop.xarduino#//@board/@modules.0"/>
+        </value>
+      </args>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.1"/>
+        <value xsi:type="value:IntegerAttributeValue"/>
+      </args>
+    </scenario>
+    <scenario type="EXPOSED">
+      <event href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3"/>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.0"/>
+        <value xsi:type="value:SingleReferenceValue">
+          <referenceValue href="../loop.xarduino#//@board/@modules.1"/>
+        </value>
+      </args>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.1"/>
+        <value xsi:type="value:IntegerAttributeValue"/>
+      </args>
+    </scenario>
+    <scenario>
+      <event href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.2"/>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.2/@params.0"/>
+        <value xsi:type="value:SingleReferenceValue">
+          <referenceValue href="../loop.xarduino#//@board/@modules.2"/>
+        </value>
+      </args>
+    </scenario>
+    <scenario xsi:type="event:StopEventOccurrence"/>
+  </testCases>
+  <testCases name="blink-3">
+    <model href="../loop.xarduino#/"/>
+    <scenario>
+      <event href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.0"/>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.0/@params.0"/>
+        <value xsi:type="value:SingleReferenceValue">
+          <referenceValue href="../loop.xarduino#//@sketch"/>
+        </value>
+      </args>
+    </scenario>
+    <scenario>
+      <event href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.1"/>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.1/@params.0"/>
+        <value xsi:type="value:SingleReferenceValue">
+          <referenceValue href="../loop.xarduino#//@board/@modules.2"/>
+        </value>
+      </args>
+    </scenario>
+    <scenario type="EXPOSED">
+      <event href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3"/>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.0"/>
+        <value xsi:type="value:SingleReferenceValue">
+          <referenceValue href="../loop.xarduino#//@board/@modules.1"/>
+        </value>
+      </args>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.1"/>
+        <value xsi:type="value:IntegerAttributeValue" attributeValue="1"/>
+      </args>
+    </scenario>
+    <scenario type="EXPOSED">
+      <event href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3"/>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.0"/>
+        <value xsi:type="value:SingleReferenceValue">
+          <referenceValue href="../loop.xarduino#//@board/@modules.0"/>
+        </value>
+      </args>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.1"/>
+        <value xsi:type="value:IntegerAttributeValue" attributeValue="1"/>
+      </args>
+    </scenario>
+    <scenario>
+      <event href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.2"/>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.2/@params.0"/>
+        <value xsi:type="value:SingleReferenceValue">
+          <referenceValue href="../loop.xarduino#//@board/@modules.2"/>
+        </value>
+      </args>
+    </scenario>
+    <scenario type="EXPOSED">
+      <event href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3"/>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.0"/>
+        <value xsi:type="value:SingleReferenceValue">
+          <referenceValue href="../loop.xarduino#//@board/@modules.0"/>
+        </value>
+      </args>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.1"/>
+        <value xsi:type="value:IntegerAttributeValue"/>
+      </args>
+    </scenario>
+    <scenario type="EXPOSED">
+      <event href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3"/>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.0"/>
+        <value xsi:type="value:SingleReferenceValue">
+          <referenceValue href="../loop.xarduino#//@board/@modules.1"/>
+        </value>
+      </args>
+      <args>
+        <parameter href="../../../plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi#//@events.3/@params.1"/>
+        <value xsi:type="value:IntegerAttributeValue"/>
+      </args>
+    </scenario>
+    <scenario xsi:type="event:StopEventOccurrence"/>
+  </testCases>
+</testsuite:TestSuite>

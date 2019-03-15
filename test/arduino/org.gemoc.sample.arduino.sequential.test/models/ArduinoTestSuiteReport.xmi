@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<testsuite:TestSuiteReport xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:testsuite="http://http://www.eclipse.org/gemoc/event/testsuite">
+  <testCaseReports xsi:type="testsuite:TestCaseSuccess">
+    <testCase href="ArduinoTestSuite.testsuite#//@testCases.0"/>
+  </testCaseReports>
+  <testCaseReports xsi:type="testsuite:TestCaseSuccess">
+    <testCase href="ArduinoTestSuite.testsuite#//@testCases.1"/>
+  </testCaseReports>
+  <testCaseReports xsi:type="testsuite:TestCaseSuccess">
+    <testCase href="ArduinoTestSuite.testsuite#//@testCases.2"/>
+  </testCaseReports>
+</testsuite:TestSuiteReport>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<arduino:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:arduino="http://org.gemoc.arduino.sequential.xarduino/arduino/" name="blink_system">
+  <board name="blink_board">
+    <modules xsi:type="arduino:Led" name="RED LED" level="0"/>
+    <modules xsi:type="arduino:Led" name="GREEN LED" level="0"/>
+    <modules xsi:type="arduino:PushButton" name="my_button" level="0"/>
+    <modules xsi:type="arduino:PushButton" name="other_button" level="0"/>
+  </board>
+  <sketch name="blink">
+    <block>
+      <instructions xsi:type="arduino:If">
+        <block>
+          <instructions xsi:type="arduino:WaitFor" module="//@board/@modules.2"/>
+        </block>
+        <condition xsi:type="arduino:UnaryExpression" operator="neg">
+          <operand xsi:type="arduino:ModuleGet" module="//@board/@modules.2"/>
+        </condition>
+      </instructions>
+      <instructions xsi:type="arduino:SetLed" led="//@board/@modules.1">
+        <value xsi:type="arduino:Constant" value="1"/>
+      </instructions>
+      <instructions xsi:type="arduino:SetLed" led="//@board/@modules.0">
+        <value xsi:type="arduino:Constant" value="1"/>
+      </instructions>
+      <instructions xsi:type="arduino:Delay" value="500"/>
+      <instructions xsi:type="arduino:SetLed" led="//@board/@modules.0">
+        <value xsi:type="arduino:Constant"/>
+      </instructions>
+      <instructions xsi:type="arduino:SetLed" led="//@board/@modules.1">
+        <value xsi:type="arduino:Constant"/>
+      </instructions>
+      <instructions xsi:type="arduino:Delay" value="500"/>
+    </block>
+  </sketch>
+</arduino:Project>

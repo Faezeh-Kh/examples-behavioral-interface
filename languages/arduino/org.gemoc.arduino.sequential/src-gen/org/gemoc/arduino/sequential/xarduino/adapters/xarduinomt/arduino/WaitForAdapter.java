@@ -4,6 +4,7 @@ import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import org.eclipse.emf.ecore.EClass;
 import org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.XArduinoMTAdaptersFactory;
 import org.gemoc.arduino.sequential.xarduino.arduino.WaitFor;
+import org.gemoc.arduino.sequential.xarduinomt.arduino.Constant;
 
 @SuppressWarnings("all")
 public class WaitForAdapter extends EObjectAdapter<WaitFor> implements org.gemoc.arduino.sequential.xarduinomt.arduino.WaitFor {
@@ -24,6 +25,18 @@ public class WaitForAdapter extends EObjectAdapter<WaitFor> implements org.gemoc
     if (o != null)
     	adaptee.setModule(((org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.ModuleAdapter) o).getAdaptee());
     else adaptee.setModule(null);
+  }
+  
+  @Override
+  public Constant getValue() {
+    return (Constant) adaptersFactory.createAdapter(adaptee.getValue(), eResource);
+  }
+  
+  @Override
+  public void setValue(final Constant o) {
+    if (o != null)
+    	adaptee.setValue(((org.gemoc.arduino.sequential.xarduino.adapters.xarduinomt.arduino.ConstantAdapter) o).getAdaptee());
+    else adaptee.setValue(null);
   }
   
   @Override
@@ -51,6 +64,8 @@ public class WaitForAdapter extends EObjectAdapter<WaitFor> implements org.gemoc
     switch (featureID) {
     	case org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage.WAIT_FOR__MODULE:
     		return getModule();
+    	case org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage.WAIT_FOR__VALUE:
+    		return getValue();
     }
     
     return super.eGet(featureID, resolve, coreType);
@@ -61,6 +76,8 @@ public class WaitForAdapter extends EObjectAdapter<WaitFor> implements org.gemoc
     switch (featureID) {
     	case org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage.WAIT_FOR__MODULE:
     		return getModule() != null;
+    	case org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage.WAIT_FOR__VALUE:
+    		return getValue() != null;
     }
     
     return super.eIsSet(featureID);
@@ -72,6 +89,11 @@ public class WaitForAdapter extends EObjectAdapter<WaitFor> implements org.gemoc
     	case org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage.WAIT_FOR__MODULE:
     		setModule(
     		(org.gemoc.arduino.sequential.xarduinomt.arduino.Module)
+    		 newValue);
+    		return;
+    	case org.gemoc.arduino.sequential.xarduinomt.arduino.ArduinoPackage.WAIT_FOR__VALUE:
+    		setValue(
+    		(org.gemoc.arduino.sequential.xarduinomt.arduino.Constant)
     		 newValue);
     		return;
     }

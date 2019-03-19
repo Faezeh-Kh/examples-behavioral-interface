@@ -89,17 +89,16 @@ public class EPLArduinoSubtypingRelationship extends EPLSubtypingRelationship {
 	static public class OnLedOffOn extends SubtypingRuleSubscriber {
 		@Override
 		public String getStatement() {
-			return "select ledon.args('led').name?, ledoff.args('led').name? from pattern "
+			return "select ledon.args('led').name? from pattern "
 					+ "[every ledoff=EPLEventOccurrence(event.name='led_level_changed', args('level')=0) -> "
-					+ "ledon=EPLEventOccurrence(event.name='led_level_changed', args('level')=1)]";
+					+ "ledon=EPLEventOccurrence(event.name='led_level_changed', args('level')=1)]#length(2) where "
+					+ "ledon.args('led').name?=ledoff.args('led').name?";
 		}
 
-		public void update(Object ledon, Object ledoff) {
-			if (ledon.equals(ledoff)) {
+		public void update(Object ledon) {
 				final Map<String, Object> parameters = new HashMap<>();
 				parameters.put("light_id", ledon);
 				consumeEventOccurrence(createExposedEventOccurrence("light_blinked", parameters));
-			}
 		}
 	}
 

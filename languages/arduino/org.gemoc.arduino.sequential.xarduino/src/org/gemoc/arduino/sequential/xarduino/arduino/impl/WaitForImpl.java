@@ -3,6 +3,7 @@
 package org.gemoc.arduino.sequential.xarduino.arduino.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -10,6 +11,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.gemoc.arduino.sequential.xarduino.arduino.ArduinoPackage;
+import org.gemoc.arduino.sequential.xarduino.arduino.Constant;
 import org.gemoc.arduino.sequential.xarduino.arduino.WaitFor;
 
 /**
@@ -21,6 +23,7 @@ import org.gemoc.arduino.sequential.xarduino.arduino.WaitFor;
  * </p>
  * <ul>
  *   <li>{@link org.gemoc.arduino.sequential.xarduino.arduino.impl.WaitForImpl#getModule <em>Module</em>}</li>
+ *   <li>{@link org.gemoc.arduino.sequential.xarduino.arduino.impl.WaitForImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -35,6 +38,16 @@ public class WaitForImpl extends InstructionImpl implements WaitFor {
 	 * @ordered
 	 */
 	protected org.gemoc.arduino.sequential.xarduino.arduino.Module module;
+
+	/**
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected Constant value;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -98,10 +111,67 @@ public class WaitForImpl extends InstructionImpl implements WaitFor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Constant getValue() {
+		return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetValue(Constant newValue, NotificationChain msgs) {
+		Constant oldValue = value;
+		value = newValue;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ArduinoPackage.WAIT_FOR__VALUE, oldValue, newValue);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setValue(Constant newValue) {
+		if (newValue != value) {
+			NotificationChain msgs = null;
+			if (value != null)
+				msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ArduinoPackage.WAIT_FOR__VALUE, null, msgs);
+			if (newValue != null)
+				msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ArduinoPackage.WAIT_FOR__VALUE, null, msgs);
+			msgs = basicSetValue(newValue, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.WAIT_FOR__VALUE, newValue, newValue));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public void setActivated() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ArduinoPackage.WAIT_FOR__VALUE:
+				return basicSetValue(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -115,6 +185,8 @@ public class WaitForImpl extends InstructionImpl implements WaitFor {
 			case ArduinoPackage.WAIT_FOR__MODULE:
 				if (resolve) return getModule();
 				return basicGetModule();
+			case ArduinoPackage.WAIT_FOR__VALUE:
+				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -129,6 +201,9 @@ public class WaitForImpl extends InstructionImpl implements WaitFor {
 		switch (featureID) {
 			case ArduinoPackage.WAIT_FOR__MODULE:
 				setModule((org.gemoc.arduino.sequential.xarduino.arduino.Module)newValue);
+				return;
+			case ArduinoPackage.WAIT_FOR__VALUE:
+				setValue((Constant)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -145,6 +220,9 @@ public class WaitForImpl extends InstructionImpl implements WaitFor {
 			case ArduinoPackage.WAIT_FOR__MODULE:
 				setModule((org.gemoc.arduino.sequential.xarduino.arduino.Module)null);
 				return;
+			case ArduinoPackage.WAIT_FOR__VALUE:
+				setValue((Constant)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -159,6 +237,8 @@ public class WaitForImpl extends InstructionImpl implements WaitFor {
 		switch (featureID) {
 			case ArduinoPackage.WAIT_FOR__MODULE:
 				return module != null;
+			case ArduinoPackage.WAIT_FOR__VALUE:
+				return value != null;
 		}
 		return super.eIsSet(featureID);
 	}

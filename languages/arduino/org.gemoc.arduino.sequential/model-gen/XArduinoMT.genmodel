@@ -188,6 +188,9 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true">
         <ecoreFeature xsi:type="ecore:EReference" href="XArduinoMT.ecore#//WaitFor/module"/>
       </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XArduinoMT.ecore#//WaitFor/value"/>
+      </genFeatures>
       <genOperations>
         <ecoreOperation href="XArduinoMT.ecore#//WaitFor/execute"/>
       </genOperations>

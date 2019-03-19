@@ -586,6 +586,15 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getWaitFor_Value() {
+		return (EReference)waitForEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getExpression() {
 		return expressionEClass;
 	}
@@ -785,6 +794,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 
 		waitForEClass = createEClass(WAIT_FOR);
 		createEReference(waitForEClass, WAIT_FOR__MODULE);
+		createEReference(waitForEClass, WAIT_FOR__VALUE);
 
 		expressionEClass = createEClass(EXPRESSION);
 
@@ -931,6 +941,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 
 		initEClass(waitForEClass, WaitFor.class, "WaitFor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getWaitFor_Module(), this.getModule(), null, "module", null, 0, 1, WaitFor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWaitFor_Value(), this.getConstant(), null, "value", null, 0, 1, WaitFor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(waitForEClass, null, "execute", 0, 1, IS_UNIQUE, IS_ORDERED);
 

@@ -5,6 +5,7 @@ import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import fr.inria.diverse.k3.al.annotationprocessor.Step;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.gemoc.arduino.sequential.xarduino.aspects.InstructionAspect;
+import org.gemoc.arduino.sequential.xarduino.aspects.ModuleAspect;
 import org.gemoc.arduino.sequential.xarduino.aspects.WaitForAspectWaitForAspectProperties;
 import org.gemoc.arduino.sequential.xarduino.arduino.WaitFor;
 
@@ -32,6 +33,16 @@ public class WaitForAspect extends InstructionAspect {
 	;
 	;
 }
+  
+  private static boolean isValidated(final WaitFor _self) {
+    final org.gemoc.arduino.sequential.xarduino.aspects.WaitForAspectWaitForAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.WaitForAspectWaitForAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# boolean isValidated()
+    if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.WaitFor){
+    	result = org.gemoc.arduino.sequential.xarduino.aspects.WaitForAspect._privk3_isValidated(_self_, (org.gemoc.arduino.sequential.xarduino.arduino.WaitFor)_self);
+    };
+    return (boolean)result;
+  }
   
   @Step
   private static void loop(final WaitFor _self) {
@@ -103,12 +114,24 @@ public class WaitForAspect extends InstructionAspect {
   }
   
   protected static void _privk3_execute(final WaitForAspectWaitForAspectProperties _self_, final WaitFor _self) {
+    if (((_self.getValue() != null) && WaitForAspect.isValidated(_self))) {
+      WaitForAspect.moduleActivated(_self, false);
+      WaitForAspect.waiting(_self, false);
+      return;
+    }
     WaitForAspect.waiting(_self, true);
-    while ((!WaitForAspect.moduleActivated(_self))) {
-      WaitForAspect.loop(_self);
+    while ((!(WaitForAspect.moduleActivated(_self) && WaitForAspect.isValidated(_self)))) {
+      {
+        WaitForAspect.moduleActivated(_self, false);
+        WaitForAspect.loop(_self);
+      }
     }
     WaitForAspect.moduleActivated(_self, false);
     WaitForAspect.waiting(_self, false);
+  }
+  
+  protected static boolean _privk3_isValidated(final WaitForAspectWaitForAspectProperties _self_, final WaitFor _self) {
+    return ((_self.getValue() == null) || ((ModuleAspect.level(_self.getModule())).intValue() == _self.getValue().getValue()));
   }
   
   protected static void _privk3_loop(final WaitForAspectWaitForAspectProperties _self_, final WaitFor _self) {

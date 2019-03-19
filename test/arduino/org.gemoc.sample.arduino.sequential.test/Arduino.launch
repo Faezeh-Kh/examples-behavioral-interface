@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.gemoc.execution.sequential.eventbased.javaengine.ui.launcher">
+    <stringAttribute key="GEMOC_DEBUG_MODEL_ID" value="org.eclipse.gemoc.execution.sequential.javaengine.ui.debugModel"/>
+    <booleanAttribute key="GEMOC_LAUNCH_BREAK_START" value="false"/>
+    <stringAttribute key="GEMOC_LAUNCH_MELANGE_QUERY" value=""/>
+    <stringAttribute key="GEMOC_LAUNCH_SELECTED_LANGUAGE" value="org.gemoc.arduino.sequential.XArduino"/>
+    <booleanAttribute key="Generic MultiDimensional Trace" value="false"/>
+    <setAttribute key="IMPL_REL_IDS">
+        <setEntry value="org.gemoc.arduino.sequential.xarduino.relationships.implementation_relationship"/>
+    </setAttribute>
+    <booleanAttribute key="LAUNCH_WAIT_FOR_EVENT" value="true"/>
+    <stringAttribute key="Resource" value="/org.gemoc.sample.arduino.sequential.test/models/loop.xarduino"/>
+    <setAttribute key="SUBTYPE_REL_IDS">
+        <setEntry value="org.gemoc.arduino.sequential.xarduino.relationships.subtyping_relationship"/>
+    </setAttribute>
+    <stringAttribute key="airdResource" value=""/>
+</launchConfiguration>

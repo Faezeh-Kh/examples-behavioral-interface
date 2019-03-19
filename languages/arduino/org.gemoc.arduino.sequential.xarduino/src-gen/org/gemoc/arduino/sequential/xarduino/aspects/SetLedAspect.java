@@ -27,7 +27,7 @@ public abstract class SetLedAspect extends ModuleSetAspect {
 	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager manager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry
 			.getInstance().findStepManager(_self);
 	if (manager != null) {
-		manager.executeStep(_self, new Object[] {_self}, command, "SetLed", "execute");
+		manager.executeStep(_self, command, "SetLed", "execute");
 	} else {
 		command.execute();
 	}

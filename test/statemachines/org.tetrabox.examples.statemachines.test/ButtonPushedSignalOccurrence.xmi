@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<statemachines:SignalEventOccurrence xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:statemachines="http://org.tetrabox.examples.statemachines.interpretedstatemachines/statemachines/">
+  <signal href="models/fsmlight.interpretedstatemachines#//@signals.0"/>
+  <attributeValues xsi:type="statemachines:StringAttributeValue" value="my_button">
+    <attribute href="models/fsmlight.interpretedstatemachines#//@signals.0/@attributes.0"/>
+  </attributeValues>
+</statemachines:SignalEventOccurrence>

@@ -660,13 +660,22 @@ public interface ArduinoPackage extends EPackage {
 	int WAIT_FOR__MODULE = INSTRUCTION_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WAIT_FOR__VALUE = INSTRUCTION_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Wait For</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WAIT_FOR_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
+	int WAIT_FOR_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.arduino.sequential.xarduino.arduino.impl.ExpressionImpl <em>Expression</em>}' class.
@@ -1193,6 +1202,17 @@ public interface ArduinoPackage extends EPackage {
 	EReference getWaitFor_Module();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.gemoc.arduino.sequential.xarduino.arduino.WaitFor#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value</em>'.
+	 * @see org.gemoc.arduino.sequential.xarduino.arduino.WaitFor#getValue()
+	 * @see #getWaitFor()
+	 * @generated
+	 */
+	EReference getWaitFor_Value();
+
+	/**
 	 * Returns the meta object for class '{@link org.gemoc.arduino.sequential.xarduino.arduino.Expression <em>Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1660,6 +1680,14 @@ public interface ArduinoPackage extends EPackage {
 		 * @generated
 		 */
 		EReference WAIT_FOR__MODULE = eINSTANCE.getWaitFor_Module();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference WAIT_FOR__VALUE = eINSTANCE.getWaitFor_Value();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.arduino.sequential.xarduino.arduino.impl.ExpressionImpl <em>Expression</em>}' class.

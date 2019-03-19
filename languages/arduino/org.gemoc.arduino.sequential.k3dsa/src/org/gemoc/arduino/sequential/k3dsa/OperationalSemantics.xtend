@@ -156,12 +156,22 @@ class WaitForAspect extends InstructionAspect {
 	@Step
 	@OverrideAspectMethod
 	def void execute() {
+		if (_self.value !== null && _self.validated) {
+			_self.moduleActivated = false
+			_self.waiting = false
+			return
+		}
 		_self.waiting = true
-		while (!_self.moduleActivated) {
+		while (!(_self.moduleActivated && _self.validated)) {
+			_self.moduleActivated = false
 			_self.loop
 		}
 		_self.moduleActivated = false
 		_self.waiting = false
+	}
+	
+	private def boolean isValidated() {
+		return _self.value === null || _self.module.level == _self.value.value
 	}
 	
 	@Step

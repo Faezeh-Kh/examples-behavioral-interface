@@ -10,27 +10,27 @@ public class InstructionAspect {
   public static void execute(final Instruction _self) {
 	final org.gemoc.arduino.sequential.xarduino.aspects.InstructionAspectInstructionAspectProperties _self_ = org.gemoc.arduino.sequential.xarduino.aspects.InstructionAspectInstructionAspectContext
 			.getSelf(_self);
-	if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.SetLed) {
-		org.gemoc.arduino.sequential.xarduino.aspects.SetLedAspect
-				.execute((org.gemoc.arduino.sequential.xarduino.arduino.SetLed) _self);
+	if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.Delay) {
+		org.gemoc.arduino.sequential.xarduino.aspects.DelayAspect
+				.execute((org.gemoc.arduino.sequential.xarduino.arduino.Delay) _self);
 	} else if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.If) {
 		org.gemoc.arduino.sequential.xarduino.aspects.IfAspect
 				.execute((org.gemoc.arduino.sequential.xarduino.arduino.If) _self);
-	} else if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.WaitFor) {
-		org.gemoc.arduino.sequential.xarduino.aspects.WaitForAspect
-				.execute((org.gemoc.arduino.sequential.xarduino.arduino.WaitFor) _self);
 	} else if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.While) {
 		org.gemoc.arduino.sequential.xarduino.aspects.WhileAspect
 				.execute((org.gemoc.arduino.sequential.xarduino.arduino.While) _self);
 	} else if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.Control) {
 		org.gemoc.arduino.sequential.xarduino.aspects.ControlAspect
 				.execute((org.gemoc.arduino.sequential.xarduino.arduino.Control) _self);
+	} else if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.SetLed) {
+		org.gemoc.arduino.sequential.xarduino.aspects.SetLedAspect
+				.execute((org.gemoc.arduino.sequential.xarduino.arduino.SetLed) _self);
 	} else if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.ModuleSet) {
 		org.gemoc.arduino.sequential.xarduino.aspects.ModuleSetAspect
 				.execute((org.gemoc.arduino.sequential.xarduino.arduino.ModuleSet) _self);
-	} else if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.Delay) {
-		org.gemoc.arduino.sequential.xarduino.aspects.DelayAspect
-				.execute((org.gemoc.arduino.sequential.xarduino.arduino.Delay) _self);
+	} else if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.WaitFor) {
+		org.gemoc.arduino.sequential.xarduino.aspects.WaitForAspect
+				.execute((org.gemoc.arduino.sequential.xarduino.arduino.WaitFor) _self);
 	} else if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.Instruction) {
 		org.gemoc.arduino.sequential.xarduino.aspects.InstructionAspect._privk3_execute(_self_,
 				(org.gemoc.arduino.sequential.xarduino.arduino.Instruction) _self);

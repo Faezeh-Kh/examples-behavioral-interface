@@ -16,15 +16,15 @@ public abstract class ExpressionAspect {
 	if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.ModuleGet) {
 		result = org.gemoc.arduino.sequential.xarduino.aspects.ModuleGetAspect
 				.evaluate((org.gemoc.arduino.sequential.xarduino.arduino.ModuleGet) _self);
-	} else if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.Constant) {
-		result = org.gemoc.arduino.sequential.xarduino.aspects.ConstantAspect
-				.evaluate((org.gemoc.arduino.sequential.xarduino.arduino.Constant) _self);
-	} else if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.BinaryExpression) {
-		result = org.gemoc.arduino.sequential.xarduino.aspects.BinaryExpressionAspect
-				.evaluate((org.gemoc.arduino.sequential.xarduino.arduino.BinaryExpression) _self);
 	} else if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.UnaryExpression) {
 		result = org.gemoc.arduino.sequential.xarduino.aspects.UnaryExpressionAspect
 				.evaluate((org.gemoc.arduino.sequential.xarduino.arduino.UnaryExpression) _self);
+	} else if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.BinaryExpression) {
+		result = org.gemoc.arduino.sequential.xarduino.aspects.BinaryExpressionAspect
+				.evaluate((org.gemoc.arduino.sequential.xarduino.arduino.BinaryExpression) _self);
+	} else if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.Constant) {
+		result = org.gemoc.arduino.sequential.xarduino.aspects.ConstantAspect
+				.evaluate((org.gemoc.arduino.sequential.xarduino.arduino.Constant) _self);
 	} else if (_self instanceof org.gemoc.arduino.sequential.xarduino.arduino.Expression) {
 		result = org.gemoc.arduino.sequential.xarduino.aspects.ExpressionAspect._privk3_evaluate(_self_,
 				(org.gemoc.arduino.sequential.xarduino.arduino.Expression) _self);

@@ -7,12 +7,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.eclipse.gemoc.executionframework.behavioralinterface.behavioralInterface.BehavioralInterface;
+import org.eclipse.gemoc.executionframework.behavioralinterface.behavioralInterface.Event;
 import org.eclipse.gemoc.executionframework.event.manager.SimpleImplementationRelationship;
-import org.eclipse.gemoc.xdsmlframework.behavioralinterface.behavioralInterface.BehavioralInterface;
-import org.eclipse.gemoc.xdsmlframework.behavioralinterface.behavioralInterface.Event;
 
 public class InterpretedStateMachinesImplementationRelationship extends SimpleImplementationRelationship {
 
+	private static final String RULE_EXECUTOR_ID = "org.eclipse.gemoc.execution.sequential.javaengine.k3_rule_executor";
+	
 	private static Set<String> computeRunToCompletionMap(List<Event> events) {
 		final Set<String> result = new HashSet<>();
 		events.stream().filter(e -> e.getName().equals("call_eventOccurrenceReceived")).findFirst()
@@ -28,6 +30,6 @@ public class InterpretedStateMachinesImplementationRelationship extends SimpleIm
 	}
 
 	public InterpretedStateMachinesImplementationRelationship(BehavioralInterface behavioralInterface) {
-		super(behavioralInterface, computeRunToCompletionMap(behavioralInterface.getEvents()));
+		super(behavioralInterface, computeRunToCompletionMap(behavioralInterface.getEvents()), RULE_EXECUTOR_ID);
 	}
 }

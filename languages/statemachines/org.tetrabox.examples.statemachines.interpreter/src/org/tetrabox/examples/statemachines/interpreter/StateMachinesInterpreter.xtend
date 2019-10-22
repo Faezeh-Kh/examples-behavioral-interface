@@ -1,13 +1,11 @@
 package org.tetrabox.examples.statemachines.interpreter
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect
-import fr.inria.diverse.k3.al.annotationprocessor.Containment
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
 import fr.inria.diverse.k3.al.annotationprocessor.Step
 import java.util.ArrayList
 import java.util.List
 import org.eclipse.emf.ecore.EObject
-import org.eclipse.gemoc.executionframework.engine.annotations.EventHandler
 import statemachines.Attribute
 import statemachines.AttributeValue
 import statemachines.Behavior
@@ -21,6 +19,7 @@ import statemachines.EventOccurrence
 import statemachines.FinalState
 import statemachines.IntegerAttribute
 import statemachines.IntegerAttributeValue
+import statemachines.NamedElement
 import statemachines.OperationBehavior
 import statemachines.Pseudostate
 import statemachines.PseudostateKind
@@ -41,12 +40,10 @@ import static extension org.tetrabox.examples.statemachines.interpreter.CallEven
 import static extension org.tetrabox.examples.statemachines.interpreter.ConstraintAspect.*
 import static extension org.tetrabox.examples.statemachines.interpreter.EventOccurrenceAspect.*
 import static extension org.tetrabox.examples.statemachines.interpreter.RegionAspect.*
-import static extension org.tetrabox.examples.statemachines.interpreter.SignalEventOccurrenceAspect.*
 import static extension org.tetrabox.examples.statemachines.interpreter.StateAspect.*
 import static extension org.tetrabox.examples.statemachines.interpreter.StateMachineAspect.*
 import static extension org.tetrabox.examples.statemachines.interpreter.TransitionAspect.*
 import static extension org.tetrabox.examples.statemachines.interpreter.VertexAspect.*
-import statemachines.NamedElement
 
 @Aspect(className=StateMachine)
 class StateMachineAspect {
@@ -56,14 +53,12 @@ class StateMachineAspect {
 	protected val List<Vertex> activeVertice = new ArrayList
 
 	@Step
-	@EventHandler
 	def void run() {
 		_self.regions.forEach[enter(null, null)]
 		_self.dispatchCompletionEvents
 	}
 	
 	@Step
-	@EventHandler
 	def void eventOccurrenceReceived(EventOccurrence event) {
 		_self.dispatchEventOccurrence(event)
 	}

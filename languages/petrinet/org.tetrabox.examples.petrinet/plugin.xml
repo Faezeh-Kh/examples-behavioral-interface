@@ -1,14 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?eclipse version="3.0"?><!--
---><plugin>
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+-->
+<plugin>
   <extension point="org.eclipse.emf.ecore.generated_package">
     <!-- @generated petrinet -->
-    <package class="org.tetrabox.examples.petrinet.model.petrinet.PetrinetPackage" genModel="model/petrinet.genmodel" uri="http://www.example.org/petrinet"/>
+    <package class="org.tetrabox.examples.petrinet.model.petrinet.PetrinetPackage" genModel="model/petrinet.genmodel" uri="http://www.example.org/petrinet" />
   </extension>
   <extension point="org.eclipse.gemoc.gemoc_language_workbench.sequential.xdsml">
-    <XDSML_Definition modelLoader_class="org.eclipse.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="org.tetrabox.examples.PetriNet" xdsmlFilePath="platform:/plugin/org.tetrabox.examples.petrinet/model/petrinet.dsl"/>
+    <XDSML_Definition modelLoader_class="org.eclipse.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="org.tetrabox.examples.PetriNet" xdsmlFilePath="platform:/plugin/org.tetrabox.examples.petrinet/model/petrinet.dsl" />
   </extension>
   <extension point="org.eclipse.gemoc.executionframework.event.implementationrelationship">
-    <implementation_relationship class="org.tetrabox.examples.petrinet.PetriNetImplementationRelationship" id="org.tetrabox.examples.petrinet.implementation_relationship" name="PetriNetImplementation"/>
+    <implementation_relationship class="org.tetrabox.examples.petrinet.PetriNetImplementationRelationship" id="org.tetrabox.examples.petrinet.implementation_relationship" name="PetriNetImplementation" />
   </extension>
 </plugin>

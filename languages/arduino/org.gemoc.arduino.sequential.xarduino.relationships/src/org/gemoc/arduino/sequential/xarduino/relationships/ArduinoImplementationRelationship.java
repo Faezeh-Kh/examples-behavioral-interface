@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.gemoc.executionframework.event.manager.SimpleImplementationRelationship;
-import org.eclipse.gemoc.xdsmlframework.behavioralinterface.behavioralInterface.BehavioralInterface;
+import org.eclipse.gemoc.executionframework.behavioralinterface.behavioralInterface.BehavioralInterface;
 
 public class ArduinoImplementationRelationship extends SimpleImplementationRelationship {
 
@@ -25,6 +25,6 @@ public class ArduinoImplementationRelationship extends SimpleImplementationRelat
 	}
 
 	public ArduinoImplementationRelationship(BehavioralInterface behavioralInterface) {
-		super(behavioralInterface, Collections.emptySet(), computeEventToMethodMap());
+		super(behavioralInterface, Collections.emptySet(), computeEventToMethodMap(), "org.eclipse.gemoc.execution.sequential.javaengine.k3_rule_executor");
 	}
 }

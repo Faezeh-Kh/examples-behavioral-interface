@@ -8,11 +8,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.gemoc.executionframework.behavioralinterface.behavioralInterface.BehavioralInterface;
 import org.eclipse.gemoc.executionframework.event.manager.EPLSubtypingRelationship;
 import org.eclipse.gemoc.executionframework.event.manager.SubtypingRuleSubscriber;
-import org.eclipse.gemoc.xdsmlframework.behavioralinterface.behavioralInterface.BehavioralInterface;
 import org.gemoc.arduino.sequential.xarduino.arduino.ArduinoPackage;
-import org.gemoc.arduino.sequential.xarduino.arduino.Led;
 import org.gemoc.arduino.sequential.xarduino.arduino.PushButton;
 import org.gemoc.arduino.sequential.xarduino.arduino.Sketch;
 
@@ -22,16 +21,14 @@ public class EPLArduinoSubtypingRelationship extends EPLSubtypingRelationship {
 
 	private static List<SubtypingRuleSubscriber> computeRuleSubscribers() {
 		final List<SubtypingRuleSubscriber> result = new ArrayList<>();
-		result.add(new OnStart());
-		result.add(new OnButtonPushed());
+		result.add(new OnActivateSketch());
+		result.add(new OnActivateButton());
 		result.add(new OnLedOffOn());
-		result.add(new OnLedOn());
-		result.add(new OnLedOff());
 		return result;
 	}
 
 	public EPLArduinoSubtypingRelationship() {
-		this(loadBehavioralInterface("platform:/plugin/org.gemoc.arduino.sequential.xarduino.relationships/ButtonLight.bi"),
+		this(loadBehavioralInterface("platform:/plugin/org.gemoc.arduino.sequential.xarduino.relationships/Activatable.bi"),
 				loadBehavioralInterface("platform:/plugin/org.gemoc.arduino.sequential.xarduino.relationships/Arduino.bi"));
 	}
 
@@ -47,38 +44,41 @@ public class EPLArduinoSubtypingRelationship extends EPLSubtypingRelationship {
 		}
 		return super.isLocal(clazz);
 	}
-
-	static public class OnStart extends SubtypingRuleSubscriber {
+	
+	static public class OnActivateSketch extends SubtypingRuleSubscriber {
 		@Override
 		public String getStatement() {
-			return "select * from EPLEventOccurrence(event.name='start')";
+			return "select args('id') from EPLEventOccurrence(event.name='activate')";
 		}
 
-		public void update(Object eventOccurrence) {
-			final Map<String, Object> parameters = new HashMap<>();
+		public void update(Object sketchId) {
 			final Sketch sketch = Streams.stream(executedResource.getAllContents())
 					.filter(o -> o instanceof Sketch)
-					.findFirst().map(b -> (Sketch) b).orElse(null);
+					.map(b -> (Sketch) b)
+					.filter(s -> s.getName().equals(sketchId))
+					.findFirst().orElse(null);
 			if (sketch != null) {
+				final Map<String, Object> parameters = new HashMap<>();
 				parameters.put("sketch", sketch);
 				consumeEventOccurrence(createAcceptedEventOccurrence("run", parameters));
 			}
 		}
 	}
 
-	static public class OnButtonPushed extends SubtypingRuleSubscriber {
+	static public class OnActivateButton extends SubtypingRuleSubscriber {
 		@Override
 		public String getStatement() {
-			return "select args('button_id') from EPLEventOccurrence(event.name='button_pushed')";
+			return "select args('id') from EPLEventOccurrence(event.name='activate')";
 		}
 
 		public void update(Object buttonId) {
-			final Map<String, Object> parameters = new HashMap<>();
 			final PushButton button = Streams.stream(executedResource.getAllContents())
 					.filter(o -> o instanceof PushButton)
-					.filter(b -> ((PushButton) b).getName().equals(buttonId))
-					.findFirst().map(b -> (PushButton) b).orElse(null);
+					.map(b -> (PushButton) b)
+					.filter(b -> b.getName().equals(buttonId))
+					.findFirst().orElse(null);
 			if (button != null) {
+				final Map<String, Object> parameters = new HashMap<>();
 				parameters.put("button", button);
 				consumeEventOccurrence(createAcceptedEventOccurrence("button_pressed", parameters));
 				consumeEventOccurrence(createAcceptedEventOccurrence("button_released", parameters));
@@ -90,41 +90,14 @@ public class EPLArduinoSubtypingRelationship extends EPLSubtypingRelationship {
 		@Override
 		public String getStatement() {
 			return "select ledon.args('led').name? from pattern "
-					+ "[every ledoff=EPLEventOccurrence(event.name='led_level_changed', args('level')=0) -> "
-					+ "ledon=EPLEventOccurrence(event.name='led_level_changed', args('level')=1)]#length(2) where "
-					+ "ledon.args('led').name?=ledoff.args('led').name?";
+			+ "[every ledoff=EPLEventOccurrence(event.name='led_level_changed', args('level')=0) -> "
+			+ "ledon=EPLEventOccurrence(event.name='led_level_changed', args('level')=1)] where "
+			+ "ledon.args('led').name?=ledoff.args('led').name?";
 		}
-
 		public void update(Object ledon) {
 				final Map<String, Object> parameters = new HashMap<>();
-				parameters.put("light_id", ledon);
-				consumeEventOccurrence(createExposedEventOccurrence("light_blinked", parameters));
-		}
-	}
-
-	static public class OnLedOn extends SubtypingRuleSubscriber {
-		@Override
-		public String getStatement() {
-			return "select args('led') as led from EPLEventOccurrence(event.name='led_level_changed', args('level')=1)";
-		}
-
-		public void update(Object led) {
-			final Map<String, Object> parameters = new HashMap<>();
-			parameters.put("light_id", ((Led) led).getName());
-			consumeEventOccurrence(createExposedEventOccurrence("light_on", parameters));
-		}
-	}
-
-	static public class OnLedOff extends SubtypingRuleSubscriber {
-		@Override
-		public String getStatement() {
-			return "select args('led') as led from EPLEventOccurrence(event.name='led_level_changed', args('level')=0)";
-		}
-
-		public void update(Object led) {
-			final Map<String, Object> parameters = new HashMap<>();
-			parameters.put("light_id", ((Led) led).getName());
-			consumeEventOccurrence(createExposedEventOccurrence("light_off", parameters));
+				parameters.put("id", ledon);
+				consumeEventOccurrence(createExposedEventOccurrence("activated", parameters));
 		}
 	}
 }

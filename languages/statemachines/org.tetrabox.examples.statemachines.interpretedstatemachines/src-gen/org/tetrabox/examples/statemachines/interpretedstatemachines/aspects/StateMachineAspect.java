@@ -1,22 +1,14 @@
 package org.tetrabox.examples.statemachines.interpretedstatemachines.aspects;
 
-import com.google.common.collect.Iterables;
-import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
-import fr.inria.diverse.k3.al.annotationprocessor.Step;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
+
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.gemoc.executionframework.engine.annotations.EventHandler;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.CallEventOccurrenceAspect;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.RegionAspect;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateAspect;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectProperties;
-import org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.TransitionAspect;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CallEventOccurrence;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.CompletionEventOccurrence;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.EventOccurrence;
@@ -26,11 +18,15 @@ import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachine
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Transition;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Vertex;
 
+import com.google.common.collect.Iterables;
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
+import fr.inria.diverse.k3.al.annotationprocessor.Step;
+
 @Aspect(className = StateMachine.class)
 @SuppressWarnings("all")
 public class StateMachineAspect {
   @Step
-  @EventHandler
   public static void run(final StateMachine _self) {
 	final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectContext
 			.getSelf(_self);
@@ -52,7 +48,6 @@ public class StateMachineAspect {
 }
   
   @Step
-  @EventHandler
   public static void eventOccurrenceReceived(final StateMachine _self, final EventOccurrence event) {
 	final org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectProperties _self_ = org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspectStateMachineAspectContext
 			.getSelf(_self);

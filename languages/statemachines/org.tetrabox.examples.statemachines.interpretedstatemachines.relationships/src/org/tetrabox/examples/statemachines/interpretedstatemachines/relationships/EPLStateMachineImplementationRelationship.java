@@ -8,16 +8,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.gemoc.executionframework.behavioralinterface.behavioralInterface.BehavioralInterface;
 import org.eclipse.gemoc.executionframework.event.manager.EPLImplementationRelationship;
 import org.eclipse.gemoc.executionframework.event.manager.ImplementationRuleSubscriber;
 import org.eclipse.gemoc.executionframework.event.manager.SimpleCallRequest;
-import org.eclipse.gemoc.xdsmlframework.behavioralinterface.behavioralInterface.BehavioralInterface;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Behavior;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.Signal;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.SignalEventOccurrence;
 import org.tetrabox.examples.statemachines.interpretedstatemachines.statemachines.StatemachinesFactory;
 
 public class EPLStateMachineImplementationRelationship extends EPLImplementationRelationship {
+	
+	private static final String RULE_EXECUTOR_ID = "org.eclipse.gemoc.execution.sequential.javaengine.k3_rule_executor";
 	
 	private static List<ImplementationRuleSubscriber> computeRuleSubscribers() {
 		final List<ImplementationRuleSubscriber> result = new ArrayList<>();
@@ -45,7 +47,7 @@ public class EPLStateMachineImplementationRelationship extends EPLImplementation
 			final String name = "org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspect.run";
 			final List<Object> arguments = Arrays.asList(new Object[] {stateMachine});
 			final boolean rtc = true;
-			consumeCallRequest(new SimpleCallRequest(name, arguments, rtc));
+			consumeCallRequest(new SimpleCallRequest(name, arguments, rtc, RULE_EXECUTOR_ID));
 		}
 	}
 	
@@ -59,7 +61,7 @@ public class EPLStateMachineImplementationRelationship extends EPLImplementation
 			final String name = "org.tetrabox.examples.statemachines.interpretedstatemachines.aspects.StateMachineAspect.eventOccurrenceReceived";
 			final List<Object> arguments = Arrays.asList(new Object[] {stateMachine, signalOccurrence});
 			final boolean rtc = true;
-			consumeCallRequest(new SimpleCallRequest(name, arguments, rtc));
+			consumeCallRequest(new SimpleCallRequest(name, arguments, rtc, RULE_EXECUTOR_ID));
 		}
 	}
 	

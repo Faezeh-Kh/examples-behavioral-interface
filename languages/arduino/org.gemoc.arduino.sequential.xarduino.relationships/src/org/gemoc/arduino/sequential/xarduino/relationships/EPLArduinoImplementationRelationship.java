@@ -11,11 +11,13 @@ import java.util.Map;
 import org.eclipse.gemoc.executionframework.event.manager.EPLImplementationRelationship;
 import org.eclipse.gemoc.executionframework.event.manager.ImplementationRuleSubscriber;
 import org.eclipse.gemoc.executionframework.event.manager.SimpleCallRequest;
-import org.eclipse.gemoc.xdsmlframework.behavioralinterface.behavioralInterface.BehavioralInterface;
+import org.eclipse.gemoc.executionframework.behavioralinterface.behavioralInterface.BehavioralInterface;
 import org.gemoc.arduino.sequential.xarduino.arduino.Led;
 import org.gemoc.arduino.sequential.xarduino.arduino.SetLed;
 
 public class EPLArduinoImplementationRelationship extends EPLImplementationRelationship {
+	
+	private static final String RULE_EXECUTOR_ID = "org.eclipse.gemoc.execution.sequential.javaengine.k3_rule_executor";
 	
 	private static List<ImplementationRuleSubscriber> computeRuleSubscribers() {
 		final List<ImplementationRuleSubscriber> result = new ArrayList<>();
@@ -44,7 +46,7 @@ public class EPLArduinoImplementationRelationship extends EPLImplementationRelat
 			final String name = "org.gemoc.arduino.sequential.xarduino.aspects.SketchAspect.execute";
 			final List<Object> arguments = Arrays.asList(new Object[] {sketch});
 			final boolean rtc = false;
-			consumeCallRequest(new SimpleCallRequest(name, arguments, rtc));
+			consumeCallRequest(new SimpleCallRequest(name, arguments, rtc, RULE_EXECUTOR_ID));
 		}
 	}
 	
@@ -58,7 +60,7 @@ public class EPLArduinoImplementationRelationship extends EPLImplementationRelat
 			final String name = "org.gemoc.arduino.sequential.xarduino.aspects.PushButtonAspect.press";
 			final List<Object> arguments = Arrays.asList(new Object[] {button});
 			final boolean rtc = true;
-			consumeCallRequest(new SimpleCallRequest(name, arguments, rtc));
+			consumeCallRequest(new SimpleCallRequest(name, arguments, rtc, RULE_EXECUTOR_ID));
 		}
 	}
 	
@@ -72,7 +74,7 @@ public class EPLArduinoImplementationRelationship extends EPLImplementationRelat
 			final String name = "org.gemoc.arduino.sequential.xarduino.aspects.PushButtonAspect.release";
 			final List<Object> arguments = Arrays.asList(new Object[] {button});
 			final boolean rtc = true;
-			consumeCallRequest(new SimpleCallRequest(name, arguments, rtc));
+			consumeCallRequest(new SimpleCallRequest(name, arguments, rtc, RULE_EXECUTOR_ID));
 		}
 	}
 	

@@ -9,7 +9,7 @@
         <setEntry value="org.gemoc.arduino.sequential.xarduino.relationships.implementation_relationship"/>
     </setAttribute>
     <booleanAttribute key="LAUNCH_WAIT_FOR_EVENT" value="true"/>
-    <stringAttribute key="Resource" value="/org.gemoc.sample.arduino.sequential.test/models/loop.xarduino"/>
+    <stringAttribute key="Resource" value="/org.gemoc.sample.arduino.sequential.test/models/blinking.xarduino"/>
     <setAttribute key="SUBTYPE_REL_IDS">
         <setEntry value="org.gemoc.arduino.sequential.xarduino.relationships.subtyping_relationship"/>
     </setAttribute>
